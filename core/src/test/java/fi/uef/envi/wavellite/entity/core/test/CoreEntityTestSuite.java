@@ -10,7 +10,7 @@ import org.junit.runners.Suite;
 
 /**
  * <p>
- * Title: EntityCoreTestSuite
+ * Title: CoreEntityTestSuite
  * </p>
  * <p>
  * Description:
@@ -30,6 +30,6 @@ import org.junit.runners.Suite;
 
 })
 
-public class EntityCoreTestSuite {
+public class CoreEntityTestSuite {
 
 }
