@@ -3,18 +3,18 @@
  * All rights reserved.
  */
 
-package fi.uef.envi.wavellite.entity.common.test;
+package fi.uef.envi.wavellite.entity.common.base.test;
 
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
-import fi.uef.envi.wavellite.entity.common.base.PropertyBase;
+import fi.uef.envi.wavellite.entity.common.base.FeatureBase;
 import fi.uef.envi.wavellite.vocabulary.WO;
 
 /**
  * <p>
- * Title: PropertyBaseTest
+ * Title: FeatureBaseTest
  * </p>
  * <p>
  * Description:
@@ -29,103 +29,103 @@ import fi.uef.envi.wavellite.vocabulary.WO;
  * @author Markus Stocker
  */
 
-public class PropertyBaseTest {
+public class FeatureBaseTest {
 
 	@Test
 	public void test1() {
-		PropertyBase e = new PropertyBase("i1");
-		PropertyBase a = new PropertyBase("i1");
+		FeatureBase e = new FeatureBase("i1");
+		FeatureBase a = new FeatureBase("i1");
 
 		assertEquals(e, a);
 	}
 	
 	@Test
 	public void test2() {
-		PropertyBase e = new PropertyBase("i1", "t1");
-		PropertyBase a = new PropertyBase("i1", "t1");
+		FeatureBase e = new FeatureBase("i1", "t1");
+		FeatureBase a = new FeatureBase("i1", "t1");
 		
 		assertEquals(e, a);
 	}
 	
 	@Test
 	public void test3() {
-		PropertyBase e = new PropertyBase("i1");
-		PropertyBase a = new PropertyBase("i2");
+		FeatureBase e = new FeatureBase("i1");
+		FeatureBase a = new FeatureBase("i2");
 		
 		assertNotEquals(e, a);
 	}
 	
 	@Test
 	public void test4() {
-		PropertyBase e = new PropertyBase("i1", "t1");
-		PropertyBase a = new PropertyBase("i1", "t2");
+		FeatureBase e = new FeatureBase("i1", "t1");
+		FeatureBase a = new FeatureBase("i1", "t2");
 		
 		assertNotEquals(e, a);
 	}
 	
 	@Test
 	public void test5() {
-		PropertyBase s1 = new PropertyBase("i1");
-		PropertyBase s2 = new PropertyBase("i1");
+		FeatureBase s1 = new FeatureBase("i1");
+		FeatureBase s2 = new FeatureBase("i1");
 		
 		assertEquals(s1.hashCode(), s2.hashCode());
 	}
 	
 	@Test
 	public void test6() {
-		PropertyBase s1 = new PropertyBase("i1", "t1");
-		PropertyBase s2 = new PropertyBase("i1", "t1");
+		FeatureBase s1 = new FeatureBase("i1", "t1");
+		FeatureBase s2 = new FeatureBase("i1", "t1");
 		
 		assertEquals(s1.hashCode(), s2.hashCode());
 	}
 	
 	@Test
 	public void test7() {
-		PropertyBase s1 = new PropertyBase("i1");
-		PropertyBase s2 = new PropertyBase("i2");
+		FeatureBase s1 = new FeatureBase("i1");
+		FeatureBase s2 = new FeatureBase("i2");
 		
 		assertNotEquals(s1.hashCode(), s2.hashCode());
 	}
 	
 	@Test
 	public void test8() {
-		PropertyBase s1 = new PropertyBase("i1", "t1");
-		PropertyBase s2 = new PropertyBase("i1", "t2");
+		FeatureBase s1 = new FeatureBase("i1", "t1");
+		FeatureBase s2 = new FeatureBase("i1", "t2");
 		
 		assertNotEquals(s1.hashCode(), s2.hashCode());
 	}
 	
 	@Test
 	public void test9() {
-		PropertyBase s = new PropertyBase("i1");
+		FeatureBase s = new FeatureBase("i1");
 		
 		assertEquals("i1", s.getId());
 	}
 	
 	@Test
 	public void test10() {
-		PropertyBase s = new PropertyBase("i1");
+		FeatureBase s = new FeatureBase("i1");
 		
-		assertEquals(WO.Property, s.getType());
+		assertEquals(WO.Feature, s.getType());
 	}
 	
 	@Test
 	public void test11() {
-		PropertyBase s = new PropertyBase("i1", "t1");
+		FeatureBase s = new FeatureBase("i1", "t1");
 		
 		assertEquals("t1", s.getType());
 	}
 	
 	@Test
 	public void test12() {
-		PropertyBase s = new PropertyBase("i1");
+		FeatureBase s = new FeatureBase("i1");
 		
 		assertNotEquals("i2", s.getId());
 	}
 	
 	@Test
 	public void test13() {
-		PropertyBase s = new PropertyBase("i1", "t1");
+		FeatureBase s = new FeatureBase("i1", "t1");
 		
 		assertNotEquals("t2", s.getType());
 	}

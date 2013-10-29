@@ -3,7 +3,7 @@
  * All rights reserved.
  */
 
-package fi.uef.envi.wavellite.entity.measurement.test;
+package fi.uef.envi.wavellite.entity.measurement.base.test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
