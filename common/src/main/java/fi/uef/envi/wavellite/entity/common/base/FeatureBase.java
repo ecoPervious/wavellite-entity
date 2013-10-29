@@ -5,7 +5,7 @@
 
 package fi.uef.envi.wavellite.entity.common.base;
 
-import fi.uef.envi.wavellite.entity.common.Sensor;
+import fi.uef.envi.wavellite.entity.common.Feature;
 import fi.uef.envi.wavellite.entity.core.base.AbstractEntity;
 import fi.uef.envi.wavellite.vocabulary.WO;
 
@@ -26,7 +26,7 @@ import fi.uef.envi.wavellite.vocabulary.WO;
  * @author Markus Stocker
  */
 
-public class FeatureBase extends AbstractEntity implements Sensor {
+public class FeatureBase extends AbstractEntity implements Feature {
 
 	public FeatureBase(String id) {
 		this(id, WO.Feature);

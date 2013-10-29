@@ -5,6 +5,8 @@
 
 package fi.uef.envi.wavellite.entity.measurement.base;
 
+import java.util.UUID;
+
 import fi.uef.envi.wavellite.entity.core.base.AbstractEntity;
 import fi.uef.envi.wavellite.entity.measurement.MeasurementContext;
 import fi.uef.envi.wavellite.entity.measurement.MeasurementResult;
@@ -34,6 +36,10 @@ public class MeasurementResultBase extends AbstractEntity implements
 	private MeasurementValue value;
 	private MeasurementContext context;
 
+	public MeasurementResultBase() {
+		this(UUID.randomUUID().toString());
+	}
+	
 	public MeasurementResultBase(String id) {
 		this(id, WO.MeasurementResult);
 	}
