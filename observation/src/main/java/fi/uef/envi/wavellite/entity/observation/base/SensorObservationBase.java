@@ -39,11 +39,11 @@ public class SensorObservationBase extends AbstractEntity implements
 	private Property property;
 
 	public SensorObservationBase() {
-		this(WO.SensorObservation);
+		this(UUID.randomUUID().toString());
 	}
 
-	public SensorObservationBase(String type) {
-		this(UUID.randomUUID().toString(), type);
+	public SensorObservationBase(String id) {
+		this(id, WO.SensorObservation);
 	}
 
 	public SensorObservationBase(String id, String type) {

@@ -8,6 +8,7 @@ package fi.uef.envi.wavellite.entity.observation;
 import fi.uef.envi.wavellite.entity.common.Feature;
 import fi.uef.envi.wavellite.entity.common.Property;
 import fi.uef.envi.wavellite.entity.common.Sensor;
+import fi.uef.envi.wavellite.entity.core.Entity;
 
 /**
  * <p>
@@ -26,7 +27,7 @@ import fi.uef.envi.wavellite.entity.common.Sensor;
  * @author Markus Stocker
  */
 
-public interface SensorObservation {
+public interface SensorObservation extends Entity {
 
 	public void setSensor(Sensor sensor);
 	
