@@ -14,7 +14,7 @@ import fi.uef.envi.wavellite.vocabulary.WO;
 
 /**
  * <p>
- * Title: MeasurementResultTest
+ * Title: MeasurementResultBaseTest
  * </p>
  * <p>
  * Description:
@@ -29,7 +29,7 @@ import fi.uef.envi.wavellite.vocabulary.WO;
  * @author Markus Stocker
  */
 
-public class MeasurementResultTest {
+public class MeasurementResultBaseTest {
 
 	@Test
 	public void test1() {

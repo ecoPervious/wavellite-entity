@@ -44,4 +44,10 @@ public interface MeasurementContext extends Entity {
 	
 	public Quality getQuality();
 	
+	public void setSensor(Sensor sensor);
+	
+	public void setProperty(Property property);
+	
+	public void setFeature(Feature feature);
+	
 }
