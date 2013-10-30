@@ -5,6 +5,8 @@
 
 package fi.uef.envi.wavellite.entity.measurement.base;
 
+import java.util.UUID;
+
 import fi.uef.envi.wavellite.vocabulary.WO;
 
 /**
@@ -29,7 +31,15 @@ public class DoubleMeasurementValue extends AbstractMeasurementValue {
 	private Double value;
 
 	public DoubleMeasurementValue(Double value) {
-		super(WO.DoubleMeasurementValue);
+		this(UUID.randomUUID().toString(), value);
+	}
+	
+	public DoubleMeasurementValue(String id, Double value) {
+		this(id, WO.DoubleMeasurementValue, value);
+	}
+	
+	public DoubleMeasurementValue(String id, String type, Double value) {
+		super(id, type);
 
 		setValue(value);
 	}

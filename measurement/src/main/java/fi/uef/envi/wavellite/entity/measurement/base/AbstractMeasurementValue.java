@@ -32,11 +32,11 @@ public abstract class AbstractMeasurementValue extends AbstractEntity implements
 		MeasurementValue {
 
 	public AbstractMeasurementValue() {
-		this(WO.MeasurementValue);
+		this(UUID.randomUUID().toString());
 	}
 	
-	public AbstractMeasurementValue(String type) {
-		this(UUID.randomUUID().toString(), type);
+	public AbstractMeasurementValue(String id) {
+		this(id, WO.MeasurementValue);
 	}
 	
 	public AbstractMeasurementValue(String id, String type) {

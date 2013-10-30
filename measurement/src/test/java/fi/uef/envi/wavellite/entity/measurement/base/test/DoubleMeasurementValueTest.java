@@ -33,55 +33,55 @@ public class DoubleMeasurementValueTest {
 
 	@Test
 	public void test1() {
-		DoubleMeasurementValue e = new DoubleMeasurementValue(0.0);
-		DoubleMeasurementValue a = new DoubleMeasurementValue(0.0);
-		
+		DoubleMeasurementValue e = new DoubleMeasurementValue("i1", 0.0);
+		DoubleMeasurementValue a = new DoubleMeasurementValue("i1", 0.0);
+
 		assertEquals(e, a);
 	}
-	
+
 	@Test
 	public void test2() {
-		DoubleMeasurementValue e = new DoubleMeasurementValue(0.0);
-		DoubleMeasurementValue a = new DoubleMeasurementValue(0.5);
-		
+		DoubleMeasurementValue e = new DoubleMeasurementValue("i1", 0.0);
+		DoubleMeasurementValue a = new DoubleMeasurementValue("i1", 0.5);
+
 		assertNotEquals(e, a);
 	}
-	
+
 	@Test
 	public void test3() {
-		DoubleMeasurementValue v1 = new DoubleMeasurementValue(0.0);
-		DoubleMeasurementValue v2 = new DoubleMeasurementValue(0.0);
-		
+		DoubleMeasurementValue v1 = new DoubleMeasurementValue("i1", 0.0);
+		DoubleMeasurementValue v2 = new DoubleMeasurementValue("i1", 0.0);
+
 		assertEquals(v1.hashCode(), v2.hashCode());
 	}
-	
+
 	@Test
 	public void test4() {
-		DoubleMeasurementValue v1 = new DoubleMeasurementValue(0.0);
-		DoubleMeasurementValue v2 = new DoubleMeasurementValue(0.5);
-		
+		DoubleMeasurementValue v1 = new DoubleMeasurementValue("i1", 0.0);
+		DoubleMeasurementValue v2 = new DoubleMeasurementValue("i1", 0.5);
+
 		assertNotEquals(v1.hashCode(), v2.hashCode());
 	}
-	
+
 	@Test
 	public void test5() {
 		DoubleMeasurementValue v = new DoubleMeasurementValue(0.0);
-		
+
 		assertEquals(Double.valueOf(0.0), v.getValue());
 	}
-	
+
 	@Test
 	public void test6() {
 		DoubleMeasurementValue v = new DoubleMeasurementValue(0.5);
-		
+
 		assertNotEquals(Double.valueOf(0.0), v.getValue());
 	}
-	
+
 	@Test
 	public void test7() {
 		DoubleMeasurementValue v = new DoubleMeasurementValue(0.0);
-		
+
 		assertEquals(WO.DoubleMeasurementValue, v.getType());
 	}
-	
+
 }
