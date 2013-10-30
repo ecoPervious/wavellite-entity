@@ -14,12 +14,12 @@ import fi.uef.envi.wavellite.entity.common.Sensor;
 import fi.uef.envi.wavellite.entity.common.SpatialLocation;
 import fi.uef.envi.wavellite.entity.common.TemporalLocation;
 import fi.uef.envi.wavellite.entity.core.base.AbstractEntity;
-import fi.uef.envi.wavellite.entity.measurement.MeasurementContext;
+import fi.uef.envi.wavellite.entity.measurement.MeasurementValueContext;
 import fi.uef.envi.wavellite.vocabulary.WO;
 
 /**
  * <p>
- * Title: MeasurementContextBase
+ * Title: MeasurementValueContextBase
  * </p>
  * <p>
  * Description:
@@ -34,22 +34,22 @@ import fi.uef.envi.wavellite.vocabulary.WO;
  * @author Markus Stocker
  */
 
-public class MeasurementContextBase extends AbstractEntity implements
-		MeasurementContext {
+public class MeasurementValueContextBase extends AbstractEntity implements
+		MeasurementValueContext {
 
 	private Sensor sensor;
 	private Property property;
 	private Feature feature;
 	
-	public MeasurementContextBase() {
+	public MeasurementValueContextBase() {
 		this(UUID.randomUUID().toString());
 	}
 	
-	public MeasurementContextBase(String id) {
-		this(id, WO.MeasurementContext);
+	public MeasurementValueContextBase(String id) {
+		this(id, WO.MeasurementValueContext);
 	}
 	
-	public MeasurementContextBase(String id, String type) {
+	public MeasurementValueContextBase(String id, String type) {
 		super(id, type);
 	}
 
@@ -124,7 +124,7 @@ public class MeasurementContextBase extends AbstractEntity implements
 		if (getClass() != obj.getClass())
 			return false;
 
-		MeasurementContextBase other = (MeasurementContextBase) obj;
+		MeasurementValueContextBase other = (MeasurementValueContextBase) obj;
 
 		if (id == null) {
 			if (other.id != null)

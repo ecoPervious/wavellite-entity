@@ -8,7 +8,7 @@ package fi.uef.envi.wavellite.entity.measurement.base;
 import java.util.UUID;
 
 import fi.uef.envi.wavellite.entity.core.base.AbstractEntity;
-import fi.uef.envi.wavellite.entity.measurement.MeasurementContext;
+import fi.uef.envi.wavellite.entity.measurement.MeasurementValueContext;
 import fi.uef.envi.wavellite.entity.measurement.MeasurementResult;
 import fi.uef.envi.wavellite.entity.measurement.MeasurementValue;
 import fi.uef.envi.wavellite.vocabulary.WO;
@@ -34,7 +34,7 @@ public class MeasurementResultBase extends AbstractEntity implements
 		MeasurementResult {
 
 	private MeasurementValue value;
-	private MeasurementContext context;
+	private MeasurementValueContext context;
 
 	public MeasurementResultBase() {
 		this(UUID.randomUUID().toString());
@@ -54,7 +54,7 @@ public class MeasurementResultBase extends AbstractEntity implements
 	}
 
 	@Override
-	public MeasurementContext getContext() {
+	public MeasurementValueContext getContext() {
 		return context;
 	}
 
@@ -64,7 +64,7 @@ public class MeasurementResultBase extends AbstractEntity implements
 	}
 
 	@Override
-	public void setContext(MeasurementContext context) {
+	public void setContext(MeasurementValueContext context) {
 		this.context = context;
 	}
 

@@ -28,10 +28,10 @@ public interface MeasurementResult extends Entity {
 
 	public MeasurementValue getValue();
 	
-	public MeasurementContext getContext();
+	public MeasurementValueContext getContext();
 	
 	public void setValue(MeasurementValue value);
 	
-	public void setContext(MeasurementContext context);
+	public void setContext(MeasurementValueContext context);
 	
 }

@@ -15,7 +15,7 @@ import fi.uef.envi.wavellite.entity.core.Entity;
 
 /**
  * <p>
- * Title: MeasurementContext
+ * Title: MeasurementValueContext
  * </p>
  * <p>
  * Description:
@@ -30,7 +30,7 @@ import fi.uef.envi.wavellite.entity.core.Entity;
  * @author Markus Stocker
  */
 
-public interface MeasurementContext extends Entity {
+public interface MeasurementValueContext extends Entity {
 
 	public Sensor getSensor();
 	
