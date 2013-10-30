@@ -32,11 +32,10 @@ public abstract class AbstractEntity implements Entity {
 	public AbstractEntity(String id, String type) {
 		if (id == null)
 			throw new NullPointerException("[id = null]");
-		if (type == null)
-			throw new NullPointerException("[type = null]");
 
 		this.id = id;
-		this.type = type;
+		
+		setType(type);
 	}
 
 	public String getId() {
@@ -45,6 +44,13 @@ public abstract class AbstractEntity implements Entity {
 
 	public String getType() {
 		return type;
+	}
+	
+	public void setType(String type) {
+		if (type == null)
+			throw new NullPointerException("[type = null]");
+		
+		this.type = type;
 	}
 
 }
