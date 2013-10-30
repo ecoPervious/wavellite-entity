@@ -9,7 +9,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
-import fi.uef.envi.wavellite.entity.common.base.SensorBase;
+import fi.uef.envi.wavellite.entity.core.base.SensorBase;
 import fi.uef.envi.wavellite.vocabulary.WO;
 
 /**

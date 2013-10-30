@@ -5,13 +5,13 @@
 
 package fi.uef.envi.wavellite.entity.measurement;
 
-import fi.uef.envi.wavellite.entity.common.Feature;
-import fi.uef.envi.wavellite.entity.common.Property;
-import fi.uef.envi.wavellite.entity.common.Quality;
-import fi.uef.envi.wavellite.entity.common.Sensor;
-import fi.uef.envi.wavellite.entity.common.SpatialLocation;
-import fi.uef.envi.wavellite.entity.common.TemporalLocation;
 import fi.uef.envi.wavellite.entity.core.Entity;
+import fi.uef.envi.wavellite.entity.core.Feature;
+import fi.uef.envi.wavellite.entity.core.Property;
+import fi.uef.envi.wavellite.entity.core.Quality;
+import fi.uef.envi.wavellite.entity.core.Sensor;
+import fi.uef.envi.wavellite.entity.core.SpatialLocation;
+import fi.uef.envi.wavellite.entity.core.TemporalLocation;
 
 /**
  * <p>

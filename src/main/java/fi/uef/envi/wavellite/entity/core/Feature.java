@@ -3,13 +3,12 @@
  * All rights reserved.
  */
 
-package fi.uef.envi.wavellite.entity.common;
+package fi.uef.envi.wavellite.entity.core;
 
-import fi.uef.envi.wavellite.entity.core.Entity;
 
 /**
  * <p>
- * Title: Quality
+ * Title: Feature
  * </p>
  * <p>
  * Description:
@@ -24,6 +23,6 @@ import fi.uef.envi.wavellite.entity.core.Entity;
  * @author Markus Stocker
  */
 
-public interface Quality extends Entity {
+public interface Feature extends Entity {
 
 }

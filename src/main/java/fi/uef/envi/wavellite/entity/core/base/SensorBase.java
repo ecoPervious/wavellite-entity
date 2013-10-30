@@ -3,15 +3,14 @@
  * All rights reserved.
  */
 
-package fi.uef.envi.wavellite.entity.common.base;
+package fi.uef.envi.wavellite.entity.core.base;
 
-import fi.uef.envi.wavellite.entity.common.Property;
-import fi.uef.envi.wavellite.entity.core.base.AbstractEntity;
+import fi.uef.envi.wavellite.entity.core.Sensor;
 import fi.uef.envi.wavellite.vocabulary.WO;
 
 /**
  * <p>
- * Title: PropertyBase
+ * Title: SensorBase
  * </p>
  * <p>
  * Description:
@@ -26,13 +25,13 @@ import fi.uef.envi.wavellite.vocabulary.WO;
  * @author Markus Stocker
  */
 
-public class PropertyBase extends AbstractEntity implements Property {
+public class SensorBase extends AbstractEntity implements Sensor {
 
-	public PropertyBase(String id) {
-		this(id, WO.Property);
+	public SensorBase(String id) {
+		this(id, WO.Sensor);
 	}
 
-	public PropertyBase(String id, String type) {
+	public SensorBase(String id, String type) {
 		super(id, type);
 	}
 
@@ -56,7 +55,7 @@ public class PropertyBase extends AbstractEntity implements Property {
 		if (getClass() != obj.getClass())
 			return false;
 
-		PropertyBase other = (PropertyBase) obj;
+		SensorBase other = (SensorBase) obj;
 
 		if (id == null) {
 			if (other.id != null)
@@ -75,7 +74,7 @@ public class PropertyBase extends AbstractEntity implements Property {
 
 	@Override
 	public String toString() {
-		return "PropertyBase [id = " + id + "; type = " + type + "]";
+		return "SensorBase [id = " + id + "; type = " + type + "]";
 	}
 
 }

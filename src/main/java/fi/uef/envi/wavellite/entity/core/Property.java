@@ -3,9 +3,8 @@
  * All rights reserved.
  */
 
-package fi.uef.envi.wavellite.entity.common;
+package fi.uef.envi.wavellite.entity.core;
 
-import fi.uef.envi.wavellite.entity.core.Entity;
 
 /**
  * <p>

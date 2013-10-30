@@ -3,10 +3,9 @@
  * All rights reserved.
  */
 
-package fi.uef.envi.wavellite.entity.common.base;
+package fi.uef.envi.wavellite.entity.core.base;
 
-import fi.uef.envi.wavellite.entity.common.Feature;
-import fi.uef.envi.wavellite.entity.core.base.AbstractEntity;
+import fi.uef.envi.wavellite.entity.core.Feature;
 import fi.uef.envi.wavellite.vocabulary.WO;
 
 /**

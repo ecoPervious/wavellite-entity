@@ -5,10 +5,10 @@
 
 package fi.uef.envi.wavellite.entity.observation;
 
-import fi.uef.envi.wavellite.entity.common.Feature;
-import fi.uef.envi.wavellite.entity.common.Property;
-import fi.uef.envi.wavellite.entity.common.Sensor;
 import fi.uef.envi.wavellite.entity.core.Entity;
+import fi.uef.envi.wavellite.entity.core.Feature;
+import fi.uef.envi.wavellite.entity.core.Property;
+import fi.uef.envi.wavellite.entity.core.Sensor;
 
 /**
  * <p>
