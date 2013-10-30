@@ -11,7 +11,7 @@ import fi.uef.envi.wavellite.vocabulary.WO;
 
 /**
  * <p>
- * Title: DoubleMeasurementValue
+ * Title: MeasurementValueDouble
  * </p>
  * <p>
  * Description:
@@ -26,19 +26,19 @@ import fi.uef.envi.wavellite.vocabulary.WO;
  * @author Markus Stocker
  */
 
-public class DoubleMeasurementValue extends AbstractMeasurementValue {
+public class MeasurementValueDouble extends AbstractMeasurementValue {
 
 	private Double value;
 
-	public DoubleMeasurementValue(Double value) {
+	public MeasurementValueDouble(Double value) {
 		this(UUID.randomUUID().toString(), value);
 	}
 	
-	public DoubleMeasurementValue(String id, Double value) {
+	public MeasurementValueDouble(String id, Double value) {
 		this(id, WO.DoubleMeasurementValue, value);
 	}
 	
-	public DoubleMeasurementValue(String id, String type, Double value) {
+	public MeasurementValueDouble(String id, String type, Double value) {
 		super(id, type);
 
 		setValue(value);
@@ -73,7 +73,7 @@ public class DoubleMeasurementValue extends AbstractMeasurementValue {
 		if (getClass() != obj.getClass())
 			return false;
 
-		DoubleMeasurementValue other = (DoubleMeasurementValue) obj;
+		MeasurementValueDouble other = (MeasurementValueDouble) obj;
 
 		if (id == null) {
 			if (other.id != null)
