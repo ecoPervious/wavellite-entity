@@ -3,13 +3,13 @@
  * All rights reserved.
  */
 
-package fi.uef.envi.wavellite.entity.measurement;
+package fi.uef.envi.wavellite.entity.observation;
 
-import fi.uef.envi.wavellite.entity.core.Entity;
+import fi.uef.envi.wavellite.entity.observation.base.ObservationValueDouble;
 
 /**
  * <p>
- * Title: MeasurementValue
+ * Title: ObservationValueVisitor
  * </p>
  * <p>
  * Description:
@@ -24,8 +24,8 @@ import fi.uef.envi.wavellite.entity.core.Entity;
  * @author Markus Stocker
  */
 
-public interface MeasurementValue extends Entity {
+public interface ObservationValueVisitor {
 
-	public void accept(MeasurementValueVisitor visitor);
+	public void visit(ObservationValueDouble value);
 	
 }

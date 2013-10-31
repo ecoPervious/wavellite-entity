@@ -30,4 +30,6 @@ public interface ObservationValue extends Entity {
 	
 	public Object getValue();
 	
+	public void accept(ObservationValueVisitor visitor);
+	
 }

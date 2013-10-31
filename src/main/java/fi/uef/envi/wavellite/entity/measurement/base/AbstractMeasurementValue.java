@@ -31,16 +31,32 @@ import fi.uef.envi.wavellite.vocabulary.WO;
 public abstract class AbstractMeasurementValue extends AbstractEntity implements
 		MeasurementValue {
 
+	protected Object value;
+
 	public AbstractMeasurementValue() {
 		this(UUID.randomUUID().toString());
 	}
-	
+
 	public AbstractMeasurementValue(String id) {
 		this(id, WO.MeasurementValue);
 	}
-	
+
 	public AbstractMeasurementValue(String id, String type) {
 		super(id, type);
+	}
+
+	public AbstractMeasurementValue(String id, String type, Object value) {
+		super(id, type);
+
+		setValue(value);
+	}
+
+	public void setValue(Object value) {
+		this.value = value;
+	}
+
+	public Object getValue() {
+		return value;
 	}
 
 }

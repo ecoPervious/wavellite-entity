@@ -5,11 +5,11 @@
 
 package fi.uef.envi.wavellite.entity.measurement;
 
-import fi.uef.envi.wavellite.entity.core.Entity;
+import fi.uef.envi.wavellite.entity.measurement.base.MeasurementValueDouble;
 
 /**
  * <p>
- * Title: MeasurementValue
+ * Title: MeasurementValueVisitor
  * </p>
  * <p>
  * Description:
@@ -24,8 +24,8 @@ import fi.uef.envi.wavellite.entity.core.Entity;
  * @author Markus Stocker
  */
 
-public interface MeasurementValue extends Entity {
+public interface MeasurementValueVisitor {
 
-	public void accept(MeasurementValueVisitor visitor);
+	public void visit(MeasurementValueDouble value);
 	
 }
