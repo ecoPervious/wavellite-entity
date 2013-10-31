@@ -46,7 +46,7 @@ public class TemporalLocationDateTime extends AbstractEntity implements
 	public TemporalLocationDateTime(String id, String type, DateTime time) {
 		super(id, type);
 
-		setDateTime(time);
+		setValue(time);
 	}
 
 	public TemporalLocationDateTime() {
@@ -61,14 +61,18 @@ public class TemporalLocationDateTime extends AbstractEntity implements
 		super(id, type);
 	}
 
-	public void setDateTime(DateTime time) {
+	@Override
+	public void setValue(Object time) {
 		if (time == null)
 			throw new NullPointerException("[time = null]");
-
-		this.time = time;
+		if (!(time instanceof DateTime))
+			throw new RuntimeException("Expected DateTime [time = " + time + "]");
+		
+		this.time = (DateTime)time;
 	}
 
-	public DateTime getDateTime() {
+	@Override
+	public DateTime getValue() {
 		return time;
 	}
 

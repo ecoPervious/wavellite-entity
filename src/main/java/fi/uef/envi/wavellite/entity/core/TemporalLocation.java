@@ -27,4 +27,8 @@ public interface TemporalLocation extends Entity {
 
 	public void accept(TemporalLocationVisitor visitor);
 	
+	public void setValue(Object value);
+	
+	public Object getValue();
+	
 }

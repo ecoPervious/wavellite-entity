@@ -8,14 +8,18 @@ package fi.uef.envi.wavellite.entity.observation.base.test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
+import org.joda.time.DateTime;
 import org.junit.Test;
 
 import fi.uef.envi.wavellite.entity.core.Feature;
 import fi.uef.envi.wavellite.entity.core.Property;
 import fi.uef.envi.wavellite.entity.core.Sensor;
+import fi.uef.envi.wavellite.entity.core.TemporalLocation;
 import fi.uef.envi.wavellite.entity.core.base.FeatureBase;
 import fi.uef.envi.wavellite.entity.core.base.PropertyBase;
 import fi.uef.envi.wavellite.entity.core.base.SensorBase;
+import fi.uef.envi.wavellite.entity.core.base.TemporalLocationDateTime;
+import fi.uef.envi.wavellite.entity.observation.ObservationValue;
 import fi.uef.envi.wavellite.entity.observation.SensorOutput;
 import fi.uef.envi.wavellite.entity.observation.base.ObservationValueDouble;
 import fi.uef.envi.wavellite.entity.observation.base.SensorObservationBase;
@@ -149,9 +153,12 @@ public class SensorObservationBaseTest {
 		so.setProperty(p);
 		Feature f = new FeatureBase("f1");
 		so.setFeature(f);
-		ObservationValueDouble ov = new ObservationValueDouble(0.0);
+		ObservationValue ov = new ObservationValueDouble(0.0);
 		SensorOutput o = new SensorOutputBase(ov);
 		so.setSensorOutput(o);
+		TemporalLocation tl = new TemporalLocationDateTime(new DateTime(2013,
+				10, 31, 0, 0, 0));
+		so.setTemporalLocation(tl);
 
 		assertEquals(s, so.getSensor());
 		assertEquals(p, so.getProperty());
@@ -159,6 +166,34 @@ public class SensorObservationBaseTest {
 		assertEquals(o, so.getSensorOutput());
 		assertEquals(Double.valueOf(0.0), so.getSensorOutput()
 				.getObservationValue().getValue());
+		assertEquals(new DateTime(2013, 10, 31, 0, 0, 0),
+				so.getTemporalLocation().getValue());
+	}
+
+	@Test
+	public void test15() {
+		SensorObservationBase so = new SensorObservationBase();
+		Sensor s = new SensorBase("s1");
+		so.setSensor(s);
+		Property p = new PropertyBase("p1");
+		so.setProperty(p);
+		Feature f = new FeatureBase("f1");
+		so.setFeature(f);
+		ObservationValue ov = new ObservationValueDouble(0.5);
+		SensorOutput o = new SensorOutputBase(ov);
+		so.setSensorOutput(o);
+		TemporalLocation tl = new TemporalLocationDateTime(new DateTime(2013,
+				11, 1, 0, 0, 0));
+		so.setTemporalLocation(tl);
+
+		assertEquals(s, so.getSensor());
+		assertEquals(p, so.getProperty());
+		assertEquals(f, so.getFeature());
+		assertEquals(o, so.getSensorOutput());
+		assertNotEquals(Double.valueOf(0.0), so.getSensorOutput()
+				.getObservationValue().getValue());
+		assertNotEquals(new DateTime(2013, 10, 31, 0, 0, 0),
+				so.getTemporalLocation().getValue());
 	}
 
 }

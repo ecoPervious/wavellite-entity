@@ -137,7 +137,7 @@ public class TemporalLocationDateTimeBase {
 		TemporalLocationDateTime s = new TemporalLocationDateTime(new DateTime(
 				2013, 10, 31, 0, 0, 0));
 
-		assertEquals(new DateTime(2013, 10, 31, 0, 0, 0), s.getDateTime());
+		assertEquals(new DateTime(2013, 10, 31, 0, 0, 0), s.getValue());
 	}
 	
 	@Test
@@ -145,7 +145,7 @@ public class TemporalLocationDateTimeBase {
 		TemporalLocationDateTime s = new TemporalLocationDateTime(new DateTime(
 				2013, 11, 1, 0, 0, 0));
 
-		assertNotEquals(new DateTime(2013, 10, 31, 0, 0, 0), s.getDateTime());
+		assertNotEquals(new DateTime(2013, 10, 31, 0, 0, 0), s.getValue());
 	}
 
 }
