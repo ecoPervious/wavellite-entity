@@ -40,15 +40,16 @@ public class MeasurementValueContextBase extends AbstractEntity implements
 	private Sensor sensor;
 	private Property property;
 	private Feature feature;
-	
+	private TemporalLocation time;
+
 	public MeasurementValueContextBase() {
 		this(UUID.randomUUID().toString());
 	}
-	
+
 	public MeasurementValueContextBase(String id) {
 		this(id, WO.MeasurementValueContext);
 	}
-	
+
 	public MeasurementValueContextBase(String id, String type) {
 		super(id, type);
 	}
@@ -67,7 +68,12 @@ public class MeasurementValueContextBase extends AbstractEntity implements
 	public void setFeature(Feature feature) {
 		this.feature = feature;
 	}
-	
+
+	@Override
+	public void setTemporalLocation(TemporalLocation location) {
+		this.time = location;
+	}
+
 	@Override
 	public Sensor getSensor() {
 		return sensor;
@@ -85,8 +91,7 @@ public class MeasurementValueContextBase extends AbstractEntity implements
 
 	@Override
 	public TemporalLocation getTemporalLocation() {
-		// TODO Auto-generated method stub
-		return null;
+		return time;
 	}
 
 	@Override
@@ -100,7 +105,7 @@ public class MeasurementValueContextBase extends AbstractEntity implements
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -109,8 +114,10 @@ public class MeasurementValueContextBase extends AbstractEntity implements
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((type == null) ? 0 : type.hashCode());
 		result = prime * result + ((sensor == null) ? 0 : sensor.hashCode());
-		result = prime * result + ((property == null) ? 0 : property.hashCode());
+		result = prime * result
+				+ ((property == null) ? 0 : property.hashCode());
 		result = prime * result + ((feature == null) ? 0 : feature.hashCode());
+		result = prime * result + ((time == null) ? 0 : time.hashCode());
 
 		return result;
 	}
@@ -131,7 +138,7 @@ public class MeasurementValueContextBase extends AbstractEntity implements
 				return false;
 		} else if (!id.equals(other.id))
 			return false;
-		
+
 		if (type == null) {
 			if (other.type != null)
 				return false;
@@ -149,11 +156,17 @@ public class MeasurementValueContextBase extends AbstractEntity implements
 				return false;
 		} else if (!property.equals(other.property))
 			return false;
-		
+
 		if (feature == null) {
 			if (other.feature != null)
 				return false;
 		} else if (!feature.equals(other.feature))
+			return false;
+
+		if (time == null) {
+			if (other.time != null)
+				return false;
+		} else if (!time.equals(other.time))
 			return false;
 
 		return true;
@@ -162,7 +175,8 @@ public class MeasurementValueContextBase extends AbstractEntity implements
 	@Override
 	public String toString() {
 		return "MeasurementContextBase [id = " + id + "; type = " + type
-				+ "; sensor = " + sensor + "; property = " + property + "; feature = " + feature + "]";
+				+ "; sensor = " + sensor + "; property = " + property
+				+ "; feature = " + feature + "; time = " + time + "]";
 	}
 
 }

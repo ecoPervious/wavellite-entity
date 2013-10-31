@@ -50,4 +50,6 @@ public interface MeasurementValueContext extends Entity {
 	
 	public void setFeature(Feature feature);
 	
+	public void setTemporalLocation(TemporalLocation location);
+	
 }
