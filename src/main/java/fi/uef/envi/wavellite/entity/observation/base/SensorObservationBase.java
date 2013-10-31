@@ -10,6 +10,7 @@ import java.util.UUID;
 import fi.uef.envi.wavellite.entity.core.Feature;
 import fi.uef.envi.wavellite.entity.core.Property;
 import fi.uef.envi.wavellite.entity.core.Sensor;
+import fi.uef.envi.wavellite.entity.core.TemporalLocation;
 import fi.uef.envi.wavellite.entity.core.base.AbstractEntity;
 import fi.uef.envi.wavellite.entity.observation.SensorObservation;
 import fi.uef.envi.wavellite.entity.observation.SensorOutput;
@@ -39,6 +40,7 @@ public class SensorObservationBase extends AbstractEntity implements
 	private Feature feature;
 	private Property property;
 	private SensorOutput output;
+	private TemporalLocation time;
 
 	public SensorObservationBase() {
 		this(UUID.randomUUID().toString());
@@ -73,6 +75,11 @@ public class SensorObservationBase extends AbstractEntity implements
 	}
 
 	@Override
+	public void setTemporalLocation(TemporalLocation location) {
+		this.time = location;
+	}
+
+	@Override
 	public Sensor getSensor() {
 		return sensor;
 	}
@@ -93,6 +100,11 @@ public class SensorObservationBase extends AbstractEntity implements
 	}
 
 	@Override
+	public TemporalLocation getTemporalLocation() {
+		return time;
+	}
+
+	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
@@ -104,6 +116,7 @@ public class SensorObservationBase extends AbstractEntity implements
 				+ ((property == null) ? 0 : property.hashCode());
 		result = prime * result + ((feature == null) ? 0 : feature.hashCode());
 		result = prime * result + ((output == null) ? 0 : output.hashCode());
+		result = prime * result + ((time == null) ? 0 : time.hashCode());
 
 		return result;
 	}
@@ -124,7 +137,7 @@ public class SensorObservationBase extends AbstractEntity implements
 				return false;
 		} else if (!id.equals(other.id))
 			return false;
-		
+
 		if (type == null) {
 			if (other.type != null)
 				return false;
@@ -155,6 +168,12 @@ public class SensorObservationBase extends AbstractEntity implements
 		} else if (!output.equals(other.output))
 			return false;
 
+		if (time == null) {
+			if (other.time != null)
+				return false;
+		} else if (!time.equals(other.time))
+			return false;
+
 		return true;
 	}
 
@@ -162,7 +181,8 @@ public class SensorObservationBase extends AbstractEntity implements
 	public String toString() {
 		return "SensorObservationBase [id = " + id + "; type = " + type
 				+ "; sensor = " + sensor + "; property = " + property
-				+ "; feature = " + feature + "; output = " + output + "]";
+				+ "; feature = " + feature + "; output = " + output
+				+ "; time = " + time + "]";
 	}
 
 }

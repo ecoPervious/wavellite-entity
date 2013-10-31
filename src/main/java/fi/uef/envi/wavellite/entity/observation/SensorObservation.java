@@ -9,6 +9,7 @@ import fi.uef.envi.wavellite.entity.core.Entity;
 import fi.uef.envi.wavellite.entity.core.Feature;
 import fi.uef.envi.wavellite.entity.core.Property;
 import fi.uef.envi.wavellite.entity.core.Sensor;
+import fi.uef.envi.wavellite.entity.core.TemporalLocation;
 
 /**
  * <p>
@@ -30,19 +31,23 @@ import fi.uef.envi.wavellite.entity.core.Sensor;
 public interface SensorObservation extends Entity {
 
 	public void setSensor(Sensor sensor);
-	
+
 	public void setFeature(Feature feature);
-	
+
 	public void setProperty(Property property);
-	
+
 	public void setSensorOutput(SensorOutput output);
-	
+
+	public void setTemporalLocation(TemporalLocation location);
+
 	public Sensor getSensor();
-	
+
 	public Feature getFeature();
-	
+
 	public Property getProperty();
-	
+
 	public SensorOutput getSensorOutput();
-	
+
+	public TemporalLocation getTemporalLocation();
+
 }
