@@ -10,6 +10,7 @@ import java.util.UUID;
 import org.joda.time.DateTime;
 
 import fi.uef.envi.wavellite.entity.core.TemporalLocation;
+import fi.uef.envi.wavellite.entity.core.TemporalLocationVisitor;
 import fi.uef.envi.wavellite.vocabulary.DUL;
 
 /**
@@ -71,6 +72,11 @@ public class TemporalLocationDateTime extends AbstractEntity implements
 		return time;
 	}
 
+	@Override
+	public void accept(TemporalLocationVisitor visitor) {
+		visitor.visit(this);
+	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;

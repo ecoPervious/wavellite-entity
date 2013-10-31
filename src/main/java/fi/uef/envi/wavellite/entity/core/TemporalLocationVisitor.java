@@ -5,10 +5,11 @@
 
 package fi.uef.envi.wavellite.entity.core;
 
+import fi.uef.envi.wavellite.entity.core.base.TemporalLocationDateTime;
 
 /**
  * <p>
- * Title: TemporalLocation
+ * Title: TemporalLocationVisitor
  * </p>
  * <p>
  * Description:
@@ -23,8 +24,8 @@ package fi.uef.envi.wavellite.entity.core;
  * @author Markus Stocker
  */
 
-public interface TemporalLocation extends Entity {
+public interface TemporalLocationVisitor {
 
-	public void accept(TemporalLocationVisitor visitor);
+	public void visit(TemporalLocationDateTime time);
 	
 }
