@@ -8,6 +8,7 @@ package fi.uef.envi.wavellite.entity.core.base.test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
+import org.joda.time.DateTime;
 import org.junit.Test;
 
 import fi.uef.envi.wavellite.entity.core.base.TemporalLocationDateTime;
@@ -129,6 +130,22 @@ public class TemporalLocationDateTimeBase {
 		TemporalLocationDateTime s = new TemporalLocationDateTime("i1", "t1");
 
 		assertNotEquals("t2", s.getType());
+	}
+
+	@Test
+	public void test14() {
+		TemporalLocationDateTime s = new TemporalLocationDateTime(new DateTime(
+				2013, 10, 31, 0, 0, 0));
+
+		assertEquals(new DateTime(2013, 10, 31, 0, 0, 0), s.getDateTime());
+	}
+	
+	@Test
+	public void test15() {
+		TemporalLocationDateTime s = new TemporalLocationDateTime(new DateTime(
+				2013, 11, 1, 0, 0, 0));
+
+		assertNotEquals(new DateTime(2013, 10, 31, 0, 0, 0), s.getDateTime());
 	}
 
 }
