@@ -12,6 +12,7 @@ import fi.uef.envi.wavellite.entity.core.Property;
 import fi.uef.envi.wavellite.entity.core.Sensor;
 import fi.uef.envi.wavellite.entity.core.base.AbstractEntity;
 import fi.uef.envi.wavellite.entity.observation.SensorObservation;
+import fi.uef.envi.wavellite.entity.observation.SensorOutput;
 import fi.uef.envi.wavellite.vocabulary.WO;
 
 /**
@@ -37,6 +38,7 @@ public class SensorObservationBase extends AbstractEntity implements
 	private Sensor sensor;
 	private Feature feature;
 	private Property property;
+	private SensorOutput output;
 
 	public SensorObservationBase() {
 		this(UUID.randomUUID().toString());
@@ -66,6 +68,11 @@ public class SensorObservationBase extends AbstractEntity implements
 	}
 
 	@Override
+	public void setSensorOutput(SensorOutput output) {
+		this.output = output;
+	}
+
+	@Override
 	public Sensor getSensor() {
 		return sensor;
 	}
@@ -81,15 +88,22 @@ public class SensorObservationBase extends AbstractEntity implements
 	}
 
 	@Override
+	public SensorOutput getSensorOutput() {
+		return output;
+	}
+
+	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((type == null) ? 0 : type.hashCode());
 		result = prime * result + ((sensor == null) ? 0 : sensor.hashCode());
 		result = prime * result
 				+ ((property == null) ? 0 : property.hashCode());
 		result = prime * result + ((feature == null) ? 0 : feature.hashCode());
+		result = prime * result + ((output == null) ? 0 : output.hashCode());
 
 		return result;
 	}
@@ -105,6 +119,12 @@ public class SensorObservationBase extends AbstractEntity implements
 
 		SensorObservationBase other = (SensorObservationBase) obj;
 
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		
 		if (type == null) {
 			if (other.type != null)
 				return false;
@@ -129,6 +149,12 @@ public class SensorObservationBase extends AbstractEntity implements
 		} else if (!feature.equals(other.feature))
 			return false;
 
+		if (output == null) {
+			if (other.output != null)
+				return false;
+		} else if (!output.equals(other.output))
+			return false;
+
 		return true;
 	}
 
@@ -136,7 +162,7 @@ public class SensorObservationBase extends AbstractEntity implements
 	public String toString() {
 		return "SensorObservationBase [id = " + id + "; type = " + type
 				+ "; sensor = " + sensor + "; property = " + property
-				+ "; feature = " + feature + "]";
+				+ "; feature = " + feature + "; output = " + output + "]";
 	}
 
 }

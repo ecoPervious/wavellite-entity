@@ -3,7 +3,7 @@
  * All rights reserved.
  */
 
-package fi.uef.envi.wavellite.entity.common.base.test;
+package fi.uef.envi.wavellite.entity.core.base.test;
 
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;

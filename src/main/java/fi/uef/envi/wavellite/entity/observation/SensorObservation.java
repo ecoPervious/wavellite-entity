@@ -35,10 +35,14 @@ public interface SensorObservation extends Entity {
 	
 	public void setProperty(Property property);
 	
+	public void setSensorOutput(SensorOutput output);
+	
 	public Sensor getSensor();
 	
 	public Feature getFeature();
 	
 	public Property getProperty();
+	
+	public SensorOutput getSensorOutput();
 	
 }
