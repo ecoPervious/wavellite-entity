@@ -42,6 +42,16 @@ public class MeasurementValueContextBase extends AbstractEntity implements
 	private Feature feature;
 	private TemporalLocation time;
 
+	public MeasurementValueContextBase(Sensor sensor, Property property,
+			Feature feature, TemporalLocation time) {
+		this();
+
+		setSensor(sensor);
+		setProperty(property);
+		setFeature(feature);
+		setTemporalLocation(time);
+	}
+
 	public MeasurementValueContextBase() {
 		this(UUID.randomUUID().toString());
 	}

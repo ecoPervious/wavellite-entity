@@ -36,14 +36,22 @@ public class MeasurementResultBase extends AbstractEntity implements
 	private MeasurementValue value;
 	private MeasurementValueContext context;
 
+	public MeasurementResultBase(MeasurementValue value,
+			MeasurementValueContext context) {
+		this();
+
+		setValue(value);
+		setContext(context);
+	}
+
 	public MeasurementResultBase() {
 		this(UUID.randomUUID().toString());
 	}
-	
+
 	public MeasurementResultBase(String id) {
 		this(id, WO.MeasurementResult);
 	}
-	
+
 	public MeasurementResultBase(String id, String type) {
 		super(id, type);
 	}
@@ -97,7 +105,7 @@ public class MeasurementResultBase extends AbstractEntity implements
 				return false;
 		} else if (!id.equals(other.id))
 			return false;
-		
+
 		if (type == null) {
 			if (other.type != null)
 				return false;
