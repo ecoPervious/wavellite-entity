@@ -3,16 +3,16 @@
  * All rights reserved.
  */
 
-package fi.uef.envi.wavellite.entity.measurement.base;
+package fi.uef.envi.wavellite.entity.derivation.base;
 
 import java.util.UUID;
 
-import fi.uef.envi.wavellite.entity.measurement.MeasurementValueVisitor;
+import fi.uef.envi.wavellite.entity.derivation.ComponentPropertyValueVisitor;
 import fi.uef.envi.wavellite.vocabulary.WO;
 
 /**
  * <p>
- * Title: MeasurementValueDouble
+ * Title: ComponentPropertyValueDouble
  * </p>
  * <p>
  * Description:
@@ -27,25 +27,38 @@ import fi.uef.envi.wavellite.vocabulary.WO;
  * @author Markus Stocker
  */
 
-public class MeasurementValueDouble extends AbstractMeasurementValue {
+public class ComponentPropertyValueDouble extends
+		AbstractComponentPropertyValue {
 
-	public MeasurementValueDouble(Double value) {
+	public ComponentPropertyValueDouble() {
+		this(UUID.randomUUID().toString());
+	}
+
+	public ComponentPropertyValueDouble(Double value) {
 		this(UUID.randomUUID().toString(), value);
 	}
 
-	public MeasurementValueDouble(String id, Double value) {
-		this(id, WO.MeasurementValueDouble, value);
+	public ComponentPropertyValueDouble(String id) {
+		this(id, WO.ComponentPropertyValueDouble);
 	}
 
-	public MeasurementValueDouble(String id, String type, Double value) {
+	public ComponentPropertyValueDouble(String id, Double value) {
+		this(id, WO.ComponentPropertyValueDouble, value);
+	}
+
+	public ComponentPropertyValueDouble(String id, String type) {
+		super(id, type);
+	}
+
+	public ComponentPropertyValueDouble(String id, String type, Double value) {
 		super(id, type, value);
 	}
-
+	
 	@Override
-	public void accept(MeasurementValueVisitor visitor) {
+	public void accept(ComponentPropertyValueVisitor visitor) {
 		visitor.visit(this);
 	}
-
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -67,7 +80,7 @@ public class MeasurementValueDouble extends AbstractMeasurementValue {
 		if (getClass() != obj.getClass())
 			return false;
 
-		MeasurementValueDouble other = (MeasurementValueDouble) obj;
+		ComponentPropertyValueDouble other = (ComponentPropertyValueDouble) obj;
 
 		if (id == null) {
 			if (other.id != null)
@@ -92,7 +105,7 @@ public class MeasurementValueDouble extends AbstractMeasurementValue {
 
 	@Override
 	public String toString() {
-		return "MeasurementValueDouble [id = " + id + "; type = " + type
+		return "ComponentPropertyValueDouble [id = " + id + "; type = " + type
 				+ "; value = " + value + "]";
 	}
 

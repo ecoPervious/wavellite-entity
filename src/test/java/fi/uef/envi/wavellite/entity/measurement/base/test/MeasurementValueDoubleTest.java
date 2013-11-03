@@ -14,7 +14,7 @@ import fi.uef.envi.wavellite.vocabulary.WO;
 
 /**
  * <p>
- * Title: DoubleMeasurementValueTest
+ * Title: MeasurementValueDoubleTest
  * </p>
  * <p>
  * Description:
@@ -29,7 +29,7 @@ import fi.uef.envi.wavellite.vocabulary.WO;
  * @author Markus Stocker
  */
 
-public class DoubleMeasurementValueTest {
+public class MeasurementValueDoubleTest {
 
 	@Test
 	public void test1() {
@@ -81,7 +81,7 @@ public class DoubleMeasurementValueTest {
 	public void test7() {
 		MeasurementValueDouble v = new MeasurementValueDouble(0.0);
 
-		assertEquals(WO.DoubleMeasurementValue, v.getType());
+		assertEquals(WO.MeasurementValueDouble, v.getType());
 	}
 
 }
