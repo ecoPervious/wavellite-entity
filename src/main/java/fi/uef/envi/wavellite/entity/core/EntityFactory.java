@@ -115,8 +115,10 @@ public class EntityFactory {
 	}
 
 	public static ComponentPropertyValue componentPropertyValue(DateTime value) {
-		return new ComponentPropertyValueTemporalLocation(
-				new TemporalLocationDateTime(value));
+		return componentPropertyValue(new TemporalLocationDateTime(value));
 	}
 
+	public static ComponentPropertyValue componentPropertyValue(TemporalLocation location) {
+		return new ComponentPropertyValueTemporalLocation(location);
+	}
 }
