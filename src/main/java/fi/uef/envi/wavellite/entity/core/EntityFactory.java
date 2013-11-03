@@ -64,6 +64,10 @@ public class EntityFactory {
 		return new FeatureBase(id);
 	}
 
+	public static TemporalLocation temporalLocation() {
+		return new TemporalLocationDateTime();
+	}
+	
 	public static TemporalLocation temporalLocation(DateTime time) {
 		return new TemporalLocationDateTime(time);
 	}
