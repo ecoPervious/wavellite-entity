@@ -45,7 +45,7 @@ public abstract class AbstractComponentPropertyValue extends AbstractEntity
 		if (value == null)
 			throw new NullPointerException("[value = null]");
 
-		this.value = (Double) value;
+		this.value = value;
 	}
 
 	@Override
