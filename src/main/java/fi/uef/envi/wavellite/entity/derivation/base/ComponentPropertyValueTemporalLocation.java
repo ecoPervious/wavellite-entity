@@ -58,6 +58,11 @@ public class ComponentPropertyValueTemporalLocation extends
 	}
 
 	@Override
+	public TemporalLocation getValue() {
+		return (TemporalLocation)value;
+	}
+	
+	@Override
 	public void accept(ComponentPropertyValueVisitor visitor) {
 		visitor.visit(this);
 	}
