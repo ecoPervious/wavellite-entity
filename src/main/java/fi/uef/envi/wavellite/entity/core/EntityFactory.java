@@ -5,12 +5,22 @@
 
 package fi.uef.envi.wavellite.entity.core;
 
+import java.util.Map;
+
 import org.joda.time.DateTime;
 
 import fi.uef.envi.wavellite.entity.core.base.FeatureBase;
 import fi.uef.envi.wavellite.entity.core.base.PropertyBase;
 import fi.uef.envi.wavellite.entity.core.base.SensorBase;
 import fi.uef.envi.wavellite.entity.core.base.TemporalLocationDateTime;
+import fi.uef.envi.wavellite.entity.derivation.ComponentProperty;
+import fi.uef.envi.wavellite.entity.derivation.ComponentPropertyValue;
+import fi.uef.envi.wavellite.entity.derivation.Dataset;
+import fi.uef.envi.wavellite.entity.derivation.DatasetObservation;
+import fi.uef.envi.wavellite.entity.derivation.base.ComponentPropertyBase;
+import fi.uef.envi.wavellite.entity.derivation.base.ComponentPropertyValueDouble;
+import fi.uef.envi.wavellite.entity.derivation.base.DatasetBase;
+import fi.uef.envi.wavellite.entity.derivation.base.DatasetObservationBase;
 import fi.uef.envi.wavellite.entity.measurement.MeasurementResult;
 import fi.uef.envi.wavellite.entity.measurement.MeasurementValue;
 import fi.uef.envi.wavellite.entity.measurement.MeasurementValueContext;
@@ -63,9 +73,35 @@ public class EntityFactory {
 		return new MeasurementValueContextBase(sensor, property, feature, time);
 	}
 
-	public static MeasurementResult measurementResult(
-			MeasurementValue value, MeasurementValueContext context) {
+	public static MeasurementResult measurementResult(MeasurementValue value,
+			MeasurementValueContext context) {
 		return new MeasurementResultBase(value, context);
+	}
+
+	public static Dataset dataset(String id) {
+		return new DatasetBase(id);
+	}
+
+	public static DatasetObservation datasetObservation(Dataset dataset,
+			Map<ComponentProperty, ComponentPropertyValue> components) {
+		DatasetObservation ret = new DatasetObservationBase();
+
+		ret.setDataset(dataset);
+
+		for (Map.Entry<ComponentProperty, ComponentPropertyValue> entry : components
+				.entrySet()) {
+			ret.addComponentProperty(entry.getKey(), entry.getValue());
+		}
+
+		return ret;
+	}
+
+	public static ComponentProperty componentProperty(String id) {
+		return new ComponentPropertyBase(id);
+	}
+
+	public static ComponentPropertyValue componentPropertyValue(Double value) {
+		return new ComponentPropertyValueDouble(value);
 	}
 
 }
