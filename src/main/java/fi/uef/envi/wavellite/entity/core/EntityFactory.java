@@ -19,6 +19,7 @@ import fi.uef.envi.wavellite.entity.derivation.Dataset;
 import fi.uef.envi.wavellite.entity.derivation.DatasetObservation;
 import fi.uef.envi.wavellite.entity.derivation.base.ComponentPropertyBase;
 import fi.uef.envi.wavellite.entity.derivation.base.ComponentPropertyValueDouble;
+import fi.uef.envi.wavellite.entity.derivation.base.ComponentPropertyValueTemporalLocation;
 import fi.uef.envi.wavellite.entity.derivation.base.DatasetBase;
 import fi.uef.envi.wavellite.entity.derivation.base.DatasetObservationBase;
 import fi.uef.envi.wavellite.entity.measurement.MeasurementResult;
@@ -102,6 +103,11 @@ public class EntityFactory {
 
 	public static ComponentPropertyValue componentPropertyValue(Double value) {
 		return new ComponentPropertyValueDouble(value);
+	}
+
+	public static ComponentPropertyValue componentPropertyValue(DateTime value) {
+		return new ComponentPropertyValueTemporalLocation(
+				new TemporalLocationDateTime(value));
 	}
 
 }

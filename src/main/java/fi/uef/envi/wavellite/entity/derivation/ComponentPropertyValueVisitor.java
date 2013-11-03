@@ -6,6 +6,7 @@
 package fi.uef.envi.wavellite.entity.derivation;
 
 import fi.uef.envi.wavellite.entity.derivation.base.ComponentPropertyValueDouble;
+import fi.uef.envi.wavellite.entity.derivation.base.ComponentPropertyValueTemporalLocation;
 
 /**
  * <p>
@@ -27,5 +28,7 @@ import fi.uef.envi.wavellite.entity.derivation.base.ComponentPropertyValueDouble
 public interface ComponentPropertyValueVisitor {
 
 	public void visit(ComponentPropertyValueDouble value);
+	
+	public void visit(ComponentPropertyValueTemporalLocation value);
 	
 }
