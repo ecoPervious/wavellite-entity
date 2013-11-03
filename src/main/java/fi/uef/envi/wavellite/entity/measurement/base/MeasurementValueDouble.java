@@ -42,6 +42,11 @@ public class MeasurementValueDouble extends AbstractMeasurementValue {
 	}
 
 	@Override
+	public Double getValue() {
+		return (Double)value;
+	}
+	
+	@Override
 	public void accept(MeasurementValueVisitor visitor) {
 		visitor.visit(this);
 	}
