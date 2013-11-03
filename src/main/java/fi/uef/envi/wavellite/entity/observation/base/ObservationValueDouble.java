@@ -54,6 +54,11 @@ public class ObservationValueDouble extends AbstractObservationValue {
 	}
 	
 	@Override
+	public Double getValue() {
+		return (Double)value;
+	}
+	
+	@Override
 	public void accept(ObservationValueVisitor visitor) {
 		visitor.visit(this);
 	}
