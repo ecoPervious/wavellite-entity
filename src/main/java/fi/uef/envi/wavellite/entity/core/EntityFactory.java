@@ -6,6 +6,7 @@
 package fi.uef.envi.wavellite.entity.core;
 
 import java.util.Map;
+import java.util.Random;
 
 import org.joda.time.DateTime;
 
@@ -48,6 +49,10 @@ import fi.uef.envi.wavellite.entity.measurement.base.MeasurementValueDouble;
 
 public class EntityFactory {
 
+	public static MeasurementValue measurementValue() {
+		return new MeasurementValueDouble(new Random().nextDouble());
+	}
+
 	public static MeasurementValue measurementValue(Double value) {
 		return new MeasurementValueDouble(value);
 	}
@@ -67,7 +72,7 @@ public class EntityFactory {
 	public static TemporalLocation temporalLocation() {
 		return new TemporalLocationDateTime();
 	}
-	
+
 	public static TemporalLocation temporalLocation(DateTime time) {
 		return new TemporalLocationDateTime(time);
 	}
