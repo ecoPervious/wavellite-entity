@@ -30,7 +30,7 @@ public interface ElementaryInfon extends Entity {
 
 	public void setRelation(Relation relation);
 
-	public void addRelevantObject(RelevantObject relevantObject);
+	public void addRelevantObject(RelevantObject object);
 
 	public void setPolarity(Polarity polarity);
 	

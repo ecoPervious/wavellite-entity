@@ -28,7 +28,7 @@ import fi.uef.envi.wavellite.entity.core.Entity;
 
 public interface Situation extends Entity {
 
-	public void addSupportedInfon(ElementaryInfon elementaryInfon);
+	public void addSupportedInfon(ElementaryInfon infon);
 
 	public Set<ElementaryInfon> getSupportedInfons();
 

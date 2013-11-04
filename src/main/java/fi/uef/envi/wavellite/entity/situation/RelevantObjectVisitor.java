@@ -5,8 +5,6 @@
 
 package fi.uef.envi.wavellite.entity.situation;
 
-import fi.uef.envi.wavellite.entity.core.TemporalLocation;
-
 /**
  * <p>
  * Title: RelevantObjectVisitor
@@ -26,8 +24,6 @@ import fi.uef.envi.wavellite.entity.core.TemporalLocation;
 
 public interface RelevantObjectVisitor {
 
-	public void visit(Individual object);
-	
-	public void visit(TemporalLocation object);
+	public void visit(RelevantIndividual object);
 
 }

@@ -28,6 +28,6 @@ public interface Attribute extends Entity {
 	
 	public AttributeValue getAttributeValue();
 	
-	public void setAttributeValue(AttributeValue attributeValue);
+	public void setAttributeValue(AttributeValue value);
 	
 }

@@ -9,7 +9,7 @@ import java.util.Set;
 
 /**
  * <p>
- * Title: Individual
+ * Title: RelevantIndividual
  * </p>
  * <p>
  * Description:
@@ -24,7 +24,7 @@ import java.util.Set;
  * @author Markus Stocker
  */
 
-public interface Individual extends RelevantObject {
+public interface RelevantIndividual extends RelevantObject {
 	
 	public void addAttribute(Attribute attribute);
 	

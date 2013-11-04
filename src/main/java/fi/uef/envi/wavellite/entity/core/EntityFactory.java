@@ -29,6 +29,20 @@ import fi.uef.envi.wavellite.entity.measurement.MeasurementValueContext;
 import fi.uef.envi.wavellite.entity.measurement.base.MeasurementResultBase;
 import fi.uef.envi.wavellite.entity.measurement.base.MeasurementValueContextBase;
 import fi.uef.envi.wavellite.entity.measurement.base.MeasurementValueDouble;
+import fi.uef.envi.wavellite.entity.situation.Attribute;
+import fi.uef.envi.wavellite.entity.situation.AttributeValue;
+import fi.uef.envi.wavellite.entity.situation.ElementaryInfon;
+import fi.uef.envi.wavellite.entity.situation.Polarity;
+import fi.uef.envi.wavellite.entity.situation.Relation;
+import fi.uef.envi.wavellite.entity.situation.RelevantIndividual;
+import fi.uef.envi.wavellite.entity.situation.RelevantObject;
+import fi.uef.envi.wavellite.entity.situation.Situation;
+import fi.uef.envi.wavellite.entity.situation.base.AttributeBase;
+import fi.uef.envi.wavellite.entity.situation.base.AttributeValueDouble;
+import fi.uef.envi.wavellite.entity.situation.base.ElementaryInfonBase;
+import fi.uef.envi.wavellite.entity.situation.base.RelationBase;
+import fi.uef.envi.wavellite.entity.situation.base.RelevantIndividualBase;
+import fi.uef.envi.wavellite.entity.situation.base.SituationBase;
 
 /**
  * <p>
@@ -121,4 +135,29 @@ public class EntityFactory {
 	public static ComponentPropertyValue componentPropertyValue(TemporalLocation location) {
 		return new ComponentPropertyValueTemporalLocation(location);
 	}
+	
+	public static Situation situation(ElementaryInfon... infons) {
+		return new SituationBase(infons);
+	}
+	
+	public static ElementaryInfon elementaryInfon(Relation relation, Polarity polarity, RelevantObject... objects) {
+		return new ElementaryInfonBase(relation, polarity, objects);
+	}
+	
+	public static Relation relation(String id) {
+		return new RelationBase(id);
+	}
+	
+	public static RelevantIndividual relevantIndividual(Attribute... attributes) {
+		return new RelevantIndividualBase(attributes);
+	}
+	
+	public static Attribute attribute(AttributeValue value) {
+		return new AttributeBase(value);
+	}
+	
+	public static AttributeValue attributeValue(Double value) {
+		return new AttributeValueDouble(value);
+	}
+	
 }
