@@ -7,12 +7,13 @@ package fi.uef.envi.wavellite.entity.situation.base;
 
 import java.util.UUID;
 
+import fi.uef.envi.wavellite.entity.core.TemporalLocation;
 import fi.uef.envi.wavellite.entity.situation.AttributeValueVisitor;
 import fi.uef.envi.wavellite.vocabulary.WO;
 
 /**
  * <p>
- * Title: AttributeValueDouble
+ * Title: AttributeValueTemporalLocation
  * </p>
  * <p>
  * Description:
@@ -27,42 +28,43 @@ import fi.uef.envi.wavellite.vocabulary.WO;
  * @author Markus Stocker
  */
 
-public class AttributeValueDouble extends AbstractAttributeValue {
+public class AttributeValueTemporalLocation extends AbstractAttributeValue {
 
-	public AttributeValueDouble() {
+	public AttributeValueTemporalLocation() {
 		this(UUID.randomUUID().toString());
 	}
 
-	public AttributeValueDouble(Double value) {
+	public AttributeValueTemporalLocation(TemporalLocation value) {
 		this(UUID.randomUUID().toString(), value);
 	}
 
-	public AttributeValueDouble(String id) {
-		this(id, WO.AttributeValueDouble);
+	public AttributeValueTemporalLocation(String id) {
+		this(id, WO.AttributeValueTemporalLocation);
 	}
 
-	public AttributeValueDouble(String id, Double value) {
-		this(id, WO.AttributeValueDouble, value);
+	public AttributeValueTemporalLocation(String id, TemporalLocation value) {
+		this(id, WO.AttributeValueTemporalLocation, value);
 	}
 
-	public AttributeValueDouble(String id, String type) {
+	public AttributeValueTemporalLocation(String id, String type) {
 		super(id, type);
 	}
 
-	public AttributeValueDouble(String id, String type, Double value) {
+	public AttributeValueTemporalLocation(String id, String type,
+			TemporalLocation value) {
 		super(id, type, value);
 	}
-	
+
 	@Override
-	public Double getValue() {
-		return (Double)value;
+	public TemporalLocation getValue() {
+		return (TemporalLocation) value;
 	}
-	
+
 	@Override
 	public void accept(AttributeValueVisitor visitor) {
 		visitor.visit(this);
 	}
-	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -84,7 +86,7 @@ public class AttributeValueDouble extends AbstractAttributeValue {
 		if (getClass() != obj.getClass())
 			return false;
 
-		AttributeValueDouble other = (AttributeValueDouble) obj;
+		AttributeValueTemporalLocation other = (AttributeValueTemporalLocation) obj;
 
 		if (id == null) {
 			if (other.id != null)
@@ -109,8 +111,8 @@ public class AttributeValueDouble extends AbstractAttributeValue {
 
 	@Override
 	public String toString() {
-		return "AttributeValueDouble [id = " + id + "; type = " + type
+		return "AttributeValueTemporalLocation [id = " + id + "; type = " + type
 				+ "; value = " + value + "]";
 	}
-	
+
 }
