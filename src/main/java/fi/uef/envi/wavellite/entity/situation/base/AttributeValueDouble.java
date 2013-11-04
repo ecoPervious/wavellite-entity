@@ -54,6 +54,11 @@ public class AttributeValueDouble extends AbstractAttributeValue {
 	}
 	
 	@Override
+	public Double getValue() {
+		return (Double)value;
+	}
+	
+	@Override
 	public void accept(AttributeValueVisitor visitor) {
 		visitor.visit(this);
 	}
