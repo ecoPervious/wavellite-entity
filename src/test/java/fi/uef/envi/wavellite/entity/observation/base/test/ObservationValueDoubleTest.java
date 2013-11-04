@@ -12,7 +12,6 @@ import org.junit.Test;
 
 import fi.uef.envi.wavellite.entity.observation.base.ObservationValueDouble;
 import fi.uef.envi.wavellite.vocabulary.SSN;
-import fi.uef.envi.wavellite.vocabulary.WO;
 
 /**
  * <p>
