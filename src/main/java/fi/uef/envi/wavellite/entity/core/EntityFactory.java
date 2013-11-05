@@ -115,7 +115,7 @@ public class EntityFactory {
 
 		for (Map.Entry<ComponentProperty, ComponentPropertyValue> entry : components
 				.entrySet()) {
-			ret.addComponentProperty(entry.getKey(), entry.getValue());
+			ret.addComponent(entry.getKey(), entry.getValue());
 		}
 
 		return ret;

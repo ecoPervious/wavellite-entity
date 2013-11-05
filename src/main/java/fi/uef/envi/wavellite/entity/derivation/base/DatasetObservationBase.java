@@ -69,7 +69,7 @@ public class DatasetObservationBase extends AbstractEntity implements
 	}
 
 	@Override
-	public void addComponentProperty(ComponentProperty property,
+	public void addComponent(ComponentProperty property,
 			ComponentPropertyValue value) {
 		components.put(property, value);
 	}

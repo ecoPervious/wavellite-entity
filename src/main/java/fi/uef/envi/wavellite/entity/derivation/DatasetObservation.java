@@ -29,17 +29,17 @@ import fi.uef.envi.wavellite.entity.core.Entity;
 public interface DatasetObservation extends Entity {
 
 	public Dataset getDataset();
-	
+
 	public void setDataset(Dataset dataset);
 
-	public void addComponentProperty(ComponentProperty property,
+	public void addComponent(ComponentProperty property,
 			ComponentPropertyValue value);
 
 	public Set<ComponentProperty> getComponentProperties();
 
 	public ComponentPropertyValue getComponentPropertyValue(
 			ComponentProperty property);
-	
+
 	public int getDimensionality();
 
 }
