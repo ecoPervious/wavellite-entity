@@ -39,7 +39,7 @@ public class DatasetObservationBase extends AbstractEntity implements
 		DatasetObservation {
 
 	private Dataset dataset;
-	private HashMap<ComponentProperty, ComponentPropertyValue> componentProperties;
+	private HashMap<ComponentProperty, ComponentPropertyValue> components;
 
 	public DatasetObservationBase() {
 		this(UUID.randomUUID().toString());
@@ -52,7 +52,7 @@ public class DatasetObservationBase extends AbstractEntity implements
 	public DatasetObservationBase(String id, String type) {
 		super(id, type);
 
-		this.componentProperties = new LinkedHashMap<ComponentProperty, ComponentPropertyValue>();
+		this.components = new LinkedHashMap<ComponentProperty, ComponentPropertyValue>();
 	}
 
 	@Override
@@ -71,18 +71,18 @@ public class DatasetObservationBase extends AbstractEntity implements
 	@Override
 	public void addComponentProperty(ComponentProperty property,
 			ComponentPropertyValue value) {
-		componentProperties.put(property, value);
+		components.put(property, value);
 	}
 
 	@Override
 	public Set<ComponentProperty> getComponentProperties() {
-		return Collections.unmodifiableSet(componentProperties.keySet());
+		return Collections.unmodifiableSet(components.keySet());
 	}
 
 	@Override
 	public ComponentPropertyValue getComponentPropertyValue(
 			ComponentProperty property) {
-		return componentProperties.get(property);
+		return components.get(property);
 	}
 
 	@Override
@@ -93,10 +93,8 @@ public class DatasetObservationBase extends AbstractEntity implements
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((type == null) ? 0 : type.hashCode());
 		result = prime * result + ((dataset == null) ? 0 : dataset.hashCode());
-		result = prime
-				* result
-				+ ((componentProperties == null) ? 0 : componentProperties
-						.hashCode());
+		result = prime * result
+				+ ((components == null) ? 0 : components.hashCode());
 
 		return result;
 	}
@@ -130,10 +128,10 @@ public class DatasetObservationBase extends AbstractEntity implements
 		} else if (!dataset.equals(other.dataset))
 			return false;
 
-		if (componentProperties == null) {
-			if (other.componentProperties != null)
+		if (components == null) {
+			if (other.components != null)
 				return false;
-		} else if (!componentProperties.equals(other.componentProperties))
+		} else if (!components.equals(other.components))
 			return false;
 
 		return true;
@@ -143,7 +141,7 @@ public class DatasetObservationBase extends AbstractEntity implements
 	public String toString() {
 		return "DatasetObservationBase [id = " + id + "; type = " + type
 				+ "; dataset = " + dataset + "; componentProperties = "
-				+ componentProperties + "]";
+				+ components + "]";
 	}
 
 }
