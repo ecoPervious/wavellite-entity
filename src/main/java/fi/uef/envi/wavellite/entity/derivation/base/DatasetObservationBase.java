@@ -84,6 +84,11 @@ public class DatasetObservationBase extends AbstractEntity implements
 			ComponentProperty property) {
 		return components.get(property);
 	}
+	
+	@Override
+	public int getDimensionality() {
+		return components.size();
+	}
 
 	@Override
 	public int hashCode() {

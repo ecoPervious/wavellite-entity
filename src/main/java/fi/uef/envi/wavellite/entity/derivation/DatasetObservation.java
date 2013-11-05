@@ -39,5 +39,7 @@ public interface DatasetObservation extends Entity {
 
 	public ComponentPropertyValue getComponentPropertyValue(
 			ComponentProperty property);
+	
+	public int getDimensionality();
 
 }
