@@ -44,6 +44,8 @@ import fi.uef.envi.wavellite.entity.situation.base.ElementaryInfonBase;
 import fi.uef.envi.wavellite.entity.situation.base.RelationBase;
 import fi.uef.envi.wavellite.entity.situation.base.RelevantIndividualBase;
 import fi.uef.envi.wavellite.entity.situation.base.SituationBase;
+import fi.uef.envi.wavellite.vocabulary.QB;
+import fi.uef.envi.wavellite.vocabulary.SDMX;
 
 /**
  * <p>
@@ -125,6 +127,11 @@ public class EntityFactory {
 		return new ComponentPropertyBase(id);
 	}
 
+	public static ComponentProperty timePeriodComponentProperty() {
+		return new ComponentPropertyBase(SDMX.Dimension.timePeriod,
+				QB.DimensionProperty);
+	}
+
 	public static ComponentPropertyValue componentPropertyValue(Double value) {
 		return new ComponentPropertyValueDouble(value);
 	}
@@ -133,36 +140,38 @@ public class EntityFactory {
 		return componentPropertyValue(new TemporalLocationDateTime(value));
 	}
 
-	public static ComponentPropertyValue componentPropertyValue(TemporalLocation location) {
+	public static ComponentPropertyValue componentPropertyValue(
+			TemporalLocation location) {
 		return new ComponentPropertyValueTemporalLocation(location);
 	}
-	
+
 	public static Situation situation(ElementaryInfon... infons) {
 		return new SituationBase(infons);
 	}
-	
-	public static ElementaryInfon elementaryInfon(Relation relation, Polarity polarity, RelevantObject... objects) {
+
+	public static ElementaryInfon elementaryInfon(Relation relation,
+			Polarity polarity, RelevantObject... objects) {
 		return new ElementaryInfonBase(relation, polarity, objects);
 	}
-	
+
 	public static Relation relation(String id) {
 		return new RelationBase(id);
 	}
-	
+
 	public static RelevantIndividual relevantIndividual(Attribute... attributes) {
 		return new RelevantIndividualBase(attributes);
 	}
-	
+
 	public static Attribute attribute(AttributeValue value) {
 		return new AttributeBase(value);
 	}
-	
+
 	public static AttributeValue attributeValue(Double value) {
 		return new AttributeValueDouble(value);
 	}
-	
+
 	public static AttributeValue attributeValue(TemporalLocation location) {
 		return new AttributeValueTemporalLocation(location);
 	}
-	
+
 }
