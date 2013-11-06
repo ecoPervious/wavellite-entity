@@ -161,7 +161,19 @@ public class EntityFactory {
 	public static RelevantIndividual relevantIndividual(Attribute... attributes) {
 		return new RelevantIndividualBase(attributes);
 	}
+	
+	public static RelevantIndividual relevantIndividual(Double value) {
+		return relevantIndividual(attribute(attributeValue(value)));
+	}
+	
+	public static RelevantIndividual relevantIndividual(TemporalLocation location) {
+		return relevantIndividual(attribute(attributeValue(location)));
+	}
 
+	public static RelevantIndividual relevantIndividual(DateTime time) {
+		return relevantIndividual(attribute(attributeValue(time)));
+	}
+	
 	public static Attribute attribute(AttributeValue value) {
 		return new AttributeBase(value);
 	}
@@ -170,6 +182,10 @@ public class EntityFactory {
 		return new AttributeValueDouble(value);
 	}
 
+	public static AttributeValue attributeValue(DateTime time) {
+		return new AttributeValueTemporalLocation(temporalLocation(time));
+	}
+	
 	public static AttributeValue attributeValue(TemporalLocation location) {
 		return new AttributeValueTemporalLocation(location);
 	}
