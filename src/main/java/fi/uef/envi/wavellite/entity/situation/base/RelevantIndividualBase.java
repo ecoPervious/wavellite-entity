@@ -36,32 +36,33 @@ public class RelevantIndividualBase extends AbstractRelevantObject implements
 		RelevantIndividual {
 
 	private Set<Attribute> attributes;
-	
+
 	public RelevantIndividualBase() {
 		this(UUID.randomUUID().toString());
 	}
-	
+
 	public RelevantIndividualBase(Attribute... attributes) {
 		this(UUID.randomUUID().toString(), attributes);
 	}
-	
+
 	public RelevantIndividualBase(String id) {
 		this(id, STO.RelevantIndividual);
 	}
-	
+
 	public RelevantIndividualBase(String id, Attribute... attributes) {
 		this(id, STO.RelevantIndividual, attributes);
 	}
-	
+
 	public RelevantIndividualBase(String id, String type) {
 		super(id, type);
-		
+
 		this.attributes = new HashSet<Attribute>();
 	}
-	
-	public RelevantIndividualBase(String id, String type, Attribute... attributes) {
+
+	public RelevantIndividualBase(String id, String type,
+			Attribute... attributes) {
 		this(id, type);
-		
+
 		for (Attribute attribute : attributes) {
 			this.attributes.add(attribute);
 		}
@@ -81,7 +82,7 @@ public class RelevantIndividualBase extends AbstractRelevantObject implements
 	public Set<Attribute> getAttributes() {
 		return Collections.unmodifiableSet(attributes);
 	}
-	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -89,7 +90,8 @@ public class RelevantIndividualBase extends AbstractRelevantObject implements
 
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((type == null) ? 0 : type.hashCode());
-		result = prime * result + ((attributes == null) ? 0 : attributes.hashCode());
+		result = prime * result
+				+ ((attributes == null) ? 0 : attributes.hashCode());
 
 		return result;
 	}
@@ -116,7 +118,7 @@ public class RelevantIndividualBase extends AbstractRelevantObject implements
 				return false;
 		} else if (!type.equals(other.type))
 			return false;
-		
+
 		if (attributes == null) {
 			if (other.attributes != null)
 				return false;
@@ -128,7 +130,8 @@ public class RelevantIndividualBase extends AbstractRelevantObject implements
 
 	@Override
 	public String toString() {
-		return "RelevantIndividualBase [id = " + id + "; type = " + type + "]";
+		return "RelevantIndividualBase [id = " + id + "; type = " + type
+				+ "; attributes = " + attributes + "]";
 	}
 
 }
