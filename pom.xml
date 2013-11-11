@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>fi.uef.envi.wavellite</groupId>
   <artifactId>wavellite-entity</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.1.0-SNAPSHOT</version>
   <build>
   	<pluginManagement>
       <plugins>
@@ -29,6 +29,22 @@
         </plugin>
       </plugins>
     </pluginManagement>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>true</filtering>
+        <includes>
+          <include>**/VERSION.txt</include>
+        </includes>
+      </resource>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>false</filtering>
+        <excludes>
+          <exclude>**/VERSION.txt</exclude>
+        </excludes>
+      </resource>
+    </resources>
   </build>
   <dependencies>
   	<dependency>
