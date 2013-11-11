@@ -29,22 +29,6 @@
         </plugin>
       </plugins>
     </pluginManagement>
-    <resources>
-      <resource>
-        <directory>src/main/resources</directory>
-        <filtering>true</filtering>
-        <includes>
-          <include>**/VERSION.txt</include>
-        </includes>
-      </resource>
-      <resource>
-        <directory>src/main/resources</directory>
-        <filtering>false</filtering>
-        <excludes>
-          <exclude>**/VERSION.txt</exclude>
-        </excludes>
-      </resource>
-    </resources>
   </build>
   <dependencies>
   	<dependency>
