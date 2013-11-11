@@ -1,0 +1,27 @@
+Copyright (C) Markus Stocker. All rights reserved.
+
+Author: 
+	Markus Stocker
+Email:
+	markus.stocker@uef.fi 
+	markus.stocker@gmail.com
+Web:
+	http://envi.uef.fi
+Address:
+	University of Eastern Finland
+	Kuopio Campus
+	Department of Environmental Science 
+	Research Group of Environmental Informatics
+	P.O. Box 1627
+	70211 Kuopio 
+	Finland
+                                                                
+The development of this software was made possible using the following components:
+
+Joda Time (2.3):
+	http://joda-time.sourceforge.net/
+	Apache License 2.0 (Apache-2.0)
+
+JUnit (4.11):
+	http://junit.org/
+	Eclipse Public License, Version 1.0 (EPL-1.0)
