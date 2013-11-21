@@ -14,10 +14,12 @@ import fi.uef.envi.wavellite.entity.core.base.FeatureBase;
 import fi.uef.envi.wavellite.entity.core.base.PropertyBase;
 import fi.uef.envi.wavellite.entity.core.base.SensorBase;
 import fi.uef.envi.wavellite.entity.core.base.TemporalLocationDateTime;
+import fi.uef.envi.wavellite.entity.derivation.Component;
 import fi.uef.envi.wavellite.entity.derivation.ComponentProperty;
 import fi.uef.envi.wavellite.entity.derivation.ComponentPropertyValue;
 import fi.uef.envi.wavellite.entity.derivation.Dataset;
 import fi.uef.envi.wavellite.entity.derivation.DatasetObservation;
+import fi.uef.envi.wavellite.entity.derivation.base.ComponentBase;
 import fi.uef.envi.wavellite.entity.derivation.base.ComponentPropertyBase;
 import fi.uef.envi.wavellite.entity.derivation.base.ComponentPropertyValueDouble;
 import fi.uef.envi.wavellite.entity.derivation.base.ComponentPropertyValueInteger;
@@ -124,11 +126,16 @@ public class EntityFactory {
 		return ret;
 	}
 
+	public static Component component(ComponentProperty property,
+			ComponentPropertyValue value) {
+		return new ComponentBase(property, value);
+	}
+
 	public static ComponentProperty componentProperty(String id) {
 		return new ComponentPropertyBase(id);
 	}
 
-	public static ComponentProperty timePeriodComponentProperty() {
+	public static ComponentProperty componentPropertyTimePeriod() {
 		return new ComponentPropertyBase(SDMX.Dimension.timePeriod,
 				QB.DimensionProperty);
 	}
@@ -136,7 +143,7 @@ public class EntityFactory {
 	public static ComponentPropertyValue componentPropertyValue(Double value) {
 		return new ComponentPropertyValueDouble(value);
 	}
-	
+
 	public static ComponentPropertyValue componentPropertyValue(Integer value) {
 		return new ComponentPropertyValueInteger(value);
 	}
@@ -166,19 +173,20 @@ public class EntityFactory {
 	public static RelevantIndividual relevantIndividual(Attribute... attributes) {
 		return new RelevantIndividualBase(attributes);
 	}
-	
+
 	public static RelevantIndividual relevantIndividual(Double value) {
 		return relevantIndividual(attribute(attributeValue(value)));
 	}
-	
-	public static RelevantIndividual relevantIndividual(TemporalLocation location) {
+
+	public static RelevantIndividual relevantIndividual(
+			TemporalLocation location) {
 		return relevantIndividual(attribute(attributeValue(location)));
 	}
 
 	public static RelevantIndividual relevantIndividual(DateTime time) {
 		return relevantIndividual(attribute(attributeValue(time)));
 	}
-	
+
 	public static Attribute attribute(AttributeValue value) {
 		return new AttributeBase(value);
 	}
@@ -190,7 +198,7 @@ public class EntityFactory {
 	public static AttributeValue attributeValue(DateTime time) {
 		return new AttributeValueTemporalLocation(temporalLocation(time));
 	}
-	
+
 	public static AttributeValue attributeValue(TemporalLocation location) {
 		return new AttributeValueTemporalLocation(location);
 	}

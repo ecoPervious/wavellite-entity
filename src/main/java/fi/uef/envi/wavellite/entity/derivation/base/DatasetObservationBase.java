@@ -7,8 +7,8 @@ package fi.uef.envi.wavellite.entity.derivation.base;
 
 import java.util.Collection;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
+import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 
@@ -41,7 +41,7 @@ public class DatasetObservationBase extends AbstractEntity implements
 		DatasetObservation {
 
 	private Dataset dataset;
-	private HashMap<ComponentProperty, Component> components;
+	private Map<ComponentProperty, Component> components;
 
 	public DatasetObservationBase() {
 		this(UUID.randomUUID().toString());
