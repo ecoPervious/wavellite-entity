@@ -5,6 +5,7 @@
 
 package fi.uef.envi.wavellite.entity.derivation.base;
 
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -12,6 +13,7 @@ import java.util.Set;
 import java.util.UUID;
 
 import fi.uef.envi.wavellite.entity.core.base.AbstractEntity;
+import fi.uef.envi.wavellite.entity.derivation.Component;
 import fi.uef.envi.wavellite.entity.derivation.ComponentProperty;
 import fi.uef.envi.wavellite.entity.derivation.ComponentPropertyValue;
 import fi.uef.envi.wavellite.entity.derivation.Dataset;
@@ -39,7 +41,7 @@ public class DatasetObservationBase extends AbstractEntity implements
 		DatasetObservation {
 
 	private Dataset dataset;
-	private HashMap<ComponentProperty, ComponentPropertyValue> components;
+	private HashMap<ComponentProperty, Component> components;
 
 	public DatasetObservationBase() {
 		this(UUID.randomUUID().toString());
@@ -52,7 +54,7 @@ public class DatasetObservationBase extends AbstractEntity implements
 	public DatasetObservationBase(String id, String type) {
 		super(id, type);
 
-		this.components = new LinkedHashMap<ComponentProperty, ComponentPropertyValue>();
+		this.components = new LinkedHashMap<ComponentProperty, Component>();
 	}
 
 	@Override
@@ -69,11 +71,21 @@ public class DatasetObservationBase extends AbstractEntity implements
 	}
 
 	@Override
-	public void addComponent(ComponentProperty property,
-			ComponentPropertyValue value) {
-		components.put(property, value);
+	public void addComponent(Component component) {
+		components.put(component.getComponentProperty(), component);
 	}
 
+	@Override
+	public void addComponent(ComponentProperty property,
+			ComponentPropertyValue value) {
+		addComponent(new ComponentBase(property, value));
+	}
+
+	@Override
+	public Collection<Component> getComponents() {
+		return Collections.unmodifiableCollection(components.values());
+	}
+	
 	@Override
 	public Set<ComponentProperty> getComponentProperties() {
 		return Collections.unmodifiableSet(components.keySet());
@@ -82,9 +94,14 @@ public class DatasetObservationBase extends AbstractEntity implements
 	@Override
 	public ComponentPropertyValue getComponentPropertyValue(
 			ComponentProperty property) {
-		return components.get(property);
+		Component component = components.get(property);
+		
+		if (component == null)
+			return null;
+		
+		return component.getComponentPropertyValue();
 	}
-	
+
 	@Override
 	public int getDimensionality() {
 		return components.size();
@@ -145,7 +162,7 @@ public class DatasetObservationBase extends AbstractEntity implements
 	@Override
 	public String toString() {
 		return "DatasetObservationBase [id = " + id + "; type = " + type
-				+ "; dataset = " + dataset + "; componentProperties = "
+				+ "; dataset = " + dataset + "; components = "
 				+ components + "]";
 	}
 
