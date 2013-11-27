@@ -42,6 +42,7 @@ import fi.uef.envi.wavellite.entity.situation.RelevantObject;
 import fi.uef.envi.wavellite.entity.situation.Situation;
 import fi.uef.envi.wavellite.entity.situation.base.AttributeBase;
 import fi.uef.envi.wavellite.entity.situation.base.AttributeValueDouble;
+import fi.uef.envi.wavellite.entity.situation.base.AttributeValueString;
 import fi.uef.envi.wavellite.entity.situation.base.AttributeValueTemporalLocation;
 import fi.uef.envi.wavellite.entity.situation.base.ElementaryInfonBase;
 import fi.uef.envi.wavellite.entity.situation.base.RelationBase;
@@ -178,6 +179,10 @@ public class EntityFactory {
 		return relevantIndividual(attribute(attributeValue(value)));
 	}
 
+	public static RelevantIndividual relevantIndividual(String value) {
+		return relevantIndividual(attribute(attributeValue(value)));
+	}
+	
 	public static RelevantIndividual relevantIndividual(
 			TemporalLocation location) {
 		return relevantIndividual(attribute(attributeValue(location)));
@@ -194,7 +199,11 @@ public class EntityFactory {
 	public static AttributeValue attributeValue(Double value) {
 		return new AttributeValueDouble(value);
 	}
-
+	
+	public static AttributeValue attributeValue(String value) {
+		return new AttributeValueString(value);
+	}
+ 
 	public static AttributeValue attributeValue(DateTime time) {
 		return new AttributeValueTemporalLocation(temporalLocation(time));
 	}
