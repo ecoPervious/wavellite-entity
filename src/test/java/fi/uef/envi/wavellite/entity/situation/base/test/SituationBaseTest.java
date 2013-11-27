@@ -10,7 +10,14 @@ import static org.junit.Assert.assertNotEquals;
 
 import org.junit.Test;
 
+import fi.uef.envi.wavellite.entity.situation.ElementaryInfon;
+import fi.uef.envi.wavellite.entity.situation.Polarity;
+import fi.uef.envi.wavellite.entity.situation.Situation;
+import fi.uef.envi.wavellite.entity.situation.base.AttributeBase;
+import fi.uef.envi.wavellite.entity.situation.base.AttributeValueString;
 import fi.uef.envi.wavellite.entity.situation.base.ElementaryInfonBase;
+import fi.uef.envi.wavellite.entity.situation.base.RelationBase;
+import fi.uef.envi.wavellite.entity.situation.base.RelevantIndividualBase;
 import fi.uef.envi.wavellite.entity.situation.base.SituationBase;
 import fi.uef.envi.wavellite.vocabulary.STO;
 
@@ -152,6 +159,27 @@ public class SituationBaseTest {
 		s2.addSupportedInfon(new ElementaryInfonBase("i1"));
 		
 		assertNotEquals(s1, s2);
+	}
+	
+	@Test
+	public void test16() {
+		Situation a = new SituationBase("s1");
+		ElementaryInfon i1 = new ElementaryInfonBase("i1");
+		i1.setRelation(new RelationBase("r1"));
+		i1.addRelevantObject(new RelevantIndividualBase("o1", new AttributeBase(
+				"a1", new AttributeValueString("v1", "A"))));
+		i1.setPolarity(Polarity.True);
+		a.addSupportedInfon(i1);
+		
+		Situation e = new SituationBase("s1");
+		ElementaryInfon i2 = new ElementaryInfonBase("i1");
+		i2.setRelation(new RelationBase("r1"));
+		i2.addRelevantObject(new RelevantIndividualBase("o1", new AttributeBase(
+				"a1", new AttributeValueString("v1", "A"))));
+		i2.setPolarity(Polarity.True);
+		e.addSupportedInfon(i2);
+
+		assertEquals(e, a);
 	}
 	
 }
