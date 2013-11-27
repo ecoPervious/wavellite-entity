@@ -55,6 +55,11 @@ public class ComponentPropertyValueInteger extends
 	}
 
 	@Override
+	public Integer getValue() {
+		return (Integer)super.getValue();
+	}
+	
+	@Override
 	public void accept(ComponentPropertyValueVisitor visitor) {
 		visitor.visit(this);
 	}

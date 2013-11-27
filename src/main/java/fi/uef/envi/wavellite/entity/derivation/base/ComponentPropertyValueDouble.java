@@ -60,6 +60,11 @@ public class ComponentPropertyValueDouble extends
 	}
 	
 	@Override
+	public Double getValue() {
+		return (Double)super.getValue();
+	}
+	
+	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
