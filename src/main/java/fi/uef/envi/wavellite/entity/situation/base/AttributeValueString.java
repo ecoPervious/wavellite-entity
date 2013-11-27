@@ -46,8 +46,8 @@ public class AttributeValueString extends AbstractAttributeValue {
 	}
 
 	@Override
-	public Double getValue() {
-		return (Double) value;
+	public String getValue() {
+		return (String) value;
 	}
 
 	@Override
