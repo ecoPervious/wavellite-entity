@@ -30,7 +30,7 @@ import fi.uef.envi.wavellite.vocabulary.WO;
 public class AttributeValueString extends AbstractAttributeValue {
 
 	public AttributeValueString() {
-		this(UUID.randomUUID().toString());
+		this(null);
 	}
 
 	public AttributeValueString(String value) {
