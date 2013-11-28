@@ -146,8 +146,8 @@ public class EntityFactory {
 		return new ComponentPropertyRange(id);
 	}
 
-	public static ComponentProperty componentPropertyTimePeriod() {
-		return new ComponentPropertyBase(SDMX.Dimension.timePeriod,
+	public static ComponentPropertyDomain componentPropertyTimePeriod() {
+		return new ComponentPropertyDomain(SDMX.Dimension.timePeriod,
 				QB.DimensionProperty);
 	}
 
