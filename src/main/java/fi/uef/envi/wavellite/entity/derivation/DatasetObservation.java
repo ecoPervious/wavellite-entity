@@ -34,6 +34,8 @@ public interface DatasetObservation extends Entity {
 	public void setDataset(Dataset dataset);
 
 	public void addComponent(Component component);
+	
+	public void addComponents(Collection<Component> components);
 
 	public void addComponent(ComponentProperty property,
 			ComponentPropertyValue value);

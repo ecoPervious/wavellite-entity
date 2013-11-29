@@ -55,7 +55,7 @@ public class ComponentPropertyValueDoubleTest {
 		ComponentPropertyValueDouble e = new ComponentPropertyValueDouble("i1");
 		ComponentPropertyValueDouble a = new ComponentPropertyValueDouble("i2");
 
-		assertNotEquals(e, a);
+		assertEquals(e, a);
 	}
 
 	@Test
@@ -91,7 +91,7 @@ public class ComponentPropertyValueDoubleTest {
 		ComponentPropertyValueDouble s1 = new ComponentPropertyValueDouble("i1");
 		ComponentPropertyValueDouble s2 = new ComponentPropertyValueDouble("i2");
 
-		assertNotEquals(s1.hashCode(), s2.hashCode());
+		assertEquals(s1.hashCode(), s2.hashCode());
 	}
 
 	@Test

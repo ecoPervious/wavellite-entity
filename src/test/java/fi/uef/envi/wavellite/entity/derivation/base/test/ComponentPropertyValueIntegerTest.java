@@ -55,7 +55,7 @@ public class ComponentPropertyValueIntegerTest {
 		ComponentPropertyValueInteger e = new ComponentPropertyValueInteger("i1");
 		ComponentPropertyValueInteger a = new ComponentPropertyValueInteger("i2");
 
-		assertNotEquals(e, a);
+		assertEquals(e, a);
 	}
 
 	@Test
@@ -91,7 +91,7 @@ public class ComponentPropertyValueIntegerTest {
 		ComponentPropertyValueInteger s1 = new ComponentPropertyValueInteger("i1");
 		ComponentPropertyValueInteger s2 = new ComponentPropertyValueInteger("i2");
 
-		assertNotEquals(s1.hashCode(), s2.hashCode());
+		assertEquals(s1.hashCode(), s2.hashCode());
 	}
 
 	@Test

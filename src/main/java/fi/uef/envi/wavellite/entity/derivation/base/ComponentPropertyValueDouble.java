@@ -69,7 +69,7 @@ public class ComponentPropertyValueDouble extends
 		final int prime = 31;
 		int result = 1;
 
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
+//		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((type == null) ? 0 : type.hashCode());
 		result = prime * result + ((value == null) ? 0 : value.hashCode());
 
@@ -87,11 +87,11 @@ public class ComponentPropertyValueDouble extends
 
 		ComponentPropertyValueDouble other = (ComponentPropertyValueDouble) obj;
 
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
+//		if (id == null) {
+//			if (other.id != null)
+//				return false;
+//		} else if (!id.equals(other.id))
+//			return false;
 
 		if (type == null) {
 			if (other.type != null)

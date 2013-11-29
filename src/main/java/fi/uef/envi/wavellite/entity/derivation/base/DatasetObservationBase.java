@@ -11,6 +11,8 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import fi.uef.envi.wavellite.entity.core.base.AbstractEntity;
 import fi.uef.envi.wavellite.entity.derivation.Component;
@@ -42,6 +44,8 @@ public class DatasetObservationBase extends AbstractEntity implements
 
 	private Dataset dataset;
 	private Map<ComponentProperty, Component> components;
+	private final static Logger log = Logger
+			.getLogger(DatasetObservationBase.class.getName());
 
 	public DatasetObservationBase() {
 		this(UUID.randomUUID().toString());
@@ -72,7 +76,25 @@ public class DatasetObservationBase extends AbstractEntity implements
 
 	@Override
 	public void addComponent(Component component) {
-		components.put(component.getComponentProperty(), component);
+		ComponentProperty componentProperty = component.getComponentProperty();
+		
+		if (components.containsKey(componentProperty)) {
+			if (log.isLoggable(Level.WARNING))
+				log.warning("Dataset observation already contains this component property (override) [componentProperty = "
+						+ componentProperty
+						+ "; components = "
+						+ components
+						+ "]");
+		}
+
+		components.put(componentProperty, component);
+	}
+
+	@Override
+	public void addComponents(Collection<Component> components) {
+		for (Component component : components) {
+			addComponent(component);
+		}
 	}
 
 	@Override
@@ -85,7 +107,7 @@ public class DatasetObservationBase extends AbstractEntity implements
 	public Collection<Component> getComponents() {
 		return Collections.unmodifiableCollection(components.values());
 	}
-	
+
 	@Override
 	public Set<ComponentProperty> getComponentProperties() {
 		return Collections.unmodifiableSet(components.keySet());
@@ -95,10 +117,10 @@ public class DatasetObservationBase extends AbstractEntity implements
 	public ComponentPropertyValue getComponentPropertyValue(
 			ComponentProperty property) {
 		Component component = components.get(property);
-		
+
 		if (component == null)
 			return null;
-		
+
 		return component.getComponentPropertyValue();
 	}
 
@@ -112,7 +134,7 @@ public class DatasetObservationBase extends AbstractEntity implements
 		final int prime = 31;
 		int result = 1;
 
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		// result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((type == null) ? 0 : type.hashCode());
 		result = prime * result + ((dataset == null) ? 0 : dataset.hashCode());
 		result = prime * result
@@ -132,11 +154,11 @@ public class DatasetObservationBase extends AbstractEntity implements
 
 		DatasetObservationBase other = (DatasetObservationBase) obj;
 
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
+		// if (id == null) {
+		// if (other.id != null)
+		// return false;
+		// } else if (!id.equals(other.id))
+		// return false;
 
 		if (type == null) {
 			if (other.type != null)
@@ -162,8 +184,8 @@ public class DatasetObservationBase extends AbstractEntity implements
 	@Override
 	public String toString() {
 		return "DatasetObservationBase [id = " + id + "; type = " + type
-				+ "; dataset = " + dataset + "; components = "
-				+ components + "]";
+				+ "; dataset = " + dataset + "; components = " + components
+				+ "]";
 	}
 
 }

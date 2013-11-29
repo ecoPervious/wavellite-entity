@@ -54,7 +54,7 @@ public class DatasetObservationBaseTest {
 		DatasetObservationBase e = new DatasetObservationBase("i1");
 		DatasetObservationBase a = new DatasetObservationBase("i2");
 		
-		assertNotEquals(e, a);
+		assertEquals(e, a);
 	}
 	
 	@Test
@@ -86,7 +86,7 @@ public class DatasetObservationBaseTest {
 		DatasetObservationBase s1 = new DatasetObservationBase("i1");
 		DatasetObservationBase s2 = new DatasetObservationBase("i2");
 		
-		assertNotEquals(s1.hashCode(), s2.hashCode());
+		assertEquals(s1.hashCode(), s2.hashCode());
 	}
 	
 	@Test
