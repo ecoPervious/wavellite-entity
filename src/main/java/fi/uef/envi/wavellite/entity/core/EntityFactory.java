@@ -129,6 +129,39 @@ public class EntityFactory {
 		return ret;
 	}
 
+	public static Component component(int year, int month, int day, int hour,
+			int min, int sec) {
+		return component(new DateTime(year, month, day, hour, min, sec));
+	}
+
+	public static Component component(DateTime value) {
+		return component(componentPropertyTimePeriod(), value);
+	}
+
+	public static Component component(String id, DateTime value) {
+		return component(componentProperty(id), value);
+	}
+
+	public static Component component(ComponentProperty property, DateTime value) {
+		return component(property, componentPropertyValue(value));
+	}
+
+	public static Component component(String id, Double value) {
+		return component(componentProperty(id), value);
+	}
+
+	public static Component component(ComponentProperty property, Double value) {
+		return component(property, componentPropertyValue(value));
+	}
+
+	public static Component component(String id, Integer value) {
+		return component(componentProperty(id), value);
+	}
+
+	public static Component component(ComponentProperty property, Integer value) {
+		return component(property, componentPropertyValue(value));
+	}
+
 	public static Component component(ComponentProperty property,
 			ComponentPropertyValue value) {
 		return new ComponentBase(property, value);
@@ -137,11 +170,11 @@ public class EntityFactory {
 	public static ComponentProperty componentProperty(String id) {
 		return new ComponentPropertyBase(id);
 	}
-	
+
 	public static ComponentPropertyDomain componentPropertyDomain(String id) {
 		return new ComponentPropertyDomain(id);
 	}
-	
+
 	public static ComponentPropertyRange componentPropertyRange(String id) {
 		return new ComponentPropertyRange(id);
 	}
@@ -192,7 +225,7 @@ public class EntityFactory {
 	public static RelevantIndividual relevantIndividual(String value) {
 		return relevantIndividual(attribute(attributeValue(value)));
 	}
-	
+
 	public static RelevantIndividual relevantIndividual(
 			TemporalLocation location) {
 		return relevantIndividual(attribute(attributeValue(location)));
@@ -209,11 +242,11 @@ public class EntityFactory {
 	public static AttributeValue attributeValue(Double value) {
 		return new AttributeValueDouble(value);
 	}
-	
+
 	public static AttributeValue attributeValue(String value) {
 		return new AttributeValueString(value);
 	}
- 
+
 	public static AttributeValue attributeValue(DateTime time) {
 		return new AttributeValueTemporalLocation(temporalLocation(time));
 	}
