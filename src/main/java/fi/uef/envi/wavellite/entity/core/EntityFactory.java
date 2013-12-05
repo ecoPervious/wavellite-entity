@@ -7,6 +7,7 @@ package fi.uef.envi.wavellite.entity.core;
 
 import java.util.Map;
 import java.util.Random;
+import java.util.Set;
 
 import org.joda.time.DateTime;
 
@@ -125,6 +126,16 @@ public class EntityFactory {
 				.entrySet()) {
 			ret.addComponent(entry.getKey(), entry.getValue());
 		}
+
+		return ret;
+	}
+
+	public static DatasetObservation datasetObservation(Dataset dataset,
+			Set<Component> components) {
+		DatasetObservation ret = new DatasetObservationBase();
+
+		ret.setDataset(dataset);
+		ret.addComponents(components);
 
 		return ret;
 	}
