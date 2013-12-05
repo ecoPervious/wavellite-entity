@@ -5,7 +5,6 @@
 
 package fi.uef.envi.wavellite.entity.core;
 
-import java.util.Map;
 import java.util.Random;
 import java.util.Set;
 
@@ -116,15 +115,24 @@ public class EntityFactory {
 		return new DatasetBase(id);
 	}
 
-	public static DatasetObservation datasetObservation(Dataset dataset,
-			Map<ComponentProperty, ComponentPropertyValue> components) {
-		DatasetObservation ret = new DatasetObservationBase();
+	public static DatasetObservation datasetObservation() {
+		return new DatasetObservationBase();
+	}
+
+	public static DatasetObservation datasetObservation(Dataset dataset) {
+		DatasetObservation ret = datasetObservation();
 
 		ret.setDataset(dataset);
 
-		for (Map.Entry<ComponentProperty, ComponentPropertyValue> entry : components
-				.entrySet()) {
-			ret.addComponent(entry.getKey(), entry.getValue());
+		return ret;
+	}
+
+	public static DatasetObservation datasetObservation(Dataset dataset,
+			Component... components) {
+		DatasetObservation ret = datasetObservation(dataset);
+
+		for (Component component : components) {
+			ret.addComponent(component);
 		}
 
 		return ret;
@@ -132,9 +140,8 @@ public class EntityFactory {
 
 	public static DatasetObservation datasetObservation(Dataset dataset,
 			Set<Component> components) {
-		DatasetObservation ret = new DatasetObservationBase();
+		DatasetObservation ret = datasetObservation(dataset);
 
-		ret.setDataset(dataset);
 		ret.addComponents(components);
 
 		return ret;
