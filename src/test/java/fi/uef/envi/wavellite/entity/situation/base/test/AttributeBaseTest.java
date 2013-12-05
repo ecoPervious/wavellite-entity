@@ -54,7 +54,7 @@ public class AttributeBaseTest {
 		AttributeBase e = new AttributeBase("i1");
 		AttributeBase a = new AttributeBase("i2");
 		
-		assertNotEquals(e, a);
+		assertEquals(e, a);
 	}
 	
 	@Test
@@ -86,7 +86,7 @@ public class AttributeBaseTest {
 		AttributeBase s1 = new AttributeBase("i1");
 		AttributeBase s2 = new AttributeBase("i2");
 		
-		assertNotEquals(s1.hashCode(), s2.hashCode());
+		assertEquals(s1.hashCode(), s2.hashCode());
 	}
 	
 	@Test

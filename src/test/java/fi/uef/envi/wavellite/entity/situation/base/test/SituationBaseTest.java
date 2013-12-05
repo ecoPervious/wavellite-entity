@@ -61,7 +61,7 @@ public class SituationBaseTest {
 		SituationBase e = new SituationBase("i1");
 		SituationBase a = new SituationBase("i2");
 		
-		assertNotEquals(e, a);
+		assertEquals(e, a);
 	}
 	
 	@Test
@@ -93,7 +93,7 @@ public class SituationBaseTest {
 		SituationBase s1 = new SituationBase("i1");
 		SituationBase s2 = new SituationBase("i2");
 		
-		assertNotEquals(s1.hashCode(), s2.hashCode());
+		assertEquals(s1.hashCode(), s2.hashCode());
 	}
 	
 	@Test
@@ -158,7 +158,7 @@ public class SituationBaseTest {
 		s1.addSupportedInfon(new ElementaryInfonBase("i2"));
 		s2.addSupportedInfon(new ElementaryInfonBase("i1"));
 		
-		assertNotEquals(s1, s2);
+		assertEquals(s1, s2);
 	}
 	
 	@Test

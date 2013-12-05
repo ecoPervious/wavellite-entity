@@ -56,7 +56,7 @@ public class ElementaryInfonBaseTest {
 		ElementaryInfonBase e = new ElementaryInfonBase("i1");
 		ElementaryInfonBase a = new ElementaryInfonBase("i2");
 
-		assertNotEquals(e, a);
+		assertEquals(e, a);
 	}
 
 	@Test
@@ -88,7 +88,7 @@ public class ElementaryInfonBaseTest {
 		ElementaryInfonBase s1 = new ElementaryInfonBase("i1");
 		ElementaryInfonBase s2 = new ElementaryInfonBase("i2");
 
-		assertNotEquals(s1.hashCode(), s2.hashCode());
+		assertEquals(s1.hashCode(), s2.hashCode());
 	}
 
 	@Test
@@ -165,7 +165,7 @@ public class ElementaryInfonBaseTest {
 		s1.setPolarity(Polarity.True);
 		s2.setPolarity(Polarity.True);
 		
-		assertNotEquals(s1, s2);
+		assertEquals(s1, s2);
 	}
 
 }

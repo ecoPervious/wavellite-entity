@@ -54,7 +54,7 @@ public class RelevantIndividualBaseTest {
 		RelevantIndividualBase e = new RelevantIndividualBase("i1");
 		RelevantIndividualBase a = new RelevantIndividualBase("i2");
 		
-		assertNotEquals(e, a);
+		assertEquals(e, a);
 	}
 	
 	@Test
@@ -86,7 +86,7 @@ public class RelevantIndividualBaseTest {
 		RelevantIndividualBase s1 = new RelevantIndividualBase("i1");
 		RelevantIndividualBase s2 = new RelevantIndividualBase("i2");
 		
-		assertNotEquals(s1.hashCode(), s2.hashCode());
+		assertEquals(s1.hashCode(), s2.hashCode());
 	}
 	
 	@Test
@@ -151,7 +151,7 @@ public class RelevantIndividualBaseTest {
 		s1.addAttribute(new AttributeBase("a1"));
 		s2.addAttribute(new AttributeBase("a2"));
 		
-		assertNotEquals(s1, s2);
+		assertEquals(s1, s2);
 	}
 	
 }

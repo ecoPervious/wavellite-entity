@@ -61,7 +61,7 @@ public class AttributeValueTemporalLocationTest {
 		AttributeValueTemporalLocation a = new AttributeValueTemporalLocation(
 				"i2");
 
-		assertNotEquals(e, a);
+		assertEquals(e, a);
 	}
 
 	@Test
@@ -101,7 +101,7 @@ public class AttributeValueTemporalLocationTest {
 		AttributeValueTemporalLocation s2 = new AttributeValueTemporalLocation(
 				"i2");
 
-		assertNotEquals(s1.hashCode(), s2.hashCode());
+		assertEquals(s1.hashCode(), s2.hashCode());
 	}
 
 	@Test

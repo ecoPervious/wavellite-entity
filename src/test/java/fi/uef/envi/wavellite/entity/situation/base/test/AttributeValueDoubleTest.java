@@ -53,7 +53,7 @@ public class AttributeValueDoubleTest {
 		AttributeValueDouble e = new AttributeValueDouble("i1");
 		AttributeValueDouble a = new AttributeValueDouble("i2");
 		
-		assertNotEquals(e, a);
+		assertEquals(e, a);
 	}
 	
 	@Test
@@ -85,7 +85,7 @@ public class AttributeValueDoubleTest {
 		AttributeValueDouble s1 = new AttributeValueDouble("i1");
 		AttributeValueDouble s2 = new AttributeValueDouble("i2");
 		
-		assertNotEquals(s1.hashCode(), s2.hashCode());
+		assertEquals(s1.hashCode(), s2.hashCode());
 	}
 	
 	@Test
