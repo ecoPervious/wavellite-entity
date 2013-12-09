@@ -189,11 +189,11 @@ public class EntityFactory {
 		return new ComponentPropertyBase(id);
 	}
 
-	public static ComponentPropertyDimension componentPropertyDomain(String id) {
+	public static ComponentPropertyDimension componentPropertyDimension(String id) {
 		return new ComponentPropertyDimension(id);
 	}
 
-	public static ComponentPropertyMeasure componentPropertyRange(String id) {
+	public static ComponentPropertyMeasure componentPropertyMeasure(String id) {
 		return new ComponentPropertyMeasure(id);
 	}
 
