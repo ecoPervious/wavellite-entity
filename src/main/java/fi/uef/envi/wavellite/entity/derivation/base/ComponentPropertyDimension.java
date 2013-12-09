@@ -9,7 +9,7 @@ import fi.uef.envi.wavellite.vocabulary.WO;
 
 /**
  * <p>
- * Title: ComponentPropertyRange
+ * Title: ComponentPropertyDimension
  * </p>
  * <p>
  * Description:
@@ -24,13 +24,13 @@ import fi.uef.envi.wavellite.vocabulary.WO;
  * @author Markus Stocker
  */
 
-public class ComponentPropertyRange extends ComponentPropertyBase {
+public class ComponentPropertyDimension extends ComponentPropertyBase {
 
-	public ComponentPropertyRange(String id) {
-		this(id, WO.ComponentPropertyRange);
+	public ComponentPropertyDimension(String id) {
+		this(id, WO.ComponentPropertyDimension);
 	}
 	
-	public ComponentPropertyRange(String id, String type) {
+	public ComponentPropertyDimension(String id, String type) {
 		super(id, type);
 	}
 	
@@ -43,7 +43,7 @@ public class ComponentPropertyRange extends ComponentPropertyBase {
 		if (getClass() != obj.getClass())
 			return false;
 
-		ComponentPropertyRange other = (ComponentPropertyRange) obj;
+		ComponentPropertyDimension other = (ComponentPropertyDimension) obj;
 
 		if (id == null) {
 			if (other.id != null)
@@ -62,7 +62,7 @@ public class ComponentPropertyRange extends ComponentPropertyBase {
 
 	@Override
 	public String toString() {
-		return "ComponentPropertyRange [id = " + id + "; type = " + type + "]";
+		return "ComponentPropertyDimension [id = " + id + "; type = " + type + "]";
 	}
 	
 }

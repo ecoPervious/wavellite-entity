@@ -21,8 +21,8 @@ import fi.uef.envi.wavellite.entity.derivation.Dataset;
 import fi.uef.envi.wavellite.entity.derivation.DatasetObservation;
 import fi.uef.envi.wavellite.entity.derivation.base.ComponentBase;
 import fi.uef.envi.wavellite.entity.derivation.base.ComponentPropertyBase;
-import fi.uef.envi.wavellite.entity.derivation.base.ComponentPropertyDomain;
-import fi.uef.envi.wavellite.entity.derivation.base.ComponentPropertyRange;
+import fi.uef.envi.wavellite.entity.derivation.base.ComponentPropertyDimension;
+import fi.uef.envi.wavellite.entity.derivation.base.ComponentPropertyMeasure;
 import fi.uef.envi.wavellite.entity.derivation.base.ComponentPropertyValueDouble;
 import fi.uef.envi.wavellite.entity.derivation.base.ComponentPropertyValueInteger;
 import fi.uef.envi.wavellite.entity.derivation.base.ComponentPropertyValueTemporalLocation;
@@ -189,16 +189,16 @@ public class EntityFactory {
 		return new ComponentPropertyBase(id);
 	}
 
-	public static ComponentPropertyDomain componentPropertyDomain(String id) {
-		return new ComponentPropertyDomain(id);
+	public static ComponentPropertyDimension componentPropertyDomain(String id) {
+		return new ComponentPropertyDimension(id);
 	}
 
-	public static ComponentPropertyRange componentPropertyRange(String id) {
-		return new ComponentPropertyRange(id);
+	public static ComponentPropertyMeasure componentPropertyRange(String id) {
+		return new ComponentPropertyMeasure(id);
 	}
 
-	public static ComponentPropertyDomain componentPropertyTimePeriod() {
-		return new ComponentPropertyDomain(SDMX.Dimension.timePeriod,
+	public static ComponentPropertyDimension componentPropertyTimePeriod() {
+		return new ComponentPropertyDimension(SDMX.Dimension.timePeriod,
 				QB.DimensionProperty);
 	}
 
