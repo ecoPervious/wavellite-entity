@@ -30,4 +30,12 @@ public interface ComponentSpecification extends Entity {
 	
 	public ComponentProperty getComponentProperty();
 	
+	public int getOrder();
+	
+	public void setOrder(int order);
+	
+	public void setComponentRequired(boolean required);
+	
+	public boolean isComponentRequired();
+	
 }
