@@ -8,8 +8,12 @@ package fi.uef.envi.wavellite.entity.derivation.base.test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.Test;
 
+import fi.uef.envi.wavellite.entity.derivation.ComponentProperty;
 import fi.uef.envi.wavellite.entity.derivation.ComponentSpecification;
 import fi.uef.envi.wavellite.entity.derivation.base.ComponentPropertyBase;
 import fi.uef.envi.wavellite.entity.derivation.base.ComponentSpecificationBase;
@@ -204,6 +208,114 @@ public class DataStructureDefinitionBaseTest {
 		
 		e.addComponentSpecification(cs1);
 		a.addComponentSpecification(cs2);
+		
+		assertNotEquals(e, a);
+	}
+	
+	@Test
+	public void test18() {
+		DataStructureDefinitionBase dsd = new DataStructureDefinitionBase();
+
+		ComponentSpecification cs1 = new ComponentSpecificationBase();
+		ComponentSpecification cs2 = new ComponentSpecificationBase();
+		
+		cs1.setComponentProperty(new ComponentPropertyBase("p1"));
+		cs1.setComponentRequired(true);
+		cs1.setOrder(0);
+		
+		cs2.setComponentProperty(new ComponentPropertyBase("p2"));
+		cs2.setComponentRequired(false);
+		cs2.setOrder(1);
+		
+		dsd.addComponentSpecification(cs2);
+		dsd.addComponentSpecification(cs1);
+		
+		List<ComponentSpecification> a = dsd.getComponentSpecificationsOrdered();
+		
+		List<ComponentSpecification> e = new ArrayList<ComponentSpecification>();
+		e.add(cs1);
+		e.add(cs2);
+		
+		assertEquals(e, a);
+	}
+	
+	@Test
+	public void test19() {
+		DataStructureDefinitionBase dsd = new DataStructureDefinitionBase();
+
+		ComponentSpecification cs1 = new ComponentSpecificationBase();
+		ComponentSpecification cs2 = new ComponentSpecificationBase();
+		
+		cs1.setComponentProperty(new ComponentPropertyBase("p1"));
+		cs1.setComponentRequired(true);
+		cs1.setOrder(0);
+		
+		cs2.setComponentProperty(new ComponentPropertyBase("p2"));
+		cs2.setComponentRequired(false);
+		cs2.setOrder(1);
+		
+		dsd.addComponentSpecification(cs2);
+		dsd.addComponentSpecification(cs1);
+		
+		List<ComponentSpecification> a = dsd.getComponentSpecificationsOrdered();
+		
+		List<ComponentSpecification> e = new ArrayList<ComponentSpecification>();
+		e.add(cs2);
+		e.add(cs1);
+		
+		assertNotEquals(e, a);
+	}
+	
+	@Test
+	public void test20() {
+		DataStructureDefinitionBase dsd = new DataStructureDefinitionBase();
+
+		ComponentSpecification cs1 = new ComponentSpecificationBase();
+		ComponentSpecification cs2 = new ComponentSpecificationBase();
+		
+		cs1.setComponentProperty(new ComponentPropertyBase("p1"));
+		cs1.setComponentRequired(true);
+		cs1.setOrder(0);
+		
+		cs2.setComponentProperty(new ComponentPropertyBase("p2"));
+		cs2.setComponentRequired(false);
+		cs2.setOrder(1);
+		
+		dsd.addComponentSpecification(cs2);
+		dsd.addComponentSpecification(cs1);
+		
+		List<ComponentProperty> a = dsd.getComponentPropertiesOrdered();
+		
+		List<ComponentProperty> e = new ArrayList<ComponentProperty>();
+		e.add(new ComponentPropertyBase("p1"));
+		e.add(new ComponentPropertyBase("p2"));
+		
+		assertEquals(e, a);
+	}
+	
+	@Test
+	public void test21() {
+		DataStructureDefinitionBase dsd = new DataStructureDefinitionBase();
+
+		ComponentSpecification cs1 = new ComponentSpecificationBase();
+		ComponentSpecification cs2 = new ComponentSpecificationBase();
+		
+		cs1.setComponentProperty(new ComponentPropertyBase("p1"));
+		cs1.setComponentRequired(true);
+		cs1.setOrder(0);
+		
+		cs2.setComponentProperty(new ComponentPropertyBase("p2"));
+		cs2.setComponentRequired(false);
+		cs2.setOrder(1);
+		
+		dsd.addComponentSpecification(cs2);
+		dsd.addComponentSpecification(cs1);
+		
+		List<ComponentProperty> a = dsd.getComponentPropertiesOrdered();
+		
+		List<ComponentProperty> e = new ArrayList<ComponentProperty>();
+		e.add(new ComponentPropertyBase("p2"));
+		e.add(new ComponentPropertyBase("p1"));
 		
 		assertNotEquals(e, a);
 	}
