@@ -151,10 +151,16 @@ public class EntityFactory {
 			int min, int sec) {
 		return component(new DateTime(year, month, day, hour, min, sec));
 	}
-	
-	public static Component component(String id, int year, int month, int day, int hour,
-			int min, int sec) {
+
+	public static Component component(String id, int year, int month, int day,
+			int hour, int min, int sec) {
 		return component(id, new DateTime(year, month, day, hour, min, sec));
+	}
+
+	public static Component component(ComponentPropertyDimension property,
+			int year, int month, int day, int hour, int min, int sec) {
+		return component(property, new DateTime(year, month, day, hour, min,
+				sec));
 	}
 
 	public static Component component(DateTime value) {
@@ -194,8 +200,17 @@ public class EntityFactory {
 		return new ComponentPropertyBase(id);
 	}
 
-	public static ComponentPropertyDimension componentPropertyDimension(String id) {
+	public static ComponentPropertyDimension dimension(String id) {
+		return componentPropertyDimension(id);
+	}
+	
+	public static ComponentPropertyDimension componentPropertyDimension(
+			String id) {
 		return new ComponentPropertyDimension(id);
+	}
+	
+	public static ComponentPropertyMeasure measure(String id) {
+		return componentPropertyMeasure(id);
 	}
 
 	public static ComponentPropertyMeasure componentPropertyMeasure(String id) {
