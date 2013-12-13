@@ -151,6 +151,11 @@ public class EntityFactory {
 			int min, int sec) {
 		return component(new DateTime(year, month, day, hour, min, sec));
 	}
+	
+	public static Component component(String id, int year, int month, int day, int hour,
+			int min, int sec) {
+		return component(id, new DateTime(year, month, day, hour, min, sec));
+	}
 
 	public static Component component(DateTime value) {
 		return component(componentPropertyTimePeriod(), value);
