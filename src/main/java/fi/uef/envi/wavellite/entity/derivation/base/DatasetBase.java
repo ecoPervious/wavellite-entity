@@ -51,7 +51,7 @@ public class DatasetBase extends AbstractEntity implements Dataset {
 	}
 
 	@Override
-	public void setStructure(DataStructureDefinition structure) {
+	public void setDataStructureDefinition(DataStructureDefinition structure) {
 		if (structure == null)
 			throw new NullPointerException("[structure = null]");
 

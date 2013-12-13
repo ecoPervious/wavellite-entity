@@ -28,7 +28,7 @@ import fi.uef.envi.wavellite.entity.core.Entity;
 
 public interface Dataset extends Entity {
 
-	public void setStructure(DataStructureDefinition structure);
+	public void setDataStructureDefinition(DataStructureDefinition structure);
 
 	public DataStructureDefinition getDataStructureDefinition();
 
