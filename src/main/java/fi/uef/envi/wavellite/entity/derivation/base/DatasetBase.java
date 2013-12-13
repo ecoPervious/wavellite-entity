@@ -59,7 +59,7 @@ public class DatasetBase extends AbstractEntity implements Dataset {
 	}
 
 	@Override
-	public DataStructureDefinition getStructure() {
+	public DataStructureDefinition getDataStructureDefinition() {
 		return structure;
 	}
 

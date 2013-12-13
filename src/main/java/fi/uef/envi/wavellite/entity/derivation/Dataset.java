@@ -30,7 +30,7 @@ public interface Dataset extends Entity {
 
 	public void setStructure(DataStructureDefinition structure);
 
-	public DataStructureDefinition getStructure();
+	public DataStructureDefinition getDataStructureDefinition();
 
 	public void addComponent(Component component);
 
