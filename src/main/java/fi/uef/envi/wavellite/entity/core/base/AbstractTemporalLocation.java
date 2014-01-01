@@ -8,7 +8,7 @@ package fi.uef.envi.wavellite.entity.core.base;
 import java.util.UUID;
 
 import fi.uef.envi.wavellite.entity.core.TemporalLocation;
-import fi.uef.envi.wavellite.vocabulary.DUL;
+import fi.uef.envi.wavellite.vocabulary.WTO;
 
 /**
  * <p>
@@ -37,7 +37,7 @@ public abstract class AbstractTemporalLocation extends AbstractEntity implements
 	}
 
 	public AbstractTemporalLocation(String id) {
-		this(id, DUL.TimeInterval);
+		this(id, WTO.TemporalLocation);
 	}
 
 	public AbstractTemporalLocation(String id, String type) {

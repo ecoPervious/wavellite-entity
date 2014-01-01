@@ -6,6 +6,7 @@
 package fi.uef.envi.wavellite.entity.core;
 
 import fi.uef.envi.wavellite.entity.core.base.TemporalLocationDateTime;
+import fi.uef.envi.wavellite.entity.core.base.TemporalLocationInterval;
 
 /**
  * <p>
@@ -27,5 +28,7 @@ import fi.uef.envi.wavellite.entity.core.base.TemporalLocationDateTime;
 public interface TemporalLocationVisitor {
 
 	public void visit(TemporalLocationDateTime time);
+	
+	public void visit(TemporalLocationInterval interval);
 	
 }
