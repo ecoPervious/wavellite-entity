@@ -11,7 +11,7 @@ import static org.junit.Assert.assertNotEquals;
 import org.junit.Test;
 
 import fi.uef.envi.wavellite.entity.derivation.base.ComponentPropertyValueInteger;
-import fi.uef.envi.wavellite.vocabulary.WO;
+import fi.uef.envi.wavellite.vocabulary.WTO;
 
 /**
  * <p>
@@ -115,7 +115,7 @@ public class ComponentPropertyValueIntegerTest {
 	public void test10() {
 		ComponentPropertyValueInteger s = new ComponentPropertyValueInteger("i1");
 
-		assertEquals(WO.ComponentPropertyValueInteger, s.getType());
+		assertEquals(WTO.ComponentPropertyValueInteger, s.getType());
 	}
 
 	@Test

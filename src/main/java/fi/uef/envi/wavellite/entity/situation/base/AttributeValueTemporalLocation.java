@@ -9,7 +9,7 @@ import java.util.UUID;
 
 import fi.uef.envi.wavellite.entity.core.TemporalLocation;
 import fi.uef.envi.wavellite.entity.situation.AttributeValueVisitor;
-import fi.uef.envi.wavellite.vocabulary.WO;
+import fi.uef.envi.wavellite.vocabulary.WTO;
 
 /**
  * <p>
@@ -39,11 +39,11 @@ public class AttributeValueTemporalLocation extends AbstractAttributeValue {
 	}
 
 	public AttributeValueTemporalLocation(String id) {
-		this(id, WO.AttributeValueTemporalLocation);
+		this(id, WTO.AttributeValueTemporalLocation);
 	}
 
 	public AttributeValueTemporalLocation(String id, TemporalLocation value) {
-		this(id, WO.AttributeValueTemporalLocation, value);
+		this(id, WTO.AttributeValueTemporalLocation, value);
 	}
 
 	public AttributeValueTemporalLocation(String id, String type) {

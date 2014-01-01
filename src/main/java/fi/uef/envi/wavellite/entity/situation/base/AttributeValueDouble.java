@@ -8,7 +8,7 @@ package fi.uef.envi.wavellite.entity.situation.base;
 import java.util.UUID;
 
 import fi.uef.envi.wavellite.entity.situation.AttributeValueVisitor;
-import fi.uef.envi.wavellite.vocabulary.WO;
+import fi.uef.envi.wavellite.vocabulary.WTO;
 
 /**
  * <p>
@@ -38,11 +38,11 @@ public class AttributeValueDouble extends AbstractAttributeValue {
 	}
 
 	public AttributeValueDouble(String id) {
-		this(id, WO.AttributeValueDouble);
+		this(id, WTO.AttributeValueDouble);
 	}
 
 	public AttributeValueDouble(String id, Double value) {
-		this(id, WO.AttributeValueDouble, value);
+		this(id, WTO.AttributeValueDouble, value);
 	}
 
 	public AttributeValueDouble(String id, String type) {

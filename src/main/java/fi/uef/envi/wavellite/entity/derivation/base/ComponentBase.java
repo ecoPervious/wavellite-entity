@@ -11,7 +11,7 @@ import fi.uef.envi.wavellite.entity.core.base.AbstractEntity;
 import fi.uef.envi.wavellite.entity.derivation.Component;
 import fi.uef.envi.wavellite.entity.derivation.ComponentProperty;
 import fi.uef.envi.wavellite.entity.derivation.ComponentPropertyValue;
-import fi.uef.envi.wavellite.vocabulary.WO;
+import fi.uef.envi.wavellite.vocabulary.WTO;
 
 /**
  * <p>
@@ -45,12 +45,12 @@ public class ComponentBase extends AbstractEntity implements Component {
 	}
 
 	public ComponentBase(String id) {
-		this(id, WO.Component);
+		this(id, WTO.Component);
 	}
 
 	public ComponentBase(String id, ComponentProperty property,
 			ComponentPropertyValue value) {
-		this(id, WO.Component, property, value);
+		this(id, WTO.Component, property, value);
 	}
 
 	public ComponentBase(String id, String type) {

@@ -10,7 +10,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
 import fi.uef.envi.wavellite.entity.core.base.SensorBase;
-import fi.uef.envi.wavellite.vocabulary.WO;
+import fi.uef.envi.wavellite.vocabulary.WTO;
 
 /**
  * <p>
@@ -106,7 +106,7 @@ public class SensorBaseTest {
 	public void test10() {
 		SensorBase s = new SensorBase("i1");
 		
-		assertEquals(WO.Sensor, s.getType());
+		assertEquals(WTO.Sensor, s.getType());
 	}
 	
 	@Test

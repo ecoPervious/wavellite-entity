@@ -11,7 +11,7 @@ import static org.junit.Assert.assertNotEquals;
 import org.junit.Test;
 
 import fi.uef.envi.wavellite.entity.situation.base.AttributeValueString;
-import fi.uef.envi.wavellite.vocabulary.WO;
+import fi.uef.envi.wavellite.vocabulary.WTO;
 
 /**
  * <p>
@@ -75,7 +75,7 @@ public class AttributeValueStringTest {
 	public void test6() {
 		AttributeValueString s = new AttributeValueString("i1", "v1");
 		
-		assertEquals(WO.AttributeValueString, s.getType());
+		assertEquals(WTO.AttributeValueString, s.getType());
 	}
 	
 	@Test

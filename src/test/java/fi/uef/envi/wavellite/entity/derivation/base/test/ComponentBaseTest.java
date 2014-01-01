@@ -13,7 +13,7 @@ import org.junit.Test;
 import fi.uef.envi.wavellite.entity.derivation.base.ComponentBase;
 import fi.uef.envi.wavellite.entity.derivation.base.ComponentPropertyBase;
 import fi.uef.envi.wavellite.entity.derivation.base.ComponentPropertyValueInteger;
-import fi.uef.envi.wavellite.vocabulary.WO;
+import fi.uef.envi.wavellite.vocabulary.WTO;
 
 /**
  * <p>
@@ -109,7 +109,7 @@ public class ComponentBaseTest {
 	public void test10() {
 		ComponentBase s = new ComponentBase("i1");
 
-		assertEquals(WO.Component, s.getType());
+		assertEquals(WTO.Component, s.getType());
 	}
 
 	@Test

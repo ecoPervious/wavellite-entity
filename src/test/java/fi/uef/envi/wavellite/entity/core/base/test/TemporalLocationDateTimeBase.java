@@ -13,7 +13,7 @@ import org.junit.Test;
 
 import fi.uef.envi.wavellite.entity.core.base.TemporalLocationDateTime;
 import fi.uef.envi.wavellite.vocabulary.DUL;
-import fi.uef.envi.wavellite.vocabulary.WO;
+import fi.uef.envi.wavellite.vocabulary.WTO;
 
 /**
  * <p>
@@ -127,7 +127,7 @@ public class TemporalLocationDateTimeBase {
 		TemporalLocationDateTime s = new TemporalLocationDateTime("i1",
 				new DateTime(2013, 11, 04, 0, 0, 0));
 
-		assertEquals(WO.TemporalLocationDateTime, s.getType());
+		assertEquals(WTO.TemporalLocationDateTime, s.getType());
 	}
 
 	@Test

@@ -15,7 +15,7 @@ import fi.uef.envi.wavellite.entity.core.SpatialLocation;
 import fi.uef.envi.wavellite.entity.core.TemporalLocation;
 import fi.uef.envi.wavellite.entity.core.base.AbstractEntity;
 import fi.uef.envi.wavellite.entity.measurement.MeasurementValueContext;
-import fi.uef.envi.wavellite.vocabulary.WO;
+import fi.uef.envi.wavellite.vocabulary.WTO;
 
 /**
  * <p>
@@ -57,7 +57,7 @@ public class MeasurementValueContextBase extends AbstractEntity implements
 	}
 
 	public MeasurementValueContextBase(String id) {
-		this(id, WO.MeasurementValueContext);
+		this(id, WTO.MeasurementValueContext);
 	}
 
 	public MeasurementValueContextBase(String id, String type) {

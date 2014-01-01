@@ -8,7 +8,7 @@ package fi.uef.envi.wavellite.entity.derivation.base;
 import java.util.UUID;
 
 import fi.uef.envi.wavellite.entity.derivation.ComponentPropertyValueVisitor;
-import fi.uef.envi.wavellite.vocabulary.WO;
+import fi.uef.envi.wavellite.vocabulary.WTO;
 
 /**
  * <p>
@@ -39,11 +39,11 @@ public class ComponentPropertyValueInteger extends
 	}
 
 	public ComponentPropertyValueInteger(String id) {
-		this(id, WO.ComponentPropertyValueInteger);
+		this(id, WTO.ComponentPropertyValueInteger);
 	}
 
 	public ComponentPropertyValueInteger(String id, Integer value) {
-		this(id, WO.ComponentPropertyValueInteger, value);
+		this(id, WTO.ComponentPropertyValueInteger, value);
 	}
 
 	public ComponentPropertyValueInteger(String id, String type) {

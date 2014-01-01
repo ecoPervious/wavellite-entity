@@ -5,7 +5,7 @@
 
 package fi.uef.envi.wavellite.entity.derivation.base;
 
-import fi.uef.envi.wavellite.vocabulary.WO;
+import fi.uef.envi.wavellite.vocabulary.WTO;
 
 /**
  * <p>
@@ -27,7 +27,7 @@ import fi.uef.envi.wavellite.vocabulary.WO;
 public class ComponentPropertyMeasure extends ComponentPropertyBase {
 
 	public ComponentPropertyMeasure(String id) {
-		this(id, WO.ComponentPropertyMeasure);
+		this(id, WTO.ComponentPropertyMeasure);
 	}
 	
 	public ComponentPropertyMeasure(String id, String type) {

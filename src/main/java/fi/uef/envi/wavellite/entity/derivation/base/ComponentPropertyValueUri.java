@@ -10,7 +10,7 @@ import java.util.UUID;
 import org.openrdf.model.URI;
 
 import fi.uef.envi.wavellite.entity.derivation.ComponentPropertyValueVisitor;
-import fi.uef.envi.wavellite.vocabulary.WO;
+import fi.uef.envi.wavellite.vocabulary.WTO;
 
 /**
  * <p>
@@ -46,11 +46,11 @@ public class ComponentPropertyValueUri extends AbstractComponentPropertyValue {
 	}
 
 	public ComponentPropertyValueUri(String id) {
-		this(id, WO.ComponentPropertyValueUri);
+		this(id, WTO.ComponentPropertyValueUri);
 	}
 
 	public ComponentPropertyValueUri(String id, URI value) {
-		this(id, WO.ComponentPropertyValueUri, value);
+		this(id, WTO.ComponentPropertyValueUri, value);
 	}
 
 	public ComponentPropertyValueUri(String id, String type) {

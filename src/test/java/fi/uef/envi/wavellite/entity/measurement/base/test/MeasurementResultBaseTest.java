@@ -10,7 +10,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
 import fi.uef.envi.wavellite.entity.measurement.base.MeasurementResultBase;
-import fi.uef.envi.wavellite.vocabulary.WO;
+import fi.uef.envi.wavellite.vocabulary.WTO;
 
 /**
  * <p>
@@ -106,7 +106,7 @@ public class MeasurementResultBaseTest {
 	public void test10() {
 		MeasurementResultBase s = new MeasurementResultBase("i1");
 		
-		assertEquals(WO.MeasurementResult, s.getType());
+		assertEquals(WTO.MeasurementResult, s.getType());
 	}
 	
 	@Test

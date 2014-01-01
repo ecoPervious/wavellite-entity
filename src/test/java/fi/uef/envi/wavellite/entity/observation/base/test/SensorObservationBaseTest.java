@@ -24,7 +24,7 @@ import fi.uef.envi.wavellite.entity.observation.SensorOutput;
 import fi.uef.envi.wavellite.entity.observation.base.ObservationValueDouble;
 import fi.uef.envi.wavellite.entity.observation.base.SensorObservationBase;
 import fi.uef.envi.wavellite.entity.observation.base.SensorOutputBase;
-import fi.uef.envi.wavellite.vocabulary.WO;
+import fi.uef.envi.wavellite.vocabulary.WTO;
 
 /**
  * <p>
@@ -120,7 +120,7 @@ public class SensorObservationBaseTest {
 	public void test10() {
 		SensorObservationBase s = new SensorObservationBase("i1");
 
-		assertEquals(WO.SensorObservation, s.getType());
+		assertEquals(WTO.SensorObservation, s.getType());
 	}
 
 	@Test
