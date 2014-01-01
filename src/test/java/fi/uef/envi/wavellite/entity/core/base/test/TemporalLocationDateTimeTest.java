@@ -12,12 +12,11 @@ import org.joda.time.DateTime;
 import org.junit.Test;
 
 import fi.uef.envi.wavellite.entity.core.base.TemporalLocationDateTime;
-import fi.uef.envi.wavellite.vocabulary.DUL;
 import fi.uef.envi.wavellite.vocabulary.WTO;
 
 /**
  * <p>
- * Title: TemporalLocationDateTimeBaseTest
+ * Title: TemporalLocationDateTimeTest
  * </p>
  * <p>
  * Description:
@@ -32,7 +31,7 @@ import fi.uef.envi.wavellite.vocabulary.WTO;
  * @author Markus Stocker
  */
 
-public class TemporalLocationDateTimeBaseTest {
+public class TemporalLocationDateTimeTest {
 
 	@Test
 	public void test1() {
