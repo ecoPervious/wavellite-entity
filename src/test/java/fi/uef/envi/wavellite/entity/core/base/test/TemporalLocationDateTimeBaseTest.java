@@ -17,7 +17,7 @@ import fi.uef.envi.wavellite.vocabulary.WTO;
 
 /**
  * <p>
- * Title: TemporalLocationDateTimeBase
+ * Title: TemporalLocationDateTimeBaseTest
  * </p>
  * <p>
  * Description:
@@ -32,7 +32,7 @@ import fi.uef.envi.wavellite.vocabulary.WTO;
  * @author Markus Stocker
  */
 
-public class TemporalLocationDateTimeBase {
+public class TemporalLocationDateTimeBaseTest {
 
 	@Test
 	public void test1() {
