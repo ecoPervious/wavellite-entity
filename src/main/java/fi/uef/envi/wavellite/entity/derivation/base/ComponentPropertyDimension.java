@@ -6,7 +6,6 @@
 package fi.uef.envi.wavellite.entity.derivation.base;
 
 import fi.uef.envi.wavellite.vocabulary.QB;
-import fi.uef.envi.wavellite.vocabulary.WTO;
 
 /**
  * <p>
