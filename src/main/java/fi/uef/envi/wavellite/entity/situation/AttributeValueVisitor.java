@@ -8,6 +8,7 @@ package fi.uef.envi.wavellite.entity.situation;
 import fi.uef.envi.wavellite.entity.situation.base.AttributeValueDouble;
 import fi.uef.envi.wavellite.entity.situation.base.AttributeValueString;
 import fi.uef.envi.wavellite.entity.situation.base.AttributeValueTemporalLocation;
+import fi.uef.envi.wavellite.entity.situation.base.AttributeValueUri;
 
 /**
  * <p>
@@ -31,6 +32,8 @@ public interface AttributeValueVisitor {
 	public void visit(AttributeValueDouble value);
 
 	public void visit(AttributeValueString value);
+	
+	public void visit(AttributeValueUri value);
 	
 	public void visit(AttributeValueTemporalLocation value);
 	
