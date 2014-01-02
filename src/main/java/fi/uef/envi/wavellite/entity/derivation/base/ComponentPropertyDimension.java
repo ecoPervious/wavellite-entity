@@ -5,6 +5,7 @@
 
 package fi.uef.envi.wavellite.entity.derivation.base;
 
+import fi.uef.envi.wavellite.vocabulary.QB;
 import fi.uef.envi.wavellite.vocabulary.WTO;
 
 /**
@@ -27,7 +28,7 @@ import fi.uef.envi.wavellite.vocabulary.WTO;
 public class ComponentPropertyDimension extends ComponentPropertyBase {
 
 	public ComponentPropertyDimension(String id) {
-		this(id, WTO.ComponentPropertyDimension);
+		this(id, QB.DimensionProperty);
 	}
 	
 	public ComponentPropertyDimension(String id, String type) {
