@@ -11,13 +11,19 @@ import static org.junit.Assert.assertNotEquals;
 import org.joda.time.DateTime;
 import org.junit.Test;
 
+import com.vividsolutions.jts.geom.Coordinate;
+import com.vividsolutions.jts.geom.Geometry;
+import com.vividsolutions.jts.geom.GeometryFactory;
+
 import fi.uef.envi.wavellite.entity.core.Feature;
 import fi.uef.envi.wavellite.entity.core.Property;
 import fi.uef.envi.wavellite.entity.core.Sensor;
+import fi.uef.envi.wavellite.entity.core.SpatialLocation;
 import fi.uef.envi.wavellite.entity.core.TemporalLocation;
 import fi.uef.envi.wavellite.entity.core.base.FeatureBase;
 import fi.uef.envi.wavellite.entity.core.base.PropertyBase;
 import fi.uef.envi.wavellite.entity.core.base.SensorBase;
+import fi.uef.envi.wavellite.entity.core.base.SpatialLocationQuantitative;
 import fi.uef.envi.wavellite.entity.core.base.TemporalLocationDateTime;
 import fi.uef.envi.wavellite.entity.observation.ObservationValue;
 import fi.uef.envi.wavellite.entity.observation.SensorOutput;
@@ -194,6 +200,37 @@ public class SensorObservationBaseTest {
 				.getObservationValue().getValue());
 		assertNotEquals(new DateTime(2013, 10, 31, 0, 0, 0),
 				so.getTemporalLocation().getValue());
+	}
+	
+	@Test
+	public void test16() {
+		SensorObservationBase so = new SensorObservationBase();
+		Sensor s = new SensorBase("s1");
+		so.setSensor(s);
+		Property p = new PropertyBase("p1");
+		so.setProperty(p);
+		Feature f = new FeatureBase("f1");
+		so.setFeature(f);
+		ObservationValue ov = new ObservationValueDouble(0.0);
+		SensorOutput o = new SensorOutputBase(ov);
+		so.setSensorOutput(o);
+		TemporalLocation tl = new TemporalLocationDateTime(new DateTime(2013,
+				10, 31, 0, 0, 0));
+		so.setTemporalLocation(tl);
+		GeometryFactory gf = new GeometryFactory();
+		Geometry g = gf.createPoint(new Coordinate(0.0, 0.0));
+		SpatialLocation sl = new SpatialLocationQuantitative(g);
+		so.setSpatialLocation(sl);
+
+		assertEquals(s, so.getSensor());
+		assertEquals(p, so.getProperty());
+		assertEquals(f, so.getFeature());
+		assertEquals(o, so.getSensorOutput());
+		assertEquals(Double.valueOf(0.0), so.getSensorOutput()
+				.getObservationValue().getValue());
+		assertEquals(new DateTime(2013, 10, 31, 0, 0, 0),
+				so.getTemporalLocation().getValue());
+		assertEquals(sl, so.getSpatialLocation());
 	}
 
 }

@@ -10,6 +10,7 @@ import java.util.UUID;
 import fi.uef.envi.wavellite.entity.core.Feature;
 import fi.uef.envi.wavellite.entity.core.Property;
 import fi.uef.envi.wavellite.entity.core.Sensor;
+import fi.uef.envi.wavellite.entity.core.SpatialLocation;
 import fi.uef.envi.wavellite.entity.core.TemporalLocation;
 import fi.uef.envi.wavellite.entity.core.base.AbstractEntity;
 import fi.uef.envi.wavellite.entity.observation.SensorObservation;
@@ -40,7 +41,8 @@ public class SensorObservationBase extends AbstractEntity implements
 	private Feature feature;
 	private Property property;
 	private SensorOutput output;
-	private TemporalLocation time;
+	private TemporalLocation temporalLocation;
+	private SpatialLocation spatialLocation;
 
 	public SensorObservationBase() {
 		this(UUID.randomUUID().toString());
@@ -76,7 +78,12 @@ public class SensorObservationBase extends AbstractEntity implements
 
 	@Override
 	public void setTemporalLocation(TemporalLocation location) {
-		this.time = location;
+		this.temporalLocation = location;
+	}
+
+	@Override
+	public void setSpatialLocation(SpatialLocation location) {
+		this.spatialLocation = location;
 	}
 
 	@Override
@@ -101,7 +108,12 @@ public class SensorObservationBase extends AbstractEntity implements
 
 	@Override
 	public TemporalLocation getTemporalLocation() {
-		return time;
+		return temporalLocation;
+	}
+
+	@Override
+	public SpatialLocation getSpatialLocation() {
+		return spatialLocation;
 	}
 
 	@Override
@@ -116,7 +128,11 @@ public class SensorObservationBase extends AbstractEntity implements
 				+ ((property == null) ? 0 : property.hashCode());
 		result = prime * result + ((feature == null) ? 0 : feature.hashCode());
 		result = prime * result + ((output == null) ? 0 : output.hashCode());
-		result = prime * result + ((time == null) ? 0 : time.hashCode());
+		result = prime
+				* result
+				+ ((temporalLocation == null) ? 0 : temporalLocation.hashCode());
+		result = prime * result
+				+ ((spatialLocation == null) ? 0 : spatialLocation.hashCode());
 
 		return result;
 	}
@@ -168,10 +184,16 @@ public class SensorObservationBase extends AbstractEntity implements
 		} else if (!output.equals(other.output))
 			return false;
 
-		if (time == null) {
-			if (other.time != null)
+		if (temporalLocation == null) {
+			if (other.temporalLocation != null)
 				return false;
-		} else if (!time.equals(other.time))
+		} else if (!temporalLocation.equals(other.temporalLocation))
+			return false;
+
+		if (spatialLocation == null) {
+			if (other.spatialLocation != null)
+				return false;
+		} else if (!spatialLocation.equals(other.spatialLocation))
 			return false;
 
 		return true;
@@ -182,7 +204,8 @@ public class SensorObservationBase extends AbstractEntity implements
 		return "SensorObservationBase [id = " + id + "; type = " + type
 				+ "; sensor = " + sensor + "; property = " + property
 				+ "; feature = " + feature + "; output = " + output
-				+ "; time = " + time + "]";
+				+ "; temporalLocation = " + temporalLocation
+				+ "; spatialLocation = " + spatialLocation + "]";
 	}
 
 }
