@@ -58,8 +58,8 @@ public class SpatialLocationQualitativeTest {
 
 	@Test
 	public void test3() {
-		SpatialLocationQualitative e = new SpatialLocationQualitative("i1");
-		SpatialLocationQualitative a = new SpatialLocationQualitative("i2");
+		SpatialLocationQualitative e = new SpatialLocationQualitative("l1");
+		SpatialLocationQualitative a = new SpatialLocationQualitative("l2");
 
 		assertNotEquals(e, a);
 	}
