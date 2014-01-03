@@ -68,6 +68,7 @@ public class SpatialLocationQualitative extends AbstractSpatialLocation {
 		this.sameAs = new HashSet<URI>();
 
 		setLabel(label);
+		
 		addSameAs(sameAs);
 	}
 
@@ -89,6 +90,9 @@ public class SpatialLocationQualitative extends AbstractSpatialLocation {
 	}
 
 	public void addSameAs(URI sameAs) {
+		if (sameAs == null)
+			return;
+		
 		this.sameAs.add(sameAs);
 	}
 

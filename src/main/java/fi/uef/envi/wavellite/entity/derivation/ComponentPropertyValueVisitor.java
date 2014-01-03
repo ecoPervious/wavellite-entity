@@ -7,6 +7,7 @@ package fi.uef.envi.wavellite.entity.derivation;
 
 import fi.uef.envi.wavellite.entity.derivation.base.ComponentPropertyValueDouble;
 import fi.uef.envi.wavellite.entity.derivation.base.ComponentPropertyValueInteger;
+import fi.uef.envi.wavellite.entity.derivation.base.ComponentPropertyValueSpatialLocation;
 import fi.uef.envi.wavellite.entity.derivation.base.ComponentPropertyValueString;
 import fi.uef.envi.wavellite.entity.derivation.base.ComponentPropertyValueTemporalLocation;
 import fi.uef.envi.wavellite.entity.derivation.base.ComponentPropertyValueUri;
@@ -37,6 +38,8 @@ public interface ComponentPropertyValueVisitor {
 	public void visit(ComponentPropertyValueString value);
 	
 	public void visit(ComponentPropertyValueTemporalLocation value);
+	
+	public void visit(ComponentPropertyValueSpatialLocation value);
 	
 	public void visit(ComponentPropertyValueUri value);
 	
