@@ -11,6 +11,7 @@ import com.vividsolutions.jts.geom.Geometry;
 import com.vividsolutions.jts.io.WKTWriter;
 import com.vividsolutions.jts.io.gml2.GMLWriter;
 
+import fi.uef.envi.wavellite.entity.core.SpatialGeometry;
 import fi.uef.envi.wavellite.entity.core.SpatialLocationVisitor;
 import fi.uef.envi.wavellite.vocabulary.WTO;
 
@@ -33,15 +34,13 @@ import fi.uef.envi.wavellite.vocabulary.WTO;
 
 public class SpatialLocationQuantitative extends AbstractSpatialLocation {
 
-	private Geometry geometry;
-	private GMLWriter gmlWriter = new GMLWriter();
-	private WKTWriter wktWriter = new WKTWriter();
+	private SpatialGeometry spatialGeometry;
 
 	public SpatialLocationQuantitative() {
 		this(UUID.randomUUID().toString());
 	}
 
-	public SpatialLocationQuantitative(Geometry geometry) {
+	public SpatialLocationQuantitative(SpatialGeometry geometry) {
 		this(UUID.randomUUID().toString(), geometry);
 	}
 
@@ -49,7 +48,7 @@ public class SpatialLocationQuantitative extends AbstractSpatialLocation {
 		this(id, WTO.SpatialLocationQuantitative);
 	}
 
-	public SpatialLocationQuantitative(String id, Geometry geometry) {
+	public SpatialLocationQuantitative(String id, SpatialGeometry geometry) {
 		this(id, WTO.SpatialLocationQuantitative, geometry);
 	}
 
@@ -57,26 +56,14 @@ public class SpatialLocationQuantitative extends AbstractSpatialLocation {
 		super(id, type);
 	}
 
-	public SpatialLocationQuantitative(String id, String type, Geometry geometry) {
+	public SpatialLocationQuantitative(String id, String type, SpatialGeometry geometry) {
 		super(id, type);
 
-		setGeometry(geometry);
+		this.spatialGeometry = geometry;
 	}
 
-	public void setGeometry(Geometry geometry) {
-		this.geometry = geometry;
-	}
-
-	public Geometry getGeometry() {
-		return geometry;
-	}
-
-	public String getGeometryAsWKT() {
-		return wktWriter.writeFormatted(geometry);
-	}
-
-	public String getGeometryAsGML() {
-		return gmlWriter.write(geometry);
+	public SpatialGeometry getSpatialGeometry() {
+		return spatialGeometry;
 	}
 
 	@Override
@@ -91,7 +78,7 @@ public class SpatialLocationQuantitative extends AbstractSpatialLocation {
 
 		result = prime * result + ((type == null) ? 0 : type.hashCode());
 		result = prime * result
-				+ ((geometry == null) ? 0 : geometry.hashCode());
+				+ ((spatialGeometry == null) ? 0 : spatialGeometry.hashCode());
 
 		return result;
 	}
@@ -113,10 +100,10 @@ public class SpatialLocationQuantitative extends AbstractSpatialLocation {
 		} else if (!type.equals(other.type))
 			return false;
 
-		if (geometry == null) {
-			if (other.geometry != null)
+		if (spatialGeometry == null) {
+			if (other.spatialGeometry != null)
 				return false;
-		} else if (!geometry.equals(other.geometry))
+		} else if (!spatialGeometry.equals(other.spatialGeometry))
 			return false;
 
 		return true;
@@ -125,7 +112,7 @@ public class SpatialLocationQuantitative extends AbstractSpatialLocation {
 	@Override
 	public String toString() {
 		return "SpatialLocationQuantitative [id = " + id + "; type = " + type
-				+ "; geometry = " + geometry + "]";
+				+ "; spatialGeometry = " + spatialGeometry + "]";
 	}
 
 }
