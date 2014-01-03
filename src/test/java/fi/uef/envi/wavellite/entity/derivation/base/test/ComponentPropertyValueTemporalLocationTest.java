@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 see CREDITS.txt
+ * Copyright (C) 2014 see CREDITS.txt
  * All rights reserved.
  */
 
@@ -26,7 +26,7 @@ import fi.uef.envi.wavellite.vocabulary.WTO;
  * Project: Wavellite Entity
  * </p>
  * <p>
- * Copyright: Copyright (C) 2013
+ * Copyright: Copyright (C) 2014
  * </p>
  * 
  * @author Markus Stocker
