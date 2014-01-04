@@ -24,7 +24,7 @@ import com.vividsolutions.jts.geom.Geometry;
  * @author Markus Stocker
  */
 
-public interface SpatialGeometry {
+public interface SpatialGeometry extends Entity {
 
 	public Geometry getGeometry();
 	
