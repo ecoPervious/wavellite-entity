@@ -46,6 +46,12 @@ import fi.uef.envi.wavellite.entity.measurement.MeasurementValueContext;
 import fi.uef.envi.wavellite.entity.measurement.base.MeasurementResultBase;
 import fi.uef.envi.wavellite.entity.measurement.base.MeasurementValueContextBase;
 import fi.uef.envi.wavellite.entity.measurement.base.MeasurementValueDouble;
+import fi.uef.envi.wavellite.entity.observation.ObservationValue;
+import fi.uef.envi.wavellite.entity.observation.SensorObservation;
+import fi.uef.envi.wavellite.entity.observation.SensorOutput;
+import fi.uef.envi.wavellite.entity.observation.base.ObservationValueDouble;
+import fi.uef.envi.wavellite.entity.observation.base.SensorObservationBase;
+import fi.uef.envi.wavellite.entity.observation.base.SensorOutputBase;
 import fi.uef.envi.wavellite.entity.situation.Attribute;
 import fi.uef.envi.wavellite.entity.situation.AttributeValue;
 import fi.uef.envi.wavellite.entity.situation.ElementaryInfon;
@@ -56,6 +62,7 @@ import fi.uef.envi.wavellite.entity.situation.RelevantObject;
 import fi.uef.envi.wavellite.entity.situation.Situation;
 import fi.uef.envi.wavellite.entity.situation.base.AttributeBase;
 import fi.uef.envi.wavellite.entity.situation.base.AttributeValueDouble;
+import fi.uef.envi.wavellite.entity.situation.base.AttributeValueSpatialLocation;
 import fi.uef.envi.wavellite.entity.situation.base.AttributeValueString;
 import fi.uef.envi.wavellite.entity.situation.base.AttributeValueTemporalLocation;
 import fi.uef.envi.wavellite.entity.situation.base.ElementaryInfonBase;
@@ -103,11 +110,28 @@ public class EntityFactory {
 	public static Feature feature(String id) {
 		return new FeatureBase(id);
 	}
+	
+	public static SensorOutput sensorOutput(ObservationValue value) {
+		return new SensorOutputBase(value);
+	}
+	
+	public static SensorOutput sensorOutput(Double output) {
+		return sensorOutput(observationValue(output));
+	}
 
+	public static ObservationValue observationValue(Double output) {
+		return new ObservationValueDouble(output);
+	}
+	
 	public static TemporalLocation temporalLocation() {
 		return new TemporalLocationDateTime();
 	}
 
+	public static TemporalLocation temporalLocation(int year, int month, int day, int hour,
+			int min, int sec) {
+		return temporalLocation(new DateTime(year, month, day, hour, min, sec));
+	}
+	
 	public static TemporalLocation temporalLocation(DateTime time) {
 		return new TemporalLocationDateTime(time);
 	}
@@ -132,31 +156,31 @@ public class EntityFactory {
 	public static SpatialLocation spatialLocation(String label, URI sameAs) {
 		return new SpatialLocationQualitative(label, sameAs);
 	}
-	
+
 	public static SpatialLocation spatialLocation(SpatialGeometry geometry) {
 		return new SpatialLocationQuantitative(geometry);
 	}
-	
+
 	public static SpatialLocation spatialLocation(Point geometry) {
 		return spatialLocation(spatialGeometry(geometry));
 	}
-	
+
 	public static SpatialLocation spatialLocation(Polygon geometry) {
 		return spatialLocation(spatialGeometry(geometry));
 	}
-	
+
 	public static SpatialLocation spatialLocation(LineString geometry) {
 		return spatialLocation(spatialGeometry(geometry));
 	}
-	
+
 	public static SpatialGeometry spatialGeometry(Point geometry) {
 		return new SpatialGeometryPoint(geometry);
 	}
-	
+
 	public static SpatialGeometry spatialGeometry(Polygon geometry) {
 		return new SpatialGeometryPolygon(geometry);
 	}
-	
+
 	public static SpatialGeometry spatialGeometry(LineString geometry) {
 		return new SpatialGeometryLineString(geometry);
 	}
@@ -170,6 +194,21 @@ public class EntityFactory {
 	public static MeasurementResult measurementResult(MeasurementValue value,
 			MeasurementValueContext context) {
 		return new MeasurementResultBase(value, context);
+	}
+
+	public static SensorObservation sensorObservation(Sensor sensor,
+			Property property, Feature feature, SensorOutput output,
+			TemporalLocation temporalLocation, SpatialLocation spatialLocation) {
+		SensorObservation ret = new SensorObservationBase();
+
+		ret.setSensor(sensor);
+		ret.setProperty(property);
+		ret.setFeature(feature);
+		ret.setSensorOutput(output);
+		ret.setTemporalLocation(temporalLocation);
+		ret.setSpatialLocation(spatialLocation);
+
+		return ret;
 	}
 
 	public static Dataset dataset(String id) {
@@ -330,8 +369,24 @@ public class EntityFactory {
 		return relevantIndividual(attribute(attributeValue(location)));
 	}
 
+	public static RelevantIndividual relevantIndividual(SpatialLocation location) {
+		return relevantIndividual(attribute(attributeValue(location)));
+	}
+
 	public static RelevantIndividual relevantIndividual(DateTime time) {
 		return relevantIndividual(attribute(attributeValue(time)));
+	}
+
+	public static RelevantIndividual relevantIndividual(Point geometry) {
+		return relevantIndividual(attribute(attributeValue(spatialLocation(geometry))));
+	}
+
+	public static RelevantIndividual relevantIndividual(Polygon geometry) {
+		return relevantIndividual(attribute(attributeValue(spatialLocation(geometry))));
+	}
+
+	public static RelevantIndividual relevantIndividual(LineString geometry) {
+		return relevantIndividual(attribute(attributeValue(spatialLocation(geometry))));
 	}
 
 	public static Attribute attribute(AttributeValue value) {
@@ -350,8 +405,16 @@ public class EntityFactory {
 		return new AttributeValueTemporalLocation(temporalLocation(time));
 	}
 
+	public static AttributeValue attributeValue(Interval interval) {
+		return new AttributeValueTemporalLocation(temporalLocation(interval));
+	}
+
 	public static AttributeValue attributeValue(TemporalLocation location) {
 		return new AttributeValueTemporalLocation(location);
+	}
+
+	public static AttributeValue attributeValue(SpatialLocation location) {
+		return new AttributeValueSpatialLocation(location);
 	}
 
 }
