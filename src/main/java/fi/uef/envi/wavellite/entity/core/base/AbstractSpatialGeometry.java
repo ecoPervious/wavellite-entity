@@ -63,11 +63,17 @@ public abstract class AbstractSpatialGeometry extends AbstractEntity implements
 	
 	@Override
 	public String getGeometryAsWKT() {
+		if (geometry == null)
+			return null;
+		
 		return wktWriter.writeFormatted(geometry);
 	}
 	
 	@Override
 	public String getGeometryAsGML() {
+		if (geometry == null)
+			return null;
+		
 		return gmlWriter.write(geometry);
 	}
 
