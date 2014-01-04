@@ -32,4 +32,6 @@ public interface SpatialGeometry {
 	
 	public String getGeometryAsGML();
 	
+	public void accept(SpatialGeometryVisitor visitor);
+	
 }
