@@ -9,11 +9,23 @@ import java.util.Random;
 import java.util.Set;
 
 import org.joda.time.DateTime;
+import org.joda.time.Interval;
+import org.openrdf.model.URI;
+
+import com.vividsolutions.jts.geom.LineString;
+import com.vividsolutions.jts.geom.Point;
+import com.vividsolutions.jts.geom.Polygon;
 
 import fi.uef.envi.wavellite.entity.core.base.FeatureBase;
 import fi.uef.envi.wavellite.entity.core.base.PropertyBase;
 import fi.uef.envi.wavellite.entity.core.base.SensorBase;
+import fi.uef.envi.wavellite.entity.core.base.SpatialGeometryLineString;
+import fi.uef.envi.wavellite.entity.core.base.SpatialGeometryPoint;
+import fi.uef.envi.wavellite.entity.core.base.SpatialGeometryPolygon;
+import fi.uef.envi.wavellite.entity.core.base.SpatialLocationQualitative;
+import fi.uef.envi.wavellite.entity.core.base.SpatialLocationQuantitative;
 import fi.uef.envi.wavellite.entity.core.base.TemporalLocationDateTime;
+import fi.uef.envi.wavellite.entity.core.base.TemporalLocationInterval;
 import fi.uef.envi.wavellite.entity.derivation.Component;
 import fi.uef.envi.wavellite.entity.derivation.ComponentProperty;
 import fi.uef.envi.wavellite.entity.derivation.ComponentPropertyValue;
@@ -98,6 +110,55 @@ public class EntityFactory {
 
 	public static TemporalLocation temporalLocation(DateTime time) {
 		return new TemporalLocationDateTime(time);
+	}
+
+	public static TemporalLocation temporalLocation(Interval interval) {
+		return temporalLocation(interval.getStart(), interval.getEnd());
+	}
+
+	public static TemporalLocation temporalLocation(DateTime start, DateTime end) {
+		return temporalLocation(start, end);
+	}
+
+	public static TemporalLocation temporalLocation(
+			TemporalLocationDateTime start, TemporalLocationDateTime end) {
+		return new TemporalLocationInterval(start, end);
+	}
+
+	public static SpatialLocation spatialLocation(String label) {
+		return new SpatialLocationQualitative(label);
+	}
+
+	public static SpatialLocation spatialLocation(String label, URI sameAs) {
+		return new SpatialLocationQualitative(label, sameAs);
+	}
+	
+	public static SpatialLocation spatialLocation(SpatialGeometry geometry) {
+		return new SpatialLocationQuantitative(geometry);
+	}
+	
+	public static SpatialLocation spatialLocation(Point geometry) {
+		return spatialLocation(spatialGeometry(geometry));
+	}
+	
+	public static SpatialLocation spatialLocation(Polygon geometry) {
+		return spatialLocation(spatialGeometry(geometry));
+	}
+	
+	public static SpatialLocation spatialLocation(LineString geometry) {
+		return spatialLocation(spatialGeometry(geometry));
+	}
+	
+	public static SpatialGeometry spatialGeometry(Point geometry) {
+		return new SpatialGeometryPoint(geometry);
+	}
+	
+	public static SpatialGeometry spatialGeometry(Polygon geometry) {
+		return new SpatialGeometryPolygon(geometry);
+	}
+	
+	public static SpatialGeometry spatialGeometry(LineString geometry) {
+		return new SpatialGeometryLineString(geometry);
 	}
 
 	public static MeasurementValueContext measurementValueContext(
@@ -203,12 +264,12 @@ public class EntityFactory {
 	public static ComponentPropertyDimension dimension(String id) {
 		return componentPropertyDimension(id);
 	}
-	
+
 	public static ComponentPropertyDimension componentPropertyDimension(
 			String id) {
 		return new ComponentPropertyDimension(id);
 	}
-	
+
 	public static ComponentPropertyMeasure measure(String id) {
 		return componentPropertyMeasure(id);
 	}
