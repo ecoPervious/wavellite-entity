@@ -37,6 +37,7 @@ import fi.uef.envi.wavellite.entity.derivation.base.ComponentPropertyDimension;
 import fi.uef.envi.wavellite.entity.derivation.base.ComponentPropertyMeasure;
 import fi.uef.envi.wavellite.entity.derivation.base.ComponentPropertyValueDouble;
 import fi.uef.envi.wavellite.entity.derivation.base.ComponentPropertyValueInteger;
+import fi.uef.envi.wavellite.entity.derivation.base.ComponentPropertyValueSpatialLocation;
 import fi.uef.envi.wavellite.entity.derivation.base.ComponentPropertyValueTemporalLocation;
 import fi.uef.envi.wavellite.entity.derivation.base.DatasetBase;
 import fi.uef.envi.wavellite.entity.derivation.base.DatasetObservationBase;
@@ -274,6 +275,14 @@ public class EntityFactory {
 	public static Component component(ComponentProperty property, DateTime value) {
 		return component(property, componentPropertyValue(value));
 	}
+	
+	public static Component component(ComponentProperty property, TemporalLocation location) {
+		return component(property, componentPropertyValue(location));
+	}
+	
+	public static Component component(ComponentProperty property, SpatialLocation location) {
+		return component(property, componentPropertyValue(location));
+	}
 
 	public static Component component(String id, Double value) {
 		return component(componentProperty(id), value);
@@ -337,6 +346,10 @@ public class EntityFactory {
 	public static ComponentPropertyValue componentPropertyValue(
 			TemporalLocation location) {
 		return new ComponentPropertyValueTemporalLocation(location);
+	}
+	
+	public static ComponentPropertyValue componentPropertyValue(SpatialLocation location) {
+		return new ComponentPropertyValueSpatialLocation(location);
 	}
 
 	public static Situation situation(ElementaryInfon... infons) {
