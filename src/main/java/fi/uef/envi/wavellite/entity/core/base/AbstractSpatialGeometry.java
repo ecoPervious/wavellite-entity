@@ -52,6 +52,8 @@ public abstract class AbstractSpatialGeometry extends AbstractEntity implements
 
 	public AbstractSpatialGeometry(String id, String type, Geometry geometry) {
 		super(id, type);
+		
+		this.geometry = geometry;
 	}
 
 	@Override

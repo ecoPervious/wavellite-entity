@@ -7,10 +7,6 @@ package fi.uef.envi.wavellite.entity.core.base;
 
 import java.util.UUID;
 
-import com.vividsolutions.jts.geom.Geometry;
-import com.vividsolutions.jts.io.WKTWriter;
-import com.vividsolutions.jts.io.gml2.GMLWriter;
-
 import fi.uef.envi.wavellite.entity.core.SpatialGeometry;
 import fi.uef.envi.wavellite.entity.core.SpatialLocationVisitor;
 import fi.uef.envi.wavellite.vocabulary.WTO;

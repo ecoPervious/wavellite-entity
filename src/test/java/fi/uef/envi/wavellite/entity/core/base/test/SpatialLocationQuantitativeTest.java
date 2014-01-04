@@ -11,9 +11,10 @@ import static org.junit.Assert.assertNotEquals;
 import org.junit.Test;
 
 import com.vividsolutions.jts.geom.Coordinate;
-import com.vividsolutions.jts.geom.Geometry;
 import com.vividsolutions.jts.geom.GeometryFactory;
+import com.vividsolutions.jts.geom.Point;
 
+import fi.uef.envi.wavellite.entity.core.base.SpatialGeometryPoint;
 import fi.uef.envi.wavellite.entity.core.base.SpatialLocationQuantitative;
 import fi.uef.envi.wavellite.vocabulary.WTO;
 
@@ -150,10 +151,10 @@ public class SpatialLocationQuantitativeTest {
 	@Test
 	public void test14() {
 		GeometryFactory gf = new GeometryFactory();
-		Geometry g = gf.createPoint(new Coordinate(0.0, 0.0));
+		Point g = gf.createPoint(new Coordinate(0.0, 0.0));
 
-		SpatialLocationQuantitative e = new SpatialLocationQuantitative(g);
-		SpatialLocationQuantitative a = new SpatialLocationQuantitative(g);
+		SpatialLocationQuantitative e = new SpatialLocationQuantitative(new SpatialGeometryPoint("p1", g));
+		SpatialLocationQuantitative a = new SpatialLocationQuantitative(new SpatialGeometryPoint("p1", g));
 		
 		assertEquals(e, a);
 	}
@@ -161,11 +162,11 @@ public class SpatialLocationQuantitativeTest {
 	@Test
 	public void test15() {
 		GeometryFactory gf = new GeometryFactory();
-		Geometry g1 = gf.createPoint(new Coordinate(0.0, 0.0));
-		Geometry g2 = gf.createPoint(new Coordinate(1.0, 1.0));
+		Point g1 = gf.createPoint(new Coordinate(0.0, 0.0));
+		Point g2 = gf.createPoint(new Coordinate(1.0, 1.0));
 
-		SpatialLocationQuantitative e = new SpatialLocationQuantitative(g1);
-		SpatialLocationQuantitative a = new SpatialLocationQuantitative(g2);
+		SpatialLocationQuantitative e = new SpatialLocationQuantitative(new SpatialGeometryPoint("p1", g1));
+		SpatialLocationQuantitative a = new SpatialLocationQuantitative(new SpatialGeometryPoint("p1", g2));
 		
 		assertNotEquals(e, a);
 	}
@@ -173,11 +174,11 @@ public class SpatialLocationQuantitativeTest {
 	@Test
 	public void test16() {
 		GeometryFactory gf = new GeometryFactory();
-		Geometry g = gf.createPoint(new Coordinate(0.0, 0.0));
+		Point g = gf.createPoint(new Coordinate(0.0, 0.0));
 
-		SpatialLocationQuantitative s = new SpatialLocationQuantitative(g);
+		SpatialLocationQuantitative s = new SpatialLocationQuantitative(new SpatialGeometryPoint("p1", g));
 		
-		assertEquals(g, s.getGeometry());
+		assertEquals(g, s.getSpatialGeometry().getGeometry());
 	}
 	
 }

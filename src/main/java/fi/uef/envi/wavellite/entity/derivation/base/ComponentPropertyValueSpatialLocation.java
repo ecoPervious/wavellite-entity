@@ -40,12 +40,12 @@ public class ComponentPropertyValueSpatialLocation extends
 	}
 
 	public ComponentPropertyValueSpatialLocation(String id) {
-		this(id, WTO.ComponentPropertyValueTemporalLocation);
+		this(id, WTO.ComponentPropertyValueSpatialLocation);
 	}
 
 	public ComponentPropertyValueSpatialLocation(String id,
 			SpatialLocation value) {
-		this(id, WTO.ComponentPropertyValueTemporalLocation, value);
+		this(id, WTO.ComponentPropertyValueSpatialLocation, value);
 	}
 
 	public ComponentPropertyValueSpatialLocation(String id, String type) {

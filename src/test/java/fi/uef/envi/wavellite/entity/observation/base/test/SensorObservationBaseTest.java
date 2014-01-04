@@ -12,8 +12,8 @@ import org.joda.time.DateTime;
 import org.junit.Test;
 
 import com.vividsolutions.jts.geom.Coordinate;
-import com.vividsolutions.jts.geom.Geometry;
 import com.vividsolutions.jts.geom.GeometryFactory;
+import com.vividsolutions.jts.geom.Point;
 
 import fi.uef.envi.wavellite.entity.core.Feature;
 import fi.uef.envi.wavellite.entity.core.Property;
@@ -23,6 +23,7 @@ import fi.uef.envi.wavellite.entity.core.TemporalLocation;
 import fi.uef.envi.wavellite.entity.core.base.FeatureBase;
 import fi.uef.envi.wavellite.entity.core.base.PropertyBase;
 import fi.uef.envi.wavellite.entity.core.base.SensorBase;
+import fi.uef.envi.wavellite.entity.core.base.SpatialGeometryPoint;
 import fi.uef.envi.wavellite.entity.core.base.SpatialLocationQuantitative;
 import fi.uef.envi.wavellite.entity.core.base.TemporalLocationDateTime;
 import fi.uef.envi.wavellite.entity.observation.ObservationValue;
@@ -218,8 +219,8 @@ public class SensorObservationBaseTest {
 				10, 31, 0, 0, 0));
 		so.setTemporalLocation(tl);
 		GeometryFactory gf = new GeometryFactory();
-		Geometry g = gf.createPoint(new Coordinate(0.0, 0.0));
-		SpatialLocation sl = new SpatialLocationQuantitative(g);
+		Point g = gf.createPoint(new Coordinate(0.0, 0.0));
+		SpatialLocation sl = new SpatialLocationQuantitative(new SpatialGeometryPoint(g));
 		so.setSpatialLocation(sl);
 
 		assertEquals(s, so.getSensor());
