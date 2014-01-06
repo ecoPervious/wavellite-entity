@@ -126,7 +126,7 @@ public class TemporalLocationDateTimeTest {
 		TemporalLocationDateTime s = new TemporalLocationDateTime("i1",
 				new DateTime(2013, 11, 04, 0, 0, 0));
 
-		assertEquals(WTO.TemporalLocationDateTime, s.getType());
+		assertEquals(WTO.TimePoint, s.getType());
 	}
 
 	@Test

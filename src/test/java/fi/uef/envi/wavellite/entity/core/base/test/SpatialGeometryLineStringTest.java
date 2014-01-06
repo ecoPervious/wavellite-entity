@@ -112,7 +112,7 @@ public class SpatialGeometryLineStringTest {
 	public void test10() {
 		SpatialGeometryLineString s = new SpatialGeometryLineString("i1");
 
-		assertEquals(WTO.SpatialGeometryLineString, s.getType());
+		assertEquals(WTO.LineString, s.getType());
 	}
 
 	@Test

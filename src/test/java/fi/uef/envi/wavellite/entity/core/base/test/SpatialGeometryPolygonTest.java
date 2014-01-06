@@ -112,7 +112,7 @@ public class SpatialGeometryPolygonTest {
 	public void test10() {
 		SpatialGeometryPolygon s = new SpatialGeometryPolygon("i1");
 
-		assertEquals(WTO.SpatialGeometryPolygon, s.getType());
+		assertEquals(WTO.Polygon, s.getType());
 	}
 
 	@Test

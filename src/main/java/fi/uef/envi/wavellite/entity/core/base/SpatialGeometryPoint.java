@@ -40,11 +40,11 @@ public class SpatialGeometryPoint extends AbstractSpatialGeometry {
 	}
 
 	public SpatialGeometryPoint(String id) {
-		this(id, WTO.SpatialGeometryPoint);
+		this(id, WTO.Point);
 	}
 
 	public SpatialGeometryPoint(String id, Point geometry) {
-		this(id, WTO.SpatialGeometryPoint, geometry);
+		this(id, WTO.Point, geometry);
 	}
 
 	public SpatialGeometryPoint(String id, String type) {

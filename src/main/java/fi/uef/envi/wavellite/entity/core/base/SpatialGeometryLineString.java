@@ -40,11 +40,11 @@ public class SpatialGeometryLineString extends AbstractSpatialGeometry {
 	}
 
 	public SpatialGeometryLineString(String id) {
-		this(id, WTO.SpatialGeometryLineString);
+		this(id, WTO.LineString);
 	}
 
 	public SpatialGeometryLineString(String id, LineString geometry) {
-		this(id, WTO.SpatialGeometryLineString, geometry);
+		this(id, WTO.LineString, geometry);
 	}
 
 	public SpatialGeometryLineString(String id, String type) {

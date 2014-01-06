@@ -167,7 +167,7 @@ public class TemporalLocationIntervalTest {
 				new TemporalLocationDateTime(new DateTime(2013, 11, 4, 0, 0, 0)),
 				new TemporalLocationDateTime(new DateTime(2013, 11, 4, 1, 0, 0)));
 
-		assertEquals(WTO.TemporalLocationInterval, s.getType());
+		assertEquals(WTO.TimeInterval, s.getType());
 	}
 
 	@Test

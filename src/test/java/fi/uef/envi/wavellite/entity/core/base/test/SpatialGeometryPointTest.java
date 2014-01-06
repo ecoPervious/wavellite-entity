@@ -111,7 +111,7 @@ public class SpatialGeometryPointTest {
 	public void test10() {
 		SpatialGeometryPoint s = new SpatialGeometryPoint("i1");
 
-		assertEquals(WTO.SpatialGeometryPoint, s.getType());
+		assertEquals(WTO.Point, s.getType());
 	}
 
 	@Test

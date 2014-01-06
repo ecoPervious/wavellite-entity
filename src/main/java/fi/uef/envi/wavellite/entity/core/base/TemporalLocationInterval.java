@@ -41,7 +41,7 @@ public class TemporalLocationInterval extends AbstractTemporalLocation {
 
 	public TemporalLocationInterval(String id, TemporalLocationDateTime start,
 			TemporalLocationDateTime end) {
-		this(id, WTO.TemporalLocationInterval, start, end);
+		this(id, WTO.TimeInterval, start, end);
 	}
 
 	public TemporalLocationInterval(String id, String type,

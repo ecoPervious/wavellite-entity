@@ -44,7 +44,7 @@ public class TemporalLocationDateTime extends AbstractTemporalLocation {
 	}
 
 	public TemporalLocationDateTime(String id, DateTime value) {
-		this(id, WTO.TemporalLocationDateTime, value);
+		this(id, WTO.TimePoint, value);
 	}
 
 	public TemporalLocationDateTime(String id, String type) {

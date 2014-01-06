@@ -40,11 +40,11 @@ public class SpatialGeometryPolygon extends AbstractSpatialGeometry {
 	}
 
 	public SpatialGeometryPolygon(String id) {
-		this(id, WTO.SpatialGeometryPolygon);
+		this(id, WTO.Polygon);
 	}
 
 	public SpatialGeometryPolygon(String id, Polygon geometry) {
-		this(id, WTO.SpatialGeometryPolygon, geometry);
+		this(id, WTO.Polygon, geometry);
 	}
 
 	public SpatialGeometryPolygon(String id, String type) {
