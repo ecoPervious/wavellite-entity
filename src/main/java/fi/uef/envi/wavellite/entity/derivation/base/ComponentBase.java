@@ -7,6 +7,7 @@ package fi.uef.envi.wavellite.entity.derivation.base;
 
 import java.util.UUID;
 
+import fi.uef.envi.wavellite.entity.core.EntityVisitor;
 import fi.uef.envi.wavellite.entity.core.base.AbstractEntity;
 import fi.uef.envi.wavellite.entity.derivation.Component;
 import fi.uef.envi.wavellite.entity.derivation.ComponentProperty;
@@ -65,6 +66,11 @@ public class ComponentBase extends AbstractEntity implements Component {
 		setComponentPropertyValue(value);
 	}
 
+	@Override
+	public void accept(EntityVisitor visitor) {
+		visitor.visit(this);
+	}
+	
 	@Override
 	public void setComponentProperty(ComponentProperty property) {
 		this.property = property;

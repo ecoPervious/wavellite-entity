@@ -91,7 +91,7 @@ import fi.uef.envi.wavellite.vocabulary.SDMX;
  */
 
 public class EntityFactory {
-
+	
 	public static MeasurementValue measurementValue() {
 		return new MeasurementValueDouble(new Random().nextDouble());
 	}
@@ -111,11 +111,11 @@ public class EntityFactory {
 	public static Feature feature(String id) {
 		return new FeatureBase(id);
 	}
-	
+
 	public static SensorOutput sensorOutput(ObservationValue value) {
 		return new SensorOutputBase(value);
 	}
-	
+
 	public static SensorOutput sensorOutput(Double output) {
 		return sensorOutput(observationValue(output));
 	}
@@ -123,16 +123,20 @@ public class EntityFactory {
 	public static ObservationValue observationValue(Double output) {
 		return new ObservationValueDouble(output);
 	}
-	
+
+	public static TemporalLocation now() {
+		return temporalLocation();
+	}
+
 	public static TemporalLocation temporalLocation() {
 		return new TemporalLocationDateTime();
 	}
 
-	public static TemporalLocation temporalLocation(int year, int month, int day, int hour,
-			int min, int sec) {
+	public static TemporalLocation temporalLocation(int year, int month,
+			int day, int hour, int min, int sec) {
 		return temporalLocation(new DateTime(year, month, day, hour, min, sec));
 	}
-	
+
 	public static TemporalLocation temporalLocation(DateTime time) {
 		return new TemporalLocationDateTime(time);
 	}
@@ -142,7 +146,8 @@ public class EntityFactory {
 	}
 
 	public static TemporalLocation temporalLocation(DateTime start, DateTime end) {
-		return temporalLocation(start, end);
+		return temporalLocation(new TemporalLocationDateTime(start),
+				new TemporalLocationDateTime(end));
 	}
 
 	public static TemporalLocation temporalLocation(
@@ -275,12 +280,14 @@ public class EntityFactory {
 	public static Component component(ComponentProperty property, DateTime value) {
 		return component(property, componentPropertyValue(value));
 	}
-	
-	public static Component component(ComponentProperty property, TemporalLocation location) {
+
+	public static Component component(ComponentProperty property,
+			TemporalLocation location) {
 		return component(property, componentPropertyValue(location));
 	}
-	
-	public static Component component(ComponentProperty property, SpatialLocation location) {
+
+	public static Component component(ComponentProperty property,
+			SpatialLocation location) {
 		return component(property, componentPropertyValue(location));
 	}
 
@@ -331,6 +338,10 @@ public class EntityFactory {
 				QB.DimensionProperty);
 	}
 
+	public static ComponentPropertyValue componentPropertyValue() {
+		return componentPropertyValue(new Random().nextDouble());
+	}
+
 	public static ComponentPropertyValue componentPropertyValue(Double value) {
 		return new ComponentPropertyValueDouble(value);
 	}
@@ -347,8 +358,9 @@ public class EntityFactory {
 			TemporalLocation location) {
 		return new ComponentPropertyValueTemporalLocation(location);
 	}
-	
-	public static ComponentPropertyValue componentPropertyValue(SpatialLocation location) {
+
+	public static ComponentPropertyValue componentPropertyValue(
+			SpatialLocation location) {
 		return new ComponentPropertyValueSpatialLocation(location);
 	}
 
@@ -390,6 +402,10 @@ public class EntityFactory {
 		return relevantIndividual(attribute(attributeValue(time)));
 	}
 
+	public static RelevantIndividual relevantIndividual(Interval interval) {
+		return relevantIndividual(attribute(attributeValue(interval)));
+	}
+	
 	public static RelevantIndividual relevantIndividual(Point geometry) {
 		return relevantIndividual(attribute(attributeValue(spatialLocation(geometry))));
 	}

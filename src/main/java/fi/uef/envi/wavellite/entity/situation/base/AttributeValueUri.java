@@ -9,6 +9,7 @@ import java.util.UUID;
 
 import org.openrdf.model.URI;
 
+import fi.uef.envi.wavellite.entity.core.EntityVisitor;
 import fi.uef.envi.wavellite.entity.situation.AttributeValueVisitor;
 import fi.uef.envi.wavellite.vocabulary.WTO;
 
@@ -62,6 +63,11 @@ public class AttributeValueUri extends AbstractAttributeValue {
 
 	@Override
 	public void accept(AttributeValueVisitor visitor) {
+		visitor.visit(this);
+	}
+	
+	@Override
+	public void accept(EntityVisitor visitor) {
 		visitor.visit(this);
 	}
 

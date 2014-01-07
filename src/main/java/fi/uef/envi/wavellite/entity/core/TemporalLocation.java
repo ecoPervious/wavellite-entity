@@ -5,6 +5,9 @@
 
 package fi.uef.envi.wavellite.entity.core;
 
+import org.joda.time.DateTime;
+import org.joda.time.Interval;
+
 
 /**
  * <p>
@@ -30,5 +33,9 @@ public interface TemporalLocation extends Entity {
 	public void setValue(Object value);
 	
 	public Object getValue();
+	
+	public DateTime getValueAsDateTime();
+	
+	public Interval getValueAsInterval();
 	
 }

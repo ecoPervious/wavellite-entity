@@ -29,17 +29,17 @@ public abstract class AbstractObservationValue extends AbstractEntity implements
 		ObservationValue {
 
 	protected Object value;
-	
+
 	public AbstractObservationValue(String id, String type) {
 		super(id, type);
 	}
-	
+
 	public AbstractObservationValue(String id, String type, Object value) {
 		super(id, type);
-		
+
 		setValue(value);
 	}
-	
+
 	@Override
 	public void setValue(Object value) {
 		if (value == null)
@@ -51,6 +51,11 @@ public abstract class AbstractObservationValue extends AbstractEntity implements
 	@Override
 	public Object getValue() {
 		return value;
+	}
+
+	@Override
+	public Double getValueAsDouble() {
+		return (Double) value;
 	}
 
 }

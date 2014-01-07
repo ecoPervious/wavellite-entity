@@ -24,5 +24,5 @@ package fi.uef.envi.wavellite.entity.core;
  */
 
 public interface Feature extends Entity {
-
+	
 }

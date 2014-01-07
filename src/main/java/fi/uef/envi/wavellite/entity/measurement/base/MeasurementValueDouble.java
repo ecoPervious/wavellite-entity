@@ -7,6 +7,7 @@ package fi.uef.envi.wavellite.entity.measurement.base;
 
 import java.util.UUID;
 
+import fi.uef.envi.wavellite.entity.core.EntityVisitor;
 import fi.uef.envi.wavellite.entity.measurement.MeasurementValueVisitor;
 import fi.uef.envi.wavellite.vocabulary.WTO;
 
@@ -48,6 +49,11 @@ public class MeasurementValueDouble extends AbstractMeasurementValue {
 	
 	@Override
 	public void accept(MeasurementValueVisitor visitor) {
+		visitor.visit(this);
+	}
+	
+	@Override
+	public void accept(EntityVisitor visitor) {
 		visitor.visit(this);
 	}
 

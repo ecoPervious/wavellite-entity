@@ -7,6 +7,7 @@ package fi.uef.envi.wavellite.entity.core.base;
 
 import java.util.UUID;
 
+import fi.uef.envi.wavellite.entity.core.EntityVisitor;
 import fi.uef.envi.wavellite.entity.core.SpatialGeometry;
 import fi.uef.envi.wavellite.entity.core.SpatialLocationVisitor;
 import fi.uef.envi.wavellite.vocabulary.WTO;
@@ -64,6 +65,11 @@ public class SpatialLocationQuantitative extends AbstractSpatialLocation {
 
 	@Override
 	public void accept(SpatialLocationVisitor visitor) {
+		visitor.visit(this);
+	}
+	
+	@Override
+	public void accept(EntityVisitor visitor) {
 		visitor.visit(this);
 	}
 

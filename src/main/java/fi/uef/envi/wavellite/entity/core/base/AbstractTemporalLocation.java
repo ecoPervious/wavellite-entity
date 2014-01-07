@@ -7,6 +7,9 @@ package fi.uef.envi.wavellite.entity.core.base;
 
 import java.util.UUID;
 
+import org.joda.time.DateTime;
+import org.joda.time.Interval;
+
 import fi.uef.envi.wavellite.entity.core.TemporalLocation;
 import fi.uef.envi.wavellite.vocabulary.WTO;
 
@@ -50,12 +53,24 @@ public abstract class AbstractTemporalLocation extends AbstractEntity implements
 		setValue(value);
 	}
 
+	@Override
 	public void setValue(Object value) {
 		this.value = value;
 	}
 
+	@Override
 	public Object getValue() {
 		return value;
 	}
+	
+	@Override
+	public DateTime getValueAsDateTime() {
+		return (DateTime)value;
+	}
 
+	@Override
+	public Interval getValueAsInterval() {
+		return (Interval)value;
+	}
+	
 }

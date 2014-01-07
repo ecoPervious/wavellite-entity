@@ -10,6 +10,7 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
 
+import fi.uef.envi.wavellite.entity.core.EntityVisitor;
 import fi.uef.envi.wavellite.entity.core.base.AbstractEntity;
 import fi.uef.envi.wavellite.entity.situation.ElementaryInfon;
 import fi.uef.envi.wavellite.entity.situation.Situation;
@@ -66,6 +67,11 @@ public class SituationBase extends AbstractEntity implements Situation {
 		}
 	}
 
+	@Override
+	public void accept(EntityVisitor visitor) {
+		visitor.visit(this);
+	}
+	
 	@Override
 	public void addSupportedInfon(ElementaryInfon infon) {
 		infons.add(infon);

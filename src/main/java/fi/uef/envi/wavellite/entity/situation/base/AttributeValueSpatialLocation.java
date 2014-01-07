@@ -7,6 +7,7 @@ package fi.uef.envi.wavellite.entity.situation.base;
 
 import java.util.UUID;
 
+import fi.uef.envi.wavellite.entity.core.EntityVisitor;
 import fi.uef.envi.wavellite.entity.core.SpatialLocation;
 import fi.uef.envi.wavellite.entity.situation.AttributeValueVisitor;
 import fi.uef.envi.wavellite.vocabulary.WTO;
@@ -55,6 +56,11 @@ public class AttributeValueSpatialLocation extends AbstractAttributeValue {
 		super(id, type, value);
 	}
 
+	@Override
+	public void accept(EntityVisitor visitor) {
+		visitor.visit(this);
+	}
+	
 	@Override
 	public SpatialLocation getValue() {
 		return (SpatialLocation) value;

@@ -7,6 +7,7 @@ package fi.uef.envi.wavellite.entity.situation.base;
 
 import java.util.UUID;
 
+import fi.uef.envi.wavellite.entity.core.EntityVisitor;
 import fi.uef.envi.wavellite.entity.situation.AttributeValueVisitor;
 import fi.uef.envi.wavellite.vocabulary.WTO;
 
@@ -51,6 +52,11 @@ public class AttributeValueDouble extends AbstractAttributeValue {
 
 	public AttributeValueDouble(String id, String type, Double value) {
 		super(id, type, value);
+	}
+	
+	@Override
+	public void accept(EntityVisitor visitor) {
+		visitor.visit(this);
 	}
 	
 	@Override

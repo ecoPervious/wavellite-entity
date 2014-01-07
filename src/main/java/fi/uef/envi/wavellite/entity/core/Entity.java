@@ -30,4 +30,6 @@ public interface Entity {
 	
 	public void setType(String type);
 	
+	public void accept(EntityVisitor visitor);
+	
 }

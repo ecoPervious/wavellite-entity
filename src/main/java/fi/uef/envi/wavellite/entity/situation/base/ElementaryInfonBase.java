@@ -10,6 +10,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
 
+import fi.uef.envi.wavellite.entity.core.EntityVisitor;
 import fi.uef.envi.wavellite.entity.core.base.AbstractEntity;
 import fi.uef.envi.wavellite.entity.situation.ElementaryInfon;
 import fi.uef.envi.wavellite.entity.situation.Polarity;
@@ -75,6 +76,11 @@ public class ElementaryInfonBase extends AbstractEntity implements
 		for (RelevantObject object : objects) {
 			this.objects.add(object);
 		}
+	}
+	
+	@Override
+	public void accept(EntityVisitor visitor) {
+		visitor.visit(this);
 	}
 
 	@Override

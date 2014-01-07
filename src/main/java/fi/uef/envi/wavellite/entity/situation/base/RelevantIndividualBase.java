@@ -10,6 +10,7 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
 
+import fi.uef.envi.wavellite.entity.core.EntityVisitor;
 import fi.uef.envi.wavellite.entity.situation.Attribute;
 import fi.uef.envi.wavellite.entity.situation.RelevantIndividual;
 import fi.uef.envi.wavellite.entity.situation.RelevantObjectVisitor;
@@ -70,6 +71,11 @@ public class RelevantIndividualBase extends AbstractRelevantObject implements
 
 	@Override
 	public void accept(RelevantObjectVisitor visitor) {
+		visitor.visit(this);
+	}
+	
+	@Override
+	public void accept(EntityVisitor visitor) {
 		visitor.visit(this);
 	}
 

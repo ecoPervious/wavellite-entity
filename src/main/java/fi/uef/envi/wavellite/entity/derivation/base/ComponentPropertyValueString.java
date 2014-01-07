@@ -7,6 +7,7 @@ package fi.uef.envi.wavellite.entity.derivation.base;
 
 import java.util.UUID;
 
+import fi.uef.envi.wavellite.entity.core.EntityVisitor;
 import fi.uef.envi.wavellite.entity.derivation.ComponentPropertyValueVisitor;
 import fi.uef.envi.wavellite.vocabulary.WTO;
 
@@ -44,6 +45,11 @@ public class ComponentPropertyValueString extends
 	
 	@Override
 	public void accept(ComponentPropertyValueVisitor visitor) {
+		visitor.visit(this);
+	}
+	
+	@Override
+	public void accept(EntityVisitor visitor) {
 		visitor.visit(this);
 	}
 	

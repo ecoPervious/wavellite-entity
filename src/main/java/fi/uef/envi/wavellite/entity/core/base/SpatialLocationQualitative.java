@@ -11,6 +11,7 @@ import java.util.UUID;
 
 import org.openrdf.model.URI;
 
+import fi.uef.envi.wavellite.entity.core.EntityVisitor;
 import fi.uef.envi.wavellite.entity.core.SpatialLocationVisitor;
 import fi.uef.envi.wavellite.vocabulary.WTO;
 
@@ -74,6 +75,11 @@ public class SpatialLocationQualitative extends AbstractSpatialLocation {
 
 	@Override
 	public void accept(SpatialLocationVisitor visitor) {
+		visitor.visit(this);
+	}
+	
+	@Override
+	public void accept(EntityVisitor visitor) {
 		visitor.visit(this);
 	}
 

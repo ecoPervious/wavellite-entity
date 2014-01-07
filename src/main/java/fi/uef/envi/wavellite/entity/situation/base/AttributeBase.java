@@ -7,6 +7,7 @@ package fi.uef.envi.wavellite.entity.situation.base;
 
 import java.util.UUID;
 
+import fi.uef.envi.wavellite.entity.core.EntityVisitor;
 import fi.uef.envi.wavellite.entity.core.base.AbstractEntity;
 import fi.uef.envi.wavellite.entity.situation.Attribute;
 import fi.uef.envi.wavellite.entity.situation.AttributeValue;
@@ -57,6 +58,11 @@ public class AttributeBase extends AbstractEntity implements Attribute {
 		this(id, type);
 
 		this.value = value;
+	}
+	
+	@Override
+	public void accept(EntityVisitor visitor) {
+		visitor.visit(this);
 	}
 
 	@Override

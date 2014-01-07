@@ -7,6 +7,7 @@ package fi.uef.envi.wavellite.entity.observation.base;
 
 import java.util.UUID;
 
+import fi.uef.envi.wavellite.entity.core.EntityVisitor;
 import fi.uef.envi.wavellite.entity.observation.ObservationValueVisitor;
 import fi.uef.envi.wavellite.vocabulary.WTO;
 
@@ -51,6 +52,11 @@ public class ObservationValueDouble extends AbstractObservationValue {
 
 	public ObservationValueDouble(String id, String type, Double value) {
 		super(id, type, value);
+	}
+	
+	@Override
+	public void accept(EntityVisitor visitor) {
+		visitor.visit(this);
 	}
 	
 	@Override

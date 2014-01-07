@@ -9,6 +9,7 @@ import java.util.UUID;
 
 import org.joda.time.DateTime;
 
+import fi.uef.envi.wavellite.entity.core.EntityVisitor;
 import fi.uef.envi.wavellite.entity.core.TemporalLocationVisitor;
 import fi.uef.envi.wavellite.vocabulary.WTO;
 
@@ -62,6 +63,11 @@ public class TemporalLocationDateTime extends AbstractTemporalLocation {
 
 	@Override
 	public void accept(TemporalLocationVisitor visitor) {
+		visitor.visit(this);
+	}
+	
+	@Override
+	public void accept(EntityVisitor visitor) {
 		visitor.visit(this);
 	}
 	

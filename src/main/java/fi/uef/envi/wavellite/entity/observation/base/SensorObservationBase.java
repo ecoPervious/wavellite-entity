@@ -7,6 +7,7 @@ package fi.uef.envi.wavellite.entity.observation.base;
 
 import java.util.UUID;
 
+import fi.uef.envi.wavellite.entity.core.EntityVisitor;
 import fi.uef.envi.wavellite.entity.core.Feature;
 import fi.uef.envi.wavellite.entity.core.Property;
 import fi.uef.envi.wavellite.entity.core.Sensor;
@@ -56,6 +57,11 @@ public class SensorObservationBase extends AbstractEntity implements
 		super(id, type);
 	}
 
+	@Override
+	public void accept(EntityVisitor visitor) {
+		visitor.visit(this);
+	}
+	
 	@Override
 	public void setSensor(Sensor sensor) {
 		this.sensor = sensor;

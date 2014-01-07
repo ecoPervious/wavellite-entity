@@ -9,6 +9,7 @@ import java.util.UUID;
 
 import com.vividsolutions.jts.geom.LineString;
 
+import fi.uef.envi.wavellite.entity.core.EntityVisitor;
 import fi.uef.envi.wavellite.entity.core.SpatialGeometryVisitor;
 import fi.uef.envi.wavellite.vocabulary.WTO;
 
@@ -55,7 +56,13 @@ public class SpatialGeometryLineString extends AbstractSpatialGeometry {
 		super(id, type, geometry);
 	}
 
+	@Override
 	public void accept(SpatialGeometryVisitor visitor) {
+		visitor.visit(this);
+	}
+	
+	@Override
+	public void accept(EntityVisitor visitor) {
 		visitor.visit(this);
 	}
 

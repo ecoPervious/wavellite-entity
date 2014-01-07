@@ -5,6 +5,7 @@
 
 package fi.uef.envi.wavellite.entity.core.base;
 
+import fi.uef.envi.wavellite.entity.core.EntityVisitor;
 import fi.uef.envi.wavellite.entity.core.Feature;
 import fi.uef.envi.wavellite.vocabulary.WTO;
 
@@ -33,6 +34,11 @@ public class FeatureBase extends AbstractEntity implements Feature {
 
 	public FeatureBase(String id, String type) {
 		super(id, type);
+	}
+	
+	@Override
+	public void accept(EntityVisitor visitor) {
+		visitor.visit(this);
 	}
 
 	@Override
