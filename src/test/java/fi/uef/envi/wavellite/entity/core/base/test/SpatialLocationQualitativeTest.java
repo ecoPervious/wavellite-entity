@@ -122,7 +122,7 @@ public class SpatialLocationQualitativeTest {
 	public void test10() {
 		SpatialLocationQualitative s = new SpatialLocationQualitative("l1");
 
-		assertEquals(WTO.SpatialLocationQualitative, s.getType());
+		assertEquals(WTO.SpatialPlace, s.getType());
 	}
 
 	@Test

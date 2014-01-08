@@ -42,11 +42,11 @@ public class SpatialLocationQuantitative extends AbstractSpatialLocation {
 	}
 
 	public SpatialLocationQuantitative(String id) {
-		this(id, WTO.SpatialLocationQuantitative);
+		this(id, WTO.SpatialRegion);
 	}
 
 	public SpatialLocationQuantitative(String id, SpatialGeometry geometry) {
-		this(id, WTO.SpatialLocationQuantitative, geometry);
+		this(id, WTO.SpatialRegion, geometry);
 	}
 
 	public SpatialLocationQuantitative(String id, String type) {

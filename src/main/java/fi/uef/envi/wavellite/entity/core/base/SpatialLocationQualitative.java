@@ -51,11 +51,11 @@ public class SpatialLocationQualitative extends AbstractSpatialLocation {
 	}
 
 	public SpatialLocationQualitative(String id, String label) {
-		this(id, WTO.SpatialLocationQualitative, label);
+		this(id, WTO.SpatialPlace, label);
 	}
 
 	public SpatialLocationQualitative(String id, String label, URI sameAs) {
-		this(id, WTO.SpatialLocationQualitative, label, sameAs);
+		this(id, WTO.SpatialPlace, label, sameAs);
 	}
 
 	public SpatialLocationQualitative(String id, String type, String label) {
