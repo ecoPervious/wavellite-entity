@@ -17,7 +17,7 @@ import fi.uef.envi.wavellite.vocabulary.WTO;
 
 /**
  * <p>
- * Title: SpatialLocationQualitative
+ * Title: SpatialLocationPlace
  * </p>
  * <p>
  * Description:
@@ -32,37 +32,37 @@ import fi.uef.envi.wavellite.vocabulary.WTO;
  * @author Markus Stocker
  */
 
-public class SpatialLocationQualitative extends AbstractSpatialLocation {
+public class SpatialLocationPlace extends AbstractSpatialLocation {
 
 	private String label;
 	// Typically used for a, but not limited to, geonames.org URIs
 	private Set<URI> sameAs;
 
-	public SpatialLocationQualitative() {
+	public SpatialLocationPlace() {
 		this(UUID.randomUUID().toString());
 	}
 
-	public SpatialLocationQualitative(String label) {
+	public SpatialLocationPlace(String label) {
 		this(UUID.randomUUID().toString(), label);
 	}
 
-	public SpatialLocationQualitative(String label, URI sameAs) {
+	public SpatialLocationPlace(String label, URI sameAs) {
 		this(UUID.randomUUID().toString(), label, sameAs);
 	}
 
-	public SpatialLocationQualitative(String id, String label) {
+	public SpatialLocationPlace(String id, String label) {
 		this(id, WTO.SpatialPlace, label);
 	}
 
-	public SpatialLocationQualitative(String id, String label, URI sameAs) {
+	public SpatialLocationPlace(String id, String label, URI sameAs) {
 		this(id, WTO.SpatialPlace, label, sameAs);
 	}
 
-	public SpatialLocationQualitative(String id, String type, String label) {
+	public SpatialLocationPlace(String id, String type, String label) {
 		this(id, type, label, null);
 	}
 
-	public SpatialLocationQualitative(String id, String type, String label,
+	public SpatialLocationPlace(String id, String type, String label,
 			URI sameAs) {
 		super(id, type);
 
@@ -122,7 +122,7 @@ public class SpatialLocationQualitative extends AbstractSpatialLocation {
 		if (getClass() != obj.getClass())
 			return false;
 
-		SpatialLocationQualitative other = (SpatialLocationQualitative) obj;
+		SpatialLocationPlace other = (SpatialLocationPlace) obj;
 
 		if (type == null) {
 			if (other.type != null)
@@ -141,7 +141,7 @@ public class SpatialLocationQualitative extends AbstractSpatialLocation {
 
 	@Override
 	public String toString() {
-		return "SpatialLocationQualitative [id = " + id + "; type = " + type
+		return "SpatialLocationPlace [id = " + id + "; type = " + type
 				+ "; label = " + label + "; sameAs = " + sameAs + "]";
 	}
 

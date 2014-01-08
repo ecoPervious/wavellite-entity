@@ -10,7 +10,7 @@ import static org.junit.Assert.assertNotEquals;
 
 import org.junit.Test;
 
-import fi.uef.envi.wavellite.entity.core.base.SpatialLocationQualitative;
+import fi.uef.envi.wavellite.entity.core.base.SpatialLocationPlace;
 import fi.uef.envi.wavellite.entity.derivation.base.ComponentPropertyValueSpatialLocation;
 import fi.uef.envi.wavellite.vocabulary.WTO;
 
@@ -156,9 +156,9 @@ public class ComponentPropertyValueSpatialLocationTest {
 	@Test
 	public void test14() {
 		ComponentPropertyValueSpatialLocation e = new ComponentPropertyValueSpatialLocation(
-				"i1", new SpatialLocationQualitative("tl1", "l1"));
+				"i1", new SpatialLocationPlace("tl1", "l1"));
 		ComponentPropertyValueSpatialLocation a = new ComponentPropertyValueSpatialLocation(
-				"i1", new SpatialLocationQualitative("tl1", "l1"));
+				"i1", new SpatialLocationPlace("tl1", "l1"));
 
 		assertEquals(e, a);
 	}
@@ -166,9 +166,9 @@ public class ComponentPropertyValueSpatialLocationTest {
 	@Test
 	public void test15() {
 		ComponentPropertyValueSpatialLocation e = new ComponentPropertyValueSpatialLocation(
-				"i1", new SpatialLocationQualitative("tl1", "l1"));
+				"i1", new SpatialLocationPlace("tl1", "l1"));
 		ComponentPropertyValueSpatialLocation a = new ComponentPropertyValueSpatialLocation(
-				"i1", new SpatialLocationQualitative("tl1", "l2"));
+				"i1", new SpatialLocationPlace("tl1", "l2"));
 
 		assertNotEquals(e, a);
 	}

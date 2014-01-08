@@ -10,7 +10,7 @@ import static org.junit.Assert.assertNotEquals;
 
 import org.junit.Test;
 
-import fi.uef.envi.wavellite.entity.core.base.SpatialLocationQualitative;
+import fi.uef.envi.wavellite.entity.core.base.SpatialLocationPlace;
 import fi.uef.envi.wavellite.entity.situation.base.AttributeValueSpatialLocation;
 import fi.uef.envi.wavellite.vocabulary.WTO;
 
@@ -160,8 +160,8 @@ public class AttributeValueSpatialLocationTest {
 		AttributeValueSpatialLocation s2 = new AttributeValueSpatialLocation(
 				"i1");
 
-		s1.setValue(new SpatialLocationQualitative("sl1", "l1"));
-		s2.setValue(new SpatialLocationQualitative("sl1", "l1"));
+		s1.setValue(new SpatialLocationPlace("sl1", "l1"));
+		s2.setValue(new SpatialLocationPlace("sl1", "l1"));
 
 		assertEquals(s1, s2);
 	}
@@ -173,8 +173,8 @@ public class AttributeValueSpatialLocationTest {
 		AttributeValueSpatialLocation s2 = new AttributeValueSpatialLocation(
 				"i1");
 
-		s1.setValue(new SpatialLocationQualitative("sl1", "l1"));
-		s2.setValue(new SpatialLocationQualitative("sl1", "l2"));
+		s1.setValue(new SpatialLocationPlace("sl1", "l1"));
+		s2.setValue(new SpatialLocationPlace("sl1", "l2"));
 
 		assertNotEquals(s1, s2);
 	}

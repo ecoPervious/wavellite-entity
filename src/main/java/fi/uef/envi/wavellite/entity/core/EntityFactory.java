@@ -22,8 +22,8 @@ import fi.uef.envi.wavellite.entity.core.base.SensorBase;
 import fi.uef.envi.wavellite.entity.core.base.SpatialGeometryLineString;
 import fi.uef.envi.wavellite.entity.core.base.SpatialGeometryPoint;
 import fi.uef.envi.wavellite.entity.core.base.SpatialGeometryPolygon;
-import fi.uef.envi.wavellite.entity.core.base.SpatialLocationQualitative;
-import fi.uef.envi.wavellite.entity.core.base.SpatialLocationQuantitative;
+import fi.uef.envi.wavellite.entity.core.base.SpatialLocationPlace;
+import fi.uef.envi.wavellite.entity.core.base.SpatialLocationRegion;
 import fi.uef.envi.wavellite.entity.core.base.TemporalLocationDateTime;
 import fi.uef.envi.wavellite.entity.core.base.TemporalLocationInterval;
 import fi.uef.envi.wavellite.entity.derivation.Component;
@@ -156,15 +156,15 @@ public class EntityFactory {
 	}
 
 	public static SpatialLocation spatialLocation(String label) {
-		return new SpatialLocationQualitative(label);
+		return new SpatialLocationPlace(label);
 	}
 
 	public static SpatialLocation spatialLocation(String label, URI sameAs) {
-		return new SpatialLocationQualitative(label, sameAs);
+		return new SpatialLocationPlace(label, sameAs);
 	}
 
 	public static SpatialLocation spatialLocation(SpatialGeometry geometry) {
-		return new SpatialLocationQuantitative(geometry);
+		return new SpatialLocationRegion(geometry);
 	}
 
 	public static SpatialLocation spatialLocation(Point geometry) {

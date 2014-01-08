@@ -15,7 +15,7 @@ import com.vividsolutions.jts.geom.GeometryFactory;
 import com.vividsolutions.jts.geom.Point;
 
 import fi.uef.envi.wavellite.entity.core.base.SpatialGeometryPoint;
-import fi.uef.envi.wavellite.entity.core.base.SpatialLocationQuantitative;
+import fi.uef.envi.wavellite.entity.core.base.SpatialLocationRegion;
 import fi.uef.envi.wavellite.vocabulary.WTO;
 
 /**
@@ -39,17 +39,17 @@ public class SpatialLocationQuantitativeTest {
 
 	@Test
 	public void test1() {
-		SpatialLocationQuantitative e = new SpatialLocationQuantitative("i1");
-		SpatialLocationQuantitative a = new SpatialLocationQuantitative("i1");
+		SpatialLocationRegion e = new SpatialLocationRegion("i1");
+		SpatialLocationRegion a = new SpatialLocationRegion("i1");
 
 		assertEquals(e, a);
 	}
 
 	@Test
 	public void test2() {
-		SpatialLocationQuantitative e = new SpatialLocationQuantitative("i1",
+		SpatialLocationRegion e = new SpatialLocationRegion("i1",
 				"t1");
-		SpatialLocationQuantitative a = new SpatialLocationQuantitative("i1",
+		SpatialLocationRegion a = new SpatialLocationRegion("i1",
 				"t1");
 
 		assertEquals(e, a);
@@ -57,17 +57,17 @@ public class SpatialLocationQuantitativeTest {
 
 	@Test
 	public void test3() {
-		SpatialLocationQuantitative e = new SpatialLocationQuantitative("i1");
-		SpatialLocationQuantitative a = new SpatialLocationQuantitative("i2");
+		SpatialLocationRegion e = new SpatialLocationRegion("i1");
+		SpatialLocationRegion a = new SpatialLocationRegion("i2");
 
 		assertEquals(e, a);
 	}
 
 	@Test
 	public void test4() {
-		SpatialLocationQuantitative e = new SpatialLocationQuantitative("i1",
+		SpatialLocationRegion e = new SpatialLocationRegion("i1",
 				"t1");
-		SpatialLocationQuantitative a = new SpatialLocationQuantitative("i1",
+		SpatialLocationRegion a = new SpatialLocationRegion("i1",
 				"t2");
 
 		assertNotEquals(e, a);
@@ -75,17 +75,17 @@ public class SpatialLocationQuantitativeTest {
 
 	@Test
 	public void test5() {
-		SpatialLocationQuantitative s1 = new SpatialLocationQuantitative("i1");
-		SpatialLocationQuantitative s2 = new SpatialLocationQuantitative("i1");
+		SpatialLocationRegion s1 = new SpatialLocationRegion("i1");
+		SpatialLocationRegion s2 = new SpatialLocationRegion("i1");
 
 		assertEquals(s1.hashCode(), s2.hashCode());
 	}
 
 	@Test
 	public void test6() {
-		SpatialLocationQuantitative s1 = new SpatialLocationQuantitative("i1",
+		SpatialLocationRegion s1 = new SpatialLocationRegion("i1",
 				"t1");
-		SpatialLocationQuantitative s2 = new SpatialLocationQuantitative("i1",
+		SpatialLocationRegion s2 = new SpatialLocationRegion("i1",
 				"t1");
 
 		assertEquals(s1.hashCode(), s2.hashCode());
@@ -93,17 +93,17 @@ public class SpatialLocationQuantitativeTest {
 
 	@Test
 	public void test7() {
-		SpatialLocationQuantitative s1 = new SpatialLocationQuantitative("i1");
-		SpatialLocationQuantitative s2 = new SpatialLocationQuantitative("i2");
+		SpatialLocationRegion s1 = new SpatialLocationRegion("i1");
+		SpatialLocationRegion s2 = new SpatialLocationRegion("i2");
 
 		assertEquals(s1.hashCode(), s2.hashCode());
 	}
 
 	@Test
 	public void test8() {
-		SpatialLocationQuantitative s1 = new SpatialLocationQuantitative("i1",
+		SpatialLocationRegion s1 = new SpatialLocationRegion("i1",
 				"t1");
-		SpatialLocationQuantitative s2 = new SpatialLocationQuantitative("i1",
+		SpatialLocationRegion s2 = new SpatialLocationRegion("i1",
 				"t2");
 
 		assertNotEquals(s1.hashCode(), s2.hashCode());
@@ -111,7 +111,7 @@ public class SpatialLocationQuantitativeTest {
 
 	@Test
 	public void test9() {
-		SpatialLocationQuantitative s = new SpatialLocationQuantitative("i1",
+		SpatialLocationRegion s = new SpatialLocationRegion("i1",
 				"t1");
 
 		assertEquals("i1", s.getId());
@@ -119,14 +119,14 @@ public class SpatialLocationQuantitativeTest {
 
 	@Test
 	public void test10() {
-		SpatialLocationQuantitative s = new SpatialLocationQuantitative("i1");
+		SpatialLocationRegion s = new SpatialLocationRegion("i1");
 
 		assertEquals(WTO.SpatialRegion, s.getType());
 	}
 
 	@Test
 	public void test11() {
-		SpatialLocationQuantitative s = new SpatialLocationQuantitative("i1",
+		SpatialLocationRegion s = new SpatialLocationRegion("i1",
 				"t1");
 
 		assertEquals("t1", s.getType());
@@ -134,7 +134,7 @@ public class SpatialLocationQuantitativeTest {
 
 	@Test
 	public void test12() {
-		SpatialLocationQuantitative s = new SpatialLocationQuantitative("i1",
+		SpatialLocationRegion s = new SpatialLocationRegion("i1",
 				"t1");
 
 		assertNotEquals("i2", s.getId());
@@ -142,7 +142,7 @@ public class SpatialLocationQuantitativeTest {
 
 	@Test
 	public void test13() {
-		SpatialLocationQuantitative s = new SpatialLocationQuantitative("i1",
+		SpatialLocationRegion s = new SpatialLocationRegion("i1",
 				"t1");
 
 		assertNotEquals("t2", s.getType());
@@ -153,8 +153,8 @@ public class SpatialLocationQuantitativeTest {
 		GeometryFactory gf = new GeometryFactory();
 		Point g = gf.createPoint(new Coordinate(0.0, 0.0));
 
-		SpatialLocationQuantitative e = new SpatialLocationQuantitative(new SpatialGeometryPoint("p1", g));
-		SpatialLocationQuantitative a = new SpatialLocationQuantitative(new SpatialGeometryPoint("p1", g));
+		SpatialLocationRegion e = new SpatialLocationRegion(new SpatialGeometryPoint("p1", g));
+		SpatialLocationRegion a = new SpatialLocationRegion(new SpatialGeometryPoint("p1", g));
 		
 		assertEquals(e, a);
 	}
@@ -165,8 +165,8 @@ public class SpatialLocationQuantitativeTest {
 		Point g1 = gf.createPoint(new Coordinate(0.0, 0.0));
 		Point g2 = gf.createPoint(new Coordinate(1.0, 1.0));
 
-		SpatialLocationQuantitative e = new SpatialLocationQuantitative(new SpatialGeometryPoint("p1", g1));
-		SpatialLocationQuantitative a = new SpatialLocationQuantitative(new SpatialGeometryPoint("p1", g2));
+		SpatialLocationRegion e = new SpatialLocationRegion(new SpatialGeometryPoint("p1", g1));
+		SpatialLocationRegion a = new SpatialLocationRegion(new SpatialGeometryPoint("p1", g2));
 		
 		assertNotEquals(e, a);
 	}
@@ -176,7 +176,7 @@ public class SpatialLocationQuantitativeTest {
 		GeometryFactory gf = new GeometryFactory();
 		Point g = gf.createPoint(new Coordinate(0.0, 0.0));
 
-		SpatialLocationQuantitative s = new SpatialLocationQuantitative(new SpatialGeometryPoint("p1", g));
+		SpatialLocationRegion s = new SpatialLocationRegion(new SpatialGeometryPoint("p1", g));
 		
 		assertEquals(g, s.getSpatialGeometry().getGeometry());
 	}

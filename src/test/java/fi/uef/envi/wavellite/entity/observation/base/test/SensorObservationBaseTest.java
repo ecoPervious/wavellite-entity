@@ -24,7 +24,7 @@ import fi.uef.envi.wavellite.entity.core.base.FeatureBase;
 import fi.uef.envi.wavellite.entity.core.base.PropertyBase;
 import fi.uef.envi.wavellite.entity.core.base.SensorBase;
 import fi.uef.envi.wavellite.entity.core.base.SpatialGeometryPoint;
-import fi.uef.envi.wavellite.entity.core.base.SpatialLocationQuantitative;
+import fi.uef.envi.wavellite.entity.core.base.SpatialLocationRegion;
 import fi.uef.envi.wavellite.entity.core.base.TemporalLocationDateTime;
 import fi.uef.envi.wavellite.entity.observation.ObservationValue;
 import fi.uef.envi.wavellite.entity.observation.SensorOutput;
@@ -220,7 +220,7 @@ public class SensorObservationBaseTest {
 		so.setTemporalLocation(tl);
 		GeometryFactory gf = new GeometryFactory();
 		Point g = gf.createPoint(new Coordinate(0.0, 0.0));
-		SpatialLocation sl = new SpatialLocationQuantitative(new SpatialGeometryPoint(g));
+		SpatialLocation sl = new SpatialLocationRegion(new SpatialGeometryPoint(g));
 		so.setSpatialLocation(sl);
 
 		assertEquals(s, so.getSensor());

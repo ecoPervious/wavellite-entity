@@ -5,8 +5,8 @@
 
 package fi.uef.envi.wavellite.entity.core;
 
-import fi.uef.envi.wavellite.entity.core.base.SpatialLocationQualitative;
-import fi.uef.envi.wavellite.entity.core.base.SpatialLocationQuantitative;
+import fi.uef.envi.wavellite.entity.core.base.SpatialLocationPlace;
+import fi.uef.envi.wavellite.entity.core.base.SpatialLocationRegion;
 
 /**
  * <p>
@@ -27,8 +27,8 @@ import fi.uef.envi.wavellite.entity.core.base.SpatialLocationQuantitative;
 
 public interface SpatialLocationVisitor {
 
-	public void visit(SpatialLocationQualitative location);
+	public void visit(SpatialLocationPlace location);
 	
-	public void visit(SpatialLocationQuantitative location);
+	public void visit(SpatialLocationRegion location);
 	
 }

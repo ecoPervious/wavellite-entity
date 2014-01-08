@@ -14,7 +14,7 @@ import fi.uef.envi.wavellite.vocabulary.WTO;
 
 /**
  * <p>
- * Title: SpatialLocationQualitative
+ * Title: SpatialLocationRegion
  * </p>
  * <p>
  * Description:
@@ -29,31 +29,31 @@ import fi.uef.envi.wavellite.vocabulary.WTO;
  * @author Markus Stocker
  */
 
-public class SpatialLocationQuantitative extends AbstractSpatialLocation {
+public class SpatialLocationRegion extends AbstractSpatialLocation {
 
 	private SpatialGeometry spatialGeometry;
 
-	public SpatialLocationQuantitative() {
+	public SpatialLocationRegion() {
 		this(UUID.randomUUID().toString());
 	}
 
-	public SpatialLocationQuantitative(SpatialGeometry geometry) {
+	public SpatialLocationRegion(SpatialGeometry geometry) {
 		this(UUID.randomUUID().toString(), geometry);
 	}
 
-	public SpatialLocationQuantitative(String id) {
+	public SpatialLocationRegion(String id) {
 		this(id, WTO.SpatialRegion);
 	}
 
-	public SpatialLocationQuantitative(String id, SpatialGeometry geometry) {
+	public SpatialLocationRegion(String id, SpatialGeometry geometry) {
 		this(id, WTO.SpatialRegion, geometry);
 	}
 
-	public SpatialLocationQuantitative(String id, String type) {
+	public SpatialLocationRegion(String id, String type) {
 		super(id, type);
 	}
 
-	public SpatialLocationQuantitative(String id, String type, SpatialGeometry geometry) {
+	public SpatialLocationRegion(String id, String type, SpatialGeometry geometry) {
 		super(id, type);
 
 		this.spatialGeometry = geometry;
@@ -94,7 +94,7 @@ public class SpatialLocationQuantitative extends AbstractSpatialLocation {
 		if (getClass() != obj.getClass())
 			return false;
 
-		SpatialLocationQuantitative other = (SpatialLocationQuantitative) obj;
+		SpatialLocationRegion other = (SpatialLocationRegion) obj;
 
 		if (type == null) {
 			if (other.type != null)
@@ -113,7 +113,7 @@ public class SpatialLocationQuantitative extends AbstractSpatialLocation {
 
 	@Override
 	public String toString() {
-		return "SpatialLocationQuantitative [id = " + id + "; type = " + type
+		return "SpatialLocationRegion [id = " + id + "; type = " + type
 				+ "; spatialGeometry = " + spatialGeometry + "]";
 	}
 
