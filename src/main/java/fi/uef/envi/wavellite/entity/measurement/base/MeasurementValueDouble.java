@@ -35,7 +35,7 @@ public class MeasurementValueDouble extends AbstractMeasurementValue {
 	}
 
 	public MeasurementValueDouble(String id, Double value) {
-		this(id, WOE.MeasurementValueDouble, value);
+		this(id, WOE.MeasurementValue, value);
 	}
 
 	public MeasurementValueDouble(String id, String type, Double value) {

@@ -81,7 +81,7 @@ public class MeasurementValueDoubleTest {
 	public void test7() {
 		MeasurementValueDouble v = new MeasurementValueDouble(0.0);
 
-		assertEquals(WOE.MeasurementValueDouble, v.getType());
+		assertEquals(WOE.MeasurementValue, v.getType());
 	}
 
 }
