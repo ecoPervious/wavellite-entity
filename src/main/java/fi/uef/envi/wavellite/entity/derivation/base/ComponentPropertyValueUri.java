@@ -11,7 +11,7 @@ import org.openrdf.model.URI;
 
 import fi.uef.envi.wavellite.entity.core.EntityVisitor;
 import fi.uef.envi.wavellite.entity.derivation.ComponentPropertyValueVisitor;
-import fi.uef.envi.wavellite.vocabulary.WTO;
+import fi.uef.envi.wavellite.vocabulary.WEO;
 
 /**
  * <p>
@@ -47,11 +47,11 @@ public class ComponentPropertyValueUri extends AbstractComponentPropertyValue {
 	}
 
 	public ComponentPropertyValueUri(String id) {
-		this(id, WTO.ComponentPropertyValueUri);
+		this(id, WEO.ComponentPropertyValueUri);
 	}
 
 	public ComponentPropertyValueUri(String id, URI value) {
-		this(id, WTO.ComponentPropertyValueUri, value);
+		this(id, WEO.ComponentPropertyValueUri, value);
 	}
 
 	public ComponentPropertyValueUri(String id, String type) {

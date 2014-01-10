@@ -11,7 +11,7 @@ import org.joda.time.DateTime;
 
 import fi.uef.envi.wavellite.entity.core.EntityVisitor;
 import fi.uef.envi.wavellite.entity.core.TemporalLocationVisitor;
-import fi.uef.envi.wavellite.vocabulary.WTO;
+import fi.uef.envi.wavellite.vocabulary.WEO;
 
 /**
  * <p>
@@ -45,7 +45,7 @@ public class TemporalLocationDateTime extends AbstractTemporalLocation {
 	}
 
 	public TemporalLocationDateTime(String id, DateTime value) {
-		this(id, WTO.TimePoint, value);
+		this(id, WEO.TimePoint, value);
 	}
 
 	public TemporalLocationDateTime(String id, String type) {

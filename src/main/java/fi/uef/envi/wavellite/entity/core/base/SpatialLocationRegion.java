@@ -10,7 +10,7 @@ import java.util.UUID;
 import fi.uef.envi.wavellite.entity.core.EntityVisitor;
 import fi.uef.envi.wavellite.entity.core.SpatialGeometry;
 import fi.uef.envi.wavellite.entity.core.SpatialLocationVisitor;
-import fi.uef.envi.wavellite.vocabulary.WTO;
+import fi.uef.envi.wavellite.vocabulary.WEO;
 
 /**
  * <p>
@@ -42,11 +42,11 @@ public class SpatialLocationRegion extends AbstractSpatialLocation {
 	}
 
 	public SpatialLocationRegion(String id) {
-		this(id, WTO.SpatialRegion);
+		this(id, WEO.SpatialRegion);
 	}
 
 	public SpatialLocationRegion(String id, SpatialGeometry geometry) {
-		this(id, WTO.SpatialRegion, geometry);
+		this(id, WEO.SpatialRegion, geometry);
 	}
 
 	public SpatialLocationRegion(String id, String type) {

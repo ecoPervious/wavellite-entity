@@ -11,7 +11,7 @@ import com.vividsolutions.jts.geom.LineString;
 
 import fi.uef.envi.wavellite.entity.core.EntityVisitor;
 import fi.uef.envi.wavellite.entity.core.SpatialGeometryVisitor;
-import fi.uef.envi.wavellite.vocabulary.WTO;
+import fi.uef.envi.wavellite.vocabulary.WEO;
 
 /**
  * <p>
@@ -41,11 +41,11 @@ public class SpatialGeometryLineString extends AbstractSpatialGeometry {
 	}
 
 	public SpatialGeometryLineString(String id) {
-		this(id, WTO.LineString);
+		this(id, WEO.LineString);
 	}
 
 	public SpatialGeometryLineString(String id, LineString geometry) {
-		this(id, WTO.LineString, geometry);
+		this(id, WEO.LineString, geometry);
 	}
 
 	public SpatialGeometryLineString(String id, String type) {

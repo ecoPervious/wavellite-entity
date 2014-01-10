@@ -9,7 +9,7 @@ import java.util.UUID;
 
 import fi.uef.envi.wavellite.entity.core.EntityVisitor;
 import fi.uef.envi.wavellite.entity.situation.AttributeValueVisitor;
-import fi.uef.envi.wavellite.vocabulary.WTO;
+import fi.uef.envi.wavellite.vocabulary.WEO;
 
 /**
  * <p>
@@ -39,7 +39,7 @@ public class AttributeValueString extends AbstractAttributeValue {
 	}
 
 	public AttributeValueString(String id, String value) {
-		this(id, WTO.AttributeValueString, value);
+		this(id, WEO.AttributeValueString, value);
 	}
 
 	public AttributeValueString(String id, String type, String value) {

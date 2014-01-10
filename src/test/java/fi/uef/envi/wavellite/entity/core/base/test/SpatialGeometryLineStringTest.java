@@ -15,7 +15,7 @@ import com.vividsolutions.jts.geom.GeometryFactory;
 import com.vividsolutions.jts.geom.LineString;
 
 import fi.uef.envi.wavellite.entity.core.base.SpatialGeometryLineString;
-import fi.uef.envi.wavellite.vocabulary.WTO;
+import fi.uef.envi.wavellite.vocabulary.WEO;
 
 /**
  * <p>
@@ -112,7 +112,7 @@ public class SpatialGeometryLineStringTest {
 	public void test10() {
 		SpatialGeometryLineString s = new SpatialGeometryLineString("i1");
 
-		assertEquals(WTO.LineString, s.getType());
+		assertEquals(WEO.LineString, s.getType());
 	}
 
 	@Test

@@ -11,7 +11,7 @@ import com.vividsolutions.jts.geom.Polygon;
 
 import fi.uef.envi.wavellite.entity.core.EntityVisitor;
 import fi.uef.envi.wavellite.entity.core.SpatialGeometryVisitor;
-import fi.uef.envi.wavellite.vocabulary.WTO;
+import fi.uef.envi.wavellite.vocabulary.WEO;
 
 /**
  * <p>
@@ -41,11 +41,11 @@ public class SpatialGeometryPolygon extends AbstractSpatialGeometry {
 	}
 
 	public SpatialGeometryPolygon(String id) {
-		this(id, WTO.Polygon);
+		this(id, WEO.Polygon);
 	}
 
 	public SpatialGeometryPolygon(String id, Polygon geometry) {
-		this(id, WTO.Polygon, geometry);
+		this(id, WEO.Polygon, geometry);
 	}
 
 	public SpatialGeometryPolygon(String id, String type) {

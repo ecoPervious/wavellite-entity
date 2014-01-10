@@ -12,7 +12,7 @@ import com.vividsolutions.jts.io.WKTWriter;
 import com.vividsolutions.jts.io.gml2.GMLWriter;
 
 import fi.uef.envi.wavellite.entity.core.SpatialGeometry;
-import fi.uef.envi.wavellite.vocabulary.WTO;
+import fi.uef.envi.wavellite.vocabulary.WEO;
 
 /**
  * <p>
@@ -43,7 +43,7 @@ public abstract class AbstractSpatialGeometry extends AbstractEntity implements
 	}
 
 	public AbstractSpatialGeometry(String id) {
-		this(id, WTO.SpatialGeometry);
+		this(id, WEO.SpatialGeometry);
 	}
 
 	public AbstractSpatialGeometry(String id, String type) {

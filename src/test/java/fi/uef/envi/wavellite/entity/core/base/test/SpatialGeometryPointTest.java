@@ -15,7 +15,7 @@ import com.vividsolutions.jts.geom.GeometryFactory;
 import com.vividsolutions.jts.geom.Point;
 
 import fi.uef.envi.wavellite.entity.core.base.SpatialGeometryPoint;
-import fi.uef.envi.wavellite.vocabulary.WTO;
+import fi.uef.envi.wavellite.vocabulary.WEO;
 
 /**
  * <p>
@@ -111,7 +111,7 @@ public class SpatialGeometryPointTest {
 	public void test10() {
 		SpatialGeometryPoint s = new SpatialGeometryPoint("i1");
 
-		assertEquals(WTO.Point, s.getType());
+		assertEquals(WEO.Point, s.getType());
 	}
 
 	@Test

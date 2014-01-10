@@ -11,7 +11,7 @@ import static org.junit.Assert.assertNotEquals;
 import org.junit.Test;
 
 import fi.uef.envi.wavellite.entity.situation.base.AttributeValueDouble;
-import fi.uef.envi.wavellite.vocabulary.WTO;
+import fi.uef.envi.wavellite.vocabulary.WEO;
 
 /**
  * <p>
@@ -107,7 +107,7 @@ public class AttributeValueDoubleTest {
 	public void test10() {
 		AttributeValueDouble s = new AttributeValueDouble("i1");
 		
-		assertEquals(WTO.AttributeValueDouble, s.getType());
+		assertEquals(WEO.AttributeValueDouble, s.getType());
 	}
 	
 	@Test

@@ -12,7 +12,7 @@ import org.junit.Test;
 
 import fi.uef.envi.wavellite.entity.derivation.base.DatasetBase;
 import fi.uef.envi.wavellite.entity.derivation.base.DatasetObservationBase;
-import fi.uef.envi.wavellite.vocabulary.WTO;
+import fi.uef.envi.wavellite.vocabulary.WEO;
 
 /**
  * <p>
@@ -108,7 +108,7 @@ public class DatasetObservationBaseTest {
 	public void test10() {
 		DatasetObservationBase s = new DatasetObservationBase("i1");
 		
-		assertEquals(WTO.DatasetObservation, s.getType());
+		assertEquals(WEO.DatasetObservation, s.getType());
 	}
 	
 	@Test

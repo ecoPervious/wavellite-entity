@@ -12,7 +12,7 @@ import org.joda.time.DateTime;
 import org.junit.Test;
 
 import fi.uef.envi.wavellite.entity.core.base.TemporalLocationDateTime;
-import fi.uef.envi.wavellite.vocabulary.WTO;
+import fi.uef.envi.wavellite.vocabulary.WEO;
 
 /**
  * <p>
@@ -126,7 +126,7 @@ public class TemporalLocationDateTimeTest {
 		TemporalLocationDateTime s = new TemporalLocationDateTime("i1",
 				new DateTime(2013, 11, 04, 0, 0, 0));
 
-		assertEquals(WTO.TimePoint, s.getType());
+		assertEquals(WEO.TimePoint, s.getType());
 	}
 
 	@Test

@@ -7,7 +7,7 @@ package fi.uef.envi.wavellite.entity.core.base;
 
 import fi.uef.envi.wavellite.entity.core.EntityVisitor;
 import fi.uef.envi.wavellite.entity.core.Feature;
-import fi.uef.envi.wavellite.vocabulary.WTO;
+import fi.uef.envi.wavellite.vocabulary.WEO;
 
 /**
  * <p>
@@ -29,7 +29,7 @@ import fi.uef.envi.wavellite.vocabulary.WTO;
 public class FeatureBase extends AbstractEntity implements Feature {
 
 	public FeatureBase(String id) {
-		this(id, WTO.Feature);
+		this(id, WEO.Feature);
 	}
 
 	public FeatureBase(String id, String type) {

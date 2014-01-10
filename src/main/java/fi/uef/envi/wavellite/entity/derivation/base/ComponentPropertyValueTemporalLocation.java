@@ -10,7 +10,7 @@ import java.util.UUID;
 import fi.uef.envi.wavellite.entity.core.EntityVisitor;
 import fi.uef.envi.wavellite.entity.core.TemporalLocation;
 import fi.uef.envi.wavellite.entity.derivation.ComponentPropertyValueVisitor;
-import fi.uef.envi.wavellite.vocabulary.WTO;
+import fi.uef.envi.wavellite.vocabulary.WEO;
 
 /**
  * <p>
@@ -41,12 +41,12 @@ public class ComponentPropertyValueTemporalLocation extends
 	}
 
 	public ComponentPropertyValueTemporalLocation(String id) {
-		this(id, WTO.ComponentPropertyValueTemporalLocation);
+		this(id, WEO.ComponentPropertyValueTemporalLocation);
 	}
 
 	public ComponentPropertyValueTemporalLocation(String id,
 			TemporalLocation value) {
-		this(id, WTO.ComponentPropertyValueTemporalLocation, value);
+		this(id, WEO.ComponentPropertyValueTemporalLocation, value);
 	}
 
 	public ComponentPropertyValueTemporalLocation(String id, String type) {

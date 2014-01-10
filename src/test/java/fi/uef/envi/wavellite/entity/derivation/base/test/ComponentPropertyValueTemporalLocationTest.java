@@ -13,7 +13,7 @@ import org.junit.Test;
 
 import fi.uef.envi.wavellite.entity.core.base.TemporalLocationDateTime;
 import fi.uef.envi.wavellite.entity.derivation.base.ComponentPropertyValueTemporalLocation;
-import fi.uef.envi.wavellite.vocabulary.WTO;
+import fi.uef.envi.wavellite.vocabulary.WEO;
 
 /**
  * <p>
@@ -127,7 +127,7 @@ public class ComponentPropertyValueTemporalLocationTest {
 		ComponentPropertyValueTemporalLocation s = new ComponentPropertyValueTemporalLocation(
 				"i1");
 
-		assertEquals(WTO.ComponentPropertyValueTemporalLocation, s.getType());
+		assertEquals(WEO.ComponentPropertyValueTemporalLocation, s.getType());
 	}
 
 	@Test

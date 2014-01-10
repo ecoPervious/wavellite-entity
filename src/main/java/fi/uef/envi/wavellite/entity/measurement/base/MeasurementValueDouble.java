@@ -9,7 +9,7 @@ import java.util.UUID;
 
 import fi.uef.envi.wavellite.entity.core.EntityVisitor;
 import fi.uef.envi.wavellite.entity.measurement.MeasurementValueVisitor;
-import fi.uef.envi.wavellite.vocabulary.WTO;
+import fi.uef.envi.wavellite.vocabulary.WEO;
 
 /**
  * <p>
@@ -35,7 +35,7 @@ public class MeasurementValueDouble extends AbstractMeasurementValue {
 	}
 
 	public MeasurementValueDouble(String id, Double value) {
-		this(id, WTO.MeasurementValueDouble, value);
+		this(id, WEO.MeasurementValueDouble, value);
 	}
 
 	public MeasurementValueDouble(String id, String type, Double value) {
