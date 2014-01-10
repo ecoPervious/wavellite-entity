@@ -11,7 +11,7 @@ import com.vividsolutions.jts.geom.Point;
 
 import fi.uef.envi.wavellite.entity.core.EntityVisitor;
 import fi.uef.envi.wavellite.entity.core.SpatialGeometryVisitor;
-import fi.uef.envi.wavellite.vocabulary.WOE;
+import fi.uef.envi.wavellite.vocabulary.SF;
 
 /**
  * <p>
@@ -41,11 +41,11 @@ public class SpatialGeometryPoint extends AbstractSpatialGeometry {
 	}
 
 	public SpatialGeometryPoint(String id) {
-		this(id, WOE.Point);
+		this(id, SF.Point);
 	}
 
 	public SpatialGeometryPoint(String id, Point geometry) {
-		this(id, WOE.Point, geometry);
+		this(id, SF.Point, geometry);
 	}
 
 	public SpatialGeometryPoint(String id, String type) {
