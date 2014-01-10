@@ -11,7 +11,7 @@ import org.openrdf.model.URI;
 
 import fi.uef.envi.wavellite.entity.core.EntityVisitor;
 import fi.uef.envi.wavellite.entity.situation.AttributeValueVisitor;
-import fi.uef.envi.wavellite.vocabulary.WOE;
+import fi.uef.envi.wavellite.vocabulary.STO;
 
 /**
  * <p>
@@ -37,7 +37,7 @@ public class AttributeValueUri extends AbstractAttributeValue {
 	}
 
 	public AttributeValueUri(String id) {
-		this(id, WOE.AttributeValueUri);
+		this(id, STO.Value);
 	}
 	
 	public AttributeValueUri(URI value) {
@@ -45,7 +45,7 @@ public class AttributeValueUri extends AbstractAttributeValue {
 	}
 
 	public AttributeValueUri(String id, URI value) {
-		this(id, WOE.AttributeValueUri, value);
+		this(id, STO.Value, value);
 	}
 
 	public AttributeValueUri(String id, String type) {

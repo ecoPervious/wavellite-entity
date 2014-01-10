@@ -12,7 +12,7 @@ import org.junit.Test;
 
 import fi.uef.envi.wavellite.entity.core.base.SpatialLocationPlace;
 import fi.uef.envi.wavellite.entity.situation.base.AttributeValueSpatialLocation;
-import fi.uef.envi.wavellite.vocabulary.WOE;
+import fi.uef.envi.wavellite.vocabulary.STO;
 
 /**
  * <p>
@@ -126,7 +126,7 @@ public class AttributeValueSpatialLocationTest {
 		AttributeValueSpatialLocation s = new AttributeValueSpatialLocation(
 				"i1");
 
-		assertEquals(WOE.AttributeValueSpatialLocation, s.getType());
+		assertEquals(STO.Value, s.getType());
 	}
 
 	@Test
