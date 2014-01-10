@@ -42,11 +42,11 @@ public class RelevantObjectSpatialLocation extends AbstractRelevantObject {
 	}
 
 	public RelevantObjectSpatialLocation(String id) {
-		this(id, WOE.SpatialLocation);
+		this(id, WOE.RelevantObject);
 	}
 
 	public RelevantObjectSpatialLocation(String id, SpatialLocation location) {
-		this(id, WOE.SpatialLocation, location);
+		this(id, WOE.RelevantObject, location);
 	}
 
 	public RelevantObjectSpatialLocation(String id, String type) {

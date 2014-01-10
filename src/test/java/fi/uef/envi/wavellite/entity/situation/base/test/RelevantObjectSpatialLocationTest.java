@@ -108,7 +108,7 @@ public class RelevantObjectSpatialLocationTest {
 	public void test10() {
 		RelevantObjectSpatialLocation s = new RelevantObjectSpatialLocation("i1");
 		
-		assertEquals(WOE.SpatialLocation, s.getType());
+		assertEquals(WOE.RelevantObject, s.getType());
 	}
 	
 	@Test

@@ -127,7 +127,7 @@ public class RelevantObjectTemporalLocationTest {
 		RelevantObjectTemporalLocation s = new RelevantObjectTemporalLocation(
 				"i1");
 
-		assertEquals(WOE.TemporalLocation, s.getType());
+		assertEquals(WOE.RelevantObject, s.getType());
 	}
 
 	@Test

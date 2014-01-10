@@ -42,11 +42,11 @@ public class RelevantObjectTemporalLocation extends AbstractRelevantObject {
 	}
 
 	public RelevantObjectTemporalLocation(String id) {
-		this(id, WOE.TemporalLocation);
+		this(id, WOE.RelevantObject);
 	}
 
 	public RelevantObjectTemporalLocation(String id, TemporalLocation location) {
-		this(id, WOE.TemporalLocation, location);
+		this(id, WOE.RelevantObject, location);
 	}
 
 	public RelevantObjectTemporalLocation(String id, String type) {
