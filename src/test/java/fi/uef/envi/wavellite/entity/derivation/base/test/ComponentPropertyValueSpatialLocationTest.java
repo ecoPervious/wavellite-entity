@@ -12,7 +12,7 @@ import org.junit.Test;
 
 import fi.uef.envi.wavellite.entity.core.base.SpatialLocationPlace;
 import fi.uef.envi.wavellite.entity.derivation.base.ComponentPropertyValueSpatialLocation;
-import fi.uef.envi.wavellite.vocabulary.WEO;
+import fi.uef.envi.wavellite.vocabulary.WOE;
 
 /**
  * <p>
@@ -126,7 +126,7 @@ public class ComponentPropertyValueSpatialLocationTest {
 		ComponentPropertyValueSpatialLocation s = new ComponentPropertyValueSpatialLocation(
 				"i1");
 
-		assertEquals(WEO.ComponentPropertyValueSpatialLocation, s.getType());
+		assertEquals(WOE.ComponentPropertyValueSpatialLocation, s.getType());
 	}
 
 	@Test

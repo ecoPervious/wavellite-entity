@@ -12,7 +12,7 @@ import fi.uef.envi.wavellite.entity.core.base.AbstractEntity;
 import fi.uef.envi.wavellite.entity.measurement.MeasurementValueContext;
 import fi.uef.envi.wavellite.entity.measurement.MeasurementResult;
 import fi.uef.envi.wavellite.entity.measurement.MeasurementValue;
-import fi.uef.envi.wavellite.vocabulary.WEO;
+import fi.uef.envi.wavellite.vocabulary.WOE;
 
 /**
  * <p>
@@ -50,7 +50,7 @@ public class MeasurementResultBase extends AbstractEntity implements
 	}
 
 	public MeasurementResultBase(String id) {
-		this(id, WEO.MeasurementResult);
+		this(id, WOE.MeasurementResult);
 	}
 
 	public MeasurementResultBase(String id, String type) {

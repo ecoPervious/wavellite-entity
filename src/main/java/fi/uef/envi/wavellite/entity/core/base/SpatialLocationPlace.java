@@ -13,7 +13,7 @@ import org.openrdf.model.URI;
 
 import fi.uef.envi.wavellite.entity.core.EntityVisitor;
 import fi.uef.envi.wavellite.entity.core.SpatialLocationVisitor;
-import fi.uef.envi.wavellite.vocabulary.WEO;
+import fi.uef.envi.wavellite.vocabulary.WOE;
 
 /**
  * <p>
@@ -51,11 +51,11 @@ public class SpatialLocationPlace extends AbstractSpatialLocation {
 	}
 
 	public SpatialLocationPlace(String id, String label) {
-		this(id, WEO.SpatialPlace, label);
+		this(id, WOE.SpatialPlace, label);
 	}
 
 	public SpatialLocationPlace(String id, String label, URI sameAs) {
-		this(id, WEO.SpatialPlace, label, sameAs);
+		this(id, WOE.SpatialPlace, label, sameAs);
 	}
 
 	public SpatialLocationPlace(String id, String type, String label) {

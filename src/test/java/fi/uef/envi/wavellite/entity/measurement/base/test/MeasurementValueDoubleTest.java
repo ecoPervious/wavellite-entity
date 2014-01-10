@@ -10,7 +10,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
 import fi.uef.envi.wavellite.entity.measurement.base.MeasurementValueDouble;
-import fi.uef.envi.wavellite.vocabulary.WEO;
+import fi.uef.envi.wavellite.vocabulary.WOE;
 
 /**
  * <p>
@@ -81,7 +81,7 @@ public class MeasurementValueDoubleTest {
 	public void test7() {
 		MeasurementValueDouble v = new MeasurementValueDouble(0.0);
 
-		assertEquals(WEO.MeasurementValueDouble, v.getType());
+		assertEquals(WOE.MeasurementValueDouble, v.getType());
 	}
 
 }

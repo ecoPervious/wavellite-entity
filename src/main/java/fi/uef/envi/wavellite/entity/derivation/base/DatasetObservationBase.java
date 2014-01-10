@@ -21,7 +21,7 @@ import fi.uef.envi.wavellite.entity.derivation.ComponentProperty;
 import fi.uef.envi.wavellite.entity.derivation.ComponentPropertyValue;
 import fi.uef.envi.wavellite.entity.derivation.Dataset;
 import fi.uef.envi.wavellite.entity.derivation.DatasetObservation;
-import fi.uef.envi.wavellite.vocabulary.WEO;
+import fi.uef.envi.wavellite.vocabulary.WOE;
 
 /**
  * <p>
@@ -53,7 +53,7 @@ public class DatasetObservationBase extends AbstractEntity implements
 	}
 
 	public DatasetObservationBase(String id) {
-		this(id, WEO.DatasetObservation);
+		this(id, WOE.DatasetObservation);
 	}
 
 	public DatasetObservationBase(String id, String type) {

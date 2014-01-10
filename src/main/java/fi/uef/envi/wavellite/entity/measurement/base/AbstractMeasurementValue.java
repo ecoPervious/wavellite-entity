@@ -9,7 +9,7 @@ import java.util.UUID;
 
 import fi.uef.envi.wavellite.entity.core.base.AbstractEntity;
 import fi.uef.envi.wavellite.entity.measurement.MeasurementValue;
-import fi.uef.envi.wavellite.vocabulary.WEO;
+import fi.uef.envi.wavellite.vocabulary.WOE;
 
 /**
  * <p>
@@ -38,7 +38,7 @@ public abstract class AbstractMeasurementValue extends AbstractEntity implements
 	}
 
 	public AbstractMeasurementValue(String id) {
-		this(id, WEO.MeasurementValue);
+		this(id, WOE.MeasurementValue);
 	}
 
 	public AbstractMeasurementValue(String id, String type) {

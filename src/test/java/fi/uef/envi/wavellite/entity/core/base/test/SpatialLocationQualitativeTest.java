@@ -15,7 +15,7 @@ import org.openrdf.model.ValueFactory;
 import org.openrdf.model.impl.ValueFactoryImpl;
 
 import fi.uef.envi.wavellite.entity.core.base.SpatialLocationPlace;
-import fi.uef.envi.wavellite.vocabulary.WEO;
+import fi.uef.envi.wavellite.vocabulary.WOE;
 
 /**
  * <p>
@@ -122,7 +122,7 @@ public class SpatialLocationQualitativeTest {
 	public void test10() {
 		SpatialLocationPlace s = new SpatialLocationPlace("l1");
 
-		assertEquals(WEO.SpatialPlace, s.getType());
+		assertEquals(WOE.SpatialPlace, s.getType());
 	}
 
 	@Test

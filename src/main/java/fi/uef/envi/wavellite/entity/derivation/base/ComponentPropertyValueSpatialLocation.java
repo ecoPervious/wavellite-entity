@@ -10,7 +10,7 @@ import java.util.UUID;
 import fi.uef.envi.wavellite.entity.core.EntityVisitor;
 import fi.uef.envi.wavellite.entity.core.SpatialLocation;
 import fi.uef.envi.wavellite.entity.derivation.ComponentPropertyValueVisitor;
-import fi.uef.envi.wavellite.vocabulary.WEO;
+import fi.uef.envi.wavellite.vocabulary.WOE;
 
 /**
  * <p>
@@ -41,12 +41,12 @@ public class ComponentPropertyValueSpatialLocation extends
 	}
 
 	public ComponentPropertyValueSpatialLocation(String id) {
-		this(id, WEO.ComponentPropertyValueSpatialLocation);
+		this(id, WOE.ComponentPropertyValueSpatialLocation);
 	}
 
 	public ComponentPropertyValueSpatialLocation(String id,
 			SpatialLocation value) {
-		this(id, WEO.ComponentPropertyValueSpatialLocation, value);
+		this(id, WOE.ComponentPropertyValueSpatialLocation, value);
 	}
 
 	public ComponentPropertyValueSpatialLocation(String id, String type) {

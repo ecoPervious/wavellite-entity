@@ -16,7 +16,7 @@ import fi.uef.envi.wavellite.entity.core.TemporalLocation;
 import fi.uef.envi.wavellite.entity.core.base.AbstractEntity;
 import fi.uef.envi.wavellite.entity.observation.SensorObservation;
 import fi.uef.envi.wavellite.entity.observation.SensorOutput;
-import fi.uef.envi.wavellite.vocabulary.WEO;
+import fi.uef.envi.wavellite.vocabulary.WOE;
 
 /**
  * <p>
@@ -50,7 +50,7 @@ public class SensorObservationBase extends AbstractEntity implements
 	}
 
 	public SensorObservationBase(String id) {
-		this(id, WEO.SensorObservation);
+		this(id, WOE.SensorObservation);
 	}
 
 	public SensorObservationBase(String id, String type) {

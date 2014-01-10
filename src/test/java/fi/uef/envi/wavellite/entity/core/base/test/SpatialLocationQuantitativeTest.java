@@ -16,7 +16,7 @@ import com.vividsolutions.jts.geom.Point;
 
 import fi.uef.envi.wavellite.entity.core.base.SpatialGeometryPoint;
 import fi.uef.envi.wavellite.entity.core.base.SpatialLocationRegion;
-import fi.uef.envi.wavellite.vocabulary.WEO;
+import fi.uef.envi.wavellite.vocabulary.WOE;
 
 /**
  * <p>
@@ -121,7 +121,7 @@ public class SpatialLocationQuantitativeTest {
 	public void test10() {
 		SpatialLocationRegion s = new SpatialLocationRegion("i1");
 
-		assertEquals(WEO.SpatialRegion, s.getType());
+		assertEquals(WOE.SpatialRegion, s.getType());
 	}
 
 	@Test

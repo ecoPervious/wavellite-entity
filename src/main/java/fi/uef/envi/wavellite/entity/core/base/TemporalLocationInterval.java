@@ -11,7 +11,7 @@ import org.joda.time.Interval;
 
 import fi.uef.envi.wavellite.entity.core.EntityVisitor;
 import fi.uef.envi.wavellite.entity.core.TemporalLocationVisitor;
-import fi.uef.envi.wavellite.vocabulary.WEO;
+import fi.uef.envi.wavellite.vocabulary.WOE;
 
 /**
  * <p>
@@ -42,7 +42,7 @@ public class TemporalLocationInterval extends AbstractTemporalLocation {
 
 	public TemporalLocationInterval(String id, TemporalLocationDateTime start,
 			TemporalLocationDateTime end) {
-		this(id, WEO.TimeInterval, start, end);
+		this(id, WOE.TimeInterval, start, end);
 	}
 
 	public TemporalLocationInterval(String id, String type,

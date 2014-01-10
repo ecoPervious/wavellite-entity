@@ -9,7 +9,7 @@ import java.util.UUID;
 
 import fi.uef.envi.wavellite.entity.core.EntityVisitor;
 import fi.uef.envi.wavellite.entity.derivation.ComponentPropertyValueVisitor;
-import fi.uef.envi.wavellite.vocabulary.WEO;
+import fi.uef.envi.wavellite.vocabulary.WOE;
 
 /**
  * <p>
@@ -36,7 +36,7 @@ public class ComponentPropertyValueString extends
 	}
 
 	public ComponentPropertyValueString(String id, String value) {
-		this(id, WEO.ComponentPropertyValueString, value);
+		this(id, WOE.ComponentPropertyValueString, value);
 	}
 
 	public ComponentPropertyValueString(String id, String type, String value) {

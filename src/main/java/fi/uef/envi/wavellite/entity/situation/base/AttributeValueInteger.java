@@ -9,7 +9,7 @@ import java.util.UUID;
 
 import fi.uef.envi.wavellite.entity.core.EntityVisitor;
 import fi.uef.envi.wavellite.entity.situation.AttributeValueVisitor;
-import fi.uef.envi.wavellite.vocabulary.WEO;
+import fi.uef.envi.wavellite.vocabulary.WOE;
 
 /**
  * <p>
@@ -39,11 +39,11 @@ public class AttributeValueInteger extends AbstractAttributeValue {
 	}
 
 	public AttributeValueInteger(String id) {
-		this(id, WEO.AttributeValueInteger);
+		this(id, WOE.AttributeValueInteger);
 	}
 	
 	public AttributeValueInteger(String id, Integer value) {
-		this(id, WEO.AttributeValueInteger, value);
+		this(id, WOE.AttributeValueInteger, value);
 	}
 	
 	public AttributeValueInteger(String id, String type) {

@@ -7,7 +7,7 @@ package fi.uef.envi.wavellite.entity.core.base;
 
 import fi.uef.envi.wavellite.entity.core.EntityVisitor;
 import fi.uef.envi.wavellite.entity.core.Sensor;
-import fi.uef.envi.wavellite.vocabulary.WEO;
+import fi.uef.envi.wavellite.vocabulary.WOE;
 
 /**
  * <p>
@@ -29,7 +29,7 @@ import fi.uef.envi.wavellite.vocabulary.WEO;
 public class SensorBase extends AbstractEntity implements Sensor {
 
 	public SensorBase(String id) {
-		this(id, WEO.Sensor);
+		this(id, WOE.Sensor);
 	}
 
 	public SensorBase(String id, String type) {

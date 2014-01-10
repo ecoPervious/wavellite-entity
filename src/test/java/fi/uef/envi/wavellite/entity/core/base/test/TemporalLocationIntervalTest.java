@@ -14,7 +14,7 @@ import org.junit.Test;
 
 import fi.uef.envi.wavellite.entity.core.base.TemporalLocationDateTime;
 import fi.uef.envi.wavellite.entity.core.base.TemporalLocationInterval;
-import fi.uef.envi.wavellite.vocabulary.WEO;
+import fi.uef.envi.wavellite.vocabulary.WOE;
 
 /**
  * <p>
@@ -167,7 +167,7 @@ public class TemporalLocationIntervalTest {
 				new TemporalLocationDateTime(new DateTime(2013, 11, 4, 0, 0, 0)),
 				new TemporalLocationDateTime(new DateTime(2013, 11, 4, 1, 0, 0)));
 
-		assertEquals(WEO.TimeInterval, s.getType());
+		assertEquals(WOE.TimeInterval, s.getType());
 	}
 
 	@Test

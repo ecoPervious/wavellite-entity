@@ -7,7 +7,7 @@ package fi.uef.envi.wavellite.entity.core.base;
 
 import fi.uef.envi.wavellite.entity.core.EntityVisitor;
 import fi.uef.envi.wavellite.entity.core.Property;
-import fi.uef.envi.wavellite.vocabulary.WEO;
+import fi.uef.envi.wavellite.vocabulary.WOE;
 
 /**
  * <p>
@@ -29,7 +29,7 @@ import fi.uef.envi.wavellite.vocabulary.WEO;
 public class PropertyBase extends AbstractEntity implements Property {
 
 	public PropertyBase(String id) {
-		this(id, WEO.Property);
+		this(id, WOE.Property);
 	}
 
 	public PropertyBase(String id, String type) {

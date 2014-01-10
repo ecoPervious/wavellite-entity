@@ -15,7 +15,7 @@ import com.vividsolutions.jts.geom.GeometryFactory;
 import com.vividsolutions.jts.geom.Polygon;
 
 import fi.uef.envi.wavellite.entity.core.base.SpatialGeometryPolygon;
-import fi.uef.envi.wavellite.vocabulary.WEO;
+import fi.uef.envi.wavellite.vocabulary.WOE;
 
 /**
  * <p>
@@ -112,7 +112,7 @@ public class SpatialGeometryPolygonTest {
 	public void test10() {
 		SpatialGeometryPolygon s = new SpatialGeometryPolygon("i1");
 
-		assertEquals(WEO.Polygon, s.getType());
+		assertEquals(WOE.Polygon, s.getType());
 	}
 
 	@Test

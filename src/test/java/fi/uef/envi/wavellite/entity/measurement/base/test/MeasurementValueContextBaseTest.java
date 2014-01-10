@@ -11,7 +11,7 @@ import static org.junit.Assert.assertNotEquals;
 import org.junit.Test;
 
 import fi.uef.envi.wavellite.entity.measurement.base.MeasurementValueContextBase;
-import fi.uef.envi.wavellite.vocabulary.WEO;
+import fi.uef.envi.wavellite.vocabulary.WOE;
 
 /**
  * <p>
@@ -107,7 +107,7 @@ public class MeasurementValueContextBaseTest {
 	public void test10() {
 		MeasurementValueContextBase s = new MeasurementValueContextBase("i1");
 		
-		assertEquals(WEO.MeasurementValueContext, s.getType());
+		assertEquals(WOE.MeasurementValueContext, s.getType());
 	}
 	
 	@Test

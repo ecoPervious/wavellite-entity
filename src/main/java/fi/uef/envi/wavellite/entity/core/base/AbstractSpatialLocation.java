@@ -11,7 +11,7 @@ import java.util.Set;
 import java.util.UUID;
 
 import fi.uef.envi.wavellite.entity.core.SpatialLocation;
-import fi.uef.envi.wavellite.vocabulary.WEO;
+import fi.uef.envi.wavellite.vocabulary.WOE;
 
 /**
  * <p>
@@ -46,7 +46,7 @@ public abstract class AbstractSpatialLocation extends AbstractEntity implements
 	}
 
 	public AbstractSpatialLocation(String id) {
-		this(id, WEO.SpatialLocation);
+		this(id, WOE.SpatialLocation);
 	}
 
 	public AbstractSpatialLocation(String id, String type) {

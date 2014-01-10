@@ -13,7 +13,7 @@ import org.openrdf.model.ValueFactory;
 import org.openrdf.model.impl.ValueFactoryImpl;
 
 import fi.uef.envi.wavellite.entity.derivation.base.ComponentPropertyValueUri;
-import fi.uef.envi.wavellite.vocabulary.WEO;
+import fi.uef.envi.wavellite.vocabulary.WOE;
 
 /**
  * <p>
@@ -109,7 +109,7 @@ public class ComponentPropertyValueUriTest {
 	public void test10() {
 		ComponentPropertyValueUri s = new ComponentPropertyValueUri("i1");
 
-		assertEquals(WEO.ComponentPropertyValueUri, s.getType());
+		assertEquals(WOE.ComponentPropertyValueUri, s.getType());
 	}
 
 	@Test

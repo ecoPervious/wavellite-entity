@@ -13,7 +13,7 @@ import org.openrdf.model.ValueFactory;
 import org.openrdf.model.impl.ValueFactoryImpl;
 
 import fi.uef.envi.wavellite.entity.situation.base.AttributeValueUri;
-import fi.uef.envi.wavellite.vocabulary.WEO;
+import fi.uef.envi.wavellite.vocabulary.WOE;
 
 /**
  * <p>
@@ -89,7 +89,7 @@ public class AttributeValueUriTest {
 		AttributeValueUri s = new AttributeValueUri("i1",
 				vf.createURI("http://example.org#v1"));
 
-		assertEquals(WEO.AttributeValueUri, s.getType());
+		assertEquals(WOE.AttributeValueUri, s.getType());
 	}
 
 	@Test
