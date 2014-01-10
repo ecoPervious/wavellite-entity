@@ -69,6 +69,10 @@ public class RelevantObjectSpatialLocation extends AbstractRelevantObject {
 	public void accept(EntityVisitor visitor) {
 		visitor.visit(this);
 	}
+	
+	public SpatialLocation getValue() {
+		return location;
+	}
 
 	@Override
 	public int hashCode() {

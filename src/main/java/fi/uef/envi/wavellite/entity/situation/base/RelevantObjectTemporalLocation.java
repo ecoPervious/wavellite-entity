@@ -69,6 +69,10 @@ public class RelevantObjectTemporalLocation extends AbstractRelevantObject {
 	public void accept(EntityVisitor visitor) {
 		visitor.visit(this);
 	}
+	
+	public TemporalLocation getValue() {
+		return location;
+	}
 
 	@Override
 	public int hashCode() {
