@@ -178,7 +178,7 @@ public class SpatialLocationQuantitativeTest {
 
 		SpatialLocationRegion s = new SpatialLocationRegion(new SpatialGeometryPoint("p1", g));
 		
-		assertEquals(g, s.getSpatialGeometry().getGeometry());
+		assertEquals(g, s.getSpatialGeometry().getValue());
 	}
 	
 }

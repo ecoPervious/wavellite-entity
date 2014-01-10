@@ -174,7 +174,7 @@ public class SpatialGeometryPolygonTest {
 
 		SpatialGeometryPolygon s = new SpatialGeometryPolygon("p1", g);
 
-		assertEquals(g, s.getGeometry());
+		assertEquals(g, s.getValue());
 	}
 
 }

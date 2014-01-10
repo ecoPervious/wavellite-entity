@@ -34,7 +34,7 @@ import fi.uef.envi.wavellite.vocabulary.SF;
 public abstract class AbstractSpatialGeometry extends AbstractEntity implements
 		SpatialGeometry {
 
-	protected Geometry geometry;
+	protected Geometry value;
 	private WKTWriter wktWriter = new WKTWriter();
 	private GMLWriter gmlWriter = new GMLWriter();
 
@@ -53,28 +53,28 @@ public abstract class AbstractSpatialGeometry extends AbstractEntity implements
 	public AbstractSpatialGeometry(String id, String type, Geometry geometry) {
 		super(id, type);
 		
-		this.geometry = geometry;
+		this.value = geometry;
 	}
 
 	@Override
-	public Geometry getGeometry() {
-		return geometry;
+	public Geometry getValue() {
+		return value;
 	}
 	
 	@Override
-	public String getGeometryAsWKT() {
-		if (geometry == null)
+	public String getValueAsWKT() {
+		if (value == null)
 			return null;
 		
-		return wktWriter.writeFormatted(geometry);
+		return wktWriter.writeFormatted(value);
 	}
 	
 	@Override
-	public String getGeometryAsGML() {
-		if (geometry == null)
+	public String getValueAsGML() {
+		if (value == null)
 			return null;
 		
-		return gmlWriter.write(geometry);
+		return gmlWriter.write(value);
 	}
 
 }

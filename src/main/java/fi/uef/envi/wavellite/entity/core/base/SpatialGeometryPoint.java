@@ -67,8 +67,8 @@ public class SpatialGeometryPoint extends AbstractSpatialGeometry {
 	}
 
 	@Override
-	public Point getGeometry() {
-		return (Point) geometry;
+	public Point getValue() {
+		return (Point) value;
 	}
 
 	@Override
@@ -78,7 +78,7 @@ public class SpatialGeometryPoint extends AbstractSpatialGeometry {
 
 		result = prime * result + ((type == null) ? 0 : type.hashCode());
 		result = prime * result
-				+ ((geometry == null) ? 0 : geometry.hashCode());
+				+ ((value == null) ? 0 : value.hashCode());
 
 		return result;
 	}
@@ -100,10 +100,10 @@ public class SpatialGeometryPoint extends AbstractSpatialGeometry {
 		} else if (!type.equals(other.type))
 			return false;
 
-		if (geometry == null) {
-			if (other.geometry != null)
+		if (value == null) {
+			if (other.value != null)
 				return false;
-		} else if (!geometry.equals(other.geometry))
+		} else if (!value.equals(other.value))
 			return false;
 
 		return true;
@@ -112,6 +112,6 @@ public class SpatialGeometryPoint extends AbstractSpatialGeometry {
 	@Override
 	public String toString() {
 		return "SpatialGeometryPoint [id = " + id + "; type = " + type
-				+ "; geometry = " + geometry + "]";
+				+ "; geometry = " + value + "]";
 	}
 }

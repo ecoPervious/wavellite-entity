@@ -170,7 +170,7 @@ public class SpatialGeometryLineStringTest {
 
 		SpatialGeometryLineString s = new SpatialGeometryLineString("p1", g);
 
-		assertEquals(g, s.getGeometry());
+		assertEquals(g, s.getValue());
 	}
 
 }

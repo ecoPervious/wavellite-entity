@@ -67,8 +67,8 @@ public class SpatialGeometryLineString extends AbstractSpatialGeometry {
 	}
 
 	@Override
-	public LineString getGeometry() {
-		return (LineString) geometry;
+	public LineString getValue() {
+		return (LineString) value;
 	}
 
 	@Override
@@ -78,7 +78,7 @@ public class SpatialGeometryLineString extends AbstractSpatialGeometry {
 
 		result = prime * result + ((type == null) ? 0 : type.hashCode());
 		result = prime * result
-				+ ((geometry == null) ? 0 : geometry.hashCode());
+				+ ((value == null) ? 0 : value.hashCode());
 
 		return result;
 	}
@@ -100,10 +100,10 @@ public class SpatialGeometryLineString extends AbstractSpatialGeometry {
 		} else if (!type.equals(other.type))
 			return false;
 
-		if (geometry == null) {
-			if (other.geometry != null)
+		if (value == null) {
+			if (other.value != null)
 				return false;
-		} else if (!geometry.equals(other.geometry))
+		} else if (!value.equals(other.value))
 			return false;
 
 		return true;
@@ -112,6 +112,6 @@ public class SpatialGeometryLineString extends AbstractSpatialGeometry {
 	@Override
 	public String toString() {
 		return "SpatialGeometryLineString [id = " + id + "; type = " + type
-				+ "; geometry = " + geometry + "]";
+				+ "; geometry = " + value + "]";
 	}
 }

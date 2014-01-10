@@ -165,7 +165,7 @@ public class SpatialGeometryPointTest {
 
 		SpatialGeometryPoint s = new SpatialGeometryPoint("p1", g);
 
-		assertEquals(g, s.getGeometry());
+		assertEquals(g, s.getValue());
 	}
 
 }

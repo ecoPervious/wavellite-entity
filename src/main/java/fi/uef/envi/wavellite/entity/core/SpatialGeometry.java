@@ -26,11 +26,11 @@ import com.vividsolutions.jts.geom.Geometry;
 
 public interface SpatialGeometry extends Entity {
 
-	public Geometry getGeometry();
+	public Geometry getValue();
 	
-	public String getGeometryAsWKT();
+	public String getValueAsWKT();
 	
-	public String getGeometryAsGML();
+	public String getValueAsGML();
 	
 	public void accept(SpatialGeometryVisitor visitor);
 	
