@@ -9,7 +9,7 @@ import java.util.UUID;
 
 import fi.uef.envi.wavellite.entity.core.EntityVisitor;
 import fi.uef.envi.wavellite.entity.observation.ObservationValueVisitor;
-import fi.uef.envi.wavellite.vocabulary.WOE;
+import fi.uef.envi.wavellite.vocabulary.SSN;
 
 /**
  * <p>
@@ -39,11 +39,11 @@ public class ObservationValueDouble extends AbstractObservationValue {
 	}
 	
 	public ObservationValueDouble(String id) {
-		this(id, WOE.ObservationValueDouble);
+		this(id, SSN.ObservationValue);
 	}
 
 	public ObservationValueDouble(String id, Double value) {
-		this(id, WOE.ObservationValueDouble, value);
+		this(id, SSN.ObservationValue, value);
 	}
 	
 	public ObservationValueDouble(String id, String type) {

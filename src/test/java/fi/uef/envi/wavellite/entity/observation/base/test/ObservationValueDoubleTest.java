@@ -11,7 +11,7 @@ import static org.junit.Assert.assertNotEquals;
 import org.junit.Test;
 
 import fi.uef.envi.wavellite.entity.observation.base.ObservationValueDouble;
-import fi.uef.envi.wavellite.vocabulary.WOE;
+import fi.uef.envi.wavellite.vocabulary.SSN;
 
 /**
  * <p>
@@ -107,7 +107,7 @@ public class ObservationValueDoubleTest {
 	public void test10() {
 		ObservationValueDouble s = new ObservationValueDouble("i1");
 
-		assertEquals(WOE.ObservationValueDouble, s.getType());
+		assertEquals(SSN.ObservationValue, s.getType());
 	}
 
 	@Test
