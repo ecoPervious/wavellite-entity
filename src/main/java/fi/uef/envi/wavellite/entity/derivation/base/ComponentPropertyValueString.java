@@ -36,7 +36,7 @@ public class ComponentPropertyValueString extends
 	}
 
 	public ComponentPropertyValueString(String id, String value) {
-		this(id, WOE.ComponentPropertyValueString, value);
+		this(id, WOE.ComponentPropertyValue, value);
 	}
 
 	public ComponentPropertyValueString(String id, String type, String value) {

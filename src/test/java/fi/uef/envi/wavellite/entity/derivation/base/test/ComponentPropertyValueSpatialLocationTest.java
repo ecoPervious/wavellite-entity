@@ -126,7 +126,7 @@ public class ComponentPropertyValueSpatialLocationTest {
 		ComponentPropertyValueSpatialLocation s = new ComponentPropertyValueSpatialLocation(
 				"i1");
 
-		assertEquals(WOE.ComponentPropertyValueSpatialLocation, s.getType());
+		assertEquals(WOE.ComponentPropertyValue, s.getType());
 	}
 
 	@Test

@@ -41,12 +41,12 @@ public class ComponentPropertyValueTemporalLocation extends
 	}
 
 	public ComponentPropertyValueTemporalLocation(String id) {
-		this(id, WOE.ComponentPropertyValueTemporalLocation);
+		this(id, WOE.ComponentPropertyValue);
 	}
 
 	public ComponentPropertyValueTemporalLocation(String id,
 			TemporalLocation value) {
-		this(id, WOE.ComponentPropertyValueTemporalLocation, value);
+		this(id, WOE.ComponentPropertyValue, value);
 	}
 
 	public ComponentPropertyValueTemporalLocation(String id, String type) {

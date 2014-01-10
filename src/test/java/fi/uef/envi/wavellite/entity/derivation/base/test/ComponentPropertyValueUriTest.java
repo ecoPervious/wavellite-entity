@@ -109,7 +109,7 @@ public class ComponentPropertyValueUriTest {
 	public void test10() {
 		ComponentPropertyValueUri s = new ComponentPropertyValueUri("i1");
 
-		assertEquals(WOE.ComponentPropertyValueUri, s.getType());
+		assertEquals(WOE.ComponentPropertyValue, s.getType());
 	}
 
 	@Test

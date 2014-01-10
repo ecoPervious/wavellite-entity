@@ -40,11 +40,11 @@ public class ComponentPropertyValueInteger extends
 	}
 
 	public ComponentPropertyValueInteger(String id) {
-		this(id, WOE.ComponentPropertyValueInteger);
+		this(id, WOE.ComponentPropertyValue);
 	}
 
 	public ComponentPropertyValueInteger(String id, Integer value) {
-		this(id, WOE.ComponentPropertyValueInteger, value);
+		this(id, WOE.ComponentPropertyValue, value);
 	}
 
 	public ComponentPropertyValueInteger(String id, String type) {

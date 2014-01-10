@@ -40,11 +40,11 @@ public class ComponentPropertyValueDouble extends
 	}
 
 	public ComponentPropertyValueDouble(String id) {
-		this(id, WOE.ComponentPropertyValueDouble);
+		this(id, WOE.ComponentPropertyValue);
 	}
 
 	public ComponentPropertyValueDouble(String id, Double value) {
-		this(id, WOE.ComponentPropertyValueDouble, value);
+		this(id, WOE.ComponentPropertyValue, value);
 	}
 
 	public ComponentPropertyValueDouble(String id, String type) {

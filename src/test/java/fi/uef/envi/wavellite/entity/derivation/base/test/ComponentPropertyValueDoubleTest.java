@@ -115,7 +115,7 @@ public class ComponentPropertyValueDoubleTest {
 	public void test10() {
 		ComponentPropertyValueDouble s = new ComponentPropertyValueDouble("i1");
 
-		assertEquals(WOE.ComponentPropertyValueDouble, s.getType());
+		assertEquals(WOE.ComponentPropertyValue, s.getType());
 	}
 
 	@Test

@@ -115,7 +115,7 @@ public class ComponentPropertyValueIntegerTest {
 	public void test10() {
 		ComponentPropertyValueInteger s = new ComponentPropertyValueInteger("i1");
 
-		assertEquals(WOE.ComponentPropertyValueInteger, s.getType());
+		assertEquals(WOE.ComponentPropertyValue, s.getType());
 	}
 
 	@Test

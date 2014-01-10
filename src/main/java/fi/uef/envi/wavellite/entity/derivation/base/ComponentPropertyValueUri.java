@@ -47,11 +47,11 @@ public class ComponentPropertyValueUri extends AbstractComponentPropertyValue {
 	}
 
 	public ComponentPropertyValueUri(String id) {
-		this(id, WOE.ComponentPropertyValueUri);
+		this(id, WOE.ComponentPropertyValue);
 	}
 
 	public ComponentPropertyValueUri(String id, URI value) {
-		this(id, WOE.ComponentPropertyValueUri, value);
+		this(id, WOE.ComponentPropertyValue, value);
 	}
 
 	public ComponentPropertyValueUri(String id, String type) {

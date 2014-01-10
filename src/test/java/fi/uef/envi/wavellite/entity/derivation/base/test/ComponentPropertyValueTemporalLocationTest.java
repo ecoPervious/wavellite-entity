@@ -127,7 +127,7 @@ public class ComponentPropertyValueTemporalLocationTest {
 		ComponentPropertyValueTemporalLocation s = new ComponentPropertyValueTemporalLocation(
 				"i1");
 
-		assertEquals(WOE.ComponentPropertyValueTemporalLocation, s.getType());
+		assertEquals(WOE.ComponentPropertyValue, s.getType());
 	}
 
 	@Test
