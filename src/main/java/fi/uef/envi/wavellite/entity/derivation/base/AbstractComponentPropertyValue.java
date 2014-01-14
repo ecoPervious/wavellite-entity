@@ -5,6 +5,10 @@
 
 package fi.uef.envi.wavellite.entity.derivation.base;
 
+import org.openrdf.model.URI;
+
+import fi.uef.envi.wavellite.entity.core.SpatialLocation;
+import fi.uef.envi.wavellite.entity.core.TemporalLocation;
 import fi.uef.envi.wavellite.entity.core.base.AbstractEntity;
 import fi.uef.envi.wavellite.entity.derivation.ComponentPropertyValue;
 
@@ -51,6 +55,36 @@ public abstract class AbstractComponentPropertyValue extends AbstractEntity
 	@Override
 	public Object getValue() {
 		return value;
+	}
+	
+	@Override
+	public Double getValueAsDouble() {
+		return (Double)value;
+	}
+
+	@Override
+	public Integer getValueAsInteger() {
+		return (Integer)value;
+	}
+
+	@Override
+	public String getValueAsString() {
+		return (String)value;
+	}
+
+	@Override
+	public TemporalLocation getValueAsTemporalLocation() {
+		return (TemporalLocation)value;
+	}
+
+	@Override
+	public SpatialLocation getValueAsSpatialLocation() {
+		return (SpatialLocation)value;
+	}
+
+	@Override
+	public URI getValueAsUri() {
+		return (URI)value;
 	}
 
 }

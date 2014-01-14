@@ -5,6 +5,11 @@
 
 package fi.uef.envi.wavellite.entity.derivation;
 
+import org.openrdf.model.URI;
+
+import fi.uef.envi.wavellite.entity.core.SpatialLocation;
+import fi.uef.envi.wavellite.entity.core.TemporalLocation;
+
 /**
  * <p>
  * Title: ComponentPropertyValue
@@ -27,7 +32,19 @@ public interface ComponentPropertyValue {
 	public void setValue(Object value);
 
 	public Object getValue();
-	
+
+	public Double getValueAsDouble();
+
+	public Integer getValueAsInteger();
+
+	public String getValueAsString();
+
+	public TemporalLocation getValueAsTemporalLocation();
+
+	public SpatialLocation getValueAsSpatialLocation();
+
+	public URI getValueAsUri();
+
 	public void accept(ComponentPropertyValueVisitor visitor);
 
 }
