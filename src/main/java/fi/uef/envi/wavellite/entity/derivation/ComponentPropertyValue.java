@@ -7,6 +7,7 @@ package fi.uef.envi.wavellite.entity.derivation;
 
 import org.openrdf.model.URI;
 
+import fi.uef.envi.wavellite.entity.core.Entity;
 import fi.uef.envi.wavellite.entity.core.SpatialLocation;
 import fi.uef.envi.wavellite.entity.core.TemporalLocation;
 
@@ -27,7 +28,7 @@ import fi.uef.envi.wavellite.entity.core.TemporalLocation;
  * @author Markus Stocker
  */
 
-public interface ComponentPropertyValue {
+public interface ComponentPropertyValue extends Entity {
 
 	public void setValue(Object value);
 
