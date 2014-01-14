@@ -61,7 +61,7 @@ public class DatasetObservationBase extends AbstractEntity implements
 
 		this.components = new LinkedHashMap<ComponentProperty, Component>();
 	}
-	
+
 	@Override
 	public void accept(EntityVisitor visitor) {
 		visitor.visit(this);
@@ -83,7 +83,7 @@ public class DatasetObservationBase extends AbstractEntity implements
 	@Override
 	public void addComponent(Component component) {
 		ComponentProperty componentProperty = component.getComponentProperty();
-		
+
 		if (components.containsKey(componentProperty)) {
 			if (log.isLoggable(Level.WARNING))
 				log.warning("Dataset observation already contains this component property (override) [componentProperty = "
@@ -93,7 +93,19 @@ public class DatasetObservationBase extends AbstractEntity implements
 						+ "]");
 		}
 
+		setComponent(component);
+	}
+
+	@Override
+	public void setComponent(Component component) {
+		ComponentProperty componentProperty = component.getComponentProperty();
 		components.put(componentProperty, component);
+	}
+
+	@Override
+	public void setComponentPropertyValue(ComponentProperty property,
+			ComponentPropertyValue value) {
+		setComponent(new ComponentBase(property, value));
 	}
 
 	@Override
