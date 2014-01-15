@@ -34,6 +34,8 @@ public interface ComponentPropertyValue extends Entity {
 
 	public Object getValue();
 
+	public Number getValueAsNumber();
+	
 	public Double getValueAsDouble();
 
 	public Integer getValueAsInteger();

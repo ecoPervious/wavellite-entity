@@ -56,35 +56,43 @@ public abstract class AbstractComponentPropertyValue extends AbstractEntity
 	public Object getValue() {
 		return value;
 	}
-	
+
+	@Override
+	public Number getValueAsNumber() {
+		return (Number) value;
+	}
+
 	@Override
 	public Double getValueAsDouble() {
-		return (Double)value;
+		if (value instanceof Integer)
+			return getValueAsInteger().doubleValue();
+
+		return (Double) value;
 	}
 
 	@Override
 	public Integer getValueAsInteger() {
-		return (Integer)value;
+		return (Integer) value;
 	}
 
 	@Override
 	public String getValueAsString() {
-		return (String)value;
+		return (String) value;
 	}
 
 	@Override
 	public TemporalLocation getValueAsTemporalLocation() {
-		return (TemporalLocation)value;
+		return (TemporalLocation) value;
 	}
 
 	@Override
 	public SpatialLocation getValueAsSpatialLocation() {
-		return (SpatialLocation)value;
+		return (SpatialLocation) value;
 	}
 
 	@Override
 	public URI getValueAsUri() {
-		return (URI)value;
+		return (URI) value;
 	}
 
 }
