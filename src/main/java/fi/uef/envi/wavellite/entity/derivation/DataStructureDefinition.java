@@ -29,7 +29,7 @@ import fi.uef.envi.wavellite.entity.core.Entity;
 
 public interface DataStructureDefinition extends Entity {
 
-	public void addComponentSpecification(ComponentSpecification component);
+	public void addComponentSpecification(ComponentSpecification specification);
 	
 	public Set<ComponentSpecification> getComponentSpecifications();
 	

@@ -62,8 +62,8 @@ public class DataStructureDefinitionBase extends AbstractEntity implements
 	}
 
 	@Override
-	public void addComponentSpecification(ComponentSpecification component) {
-		componentSpecifications.add(component);
+	public void addComponentSpecification(ComponentSpecification specification) {
+		componentSpecifications.add(specification);
 	}
 
 	@Override
