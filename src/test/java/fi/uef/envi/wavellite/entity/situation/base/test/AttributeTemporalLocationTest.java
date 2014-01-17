@@ -14,11 +14,10 @@ import org.junit.Test;
 import fi.uef.envi.wavellite.entity.core.base.TemporalLocationDateTime;
 import fi.uef.envi.wavellite.entity.situation.base.AttributeTemporalLocation;
 import fi.uef.envi.wavellite.vocabulary.STO;
-import fi.uef.envi.wavellite.vocabulary.WOE;
 
 /**
  * <p>
- * Title: AttributeTemporalLocation
+ * Title: AttributeTemporalLocationTest
  * </p>
  * <p>
  * Description:

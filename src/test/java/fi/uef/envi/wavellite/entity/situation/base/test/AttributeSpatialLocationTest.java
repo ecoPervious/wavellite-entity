@@ -13,11 +13,10 @@ import org.junit.Test;
 import fi.uef.envi.wavellite.entity.core.base.SpatialLocationPlace;
 import fi.uef.envi.wavellite.entity.situation.base.AttributeSpatialLocation;
 import fi.uef.envi.wavellite.vocabulary.STO;
-import fi.uef.envi.wavellite.vocabulary.WOE;
 
 /**
  * <p>
- * Title: AttributeSpatialLocation
+ * Title: AttributeSpatialLocationTest
  * </p>
  * <p>
  * Description:
