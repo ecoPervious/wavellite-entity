@@ -10,6 +10,7 @@ import java.util.Set;
 
 import org.joda.time.DateTime;
 import org.joda.time.Interval;
+import org.joda.time.Period;
 import org.openrdf.model.URI;
 
 import com.vividsolutions.jts.geom.LineString;
@@ -64,6 +65,7 @@ import fi.uef.envi.wavellite.entity.situation.Situation;
 import fi.uef.envi.wavellite.entity.situation.base.AttributeRelevantIndividual;
 import fi.uef.envi.wavellite.entity.situation.base.AttributeValueDouble;
 import fi.uef.envi.wavellite.entity.situation.base.AttributeSpatialLocation;
+import fi.uef.envi.wavellite.entity.situation.base.AttributeValuePeriod;
 import fi.uef.envi.wavellite.entity.situation.base.AttributeValueString;
 import fi.uef.envi.wavellite.entity.situation.base.AttributeTemporalLocation;
 import fi.uef.envi.wavellite.entity.situation.base.ElementaryInfonBase;
@@ -413,6 +415,10 @@ public class EntityFactory {
 		return relevantIndividual(attribute(attributeValue(value)));
 	}
 
+	public static RelevantIndividual relevantIndividual(Period value) {
+		return relevantIndividual(attribute(attributeValue(value)));
+	}
+	
 	public static RelevantIndividual relevantIndividual(String value) {
 		return relevantIndividual(attribute(attributeValue(value)));
 	}
@@ -423,6 +429,10 @@ public class EntityFactory {
 
 	public static AttributeValue attributeValue(Double value) {
 		return new AttributeValueDouble(value);
+	}
+	
+	public static AttributeValue attributeValue(Period value) {
+		return new AttributeValuePeriod(value);
 	}
 
 	public static AttributeValue attributeValue(String value) {
