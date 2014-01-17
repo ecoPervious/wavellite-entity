@@ -61,16 +61,14 @@ import fi.uef.envi.wavellite.entity.situation.Relation;
 import fi.uef.envi.wavellite.entity.situation.RelevantIndividual;
 import fi.uef.envi.wavellite.entity.situation.RelevantObject;
 import fi.uef.envi.wavellite.entity.situation.Situation;
-import fi.uef.envi.wavellite.entity.situation.base.AttributeBase;
+import fi.uef.envi.wavellite.entity.situation.base.AttributeValued;
 import fi.uef.envi.wavellite.entity.situation.base.AttributeValueDouble;
-import fi.uef.envi.wavellite.entity.situation.base.AttributeValueSpatialLocation;
+import fi.uef.envi.wavellite.entity.situation.base.AttributeSpatialLocation;
 import fi.uef.envi.wavellite.entity.situation.base.AttributeValueString;
-import fi.uef.envi.wavellite.entity.situation.base.AttributeValueTemporalLocation;
+import fi.uef.envi.wavellite.entity.situation.base.AttributeTemporalLocation;
 import fi.uef.envi.wavellite.entity.situation.base.ElementaryInfonBase;
 import fi.uef.envi.wavellite.entity.situation.base.RelationBase;
 import fi.uef.envi.wavellite.entity.situation.base.RelevantIndividualBase;
-import fi.uef.envi.wavellite.entity.situation.base.RelevantObjectSpatialLocation;
-import fi.uef.envi.wavellite.entity.situation.base.RelevantObjectTemporalLocation;
 import fi.uef.envi.wavellite.entity.situation.base.SituationBase;
 import fi.uef.envi.wavellite.vocabulary.QB;
 import fi.uef.envi.wavellite.vocabulary.SDMX;
@@ -379,32 +377,32 @@ public class EntityFactory {
 		return new RelationBase(id);
 	}
 
-	public static RelevantObject relevantObject(DateTime object) {
-		return new RelevantObjectTemporalLocation(temporalLocation(object));
+	public static AttributeTemporalLocation relevantObject(DateTime object) {
+		return relevantObject(object);
 	}
 
-	public static RelevantObject relevantObject(Interval object) {
-		return new RelevantObjectTemporalLocation(temporalLocation(object));
+	public static AttributeTemporalLocation relevantObject(Interval object) {
+		return relevantObject(object);
 	}
 
-	public static RelevantObject relevantObject(TemporalLocation object) {
-		return new RelevantObjectTemporalLocation(object);
+	public static AttributeTemporalLocation relevantObject(TemporalLocation object) {
+		return attribute(object);
 	}
 
-	public static RelevantObject relevantObject(Point object) {
-		return new RelevantObjectSpatialLocation(spatialLocation(object));
+	public static AttributeSpatialLocation relevantObject(Point object) {
+		return relevantObject(object);
 	}
 
-	public static RelevantObject relevantObject(Polygon object) {
-		return new RelevantObjectSpatialLocation(spatialLocation(object));
+	public static AttributeSpatialLocation relevantObject(Polygon object) {
+		return relevantObject(object);
 	}
 
-	public static RelevantObject relevantObject(LineString object) {
-		return new RelevantObjectSpatialLocation(spatialLocation(object));
+	public static AttributeSpatialLocation relevantObject(LineString object) {
+		return relevantObject(object);
 	}
 
-	public static RelevantObject relevantObject(SpatialLocation object) {
-		return new RelevantObjectSpatialLocation(object);
+	public static AttributeSpatialLocation relevantObject(SpatialLocation object) {
+		return attribute(object);
 	}
 
 	public static RelevantIndividual relevantIndividual(Attribute... attributes) {
@@ -419,37 +417,8 @@ public class EntityFactory {
 		return relevantIndividual(attribute(attributeValue(value)));
 	}
 
-	public static RelevantIndividual relevantIndividual(
-			TemporalLocation location) {
-		return relevantIndividual(attribute(attributeValue(location)));
-	}
-
-	public static RelevantIndividual relevantIndividual(SpatialLocation location) {
-		return relevantIndividual(attribute(attributeValue(location)));
-	}
-
-	public static RelevantIndividual relevantIndividual(DateTime time) {
-		return relevantIndividual(attribute(attributeValue(time)));
-	}
-
-	public static RelevantIndividual relevantIndividual(Interval interval) {
-		return relevantIndividual(attribute(attributeValue(interval)));
-	}
-
-	public static RelevantIndividual relevantIndividual(Point geometry) {
-		return relevantIndividual(attribute(attributeValue(spatialLocation(geometry))));
-	}
-
-	public static RelevantIndividual relevantIndividual(Polygon geometry) {
-		return relevantIndividual(attribute(attributeValue(spatialLocation(geometry))));
-	}
-
-	public static RelevantIndividual relevantIndividual(LineString geometry) {
-		return relevantIndividual(attribute(attributeValue(spatialLocation(geometry))));
-	}
-
 	public static Attribute attribute(AttributeValue value) {
-		return new AttributeBase(value);
+		return new AttributeValued(value);
 	}
 
 	public static AttributeValue attributeValue(Double value) {
@@ -460,20 +429,20 @@ public class EntityFactory {
 		return new AttributeValueString(value);
 	}
 
-	public static AttributeValue attributeValue(DateTime time) {
-		return new AttributeValueTemporalLocation(temporalLocation(time));
+	public static AttributeTemporalLocation attribute(DateTime time) {
+		return attribute(temporalLocation(time));
 	}
 
-	public static AttributeValue attributeValue(Interval interval) {
-		return new AttributeValueTemporalLocation(temporalLocation(interval));
+	public static AttributeTemporalLocation attribute(Interval interval) {
+		return attribute(temporalLocation(interval));
 	}
 
-	public static AttributeValue attributeValue(TemporalLocation location) {
-		return new AttributeValueTemporalLocation(location);
+	public static AttributeTemporalLocation attribute(TemporalLocation location) {
+		return new AttributeTemporalLocation(location);
 	}
 
-	public static AttributeValue attributeValue(SpatialLocation location) {
-		return new AttributeValueSpatialLocation(location);
+	public static AttributeSpatialLocation attribute(SpatialLocation location) {
+		return new AttributeSpatialLocation(location);
 	}
 
 }

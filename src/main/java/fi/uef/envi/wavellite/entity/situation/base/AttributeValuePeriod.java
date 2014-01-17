@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 see CREDITS.txt
+ * Copyright (C) 2013 see CREDITS.txt
  * All rights reserved.
  */
 
@@ -7,14 +7,15 @@ package fi.uef.envi.wavellite.entity.situation.base;
 
 import java.util.UUID;
 
+import org.joda.time.Period;
+
 import fi.uef.envi.wavellite.entity.core.EntityVisitor;
-import fi.uef.envi.wavellite.entity.core.SpatialLocation;
 import fi.uef.envi.wavellite.entity.situation.AttributeValueVisitor;
 import fi.uef.envi.wavellite.vocabulary.STO;
 
 /**
  * <p>
- * Title: AttributeValueSpatialLocation
+ * Title: AttributeValuePeriod
  * </p>
  * <p>
  * Description:
@@ -23,52 +24,55 @@ import fi.uef.envi.wavellite.vocabulary.STO;
  * Project: Wavellite Entity
  * </p>
  * <p>
- * Copyright: Copyright (C) 2014
+ * Copyright: Copyright (C) 2013
  * </p>
  * 
  * @author Markus Stocker
  */
 
-public class AttributeValueSpatialLocation extends AbstractAttributeValue {
+public class AttributeValuePeriod extends AbstractAttributeValue {
 
-	public AttributeValueSpatialLocation() {
+	private Period period;
+
+	public AttributeValuePeriod() {
 		this(UUID.randomUUID().toString());
 	}
 
-	public AttributeValueSpatialLocation(SpatialLocation value) {
-		this(UUID.randomUUID().toString(), value);
+	public AttributeValuePeriod(Period period) {
+		this(UUID.randomUUID().toString(), period);
 	}
 
-	public AttributeValueSpatialLocation(String id) {
+	public AttributeValuePeriod(String id) {
 		this(id, STO.Value);
 	}
 
-	public AttributeValueSpatialLocation(String id, SpatialLocation value) {
-		this(id, STO.Value, value);
+	public AttributeValuePeriod(String id, Period period) {
+		this(id, STO.Value, period);
 	}
 
-	public AttributeValueSpatialLocation(String id, String type) {
+	public AttributeValuePeriod(String id, String type) {
 		super(id, type);
 	}
 
-	public AttributeValueSpatialLocation(String id, String type,
-			SpatialLocation value) {
-		super(id, type, value);
+	public AttributeValuePeriod(String id, String type, Period period) {
+		this(id, type);
+
+		this.period = period;
 	}
 
 	@Override
 	public void accept(EntityVisitor visitor) {
 		visitor.visit(this);
 	}
-	
-	@Override
-	public SpatialLocation getValue() {
-		return (SpatialLocation) value;
-	}
 
 	@Override
 	public void accept(AttributeValueVisitor visitor) {
 		visitor.visit(this);
+	}
+	
+	@Override
+	public Period getValue() {
+		return (Period) value;
 	}
 
 	@Override
@@ -77,7 +81,7 @@ public class AttributeValueSpatialLocation extends AbstractAttributeValue {
 		int result = 1;
 
 		result = prime * result + ((type == null) ? 0 : type.hashCode());
-		result = prime * result + ((value == null) ? 0 : value.hashCode());
+		result = prime * result + ((period == null) ? 0 : period.hashCode());
 
 		return result;
 	}
@@ -91,7 +95,7 @@ public class AttributeValueSpatialLocation extends AbstractAttributeValue {
 		if (getClass() != obj.getClass())
 			return false;
 
-		AttributeValueSpatialLocation other = (AttributeValueSpatialLocation) obj;
+		AttributeValuePeriod other = (AttributeValuePeriod) obj;
 
 		if (type == null) {
 			if (other.type != null)
@@ -99,10 +103,10 @@ public class AttributeValueSpatialLocation extends AbstractAttributeValue {
 		} else if (!type.equals(other.type))
 			return false;
 
-		if (value == null) {
-			if (other.value != null)
+		if (period == null) {
+			if (other.period != null)
 				return false;
-		} else if (!value.equals(other.value))
+		} else if (!period.equals(other.period))
 			return false;
 
 		return true;
@@ -110,8 +114,8 @@ public class AttributeValueSpatialLocation extends AbstractAttributeValue {
 
 	@Override
 	public String toString() {
-		return "AttributeValueSpatialLocation [id = " + id + "; type = " + type
-				+ "; value = " + value + "]";
+		return "AttributeValuePeriod [id = " + id + "; type = " + type
+				+ "; period = " + period + "]";
 	}
 
 }

@@ -31,6 +31,8 @@ import fi.uef.envi.wavellite.entity.situation.ElementaryInfon;
 import fi.uef.envi.wavellite.entity.situation.Relation;
 import fi.uef.envi.wavellite.entity.situation.RelevantObject;
 import fi.uef.envi.wavellite.entity.situation.Situation;
+import fi.uef.envi.wavellite.entity.situation.base.AttributeSpatialLocation;
+import fi.uef.envi.wavellite.entity.situation.base.AttributeTemporalLocation;
 
 /**
  * <p>
@@ -51,127 +53,164 @@ import fi.uef.envi.wavellite.entity.situation.Situation;
 
 public abstract class AbstractEntityVisitor implements EntityVisitor {
 
+	@Override
 	public void visit(Feature entity) {
 		throw new UnsupportedOperationException(
 				"Not supported by this entity visitor");
 	}
 
+	@Override
 	public void visit(Property entity) {
 		throw new UnsupportedOperationException(
 				"Not supported by this entity visitor");
 	}
 
+	@Override
 	public void visit(Sensor entity) {
 		throw new UnsupportedOperationException(
 				"Not supported by this entity visitor");
 	}
 
+	@Override
 	public void visit(SpatialGeometry entity) {
 		throw new UnsupportedOperationException(
 				"Not supported by this entity visitor");
 	}
 
+	@Override
 	public void visit(SpatialLocation entity) {
 		throw new UnsupportedOperationException(
 				"Not supported by this entity visitor");
 	}
 
+	@Override
 	public void visit(TemporalLocation entity) {
 		throw new UnsupportedOperationException(
 				"Not supported by this entity visitor");
 	}
 
+	@Override
 	public void visit(Component entity) {
 		throw new UnsupportedOperationException(
 				"Not supported by this entity visitor");
 	}
 
+	@Override
 	public void visit(ComponentProperty entity) {
 		throw new UnsupportedOperationException(
 				"Not supported by this entity visitor");
 	}
 
+	@Override
 	public void visit(ComponentPropertyValue entity) {
 		throw new UnsupportedOperationException(
 				"Not supported by this entity visitor");
 	}
 
+	@Override
 	public void visit(ComponentSpecification entity) {
 		throw new UnsupportedOperationException(
 				"Not supported by this entity visitor");
 	}
 
+	@Override
 	public void visit(Dataset entity) {
 		throw new UnsupportedOperationException(
 				"Not supported by this entity visitor");
 	}
 
+	@Override
 	public void visit(DatasetObservation entity) {
 		throw new UnsupportedOperationException(
 				"Not supported by this entity visitor");
 	}
 
+	@Override
 	public void visit(DataStructureDefinition entity) {
 		throw new UnsupportedOperationException(
 				"Not supported by this entity visitor");
 	}
 
+	@Override
 	public void visit(MeasurementResult entity) {
 		throw new UnsupportedOperationException(
 				"Not supported by this entity visitor");
 	}
 
+	@Override
 	public void visit(MeasurementValueContext entity) {
 		throw new UnsupportedOperationException(
 				"Not supported by this entity visitor");
 	}
 
+	@Override
 	public void visit(MeasurementValue entity) {
 		throw new UnsupportedOperationException(
 				"Not supported by this entity visitor");
 	}
 
+	@Override
 	public void visit(ObservationValue entity) {
 		throw new UnsupportedOperationException(
 				"Not supported by this entity visitor");
 	}
 
+	@Override
 	public void visit(SensorObservation entity) {
 		throw new UnsupportedOperationException(
 				"Not supported by this entity visitor");
 	}
 
+	@Override
 	public void visit(SensorOutput entity) {
 		throw new UnsupportedOperationException(
 				"Not supported by this entity visitor");
 	}
 
+	@Override
 	public void visit(Attribute entity) {
 		throw new UnsupportedOperationException(
 				"Not supported by this entity visitor");
 	}
-
+	
+	@Override
 	public void visit(AttributeValue entity) {
 		throw new UnsupportedOperationException(
 				"Not supported by this entity visitor");
 	}
-
+	
+	@Override
 	public void visit(ElementaryInfon entity) {
 		throw new UnsupportedOperationException(
 				"Not supported by this entity visitor");
 	}
 
+	@Override
 	public void visit(Relation entity) {
 		throw new UnsupportedOperationException(
 				"Not supported by this entity visitor");
 	}
 
+	@Override
 	public void visit(RelevantObject entity) {
 		throw new UnsupportedOperationException(
 				"Not supported by this entity visitor");
 	}
 
+	@Override
 	public void visit(Situation entity) {
+		throw new UnsupportedOperationException(
+				"Not supported by this entity visitor");
+	}
+	
+	@Override
+	public void visit(AttributeSpatialLocation entity) {
+		throw new UnsupportedOperationException(
+				"Not supported by this entity visitor");
+	}
+
+	@Override
+	public void visit(AttributeTemporalLocation entity) {
 		throw new UnsupportedOperationException(
 				"Not supported by this entity visitor");
 	}

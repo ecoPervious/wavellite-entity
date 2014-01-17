@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 see CREDITS.txt
+ * Copyright (C) 2014 see CREDITS.txt
  * All rights reserved.
  */
 
@@ -8,14 +8,15 @@ package fi.uef.envi.wavellite.entity.situation.base;
 import java.util.UUID;
 
 import fi.uef.envi.wavellite.entity.core.EntityVisitor;
-import fi.uef.envi.wavellite.entity.core.base.AbstractEntity;
-import fi.uef.envi.wavellite.entity.situation.Attribute;
-import fi.uef.envi.wavellite.entity.situation.AttributeValue;
+import fi.uef.envi.wavellite.entity.core.SpatialLocation;
+import fi.uef.envi.wavellite.entity.situation.AttributeVisitor;
+import fi.uef.envi.wavellite.entity.situation.RelevantObject;
+import fi.uef.envi.wavellite.entity.situation.RelevantObjectVisitor;
 import fi.uef.envi.wavellite.vocabulary.STO;
 
 /**
  * <p>
- * Title: AttributeBase
+ * Title: AttributeSpatialLocation
  * </p>
  * <p>
  * Description:
@@ -24,55 +25,58 @@ import fi.uef.envi.wavellite.vocabulary.STO;
  * Project: Wavellite Entity
  * </p>
  * <p>
- * Copyright: Copyright (C) 2013
+ * Copyright: Copyright (C) 2014
  * </p>
  * 
  * @author Markus Stocker
  */
 
-public class AttributeBase extends AbstractEntity implements Attribute {
+public class AttributeSpatialLocation extends AbstractAttribute implements
+		RelevantObject {
 
-	private AttributeValue value;
-
-	public AttributeBase() {
+	public AttributeSpatialLocation() {
 		this(UUID.randomUUID().toString());
 	}
 
-	public AttributeBase(AttributeValue value) {
+	public AttributeSpatialLocation(SpatialLocation value) {
 		this(UUID.randomUUID().toString(), value);
 	}
 
-	public AttributeBase(String id) {
+	public AttributeSpatialLocation(String id) {
 		this(id, STO.Attribute);
 	}
 
-	public AttributeBase(String id, AttributeValue value) {
+	public AttributeSpatialLocation(String id, SpatialLocation value) {
 		this(id, STO.Attribute, value);
 	}
 
-	public AttributeBase(String id, String type) {
+	public AttributeSpatialLocation(String id, String type) {
 		super(id, type);
 	}
 
-	public AttributeBase(String id, String type, AttributeValue value) {
-		this(id, type);
-
-		this.value = value;
+	public AttributeSpatialLocation(String id, String type,
+			SpatialLocation value) {
+		super(id, type, value);
 	}
-	
+
 	@Override
 	public void accept(EntityVisitor visitor) {
 		visitor.visit(this);
 	}
 
 	@Override
-	public AttributeValue getAttributeValue() {
-		return value;
+	public void accept(RelevantObjectVisitor visitor) {
+		visitor.visit(this);
+	}
+	
+	@Override
+	public void accept(AttributeVisitor visitor) {
+		visitor.visit(this);
 	}
 
 	@Override
-	public void setAttributeValue(AttributeValue value) {
-		this.value = value;
+	public SpatialLocation getValue() {
+		return (SpatialLocation) value;
 	}
 
 	@Override
@@ -80,7 +84,6 @@ public class AttributeBase extends AbstractEntity implements Attribute {
 		final int prime = 31;
 		int result = 1;
 
-//		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((type == null) ? 0 : type.hashCode());
 		result = prime * result + ((value == null) ? 0 : value.hashCode());
 
@@ -96,13 +99,7 @@ public class AttributeBase extends AbstractEntity implements Attribute {
 		if (getClass() != obj.getClass())
 			return false;
 
-		AttributeBase other = (AttributeBase) obj;
-
-//		if (id == null) {
-//			if (other.id != null)
-//				return false;
-//		} else if (!id.equals(other.id))
-//			return false;
+		AttributeSpatialLocation other = (AttributeSpatialLocation) obj;
 
 		if (type == null) {
 			if (other.type != null)
@@ -121,8 +118,8 @@ public class AttributeBase extends AbstractEntity implements Attribute {
 
 	@Override
 	public String toString() {
-		return "AttributeBase [id = " + id + "; type = " + type + "; value = "
-				+ value + "]";
+		return "AttributeSpatialLocation [id = " + id + "; type = " + type
+				+ "; value = " + value + "]";
 	}
 
 }

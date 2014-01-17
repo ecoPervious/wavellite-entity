@@ -24,6 +24,8 @@ import fi.uef.envi.wavellite.entity.situation.ElementaryInfon;
 import fi.uef.envi.wavellite.entity.situation.Relation;
 import fi.uef.envi.wavellite.entity.situation.RelevantObject;
 import fi.uef.envi.wavellite.entity.situation.Situation;
+import fi.uef.envi.wavellite.entity.situation.base.AttributeSpatialLocation;
+import fi.uef.envi.wavellite.entity.situation.base.AttributeTemporalLocation;
 
 /**
  * <p>
@@ -91,6 +93,10 @@ public interface EntityVisitor {
 	public void visit(Relation entity);
 	
 	public void visit(RelevantObject entity);
+	
+	public void visit(AttributeSpatialLocation entity);
+	
+	public void visit(AttributeTemporalLocation entity);
 	
 	public void visit(Situation entity);
 	

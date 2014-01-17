@@ -8,13 +8,13 @@ package fi.uef.envi.wavellite.entity.situation.base;
 import java.util.UUID;
 
 import fi.uef.envi.wavellite.entity.core.EntityVisitor;
-import fi.uef.envi.wavellite.entity.core.TemporalLocation;
-import fi.uef.envi.wavellite.entity.situation.AttributeValueVisitor;
+import fi.uef.envi.wavellite.entity.situation.AttributeValue;
+import fi.uef.envi.wavellite.entity.situation.AttributeVisitor;
 import fi.uef.envi.wavellite.vocabulary.STO;
 
 /**
  * <p>
- * Title: AttributeValueTemporalLocation
+ * Title: AttributeValued
  * </p>
  * <p>
  * Description:
@@ -29,46 +29,45 @@ import fi.uef.envi.wavellite.vocabulary.STO;
  * @author Markus Stocker
  */
 
-public class AttributeValueTemporalLocation extends AbstractAttributeValue {
+public class AttributeValued extends AbstractAttribute {
 
-	public AttributeValueTemporalLocation() {
+	public AttributeValued() {
 		this(UUID.randomUUID().toString());
 	}
 
-	public AttributeValueTemporalLocation(TemporalLocation value) {
+	public AttributeValued(AttributeValue value) {
 		this(UUID.randomUUID().toString(), value);
 	}
 
-	public AttributeValueTemporalLocation(String id) {
-		this(id, STO.Value);
+	public AttributeValued(String id) {
+		this(id, STO.Attribute);
 	}
 
-	public AttributeValueTemporalLocation(String id, TemporalLocation value) {
-		this(id, STO.Value, value);
+	public AttributeValued(String id, AttributeValue value) {
+		this(id, STO.Attribute, value);
 	}
 
-	public AttributeValueTemporalLocation(String id, String type) {
+	public AttributeValued(String id, String type) {
 		super(id, type);
 	}
 
-	public AttributeValueTemporalLocation(String id, String type,
-			TemporalLocation value) {
+	public AttributeValued(String id, String type, AttributeValue value) {
 		super(id, type, value);
 	}
 
 	@Override
-	public TemporalLocation getValue() {
-		return (TemporalLocation) value;
-	}
-
-	@Override
-	public void accept(AttributeValueVisitor visitor) {
+	public void accept(EntityVisitor visitor) {
 		visitor.visit(this);
 	}
 	
 	@Override
-	public void accept(EntityVisitor visitor) {
+	public void accept(AttributeVisitor visitor) {
 		visitor.visit(this);
+	}
+
+	@Override
+	public AttributeValue getValue() {
+		return (AttributeValue) value;
 	}
 
 	@Override
@@ -76,7 +75,6 @@ public class AttributeValueTemporalLocation extends AbstractAttributeValue {
 		final int prime = 31;
 		int result = 1;
 
-//		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((type == null) ? 0 : type.hashCode());
 		result = prime * result + ((value == null) ? 0 : value.hashCode());
 
@@ -92,13 +90,7 @@ public class AttributeValueTemporalLocation extends AbstractAttributeValue {
 		if (getClass() != obj.getClass())
 			return false;
 
-		AttributeValueTemporalLocation other = (AttributeValueTemporalLocation) obj;
-
-//		if (id == null) {
-//			if (other.id != null)
-//				return false;
-//		} else if (!id.equals(other.id))
-//			return false;
+		AttributeValued other = (AttributeValued) obj;
 
 		if (type == null) {
 			if (other.type != null)
@@ -117,7 +109,7 @@ public class AttributeValueTemporalLocation extends AbstractAttributeValue {
 
 	@Override
 	public String toString() {
-		return "AttributeValueTemporalLocation [id = " + id + "; type = " + type
+		return "AttributeValued [id = " + id + "; type = " + type
 				+ "; value = " + value + "]";
 	}
 

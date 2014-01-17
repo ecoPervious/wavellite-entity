@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 see CREDITS.txt
+ * Copyright (C) 2013 see CREDITS.txt
  * All rights reserved.
  */
 
@@ -13,10 +13,11 @@ import org.junit.Test;
 import fi.uef.envi.wavellite.entity.core.base.SpatialLocationPlace;
 import fi.uef.envi.wavellite.entity.situation.base.AttributeSpatialLocation;
 import fi.uef.envi.wavellite.vocabulary.STO;
+import fi.uef.envi.wavellite.vocabulary.WOE;
 
 /**
  * <p>
- * Title: AttributeValueSpatialLocationTest
+ * Title: AttributeSpatialLocation
  * </p>
  * <p>
  * Description:
@@ -25,13 +26,13 @@ import fi.uef.envi.wavellite.vocabulary.STO;
  * Project: Wavellite Entity
  * </p>
  * <p>
- * Copyright: Copyright (C) 2014
+ * Copyright: Copyright (C) 2013
  * </p>
  * 
  * @author Markus Stocker
  */
 
-public class AttributeValueSpatialLocationTest {
+public class AttributeSpatialLocationTest {
 
 	@Test
 	public void test1() {
@@ -134,22 +135,20 @@ public class AttributeValueSpatialLocationTest {
 
 	@Test
 	public void test14() {
-		AttributeSpatialLocation s1 = new AttributeSpatialLocation("i1");
-		AttributeSpatialLocation s2 = new AttributeSpatialLocation("i1");
-
-		s1.setValue(new SpatialLocationPlace("sl1", "l1"));
-		s2.setValue(new SpatialLocationPlace("sl1", "l1"));
+		AttributeSpatialLocation s1 = new AttributeSpatialLocation(
+				new SpatialLocationPlace("l1"));
+		AttributeSpatialLocation s2 = new AttributeSpatialLocation(
+				new SpatialLocationPlace("l1"));
 
 		assertEquals(s1, s2);
 	}
 
 	@Test
 	public void test15() {
-		AttributeSpatialLocation s1 = new AttributeSpatialLocation("i1");
-		AttributeSpatialLocation s2 = new AttributeSpatialLocation("i1");
-
-		s1.setValue(new SpatialLocationPlace("sl1", "l1"));
-		s2.setValue(new SpatialLocationPlace("sl1", "l2"));
+		AttributeSpatialLocation s1 = new AttributeSpatialLocation(
+				new SpatialLocationPlace("l1"));
+		AttributeSpatialLocation s2 = new AttributeSpatialLocation(
+				new SpatialLocationPlace("l2"));
 
 		assertNotEquals(s1, s2);
 	}

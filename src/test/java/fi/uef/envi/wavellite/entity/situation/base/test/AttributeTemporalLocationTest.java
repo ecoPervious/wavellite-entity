@@ -14,10 +14,11 @@ import org.junit.Test;
 import fi.uef.envi.wavellite.entity.core.base.TemporalLocationDateTime;
 import fi.uef.envi.wavellite.entity.situation.base.AttributeTemporalLocation;
 import fi.uef.envi.wavellite.vocabulary.STO;
+import fi.uef.envi.wavellite.vocabulary.WOE;
 
 /**
  * <p>
- * Title: AttributeValueTemporalLocationTest
+ * Title: AttributeTemporalLocation
  * </p>
  * <p>
  * Description:
@@ -32,7 +33,7 @@ import fi.uef.envi.wavellite.vocabulary.STO;
  * @author Markus Stocker
  */
 
-public class AttributeValueTemporalLocationTest {
+public class AttributeTemporalLocationTest {
 
 	@Test
 	public void test1() {
@@ -135,26 +136,20 @@ public class AttributeValueTemporalLocationTest {
 
 	@Test
 	public void test14() {
-		AttributeTemporalLocation s1 = new AttributeTemporalLocation("i1");
-		AttributeTemporalLocation s2 = new AttributeTemporalLocation("i1");
-
-		s1.setValue(new TemporalLocationDateTime("d1", new DateTime(2013, 11,
-				04, 0, 0, 0)));
-		s2.setValue(new TemporalLocationDateTime("d1", new DateTime(2013, 11,
-				04, 0, 0, 0)));
+		AttributeTemporalLocation s1 = new AttributeTemporalLocation(
+				new TemporalLocationDateTime(new DateTime(2014, 1, 10, 0, 0, 0)));
+		AttributeTemporalLocation s2 = new AttributeTemporalLocation(
+				new TemporalLocationDateTime(new DateTime(2014, 1, 10, 0, 0, 0)));
 
 		assertEquals(s1, s2);
 	}
 
 	@Test
 	public void test15() {
-		AttributeTemporalLocation s1 = new AttributeTemporalLocation("i1");
-		AttributeTemporalLocation s2 = new AttributeTemporalLocation("i1");
-
-		s1.setValue(new TemporalLocationDateTime("d1", new DateTime(2013, 11,
-				04, 0, 0, 0)));
-		s2.setValue(new TemporalLocationDateTime("d1", new DateTime(2013, 11,
-				04, 1, 0, 0)));
+		AttributeTemporalLocation s1 = new AttributeTemporalLocation(
+				new TemporalLocationDateTime(new DateTime(2014, 1, 10, 0, 0, 0)));
+		AttributeTemporalLocation s2 = new AttributeTemporalLocation(
+				new TemporalLocationDateTime(new DateTime(2014, 1, 10, 1, 0, 0)));
 
 		assertNotEquals(s1, s2);
 	}
