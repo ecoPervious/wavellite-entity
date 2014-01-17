@@ -32,8 +32,6 @@ import fi.uef.envi.wavellite.vocabulary.STO;
 
 public class AttributeValuePeriod extends AbstractAttributeValue {
 
-	private Period period;
-
 	public AttributeValuePeriod() {
 		this(UUID.randomUUID().toString());
 	}
@@ -55,9 +53,7 @@ public class AttributeValuePeriod extends AbstractAttributeValue {
 	}
 
 	public AttributeValuePeriod(String id, String type, Period period) {
-		this(id, type);
-
-		this.period = period;
+		super(id, type);
 	}
 
 	@Override
@@ -81,7 +77,7 @@ public class AttributeValuePeriod extends AbstractAttributeValue {
 		int result = 1;
 
 		result = prime * result + ((type == null) ? 0 : type.hashCode());
-		result = prime * result + ((period == null) ? 0 : period.hashCode());
+		result = prime * result + ((value == null) ? 0 : value.hashCode());
 
 		return result;
 	}
@@ -103,10 +99,10 @@ public class AttributeValuePeriod extends AbstractAttributeValue {
 		} else if (!type.equals(other.type))
 			return false;
 
-		if (period == null) {
-			if (other.period != null)
+		if (value == null) {
+			if (other.value != null)
 				return false;
-		} else if (!period.equals(other.period))
+		} else if (!value.equals(other.value))
 			return false;
 
 		return true;
@@ -115,7 +111,7 @@ public class AttributeValuePeriod extends AbstractAttributeValue {
 	@Override
 	public String toString() {
 		return "AttributeValuePeriod [id = " + id + "; type = " + type
-				+ "; period = " + period + "]";
+				+ "; value = " + value + "]";
 	}
 
 }
