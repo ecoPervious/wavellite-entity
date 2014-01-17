@@ -53,7 +53,7 @@ public class AttributeValuePeriod extends AbstractAttributeValue {
 	}
 
 	public AttributeValuePeriod(String id, String type, Period period) {
-		super(id, type);
+		super(id, type, period);
 	}
 
 	@Override
