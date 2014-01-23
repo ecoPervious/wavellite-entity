@@ -55,7 +55,7 @@ import fi.uef.envi.wavellite.entity.observation.base.ObservationValueDouble;
 import fi.uef.envi.wavellite.entity.observation.base.SensorObservationBase;
 import fi.uef.envi.wavellite.entity.observation.base.SensorOutputBase;
 import fi.uef.envi.wavellite.entity.situation.Attribute;
-import fi.uef.envi.wavellite.entity.situation.AttributeValue;
+import fi.uef.envi.wavellite.entity.situation.Value;
 import fi.uef.envi.wavellite.entity.situation.ElementaryInfon;
 import fi.uef.envi.wavellite.entity.situation.Polarity;
 import fi.uef.envi.wavellite.entity.situation.Relation;
@@ -63,10 +63,10 @@ import fi.uef.envi.wavellite.entity.situation.RelevantIndividual;
 import fi.uef.envi.wavellite.entity.situation.RelevantObject;
 import fi.uef.envi.wavellite.entity.situation.Situation;
 import fi.uef.envi.wavellite.entity.situation.base.AttributeRelevantIndividual;
-import fi.uef.envi.wavellite.entity.situation.base.AttributeValueDouble;
+import fi.uef.envi.wavellite.entity.situation.base.ValueDouble;
 import fi.uef.envi.wavellite.entity.situation.base.AttributeSpatialLocation;
-import fi.uef.envi.wavellite.entity.situation.base.AttributeValuePeriod;
-import fi.uef.envi.wavellite.entity.situation.base.AttributeValueString;
+import fi.uef.envi.wavellite.entity.situation.base.ValuePeriod;
+import fi.uef.envi.wavellite.entity.situation.base.ValueString;
 import fi.uef.envi.wavellite.entity.situation.base.AttributeTemporalLocation;
 import fi.uef.envi.wavellite.entity.situation.base.ElementaryInfonBase;
 import fi.uef.envi.wavellite.entity.situation.base.RelationBase;
@@ -423,20 +423,20 @@ public class EntityFactory {
 		return relevantIndividual(attribute(attributeValue(value)));
 	}
 
-	public static Attribute attribute(AttributeValue value) {
+	public static Attribute attribute(Value value) {
 		return new AttributeRelevantIndividual(value);
 	}
 
-	public static AttributeValue attributeValue(Double value) {
-		return new AttributeValueDouble(value);
+	public static Value attributeValue(Double value) {
+		return new ValueDouble(value);
 	}
 	
-	public static AttributeValue attributeValue(Period value) {
-		return new AttributeValuePeriod(value);
+	public static Value attributeValue(Period value) {
+		return new ValuePeriod(value);
 	}
 
-	public static AttributeValue attributeValue(String value) {
-		return new AttributeValueString(value);
+	public static Value attributeValue(String value) {
+		return new ValueString(value);
 	}
 
 	public static AttributeTemporalLocation attribute(DateTime time) {

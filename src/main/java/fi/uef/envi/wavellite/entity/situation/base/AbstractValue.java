@@ -6,11 +6,11 @@
 package fi.uef.envi.wavellite.entity.situation.base;
 
 import fi.uef.envi.wavellite.entity.core.base.AbstractEntity;
-import fi.uef.envi.wavellite.entity.situation.AttributeValue;
+import fi.uef.envi.wavellite.entity.situation.Value;
 
 /**
  * <p>
- * Title: AbstractAttributeValue
+ * Title: AbstractValue
  * </p>
  * <p>
  * Description:
@@ -25,16 +25,16 @@ import fi.uef.envi.wavellite.entity.situation.AttributeValue;
  * @author Markus Stocker
  */
 
-public abstract class AbstractAttributeValue extends AbstractEntity implements
-		AttributeValue {
+public abstract class AbstractValue extends AbstractEntity implements
+		Value {
 
 	protected Object value;
 	
-	public AbstractAttributeValue(String id, String type) {
+	public AbstractValue(String id, String type) {
 		super(id, type);
 	}
 	
-	public AbstractAttributeValue(String id, String type, Object value) {
+	public AbstractValue(String id, String type, Object value) {
 		this(id, type);
 		
 		setValue(value);

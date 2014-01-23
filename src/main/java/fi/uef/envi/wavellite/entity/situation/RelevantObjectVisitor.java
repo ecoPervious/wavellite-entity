@@ -7,6 +7,11 @@ package fi.uef.envi.wavellite.entity.situation;
 
 import fi.uef.envi.wavellite.entity.situation.base.AttributeSpatialLocation;
 import fi.uef.envi.wavellite.entity.situation.base.AttributeTemporalLocation;
+import fi.uef.envi.wavellite.entity.situation.base.ValueDouble;
+import fi.uef.envi.wavellite.entity.situation.base.ValueInteger;
+import fi.uef.envi.wavellite.entity.situation.base.ValuePeriod;
+import fi.uef.envi.wavellite.entity.situation.base.ValueString;
+import fi.uef.envi.wavellite.entity.situation.base.ValueUri;
 
 
 /**
@@ -33,5 +38,15 @@ public interface RelevantObjectVisitor {
 	public void visit(AttributeSpatialLocation object);
 
 	public void visit(AttributeTemporalLocation object);
+	
+	public void visit(ValueDouble object);
+	
+	public void visit(ValueInteger object);
+	
+	public void visit(ValuePeriod object);
+	
+	public void visit(ValueString object);
+	
+	public void visit(ValueUri object);
 
 }

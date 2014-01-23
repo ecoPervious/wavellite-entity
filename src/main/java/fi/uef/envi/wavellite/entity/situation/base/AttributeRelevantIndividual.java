@@ -8,7 +8,7 @@ package fi.uef.envi.wavellite.entity.situation.base;
 import java.util.UUID;
 
 import fi.uef.envi.wavellite.entity.core.EntityVisitor;
-import fi.uef.envi.wavellite.entity.situation.AttributeValue;
+import fi.uef.envi.wavellite.entity.situation.Value;
 import fi.uef.envi.wavellite.entity.situation.AttributeVisitor;
 import fi.uef.envi.wavellite.vocabulary.STO;
 
@@ -35,7 +35,7 @@ public class AttributeRelevantIndividual extends AbstractAttribute {
 		this(UUID.randomUUID().toString());
 	}
 
-	public AttributeRelevantIndividual(AttributeValue value) {
+	public AttributeRelevantIndividual(Value value) {
 		this(UUID.randomUUID().toString(), value);
 	}
 
@@ -43,7 +43,7 @@ public class AttributeRelevantIndividual extends AbstractAttribute {
 		this(id, STO.Attribute);
 	}
 
-	public AttributeRelevantIndividual(String id, AttributeValue value) {
+	public AttributeRelevantIndividual(String id, Value value) {
 		this(id, STO.Attribute, value);
 	}
 
@@ -51,7 +51,7 @@ public class AttributeRelevantIndividual extends AbstractAttribute {
 		super(id, type);
 	}
 
-	public AttributeRelevantIndividual(String id, String type, AttributeValue value) {
+	public AttributeRelevantIndividual(String id, String type, Value value) {
 		super(id, type, value);
 	}
 
@@ -66,8 +66,8 @@ public class AttributeRelevantIndividual extends AbstractAttribute {
 	}
 
 	@Override
-	public AttributeValue getValue() {
-		return (AttributeValue) value;
+	public Value getValue() {
+		return (Value) value;
 	}
 
 	@Override

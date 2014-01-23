@@ -8,12 +8,13 @@ package fi.uef.envi.wavellite.entity.situation.base;
 import java.util.UUID;
 
 import fi.uef.envi.wavellite.entity.core.EntityVisitor;
-import fi.uef.envi.wavellite.entity.situation.AttributeValueVisitor;
+import fi.uef.envi.wavellite.entity.situation.RelevantObjectVisitor;
+import fi.uef.envi.wavellite.entity.situation.ValueVisitor;
 import fi.uef.envi.wavellite.vocabulary.STO;
 
 /**
  * <p>
- * Title: AttributeValueString
+ * Title: ValueString
  * </p>
  * <p>
  * Description:
@@ -28,21 +29,21 @@ import fi.uef.envi.wavellite.vocabulary.STO;
  * @author Markus Stocker
  */
 
-public class AttributeValueString extends AbstractAttributeValue {
+public class ValueString extends AbstractValue {
 
-	public AttributeValueString() {
+	public ValueString() {
 		this(null);
 	}
 
-	public AttributeValueString(String value) {
+	public ValueString(String value) {
 		this(UUID.randomUUID().toString(), value);
 	}
 
-	public AttributeValueString(String id, String value) {
+	public ValueString(String id, String value) {
 		this(id, STO.Value, value);
 	}
 
-	public AttributeValueString(String id, String type, String value) {
+	public ValueString(String id, String type, String value) {
 		super(id, type, value);
 	}
 
@@ -52,13 +53,18 @@ public class AttributeValueString extends AbstractAttributeValue {
 	}
 	
 	@Override
+	public void accept(RelevantObjectVisitor visitor) {
+		visitor.visit(this);
+	}
+	
+	@Override
+	public void accept(ValueVisitor visitor) {
+		visitor.visit(this);
+	}
+	
+	@Override
 	public String getValue() {
 		return (String) value;
-	}
-
-	@Override
-	public void accept(AttributeValueVisitor visitor) {
-		visitor.visit(this);
 	}
 
 	@Override
@@ -82,7 +88,7 @@ public class AttributeValueString extends AbstractAttributeValue {
 		if (getClass() != obj.getClass())
 			return false;
 
-		AttributeValueString other = (AttributeValueString) obj;
+		ValueString other = (ValueString) obj;
 
 //		if (id == null) {
 //			if (other.id != null)

@@ -5,11 +5,9 @@
 
 package fi.uef.envi.wavellite.entity.situation;
 
-import fi.uef.envi.wavellite.entity.core.Entity;
-
 /**
  * <p>
- * Title: AttributeValue
+ * Title: Value
  * </p>
  * <p>
  * Description:
@@ -24,9 +22,9 @@ import fi.uef.envi.wavellite.entity.core.Entity;
  * @author Markus Stocker, markus.stocker@uef.fi
  */
 
-public interface AttributeValue extends Entity {
+public interface Value extends RelevantObject {
 
-	public void accept(AttributeValueVisitor visitor);
+	public void accept(ValueVisitor visitor);
 	
 	public void setValue(Object value);
 	

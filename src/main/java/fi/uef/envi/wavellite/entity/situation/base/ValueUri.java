@@ -7,13 +7,16 @@ package fi.uef.envi.wavellite.entity.situation.base;
 
 import java.util.UUID;
 
+import org.openrdf.model.URI;
+
 import fi.uef.envi.wavellite.entity.core.EntityVisitor;
-import fi.uef.envi.wavellite.entity.situation.AttributeValueVisitor;
+import fi.uef.envi.wavellite.entity.situation.RelevantObjectVisitor;
+import fi.uef.envi.wavellite.entity.situation.ValueVisitor;
 import fi.uef.envi.wavellite.vocabulary.STO;
 
 /**
  * <p>
- * Title: AttributeValueDouble
+ * Title: ValueUri
  * </p>
  * <p>
  * Description:
@@ -28,53 +31,57 @@ import fi.uef.envi.wavellite.vocabulary.STO;
  * @author Markus Stocker
  */
 
-public class AttributeValueDouble extends AbstractAttributeValue {
+public class ValueUri extends AbstractValue {
 
-	public AttributeValueDouble() {
+	public ValueUri() {
 		this(UUID.randomUUID().toString());
 	}
 
-	public AttributeValueDouble(Double value) {
+	public ValueUri(String id) {
+		this(id, STO.Value);
+	}
+	
+	public ValueUri(URI value) {
 		this(UUID.randomUUID().toString(), value);
 	}
 
-	public AttributeValueDouble(String id) {
-		this(id, STO.Value);
-	}
-
-	public AttributeValueDouble(String id, Double value) {
+	public ValueUri(String id, URI value) {
 		this(id, STO.Value, value);
 	}
 
-	public AttributeValueDouble(String id, String type) {
+	public ValueUri(String id, String type) {
 		super(id, type);
 	}
-
-	public AttributeValueDouble(String id, String type, Double value) {
+	
+	public ValueUri(String id, String type, URI value) {
 		super(id, type, value);
 	}
-	
+
 	@Override
 	public void accept(EntityVisitor visitor) {
 		visitor.visit(this);
 	}
 	
 	@Override
-	public Double getValue() {
-		return (Double)value;
-	}
-	
-	@Override
-	public void accept(AttributeValueVisitor visitor) {
+	public void accept(RelevantObjectVisitor visitor) {
 		visitor.visit(this);
 	}
 	
+	@Override
+	public void accept(ValueVisitor visitor) {
+		visitor.visit(this);
+	}
+	
+	@Override
+	public URI getValue() {
+		return (URI) value;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 
-//		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((type == null) ? 0 : type.hashCode());
 		result = prime * result + ((value == null) ? 0 : value.hashCode());
 
@@ -90,13 +97,7 @@ public class AttributeValueDouble extends AbstractAttributeValue {
 		if (getClass() != obj.getClass())
 			return false;
 
-		AttributeValueDouble other = (AttributeValueDouble) obj;
-
-//		if (id == null) {
-//			if (other.id != null)
-//				return false;
-//		} else if (!id.equals(other.id))
-//			return false;
+		ValueUri other = (ValueUri) obj;
 
 		if (type == null) {
 			if (other.type != null)
@@ -115,8 +116,8 @@ public class AttributeValueDouble extends AbstractAttributeValue {
 
 	@Override
 	public String toString() {
-		return "AttributeValueDouble [id = " + id + "; type = " + type
+		return "AttributeValueUri [id = " + id + "; type = " + type
 				+ "; value = " + value + "]";
 	}
-	
+
 }

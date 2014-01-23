@@ -7,15 +7,16 @@ package fi.uef.envi.wavellite.entity.situation.base;
 
 import java.util.UUID;
 
-import org.openrdf.model.URI;
+import org.joda.time.Period;
 
 import fi.uef.envi.wavellite.entity.core.EntityVisitor;
-import fi.uef.envi.wavellite.entity.situation.AttributeValueVisitor;
+import fi.uef.envi.wavellite.entity.situation.RelevantObjectVisitor;
+import fi.uef.envi.wavellite.entity.situation.ValueVisitor;
 import fi.uef.envi.wavellite.vocabulary.STO;
 
 /**
  * <p>
- * Title: AttributeValueUri
+ * Title: ValuePeriod
  * </p>
  * <p>
  * Description:
@@ -30,45 +31,50 @@ import fi.uef.envi.wavellite.vocabulary.STO;
  * @author Markus Stocker
  */
 
-public class AttributeValueUri extends AbstractAttributeValue {
+public class ValuePeriod extends AbstractValue {
 
-	public AttributeValueUri() {
+	public ValuePeriod() {
 		this(UUID.randomUUID().toString());
 	}
 
-	public AttributeValueUri(String id) {
+	public ValuePeriod(Period period) {
+		this(UUID.randomUUID().toString(), period);
+	}
+
+	public ValuePeriod(String id) {
 		this(id, STO.Value);
 	}
-	
-	public AttributeValueUri(URI value) {
-		this(UUID.randomUUID().toString(), value);
+
+	public ValuePeriod(String id, Period period) {
+		this(id, STO.Value, period);
 	}
 
-	public AttributeValueUri(String id, URI value) {
-		this(id, STO.Value, value);
-	}
-
-	public AttributeValueUri(String id, String type) {
+	public ValuePeriod(String id, String type) {
 		super(id, type);
 	}
-	
-	public AttributeValueUri(String id, String type, URI value) {
-		super(id, type, value);
+
+	public ValuePeriod(String id, String type, Period period) {
+		super(id, type, period);
 	}
 
-	@Override
-	public URI getValue() {
-		return (URI) value;
-	}
-
-	@Override
-	public void accept(AttributeValueVisitor visitor) {
-		visitor.visit(this);
-	}
-	
 	@Override
 	public void accept(EntityVisitor visitor) {
 		visitor.visit(this);
+	}
+
+	@Override
+	public void accept(RelevantObjectVisitor visitor) {
+		visitor.visit(this);
+	}
+	
+	@Override
+	public void accept(ValueVisitor visitor) {
+		visitor.visit(this);
+	}
+	
+	@Override
+	public Period getValue() {
+		return (Period) value;
 	}
 
 	@Override
@@ -91,7 +97,7 @@ public class AttributeValueUri extends AbstractAttributeValue {
 		if (getClass() != obj.getClass())
 			return false;
 
-		AttributeValueUri other = (AttributeValueUri) obj;
+		ValuePeriod other = (ValuePeriod) obj;
 
 		if (type == null) {
 			if (other.type != null)
@@ -110,7 +116,7 @@ public class AttributeValueUri extends AbstractAttributeValue {
 
 	@Override
 	public String toString() {
-		return "AttributeValueUri [id = " + id + "; type = " + type
+		return "AttributeValuePeriod [id = " + id + "; type = " + type
 				+ "; value = " + value + "]";
 	}
 

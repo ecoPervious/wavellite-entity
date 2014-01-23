@@ -19,7 +19,7 @@ import fi.uef.envi.wavellite.entity.observation.ObservationValue;
 import fi.uef.envi.wavellite.entity.observation.SensorObservation;
 import fi.uef.envi.wavellite.entity.observation.SensorOutput;
 import fi.uef.envi.wavellite.entity.situation.Attribute;
-import fi.uef.envi.wavellite.entity.situation.AttributeValue;
+import fi.uef.envi.wavellite.entity.situation.Value;
 import fi.uef.envi.wavellite.entity.situation.ElementaryInfon;
 import fi.uef.envi.wavellite.entity.situation.Relation;
 import fi.uef.envi.wavellite.entity.situation.RelevantObject;
@@ -86,7 +86,7 @@ public interface EntityVisitor {
 	
 	public void visit(Attribute entity);
 	
-	public void visit(AttributeValue entity);
+	public void visit(Value entity);
 	
 	public void visit(ElementaryInfon entity);
 	

@@ -12,12 +12,12 @@ import org.joda.time.DateTime;
 import org.joda.time.Period;
 import org.junit.Test;
 
-import fi.uef.envi.wavellite.entity.situation.base.AttributeValuePeriod;
+import fi.uef.envi.wavellite.entity.situation.base.ValuePeriod;
 import fi.uef.envi.wavellite.vocabulary.STO;
 
 /**
  * <p>
- * Title: AttributeValuePeriodTest
+ * Title: ValuePeriodTest
  * </p>
  * <p>
  * Description:
@@ -32,111 +32,111 @@ import fi.uef.envi.wavellite.vocabulary.STO;
  * @author Markus Stocker
  */
 
-public class AttributeValuePeriodTest {
+public class ValuePeriodTest {
 
 	@Test
 	public void test1() {
-		AttributeValuePeriod e = new AttributeValuePeriod("i1");
-		AttributeValuePeriod a = new AttributeValuePeriod("i1");
+		ValuePeriod e = new ValuePeriod("i1");
+		ValuePeriod a = new ValuePeriod("i1");
 
 		assertEquals(e, a);
 	}
 
 	@Test
 	public void test2() {
-		AttributeValuePeriod e = new AttributeValuePeriod("i1", "t1");
-		AttributeValuePeriod a = new AttributeValuePeriod("i1", "t1");
+		ValuePeriod e = new ValuePeriod("i1", "t1");
+		ValuePeriod a = new ValuePeriod("i1", "t1");
 
 		assertEquals(e, a);
 	}
 
 	@Test
 	public void test3() {
-		AttributeValuePeriod e = new AttributeValuePeriod("i1");
-		AttributeValuePeriod a = new AttributeValuePeriod("i2");
+		ValuePeriod e = new ValuePeriod("i1");
+		ValuePeriod a = new ValuePeriod("i2");
 
 		assertEquals(e, a);
 	}
 
 	@Test
 	public void test4() {
-		AttributeValuePeriod e = new AttributeValuePeriod("i1", "t1");
-		AttributeValuePeriod a = new AttributeValuePeriod("i1", "t2");
+		ValuePeriod e = new ValuePeriod("i1", "t1");
+		ValuePeriod a = new ValuePeriod("i1", "t2");
 
 		assertNotEquals(e, a);
 	}
 
 	@Test
 	public void test5() {
-		AttributeValuePeriod s1 = new AttributeValuePeriod("i1");
-		AttributeValuePeriod s2 = new AttributeValuePeriod("i1");
+		ValuePeriod s1 = new ValuePeriod("i1");
+		ValuePeriod s2 = new ValuePeriod("i1");
 
 		assertEquals(s1.hashCode(), s2.hashCode());
 	}
 
 	@Test
 	public void test6() {
-		AttributeValuePeriod s1 = new AttributeValuePeriod("i1", "t1");
-		AttributeValuePeriod s2 = new AttributeValuePeriod("i1", "t1");
+		ValuePeriod s1 = new ValuePeriod("i1", "t1");
+		ValuePeriod s2 = new ValuePeriod("i1", "t1");
 
 		assertEquals(s1.hashCode(), s2.hashCode());
 	}
 
 	@Test
 	public void test7() {
-		AttributeValuePeriod s1 = new AttributeValuePeriod("i1");
-		AttributeValuePeriod s2 = new AttributeValuePeriod("i2");
+		ValuePeriod s1 = new ValuePeriod("i1");
+		ValuePeriod s2 = new ValuePeriod("i2");
 
 		assertEquals(s1.hashCode(), s2.hashCode());
 	}
 
 	@Test
 	public void test8() {
-		AttributeValuePeriod s1 = new AttributeValuePeriod("i1", "t1");
-		AttributeValuePeriod s2 = new AttributeValuePeriod("i1", "t2");
+		ValuePeriod s1 = new ValuePeriod("i1", "t1");
+		ValuePeriod s2 = new ValuePeriod("i1", "t2");
 
 		assertNotEquals(s1.hashCode(), s2.hashCode());
 	}
 
 	@Test
 	public void test9() {
-		AttributeValuePeriod s = new AttributeValuePeriod("i1");
+		ValuePeriod s = new ValuePeriod("i1");
 
 		assertEquals("i1", s.getId());
 	}
 
 	@Test
 	public void test10() {
-		AttributeValuePeriod s = new AttributeValuePeriod("i1");
+		ValuePeriod s = new ValuePeriod("i1");
 
 		assertEquals(STO.Value, s.getType());
 	}
 
 	@Test
 	public void test11() {
-		AttributeValuePeriod s = new AttributeValuePeriod("i1", "t1");
+		ValuePeriod s = new ValuePeriod("i1", "t1");
 
 		assertEquals("t1", s.getType());
 	}
 
 	@Test
 	public void test12() {
-		AttributeValuePeriod s = new AttributeValuePeriod("i1");
+		ValuePeriod s = new ValuePeriod("i1");
 
 		assertNotEquals("i2", s.getId());
 	}
 
 	@Test
 	public void test13() {
-		AttributeValuePeriod s = new AttributeValuePeriod("i1", "t1");
+		ValuePeriod s = new ValuePeriod("i1", "t1");
 
 		assertNotEquals("t2", s.getType());
 	}
 
 	@Test
 	public void test14() {
-		AttributeValuePeriod s1 = new AttributeValuePeriod("i1");
-		AttributeValuePeriod s2 = new AttributeValuePeriod("i1");
+		ValuePeriod s1 = new ValuePeriod("i1");
+		ValuePeriod s2 = new ValuePeriod("i1");
 
 		s1.setValue(new Period(new DateTime(2011, 1, 1, 0, 0, 0), new DateTime(
 				2011, 1, 1, 0, 0, 1)));
@@ -148,8 +148,8 @@ public class AttributeValuePeriodTest {
 
 	@Test
 	public void test15() {
-		AttributeValuePeriod s1 = new AttributeValuePeriod("i1");
-		AttributeValuePeriod s2 = new AttributeValuePeriod("i1");
+		ValuePeriod s1 = new ValuePeriod("i1");
+		ValuePeriod s2 = new ValuePeriod("i1");
 
 		s1.setValue(new Period(new DateTime(2011, 1, 1, 0, 0, 0), new DateTime(
 				2011, 1, 1, 0, 0, 1)));

@@ -7,15 +7,14 @@ package fi.uef.envi.wavellite.entity.situation.base;
 
 import java.util.UUID;
 
-import org.joda.time.Period;
-
 import fi.uef.envi.wavellite.entity.core.EntityVisitor;
-import fi.uef.envi.wavellite.entity.situation.AttributeValueVisitor;
+import fi.uef.envi.wavellite.entity.situation.RelevantObjectVisitor;
+import fi.uef.envi.wavellite.entity.situation.ValueVisitor;
 import fi.uef.envi.wavellite.vocabulary.STO;
 
 /**
  * <p>
- * Title: AttributeValuePeriod
+ * Title: ValueDouble
  * </p>
  * <p>
  * Description:
@@ -30,52 +29,58 @@ import fi.uef.envi.wavellite.vocabulary.STO;
  * @author Markus Stocker
  */
 
-public class AttributeValuePeriod extends AbstractAttributeValue {
+public class ValueDouble extends AbstractValue {
 
-	public AttributeValuePeriod() {
+	public ValueDouble() {
 		this(UUID.randomUUID().toString());
 	}
 
-	public AttributeValuePeriod(Period period) {
-		this(UUID.randomUUID().toString(), period);
+	public ValueDouble(Double value) {
+		this(UUID.randomUUID().toString(), value);
 	}
 
-	public AttributeValuePeriod(String id) {
+	public ValueDouble(String id) {
 		this(id, STO.Value);
 	}
 
-	public AttributeValuePeriod(String id, Period period) {
-		this(id, STO.Value, period);
+	public ValueDouble(String id, Double value) {
+		this(id, STO.Value, value);
 	}
 
-	public AttributeValuePeriod(String id, String type) {
+	public ValueDouble(String id, String type) {
 		super(id, type);
 	}
 
-	public AttributeValuePeriod(String id, String type, Period period) {
-		super(id, type, period);
+	public ValueDouble(String id, String type, Double value) {
+		super(id, type, value);
 	}
-
+	
 	@Override
 	public void accept(EntityVisitor visitor) {
 		visitor.visit(this);
 	}
-
+	
 	@Override
-	public void accept(AttributeValueVisitor visitor) {
+	public void accept(RelevantObjectVisitor visitor) {
 		visitor.visit(this);
 	}
 	
 	@Override
-	public Period getValue() {
-		return (Period) value;
+	public void accept(ValueVisitor visitor) {
+		visitor.visit(this);
 	}
-
+	
+	@Override
+	public Double getValue() {
+		return (Double)value;
+	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 
+//		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((type == null) ? 0 : type.hashCode());
 		result = prime * result + ((value == null) ? 0 : value.hashCode());
 
@@ -91,7 +96,13 @@ public class AttributeValuePeriod extends AbstractAttributeValue {
 		if (getClass() != obj.getClass())
 			return false;
 
-		AttributeValuePeriod other = (AttributeValuePeriod) obj;
+		ValueDouble other = (ValueDouble) obj;
+
+//		if (id == null) {
+//			if (other.id != null)
+//				return false;
+//		} else if (!id.equals(other.id))
+//			return false;
 
 		if (type == null) {
 			if (other.type != null)
@@ -110,8 +121,8 @@ public class AttributeValuePeriod extends AbstractAttributeValue {
 
 	@Override
 	public String toString() {
-		return "AttributeValuePeriod [id = " + id + "; type = " + type
+		return "AttributeValueDouble [id = " + id + "; type = " + type
 				+ "; value = " + value + "]";
 	}
-
+	
 }

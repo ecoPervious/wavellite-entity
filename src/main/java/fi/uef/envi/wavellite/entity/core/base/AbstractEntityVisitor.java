@@ -26,7 +26,7 @@ import fi.uef.envi.wavellite.entity.observation.ObservationValue;
 import fi.uef.envi.wavellite.entity.observation.SensorObservation;
 import fi.uef.envi.wavellite.entity.observation.SensorOutput;
 import fi.uef.envi.wavellite.entity.situation.Attribute;
-import fi.uef.envi.wavellite.entity.situation.AttributeValue;
+import fi.uef.envi.wavellite.entity.situation.Value;
 import fi.uef.envi.wavellite.entity.situation.ElementaryInfon;
 import fi.uef.envi.wavellite.entity.situation.Relation;
 import fi.uef.envi.wavellite.entity.situation.RelevantObject;
@@ -174,7 +174,7 @@ public abstract class AbstractEntityVisitor implements EntityVisitor {
 	}
 	
 	@Override
-	public void visit(AttributeValue entity) {
+	public void visit(Value entity) {
 		throw new UnsupportedOperationException(
 				"Not supported by this entity visitor");
 	}

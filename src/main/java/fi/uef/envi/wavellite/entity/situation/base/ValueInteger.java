@@ -8,12 +8,13 @@ package fi.uef.envi.wavellite.entity.situation.base;
 import java.util.UUID;
 
 import fi.uef.envi.wavellite.entity.core.EntityVisitor;
-import fi.uef.envi.wavellite.entity.situation.AttributeValueVisitor;
+import fi.uef.envi.wavellite.entity.situation.RelevantObjectVisitor;
+import fi.uef.envi.wavellite.entity.situation.ValueVisitor;
 import fi.uef.envi.wavellite.vocabulary.STO;
 
 /**
  * <p>
- * Title: AttributeValueInteger
+ * Title: ValueInteger
  * </p>
  * <p>
  * Description:
@@ -28,29 +29,29 @@ import fi.uef.envi.wavellite.vocabulary.STO;
  * @author Markus Stocker
  */
 
-public class AttributeValueInteger extends AbstractAttributeValue {
+public class ValueInteger extends AbstractValue {
 
-	public AttributeValueInteger() {
+	public ValueInteger() {
 		this(UUID.randomUUID().toString());
 	}
 
-	public AttributeValueInteger(Integer value) {
+	public ValueInteger(Integer value) {
 		this(UUID.randomUUID().toString(), value);
 	}
 
-	public AttributeValueInteger(String id) {
+	public ValueInteger(String id) {
 		this(id, STO.Value);
 	}
 	
-	public AttributeValueInteger(String id, Integer value) {
+	public ValueInteger(String id, Integer value) {
 		this(id, STO.Value, value);
 	}
 	
-	public AttributeValueInteger(String id, String type) {
+	public ValueInteger(String id, String type) {
 		super(id, type);
 	}
 
-	public AttributeValueInteger(String id, String type, Integer value) {
+	public ValueInteger(String id, String type, Integer value) {
 		super(id, type, value);
 	}
 
@@ -60,13 +61,18 @@ public class AttributeValueInteger extends AbstractAttributeValue {
 	}
 	
 	@Override
+	public void accept(RelevantObjectVisitor visitor) {
+		visitor.visit(this);
+	}
+	
+	@Override
+	public void accept(ValueVisitor visitor) {
+		visitor.visit(this);
+	}
+	
+	@Override
 	public Integer getValue() {
 		return (Integer) value;
-	}
-
-	@Override
-	public void accept(AttributeValueVisitor visitor) {
-		visitor.visit(this);
 	}
 
 	@Override
@@ -89,7 +95,7 @@ public class AttributeValueInteger extends AbstractAttributeValue {
 		if (getClass() != obj.getClass())
 			return false;
 
-		AttributeValueInteger other = (AttributeValueInteger) obj;
+		ValueInteger other = (ValueInteger) obj;
 
 		if (type == null) {
 			if (other.type != null)
