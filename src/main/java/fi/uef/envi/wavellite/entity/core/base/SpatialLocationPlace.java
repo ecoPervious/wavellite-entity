@@ -35,41 +35,38 @@ import fi.uef.envi.wavellite.vocabulary.WOE;
 public class SpatialLocationPlace extends AbstractSpatialLocation {
 
 	private String label;
-	// Typically used for a, but not limited to, geonames.org URIs
 	private Set<URI> sameAs;
 
 	public SpatialLocationPlace() {
 		this(UUID.randomUUID().toString());
 	}
 
-	public SpatialLocationPlace(String label) {
-		this(UUID.randomUUID().toString(), label);
+	public SpatialLocationPlace(String id) {
+		this(id, WOE.SpatialPlace);
 	}
 
-	public SpatialLocationPlace(String label, URI sameAs) {
-		this(UUID.randomUUID().toString(), label, sameAs);
+	public SpatialLocationPlace(String id, URI sameAs) {
+		this(id, WOE.SpatialPlace, sameAs, null);
 	}
 
 	public SpatialLocationPlace(String id, String label) {
-		this(id, WOE.SpatialPlace, label);
+		this(id, WOE.SpatialPlace, null, label);
 	}
-
-	public SpatialLocationPlace(String id, String label, URI sameAs) {
-		this(id, WOE.SpatialPlace, label, sameAs);
-	}
-
+	
 	public SpatialLocationPlace(String id, String type, String label) {
-		this(id, type, label, null);
+		this(id, type, null, label);
+	}
+	
+	public SpatialLocationPlace(String id, URI sameAs, String label) {
+		this(id, WOE.SpatialPlace, sameAs, label);
 	}
 
-	public SpatialLocationPlace(String id, String type, String label,
-			URI sameAs) {
+	public SpatialLocationPlace(String id, String type, URI sameAs, String label) {
 		super(id, type);
 
 		this.sameAs = new HashSet<URI>();
 
 		setLabel(label);
-		
 		addSameAs(sameAs);
 	}
 
@@ -77,7 +74,7 @@ public class SpatialLocationPlace extends AbstractSpatialLocation {
 	public void accept(SpatialLocationVisitor visitor) {
 		visitor.visit(this);
 	}
-	
+
 	@Override
 	public void accept(EntityVisitor visitor) {
 		visitor.visit(this);
@@ -98,7 +95,7 @@ public class SpatialLocationPlace extends AbstractSpatialLocation {
 	public void addSameAs(URI sameAs) {
 		if (sameAs == null)
 			return;
-		
+
 		this.sameAs.add(sameAs);
 	}
 
@@ -107,6 +104,7 @@ public class SpatialLocationPlace extends AbstractSpatialLocation {
 		final int prime = 31;
 		int result = 1;
 
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((type == null) ? 0 : type.hashCode());
 		result = prime * result + ((label == null) ? 0 : label.hashCode());
 
@@ -124,6 +122,12 @@ public class SpatialLocationPlace extends AbstractSpatialLocation {
 
 		SpatialLocationPlace other = (SpatialLocationPlace) obj;
 
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		
 		if (type == null) {
 			if (other.type != null)
 				return false;
