@@ -19,13 +19,17 @@ import fi.uef.envi.wavellite.entity.observation.ObservationValue;
 import fi.uef.envi.wavellite.entity.observation.SensorObservation;
 import fi.uef.envi.wavellite.entity.observation.SensorOutput;
 import fi.uef.envi.wavellite.entity.situation.Attribute;
-import fi.uef.envi.wavellite.entity.situation.Value;
 import fi.uef.envi.wavellite.entity.situation.ElementaryInfon;
 import fi.uef.envi.wavellite.entity.situation.Relation;
 import fi.uef.envi.wavellite.entity.situation.RelevantObject;
 import fi.uef.envi.wavellite.entity.situation.Situation;
 import fi.uef.envi.wavellite.entity.situation.base.AttributeSpatialLocation;
 import fi.uef.envi.wavellite.entity.situation.base.AttributeTemporalLocation;
+import fi.uef.envi.wavellite.entity.situation.base.ValueDouble;
+import fi.uef.envi.wavellite.entity.situation.base.ValueInteger;
+import fi.uef.envi.wavellite.entity.situation.base.ValuePeriod;
+import fi.uef.envi.wavellite.entity.situation.base.ValueString;
+import fi.uef.envi.wavellite.entity.situation.base.ValueUri;
 
 /**
  * <p>
@@ -86,7 +90,15 @@ public interface EntityVisitor {
 	
 	public void visit(Attribute entity);
 	
-	public void visit(Value entity);
+	public void visit(ValueDouble entity);
+	
+	public void visit(ValueInteger entity);
+	
+	public void visit(ValuePeriod entity);
+	
+	public void visit(ValueString entity);
+	
+	public void visit(ValueUri entity);
 	
 	public void visit(ElementaryInfon entity);
 	

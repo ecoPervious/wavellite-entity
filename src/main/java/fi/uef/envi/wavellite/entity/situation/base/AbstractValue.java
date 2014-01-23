@@ -6,6 +6,7 @@
 package fi.uef.envi.wavellite.entity.situation.base;
 
 import fi.uef.envi.wavellite.entity.core.base.AbstractEntity;
+import fi.uef.envi.wavellite.entity.situation.RelevantObject;
 import fi.uef.envi.wavellite.entity.situation.Value;
 
 /**
@@ -26,7 +27,7 @@ import fi.uef.envi.wavellite.entity.situation.Value;
  */
 
 public abstract class AbstractValue extends AbstractEntity implements
-		Value {
+		Value, RelevantObject {
 
 	protected Object value;
 	
