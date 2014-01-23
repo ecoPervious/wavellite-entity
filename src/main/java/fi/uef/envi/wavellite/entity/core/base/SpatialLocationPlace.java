@@ -42,11 +42,11 @@ public class SpatialLocationPlace extends AbstractSpatialLocation {
 	}
 
 	public SpatialLocationPlace(String id) {
-		this(id, WOE.SpatialPlace);
+		this(id, WOE.SpatialPlace, null);
 	}
 
 	public SpatialLocationPlace(String id, URI sameAs) {
-		this(id, WOE.SpatialPlace, sameAs, null);
+		this(id, sameAs, null);
 	}
 
 	public SpatialLocationPlace(String id, String label) {
