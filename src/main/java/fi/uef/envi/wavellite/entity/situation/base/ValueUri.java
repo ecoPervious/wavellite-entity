@@ -116,7 +116,7 @@ public class ValueUri extends AbstractValue {
 
 	@Override
 	public String toString() {
-		return "AttributeValueUri [id = " + id + "; type = " + type
+		return "ValueUri [id = " + id + "; type = " + type
 				+ "; value = " + value + "]";
 	}
 

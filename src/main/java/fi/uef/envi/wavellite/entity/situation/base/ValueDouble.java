@@ -121,7 +121,7 @@ public class ValueDouble extends AbstractValue {
 
 	@Override
 	public String toString() {
-		return "AttributeValueDouble [id = " + id + "; type = " + type
+		return "ValueDouble [id = " + id + "; type = " + type
 				+ "; value = " + value + "]";
 	}
 	

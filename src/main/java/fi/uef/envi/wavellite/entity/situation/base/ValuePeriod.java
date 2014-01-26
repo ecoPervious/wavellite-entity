@@ -116,7 +116,7 @@ public class ValuePeriod extends AbstractValue {
 
 	@Override
 	public String toString() {
-		return "AttributeValuePeriod [id = " + id + "; type = " + type
+		return "ValuePeriod [id = " + id + "; type = " + type
 				+ "; value = " + value + "]";
 	}
 

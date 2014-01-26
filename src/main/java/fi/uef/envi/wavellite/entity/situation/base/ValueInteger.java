@@ -114,7 +114,7 @@ public class ValueInteger extends AbstractValue {
 
 	@Override
 	public String toString() {
-		return "AttributeValueInteger [id = " + id + "; type = " + type
+		return "ValueInteger [id = " + id + "; type = " + type
 				+ "; value = " + value + "]";
 	}
 

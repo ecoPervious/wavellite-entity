@@ -113,7 +113,7 @@ public class ValueString extends AbstractValue {
 
 	@Override
 	public String toString() {
-		return "AttributeValueString [id = " + id + "; type = " + type
+		return "ValueString [id = " + id + "; type = " + type
 				+ "; value = " + value + "]";
 	}
 
