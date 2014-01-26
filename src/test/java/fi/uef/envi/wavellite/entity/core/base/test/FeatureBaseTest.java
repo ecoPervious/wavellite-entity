@@ -10,7 +10,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
 import fi.uef.envi.wavellite.entity.core.base.FeatureBase;
-import fi.uef.envi.wavellite.vocabulary.WOE;
+import fi.uef.envi.wavellite.vocabulary.SSN;
 
 /**
  * <p>
@@ -106,7 +106,7 @@ public class FeatureBaseTest {
 	public void test10() {
 		FeatureBase s = new FeatureBase("i1");
 		
-		assertEquals(WOE.Feature, s.getType());
+		assertEquals(SSN.FeatureOfInterest, s.getType());
 	}
 	
 	@Test
