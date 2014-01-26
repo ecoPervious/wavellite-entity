@@ -8,11 +8,12 @@ package fi.uef.envi.wavellite.entity.situation;
 import fi.uef.envi.wavellite.entity.situation.base.AttributeSpatialLocation;
 import fi.uef.envi.wavellite.entity.situation.base.AttributeTemporalLocation;
 import fi.uef.envi.wavellite.entity.situation.base.AttributeRelevantIndividual;
+import fi.uef.envi.wavellite.entity.situation.base.AttributeUri;
 
 /**
  * <p>
  * Title: AttributeVisitor
- * </p> 
+ * </p>
  * <p>
  * Description:
  * </p>
@@ -29,9 +30,11 @@ import fi.uef.envi.wavellite.entity.situation.base.AttributeRelevantIndividual;
 public interface AttributeVisitor {
 
 	public void visit(AttributeRelevantIndividual attribute);
-	
+
 	public void visit(AttributeSpatialLocation attribute);
-	
+
 	public void visit(AttributeTemporalLocation attribute);
-	
+
+	public void visit(AttributeUri attribute);
+
 }

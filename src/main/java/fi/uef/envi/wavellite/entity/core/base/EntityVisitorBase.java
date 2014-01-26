@@ -36,7 +36,7 @@ import fi.uef.envi.wavellite.entity.situation.base.ValueDouble;
 import fi.uef.envi.wavellite.entity.situation.base.ValueInteger;
 import fi.uef.envi.wavellite.entity.situation.base.ValuePeriod;
 import fi.uef.envi.wavellite.entity.situation.base.ValueString;
-import fi.uef.envi.wavellite.entity.situation.base.ValueUri;
+import fi.uef.envi.wavellite.entity.situation.base.AttributeUri;
 
 /**
  * <p>
@@ -202,7 +202,7 @@ public class EntityVisitorBase implements EntityVisitor {
 	}
 	
 	@Override
-	public void visit(ValueUri entity) {
+	public void visit(AttributeUri entity) {
 		throw new UnsupportedOperationException(
 				"Not supported by this entity visitor");
 	}

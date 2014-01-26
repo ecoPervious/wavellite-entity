@@ -11,7 +11,7 @@ import fi.uef.envi.wavellite.entity.situation.base.ValueDouble;
 import fi.uef.envi.wavellite.entity.situation.base.ValueInteger;
 import fi.uef.envi.wavellite.entity.situation.base.ValuePeriod;
 import fi.uef.envi.wavellite.entity.situation.base.ValueString;
-import fi.uef.envi.wavellite.entity.situation.base.ValueUri;
+import fi.uef.envi.wavellite.entity.situation.base.AttributeUri;
 
 
 /**
@@ -47,6 +47,6 @@ public interface RelevantObjectVisitor {
 	
 	public void visit(ValueString object);
 	
-	public void visit(ValueUri object);
+	public void visit(AttributeUri object);
 
 }

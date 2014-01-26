@@ -29,7 +29,7 @@ import fi.uef.envi.wavellite.entity.situation.base.ValueDouble;
 import fi.uef.envi.wavellite.entity.situation.base.ValueInteger;
 import fi.uef.envi.wavellite.entity.situation.base.ValuePeriod;
 import fi.uef.envi.wavellite.entity.situation.base.ValueString;
-import fi.uef.envi.wavellite.entity.situation.base.ValueUri;
+import fi.uef.envi.wavellite.entity.situation.base.AttributeUri;
 
 /**
  * <p>
@@ -98,7 +98,7 @@ public interface EntityVisitor {
 	
 	public void visit(ValueString entity);
 	
-	public void visit(ValueUri entity);
+	public void visit(AttributeUri entity);
 	
 	public void visit(ElementaryInfon entity);
 	

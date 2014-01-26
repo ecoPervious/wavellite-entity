@@ -10,13 +10,14 @@ import java.util.UUID;
 import org.openrdf.model.URI;
 
 import fi.uef.envi.wavellite.entity.core.EntityVisitor;
+import fi.uef.envi.wavellite.entity.situation.AttributeVisitor;
+import fi.uef.envi.wavellite.entity.situation.RelevantObject;
 import fi.uef.envi.wavellite.entity.situation.RelevantObjectVisitor;
-import fi.uef.envi.wavellite.entity.situation.ValueVisitor;
 import fi.uef.envi.wavellite.vocabulary.STO;
 
 /**
  * <p>
- * Title: ValueUri
+ * Title: AttributeUri
  * </p>
  * <p>
  * Description:
@@ -31,29 +32,29 @@ import fi.uef.envi.wavellite.vocabulary.STO;
  * @author Markus Stocker
  */
 
-public class ValueUri extends AbstractValue {
+public class AttributeUri extends AbstractAttribute implements RelevantObject {
 
-	public ValueUri() {
+	public AttributeUri() {
 		this(UUID.randomUUID().toString());
 	}
 
-	public ValueUri(String id) {
-		this(id, STO.Value);
+	public AttributeUri(String id) {
+		this(id, STO.Attribute);
 	}
-	
-	public ValueUri(URI value) {
+
+	public AttributeUri(URI value) {
 		this(UUID.randomUUID().toString(), value);
 	}
 
-	public ValueUri(String id, URI value) {
-		this(id, STO.Value, value);
+	public AttributeUri(String id, URI value) {
+		this(id, STO.Attribute, value);
 	}
 
-	public ValueUri(String id, String type) {
+	public AttributeUri(String id, String type) {
 		super(id, type);
 	}
-	
-	public ValueUri(String id, String type, URI value) {
+
+	public AttributeUri(String id, String type, URI value) {
 		super(id, type, value);
 	}
 
@@ -61,17 +62,17 @@ public class ValueUri extends AbstractValue {
 	public void accept(EntityVisitor visitor) {
 		visitor.visit(this);
 	}
-	
+
 	@Override
 	public void accept(RelevantObjectVisitor visitor) {
 		visitor.visit(this);
 	}
-	
+
 	@Override
-	public void accept(ValueVisitor visitor) {
+	public void accept(AttributeVisitor visitor) {
 		visitor.visit(this);
 	}
-	
+
 	@Override
 	public URI getValue() {
 		return (URI) value;
@@ -97,7 +98,7 @@ public class ValueUri extends AbstractValue {
 		if (getClass() != obj.getClass())
 			return false;
 
-		ValueUri other = (ValueUri) obj;
+		AttributeUri other = (AttributeUri) obj;
 
 		if (type == null) {
 			if (other.type != null)
@@ -116,8 +117,8 @@ public class ValueUri extends AbstractValue {
 
 	@Override
 	public String toString() {
-		return "ValueUri [id = " + id + "; type = " + type
-				+ "; value = " + value + "]";
+		return "AttributeUri [id = " + id + "; type = " + type + "; value = "
+				+ value + "]";
 	}
 
 }
