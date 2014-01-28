@@ -1,9 +1,10 @@
-0.1.0 Changes ()
+0.1.0 Changes (2014-01-28)
 --------------------------
 
 * ADDED: Support the attaching of Component(s) (typically attributes) to Dataset(s)
 * ADDED: Component type
 * ADDED: Support for ComponentPropertyValueInteger
+* ADDED: Support for temporal and spatial locations
 
 0.0.1 Changes (2013-11-08)
 --------------------------
