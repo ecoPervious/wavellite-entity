@@ -25,3 +25,7 @@ Joda Time (2.3):
 JUnit (4.11):
 	http://junit.org/
 	Eclipse Public License, Version 1.0 (EPL-1.0)
+	
+JTS Topology Suite (1.13)
+	http://www.vividsolutions.com/jts/JTSHome.htm
+	GNU Lesser General Public License v3 (LGPL-3.0)
