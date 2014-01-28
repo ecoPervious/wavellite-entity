@@ -59,7 +59,7 @@ public class AttributeRelevantIndividual extends AbstractAttribute {
 	public void accept(EntityVisitor visitor) {
 		visitor.visit(this);
 	}
-	
+
 	@Override
 	public void accept(AttributeVisitor visitor) {
 		visitor.visit(this);
@@ -109,7 +109,7 @@ public class AttributeRelevantIndividual extends AbstractAttribute {
 
 	@Override
 	public String toString() {
-		return "AttributeValued [id = " + id + "; type = " + type
+		return "AttributeRelevantIndividual [id = " + id + "; type = " + type
 				+ "; value = " + value + "]";
 	}
 
