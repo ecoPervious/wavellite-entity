@@ -5,7 +5,8 @@
 
 package fi.uef.envi.wavellite.entity.derivation;
 
-import java.util.Collection;
+import java.util.List;
+import java.util.Set;
 
 import fi.uef.envi.wavellite.entity.core.Entity;
 
@@ -32,6 +33,8 @@ public interface Dataset extends Entity {
 
 	public DataStructureDefinition getDataStructureDefinition();
 
-	public Collection<Component> getComponents();
+	public Set<ComponentProperty> getComponentProperties();
+	
+	public List<ComponentProperty> getComponentPropertiesOrdered();
 
 }

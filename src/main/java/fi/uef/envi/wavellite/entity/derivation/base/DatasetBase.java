@@ -5,14 +5,12 @@
 
 package fi.uef.envi.wavellite.entity.derivation.base;
 
-import java.util.Collection;
 import java.util.Collections;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.List;
+import java.util.Set;
 
 import fi.uef.envi.wavellite.entity.core.EntityVisitor;
 import fi.uef.envi.wavellite.entity.core.base.AbstractEntity;
-import fi.uef.envi.wavellite.entity.derivation.Component;
 import fi.uef.envi.wavellite.entity.derivation.ComponentProperty;
 import fi.uef.envi.wavellite.entity.derivation.DataStructureDefinition;
 import fi.uef.envi.wavellite.entity.derivation.Dataset;
@@ -37,40 +35,59 @@ import fi.uef.envi.wavellite.vocabulary.QB;
 
 public class DatasetBase extends AbstractEntity implements Dataset {
 
-	private DataStructureDefinition structure;
-	private Map<ComponentProperty, Component> components;
+	private DataStructureDefinition definition;
 
 	public DatasetBase(String id) {
 		this(id, QB.DataSet);
 	}
 
+	public DatasetBase(String id, DataStructureDefinition definition) {
+		this(id, QB.DataSet, definition);
+	}
+
 	public DatasetBase(String id, String type) {
 		super(id, type);
-
-		this.components = new LinkedHashMap<ComponentProperty, Component>();
 	}
-	
+
+	public DatasetBase(String id, String type,
+			DataStructureDefinition definition) {
+		super(id, type);
+
+		setDataStructureDefinition(definition);
+	}
+
 	@Override
 	public void accept(EntityVisitor visitor) {
 		visitor.visit(this);
 	}
 
 	@Override
-	public void setDataStructureDefinition(DataStructureDefinition structure) {
-		if (structure == null)
-			throw new NullPointerException("[structure = null]");
+	public void setDataStructureDefinition(DataStructureDefinition definition) {
+		if (definition == null)
+			throw new NullPointerException("[definition = null]");
 
-		this.structure = structure;
+		this.definition = definition;
 	}
 
 	@Override
 	public DataStructureDefinition getDataStructureDefinition() {
-		return structure;
+		return definition;
 	}
 
 	@Override
-	public Collection<Component> getComponents() {
-		return Collections.unmodifiableCollection(components.values());
+	public Set<ComponentProperty> getComponentProperties() {
+		if (definition == null)
+			return Collections.emptySet();
+
+		return definition.getComponentProperties();
+	}
+
+	@Override
+	public List<ComponentProperty> getComponentPropertiesOrdered() {
+		if (definition == null)
+			return Collections.emptyList();
+
+		return definition.getComponentPropertiesOrdered();
 	}
 
 	@Override
@@ -81,9 +98,7 @@ public class DatasetBase extends AbstractEntity implements Dataset {
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((type == null) ? 0 : type.hashCode());
 		result = prime * result
-				+ ((structure == null) ? 0 : structure.hashCode());
-		result = prime * result
-				+ ((components == null) ? 0 : components.hashCode());
+				+ ((definition == null) ? 0 : definition.hashCode());
 
 		return result;
 	}
@@ -111,16 +126,10 @@ public class DatasetBase extends AbstractEntity implements Dataset {
 		} else if (!type.equals(other.type))
 			return false;
 
-		if (structure == null) {
-			if (other.structure != null)
+		if (definition == null) {
+			if (other.definition != null)
 				return false;
-		} else if (!structure.equals(other.structure))
-			return false;
-
-		if (components == null) {
-			if (other.components != null)
-				return false;
-		} else if (!components.equals(other.components))
+		} else if (!definition.equals(other.definition))
 			return false;
 
 		return true;
@@ -129,8 +138,7 @@ public class DatasetBase extends AbstractEntity implements Dataset {
 	@Override
 	public String toString() {
 		return "DatasetBase [id = " + id + "; type = " + type
-				+ "; structure = " + structure + "; components = " + components
-				+ "]";
+				+ "; definition = " + definition + "]";
 	}
 
 }

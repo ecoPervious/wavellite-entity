@@ -8,8 +8,12 @@ package fi.uef.envi.wavellite.entity.derivation.base.test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.Test;
 
+import fi.uef.envi.wavellite.entity.derivation.ComponentProperty;
 import fi.uef.envi.wavellite.entity.derivation.ComponentSpecification;
 import fi.uef.envi.wavellite.entity.derivation.DataStructureDefinition;
 import fi.uef.envi.wavellite.entity.derivation.base.ComponentPropertyBase;
@@ -177,6 +181,34 @@ public class DatasetBaseTest {
 		a.setDataStructureDefinition(d2);
 
 		assertNotEquals(e, a);
+	}
+	
+	@Test
+	public void test16() {
+		DatasetBase d = new DatasetBase("i1");
+
+		DataStructureDefinition sd = new DataStructureDefinitionBase("sd1");
+		ComponentSpecification cs1 = new ComponentSpecificationBase("cs1");
+		cs1.setComponentProperty(new ComponentPropertyBase("cp1"));
+		cs1.setComponentRequired(true);
+		cs1.setOrder(1);
+		sd.addComponentSpecification(cs1);
+		ComponentSpecification cs2 = new ComponentSpecificationBase("cs2");
+		cs2.setComponentProperty(new ComponentPropertyBase("cp0"));
+		cs2.setComponentRequired(true);
+		cs2.setOrder(0);
+		sd.addComponentSpecification(cs2);
+		
+		d.setDataStructureDefinition(sd);
+		
+		List<ComponentProperty> e = new ArrayList<ComponentProperty>();
+		
+		e.add(new ComponentPropertyBase("cp0"));
+		e.add(new ComponentPropertyBase("cp1"));
+		
+		List<ComponentProperty> a = d.getComponentPropertiesOrdered();
+		
+		assertEquals(e, a);
 	}
 
 
