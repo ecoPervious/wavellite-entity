@@ -1,10 +1,14 @@
 0.1.1 Changes (YYYY-MM-DD)
 --------------------------
 
+* FIXED: Dataset interface. No setting and getting of Components. Only set the 
+data structure definition and get component properties.
+
 0.1.0 Changes (2014-01-28)
 --------------------------
 
-* ADDED: Support the attaching of Component(s) (typically attributes) to Dataset(s)
+* ADDED: Support the attaching of Component(s) (typically attributes) to 
+Dataset(s)
 * ADDED: Component type
 * ADDED: Support for ComponentPropertyValueInteger
 * ADDED: Support for temporal and spatial locations
