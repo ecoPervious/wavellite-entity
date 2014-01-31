@@ -14,7 +14,6 @@ import fi.uef.envi.wavellite.entity.core.EntityVisitor;
 import fi.uef.envi.wavellite.entity.core.base.AbstractEntity;
 import fi.uef.envi.wavellite.entity.derivation.Component;
 import fi.uef.envi.wavellite.entity.derivation.ComponentProperty;
-import fi.uef.envi.wavellite.entity.derivation.ComponentPropertyValue;
 import fi.uef.envi.wavellite.entity.derivation.DataStructureDefinition;
 import fi.uef.envi.wavellite.entity.derivation.Dataset;
 import fi.uef.envi.wavellite.vocabulary.QB;
@@ -67,17 +66,6 @@ public class DatasetBase extends AbstractEntity implements Dataset {
 	@Override
 	public DataStructureDefinition getDataStructureDefinition() {
 		return structure;
-	}
-
-	@Override
-	public void addComponent(Component component) {
-		components.put(component.getComponentProperty(), component);
-	}
-
-	@Override
-	public void addComponent(ComponentProperty property,
-			ComponentPropertyValue value) {
-		addComponent(new ComponentBase(property, value));
 	}
 
 	@Override

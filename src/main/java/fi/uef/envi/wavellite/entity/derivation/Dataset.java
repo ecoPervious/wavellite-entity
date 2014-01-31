@@ -32,11 +32,6 @@ public interface Dataset extends Entity {
 
 	public DataStructureDefinition getDataStructureDefinition();
 
-	public void addComponent(Component component);
-
-	public void addComponent(ComponentProperty property,
-			ComponentPropertyValue value);
-
 	public Collection<Component> getComponents();
 
 }

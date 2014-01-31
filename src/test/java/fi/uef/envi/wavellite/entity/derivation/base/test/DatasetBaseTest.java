@@ -10,9 +10,11 @@ import static org.junit.Assert.assertNotEquals;
 
 import org.junit.Test;
 
-import fi.uef.envi.wavellite.entity.derivation.base.ComponentBase;
+import fi.uef.envi.wavellite.entity.derivation.ComponentSpecification;
+import fi.uef.envi.wavellite.entity.derivation.DataStructureDefinition;
 import fi.uef.envi.wavellite.entity.derivation.base.ComponentPropertyBase;
-import fi.uef.envi.wavellite.entity.derivation.base.ComponentPropertyValueDouble;
+import fi.uef.envi.wavellite.entity.derivation.base.ComponentSpecificationBase;
+import fi.uef.envi.wavellite.entity.derivation.base.DataStructureDefinitionBase;
 import fi.uef.envi.wavellite.entity.derivation.base.DatasetBase;
 import fi.uef.envi.wavellite.vocabulary.QB;
 
@@ -139,11 +141,16 @@ public class DatasetBaseTest {
 		DatasetBase e = new DatasetBase("i1");
 		DatasetBase a = new DatasetBase("i1");
 
-		e.addComponent(new ComponentBase("c1", new ComponentPropertyBase("p1"),
-				new ComponentPropertyValueDouble("v1", 0.0)));
-		a.addComponent(new ComponentBase("c1", new ComponentPropertyBase("p1"),
-				new ComponentPropertyValueDouble("v1", 0.0)));
-
+		DataStructureDefinition d = new DataStructureDefinitionBase("d1");
+		ComponentSpecification s = new ComponentSpecificationBase("s1");
+		s.setComponentProperty(new ComponentPropertyBase("p1"));
+		s.setComponentRequired(true);
+		s.setOrder(1);
+		d.addComponentSpecification(s);
+		
+		e.setDataStructureDefinition(d);
+		a.setDataStructureDefinition(d);
+		
 		assertEquals(e, a);
 	}
 	
@@ -151,11 +158,23 @@ public class DatasetBaseTest {
 	public void test15() {
 		DatasetBase e = new DatasetBase("i1");
 		DatasetBase a = new DatasetBase("i1");
-
-		e.addComponent(new ComponentBase("c1", new ComponentPropertyBase("p1"),
-				new ComponentPropertyValueDouble("v1", 0.0)));
-		a.addComponent(new ComponentBase("c1", new ComponentPropertyBase("p1"),
-				new ComponentPropertyValueDouble("v1", 0.5)));
+		
+		DataStructureDefinition d1 = new DataStructureDefinitionBase("d1");
+		ComponentSpecification s1 = new ComponentSpecificationBase("s1");
+		s1.setComponentProperty(new ComponentPropertyBase("p1"));
+		s1.setComponentRequired(true);
+		s1.setOrder(1);
+		d1.addComponentSpecification(s1);
+		
+		DataStructureDefinition d2 = new DataStructureDefinitionBase("d1");
+		ComponentSpecification s2 = new ComponentSpecificationBase("s1");
+		s2.setComponentProperty(new ComponentPropertyBase("p1"));
+		s2.setComponentRequired(false);
+		s2.setOrder(1);
+		d2.addComponentSpecification(s2);
+		
+		e.setDataStructureDefinition(d1);
+		a.setDataStructureDefinition(d2);
 
 		assertNotEquals(e, a);
 	}
