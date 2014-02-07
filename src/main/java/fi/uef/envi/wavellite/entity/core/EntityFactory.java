@@ -195,8 +195,16 @@ public class EntityFactory {
 
 	public static MeasurementValueContext measurementValueContext(
 			Sensor sensor, Property property, Feature feature,
-			TemporalLocation time) {
-		return new MeasurementValueContextBase(sensor, property, feature, time);
+			TemporalLocation temporalLocation) {
+		return measurementValueContext(sensor, property, feature,
+				temporalLocation, null);
+	}
+
+	public static MeasurementValueContext measurementValueContext(
+			Sensor sensor, Property property, Feature feature,
+			TemporalLocation temporalLocation, SpatialLocation spatialLocation) {
+		return new MeasurementValueContextBase(sensor, property, feature,
+				temporalLocation, spatialLocation);
 	}
 
 	public static MeasurementResult measurementResult(MeasurementValue value,
@@ -387,7 +395,8 @@ public class EntityFactory {
 		return relevantObject(object);
 	}
 
-	public static AttributeTemporalLocation relevantObject(TemporalLocation object) {
+	public static AttributeTemporalLocation relevantObject(
+			TemporalLocation object) {
 		return attribute(object);
 	}
 
@@ -418,7 +427,7 @@ public class EntityFactory {
 	public static RelevantIndividual relevantIndividual(Period value) {
 		return relevantIndividual(attribute(attributeValue(value)));
 	}
-	
+
 	public static RelevantIndividual relevantIndividual(String value) {
 		return relevantIndividual(attribute(attributeValue(value)));
 	}
@@ -430,7 +439,7 @@ public class EntityFactory {
 	public static Value attributeValue(Double value) {
 		return new ValueDouble(value);
 	}
-	
+
 	public static Value attributeValue(Period value) {
 		return new ValuePeriod(value);
 	}
