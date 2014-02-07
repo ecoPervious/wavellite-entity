@@ -52,4 +52,8 @@ public interface MeasurementValueContext extends Entity {
 	
 	public void setTemporalLocation(TemporalLocation location);
 	
+	public void setSpatialLocation(SpatialLocation location);
+	
+	public void setQuality(Quality quality);
+	
 }

@@ -41,17 +41,9 @@ public class MeasurementValueContextBase extends AbstractEntity implements
 	private Sensor sensor;
 	private Property property;
 	private Feature feature;
-	private TemporalLocation time;
-
-	public MeasurementValueContextBase(Sensor sensor, Property property,
-			Feature feature, TemporalLocation time) {
-		this();
-
-		setSensor(sensor);
-		setProperty(property);
-		setFeature(feature);
-		setTemporalLocation(time);
-	}
+	private TemporalLocation temporalLocation;
+	private SpatialLocation spatialLocation;
+	private Quality quality;
 
 	public MeasurementValueContextBase() {
 		this(UUID.randomUUID().toString());
@@ -65,11 +57,123 @@ public class MeasurementValueContextBase extends AbstractEntity implements
 		super(id, type);
 	}
 
+	public MeasurementValueContextBase(Sensor sensor) {
+		this(UUID.randomUUID().toString(), sensor);
+	}
+
+	public MeasurementValueContextBase(String id, Sensor sensor) {
+		this(UUID.randomUUID().toString(), WOE.MeasurementValueContext, sensor);
+	}
+
+	public MeasurementValueContextBase(String id, String type, Sensor sensor) {
+		this(id, type, sensor, null);
+	}
+
+	public MeasurementValueContextBase(Sensor sensor, Property property) {
+		this(UUID.randomUUID().toString(), sensor, property);
+	}
+
+	public MeasurementValueContextBase(String id, Sensor sensor,
+			Property property) {
+		this(UUID.randomUUID().toString(), WOE.MeasurementValueContext, sensor,
+				property);
+	}
+
+	public MeasurementValueContextBase(String id, String type, Sensor sensor,
+			Property property) {
+		this(id, type, sensor, property, null);
+	}
+
+	public MeasurementValueContextBase(Sensor sensor, Property property,
+			Feature feature) {
+		this(UUID.randomUUID().toString(), sensor, property, feature);
+	}
+
+	public MeasurementValueContextBase(String id, Sensor sensor,
+			Property property, Feature feature) {
+		this(UUID.randomUUID().toString(), WOE.MeasurementValueContext, sensor,
+				property, feature);
+	}
+
+	public MeasurementValueContextBase(String id, String type, Sensor sensor,
+			Property property, Feature feature) {
+		this(id, type, sensor, property, feature, null);
+	}
+
+	public MeasurementValueContextBase(Sensor sensor, Property property,
+			Feature feature, TemporalLocation temporalLocation) {
+		this(UUID.randomUUID().toString(), sensor, property, feature,
+				temporalLocation);
+	}
+
+	public MeasurementValueContextBase(String id, Sensor sensor,
+			Property property, Feature feature,
+			TemporalLocation temporalLocation) {
+		this(UUID.randomUUID().toString(), WOE.MeasurementValueContext, sensor,
+				property, feature, temporalLocation);
+	}
+
+	public MeasurementValueContextBase(String id, String type, Sensor sensor,
+			Property property, Feature feature,
+			TemporalLocation temporalLocation) {
+		this(id, type, sensor, property, feature, temporalLocation, null);
+	}
+
+	public MeasurementValueContextBase(Sensor sensor, Property property,
+			Feature feature, TemporalLocation temporalLocation,
+			SpatialLocation spatialLocation) {
+		this(UUID.randomUUID().toString(), sensor, property, feature,
+				temporalLocation, spatialLocation);
+	}
+
+	public MeasurementValueContextBase(String id, Sensor sensor,
+			Property property, Feature feature,
+			TemporalLocation temporalLocation, SpatialLocation spatialLocation) {
+		this(UUID.randomUUID().toString(), WOE.MeasurementValueContext, sensor,
+				property, feature, temporalLocation, spatialLocation);
+	}
+
+	public MeasurementValueContextBase(String id, String type, Sensor sensor,
+			Property property, Feature feature,
+			TemporalLocation temporalLocation, SpatialLocation spatialLocation) {
+		this(id, type, sensor, property, feature, temporalLocation,
+				spatialLocation, null);
+	}
+
+	public MeasurementValueContextBase(Sensor sensor, Property property,
+			Feature feature, TemporalLocation temporalLocation,
+			SpatialLocation spatialLocation, Quality quality) {
+		this(UUID.randomUUID().toString(), sensor, property, feature,
+				temporalLocation, spatialLocation, quality);
+	}
+
+	public MeasurementValueContextBase(String id, Sensor sensor,
+			Property property, Feature feature,
+			TemporalLocation temporalLocation, SpatialLocation spatialLocation,
+			Quality quality) {
+		this(UUID.randomUUID().toString(), WOE.MeasurementValueContext, sensor,
+				property, feature, temporalLocation, spatialLocation, quality);
+	}
+
+	public MeasurementValueContextBase(String id, String type, Sensor sensor,
+			Property property, Feature feature,
+			TemporalLocation temporalLocation, SpatialLocation spatialLocation,
+			Quality quality) {
+		super(id, type);
+		
+		setSensor(sensor);
+		setProperty(property);
+		setFeature(feature);
+		setTemporalLocation(temporalLocation);
+		setSpatialLocation(spatialLocation);
+		setQuality(quality);
+	}
+
 	@Override
 	public void accept(EntityVisitor visitor) {
 		visitor.visit(this);
 	}
-	
+
 	@Override
 	public void setSensor(Sensor sensor) {
 		this.sensor = sensor;
@@ -87,7 +191,17 @@ public class MeasurementValueContextBase extends AbstractEntity implements
 
 	@Override
 	public void setTemporalLocation(TemporalLocation location) {
-		this.time = location;
+		this.temporalLocation = location;
+	}
+
+	@Override
+	public void setSpatialLocation(SpatialLocation location) {
+		this.spatialLocation = location;
+	}
+
+	@Override
+	public void setQuality(Quality quality) {
+		this.quality = quality;
 	}
 
 	@Override
@@ -107,19 +221,17 @@ public class MeasurementValueContextBase extends AbstractEntity implements
 
 	@Override
 	public TemporalLocation getTemporalLocation() {
-		return time;
+		return temporalLocation;
 	}
 
 	@Override
 	public SpatialLocation getSpatialLocation() {
-		// TODO Auto-generated method stub
-		return null;
+		return spatialLocation;
 	}
 
 	@Override
 	public Quality getQuality() {
-		// TODO Auto-generated method stub
-		return null;
+		return quality;
 	}
 
 	@Override
@@ -133,7 +245,12 @@ public class MeasurementValueContextBase extends AbstractEntity implements
 		result = prime * result
 				+ ((property == null) ? 0 : property.hashCode());
 		result = prime * result + ((feature == null) ? 0 : feature.hashCode());
-		result = prime * result + ((time == null) ? 0 : time.hashCode());
+		result = prime
+				* result
+				+ ((temporalLocation == null) ? 0 : temporalLocation.hashCode());
+		result = prime * result
+				+ ((spatialLocation == null) ? 0 : spatialLocation.hashCode());
+		result = prime * result + ((quality == null) ? 0 : quality.hashCode());
 
 		return result;
 	}
@@ -179,10 +296,22 @@ public class MeasurementValueContextBase extends AbstractEntity implements
 		} else if (!feature.equals(other.feature))
 			return false;
 
-		if (time == null) {
-			if (other.time != null)
+		if (temporalLocation == null) {
+			if (other.temporalLocation != null)
 				return false;
-		} else if (!time.equals(other.time))
+		} else if (!temporalLocation.equals(other.temporalLocation))
+			return false;
+
+		if (spatialLocation == null) {
+			if (other.spatialLocation != null)
+				return false;
+		} else if (!spatialLocation.equals(other.spatialLocation))
+			return false;
+
+		if (quality == null) {
+			if (other.quality != null)
+				return false;
+		} else if (!quality.equals(other.quality))
 			return false;
 
 		return true;
@@ -192,7 +321,9 @@ public class MeasurementValueContextBase extends AbstractEntity implements
 	public String toString() {
 		return "MeasurementContextBase [id = " + id + "; type = " + type
 				+ "; sensor = " + sensor + "; property = " + property
-				+ "; feature = " + feature + "; time = " + time + "]";
+				+ "; feature = " + feature + "; temporalLocation = "
+				+ temporalLocation + "; spatialLocation = " + spatialLocation
+				+ "; quality = " + quality + "]";
 	}
 
 }
