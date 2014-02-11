@@ -5,6 +5,8 @@
 
 package fi.uef.envi.wavellite.entity.core;
 
+import java.io.Serializable;
+
 /**
  * <p>
  * Title: Entity
@@ -22,7 +24,7 @@ package fi.uef.envi.wavellite.entity.core;
  * @author Markus Stocker
  */
 
-public interface Entity {
+public interface Entity extends Serializable {
 
 	public String getId();
 	
