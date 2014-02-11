@@ -3,6 +3,7 @@
 
 * FIXED: Dataset interface. No setting and getting of Components. Only set the 
 data structure definition and get component properties.
+* CHANGED: Entity extends Serializable
 
 0.1.0 Changes (2014-01-28)
 --------------------------
