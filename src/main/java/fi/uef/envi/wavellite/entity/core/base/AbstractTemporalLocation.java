@@ -33,6 +33,7 @@ import fi.uef.envi.wavellite.vocabulary.WOE;
 public abstract class AbstractTemporalLocation extends AbstractEntity implements
 		TemporalLocation {
 
+	private static final long serialVersionUID = -796756125029394762L;
 	protected Object value;
 
 	public AbstractTemporalLocation() {

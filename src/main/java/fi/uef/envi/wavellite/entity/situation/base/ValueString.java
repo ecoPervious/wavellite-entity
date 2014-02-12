@@ -31,6 +31,8 @@ import fi.uef.envi.wavellite.vocabulary.STO;
 
 public class ValueString extends AbstractValue {
 
+	private static final long serialVersionUID = -7012839615989817627L;
+
 	public ValueString() {
 		this(null);
 	}

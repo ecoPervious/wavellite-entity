@@ -34,6 +34,7 @@ import fi.uef.envi.wavellite.vocabulary.WOE;
 public class MeasurementResultBase extends AbstractEntity implements
 		MeasurementResult {
 
+	private static final long serialVersionUID = -7818144488933554209L;
 	private MeasurementValue value;
 	private MeasurementValueContext context;
 

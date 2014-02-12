@@ -38,6 +38,7 @@ import fi.uef.envi.wavellite.vocabulary.WOE;
 public class MeasurementValueContextBase extends AbstractEntity implements
 		MeasurementValueContext {
 
+	private static final long serialVersionUID = 6027237452993823419L;
 	private Sensor sensor;
 	private Property property;
 	private Feature feature;

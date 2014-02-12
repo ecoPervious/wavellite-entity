@@ -38,6 +38,7 @@ import fi.uef.envi.wavellite.vocabulary.WOE;
 public class SensorObservationBase extends AbstractEntity implements
 		SensorObservation {
 
+	private static final long serialVersionUID = -4827287967393281660L;
 	private Sensor sensor;
 	private Feature feature;
 	private Property property;

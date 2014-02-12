@@ -34,6 +34,8 @@ import fi.uef.envi.wavellite.vocabulary.STO;
 public class AttributeTemporalLocation extends AbstractAttribute implements
 		RelevantObject {
 
+	private static final long serialVersionUID = 5443016051563732240L;
+
 	public AttributeTemporalLocation() {
 		this(UUID.randomUUID().toString());
 	}

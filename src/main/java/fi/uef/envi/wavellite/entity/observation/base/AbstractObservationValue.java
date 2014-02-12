@@ -28,6 +28,7 @@ import fi.uef.envi.wavellite.entity.observation.ObservationValue;
 public abstract class AbstractObservationValue extends AbstractEntity implements
 		ObservationValue {
 
+	private static final long serialVersionUID = 3129866298683265997L;
 	protected Object value;
 
 	public AbstractObservationValue(String id, String type) {

@@ -31,6 +31,8 @@ import fi.uef.envi.wavellite.vocabulary.WOE;
 public class ComponentPropertyValueString extends
 		AbstractComponentPropertyValue {
 
+	private static final long serialVersionUID = 5296845926082136933L;
+
 	public ComponentPropertyValueString(String value) {
 		this(UUID.randomUUID().toString(), value);
 	}

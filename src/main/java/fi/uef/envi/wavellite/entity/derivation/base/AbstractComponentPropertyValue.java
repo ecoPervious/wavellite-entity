@@ -32,6 +32,7 @@ import fi.uef.envi.wavellite.entity.derivation.ComponentPropertyValue;
 public abstract class AbstractComponentPropertyValue extends AbstractEntity
 		implements ComponentPropertyValue {
 
+	private static final long serialVersionUID = -8892563883527113933L;
 	protected Object value;
 
 	public AbstractComponentPropertyValue(String id, String type) {

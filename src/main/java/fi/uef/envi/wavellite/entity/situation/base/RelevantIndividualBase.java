@@ -36,6 +36,7 @@ import fi.uef.envi.wavellite.vocabulary.STO;
 public class RelevantIndividualBase extends AbstractRelevantObject implements
 		RelevantIndividual {
 
+	private static final long serialVersionUID = 5749430056919006280L;
 	private Set<Attribute> attributes;
 
 	public RelevantIndividualBase() {

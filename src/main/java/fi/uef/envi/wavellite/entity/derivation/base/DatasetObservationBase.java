@@ -43,6 +43,7 @@ import fi.uef.envi.wavellite.vocabulary.WOE;
 public class DatasetObservationBase extends AbstractEntity implements
 		DatasetObservation {
 
+	private static final long serialVersionUID = -903449366250020973L;
 	private Dataset dataset;
 	private Map<ComponentProperty, Component> components;
 	private final static Logger log = Logger

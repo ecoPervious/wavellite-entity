@@ -28,6 +28,8 @@ import fi.uef.envi.wavellite.vocabulary.SSN;
 
 public class PropertyBase extends AbstractEntity implements Property {
 
+	private static final long serialVersionUID = -2711282645079376576L;
+
 	public PropertyBase(String id) {
 		this(id, SSN.Property);
 	}

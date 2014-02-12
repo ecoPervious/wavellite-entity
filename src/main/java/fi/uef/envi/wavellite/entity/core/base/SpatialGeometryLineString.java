@@ -32,6 +32,8 @@ import fi.uef.envi.wavellite.vocabulary.SF;
 
 public class SpatialGeometryLineString extends AbstractSpatialGeometry {
 
+	private static final long serialVersionUID = 4020988360733927318L;
+
 	public SpatialGeometryLineString() {
 		this(UUID.randomUUID().toString());
 	}

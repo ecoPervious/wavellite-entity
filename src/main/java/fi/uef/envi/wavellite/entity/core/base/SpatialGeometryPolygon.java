@@ -32,6 +32,8 @@ import fi.uef.envi.wavellite.vocabulary.SF;
 
 public class SpatialGeometryPolygon extends AbstractSpatialGeometry {
 
+	private static final long serialVersionUID = 5166439266495837060L;
+
 	public SpatialGeometryPolygon() {
 		this(UUID.randomUUID().toString());
 	}

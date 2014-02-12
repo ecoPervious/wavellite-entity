@@ -32,6 +32,7 @@ import fi.uef.envi.wavellite.vocabulary.SSN;
 
 public class SensorOutputBase extends AbstractEntity implements SensorOutput {
 
+	private static final long serialVersionUID = 3473090707973673956L;
 	private ObservationValue value;
 
 	public SensorOutputBase() {

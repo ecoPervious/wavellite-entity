@@ -32,6 +32,8 @@ import fi.uef.envi.wavellite.vocabulary.SF;
 
 public class SpatialGeometryPoint extends AbstractSpatialGeometry {
 
+	private static final long serialVersionUID = 5462816501788940317L;
+
 	public SpatialGeometryPoint() {
 		this(UUID.randomUUID().toString());
 	}

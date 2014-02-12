@@ -33,6 +33,7 @@ import fi.uef.envi.wavellite.vocabulary.QB;
 public class ComponentSpecificationBase extends AbstractEntity implements
 		ComponentSpecification {
 
+	private static final long serialVersionUID = 3757740230648198176L;
 	private int order;
 	private boolean componentRequired;
 	private ComponentProperty componentProperty;

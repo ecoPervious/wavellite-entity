@@ -28,6 +28,8 @@ import fi.uef.envi.wavellite.vocabulary.SSN;
 
 public class FeatureBase extends AbstractEntity implements Feature {
 
+	private static final long serialVersionUID = -5579059943406426940L;
+
 	public FeatureBase(String id) {
 		this(id, SSN.FeatureOfInterest);
 	}

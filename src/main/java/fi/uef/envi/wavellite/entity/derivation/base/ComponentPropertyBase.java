@@ -30,6 +30,8 @@ import fi.uef.envi.wavellite.vocabulary.QB;
 public class ComponentPropertyBase extends AbstractEntity implements
 		ComponentProperty {
 
+	private static final long serialVersionUID = 1007234743098517328L;
+
 	public ComponentPropertyBase(String id) {
 		this(id, QB.ComponentProperty);
 	}

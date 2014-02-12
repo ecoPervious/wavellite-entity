@@ -34,6 +34,8 @@ import fi.uef.envi.wavellite.vocabulary.STO;
 public class AttributeSpatialLocation extends AbstractAttribute implements
 		RelevantObject {
 
+	private static final long serialVersionUID = -8851282458063826547L;
+
 	public AttributeSpatialLocation() {
 		this(UUID.randomUUID().toString());
 	}

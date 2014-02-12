@@ -33,6 +33,8 @@ import fi.uef.envi.wavellite.vocabulary.STO;
 
 public class ValuePeriod extends AbstractValue {
 
+	private static final long serialVersionUID = 3666925474674408301L;
+
 	public ValuePeriod() {
 		this(UUID.randomUUID().toString());
 	}

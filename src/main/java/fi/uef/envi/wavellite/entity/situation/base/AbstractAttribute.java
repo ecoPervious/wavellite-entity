@@ -28,6 +28,7 @@ import fi.uef.envi.wavellite.entity.situation.Attribute;
 public abstract class AbstractAttribute extends AbstractEntity implements
 		Attribute {
 
+	private static final long serialVersionUID = -3895824058486371102L;
 	protected Object value;
 
 	public AbstractAttribute(String id, String type) {

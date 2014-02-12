@@ -27,6 +27,8 @@ import fi.uef.envi.wavellite.vocabulary.SSN;
  */
 
 public class SensorBase extends AbstractEntity implements Sensor {
+	
+	private static final long serialVersionUID = -8805371750193731525L;
 
 	public SensorBase(String id) {
 		this(id, SSN.Sensor);

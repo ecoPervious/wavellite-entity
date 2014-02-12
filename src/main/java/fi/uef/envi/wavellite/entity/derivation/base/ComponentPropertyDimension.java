@@ -26,6 +26,8 @@ import fi.uef.envi.wavellite.vocabulary.QB;
 
 public class ComponentPropertyDimension extends ComponentPropertyBase {
 
+	private static final long serialVersionUID = -950126662029624452L;
+
 	public ComponentPropertyDimension(String id) {
 		this(id, QB.DimensionProperty);
 	}

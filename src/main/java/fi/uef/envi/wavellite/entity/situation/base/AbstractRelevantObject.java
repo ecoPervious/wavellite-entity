@@ -28,6 +28,8 @@ import fi.uef.envi.wavellite.entity.situation.RelevantObject;
 public abstract class AbstractRelevantObject extends AbstractEntity implements
 		RelevantObject {
 
+	private static final long serialVersionUID = -4685705879875540200L;
+
 	public AbstractRelevantObject(String id, String type) {
 		super(id, type);
 	}

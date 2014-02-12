@@ -29,6 +29,7 @@ import fi.uef.envi.wavellite.entity.situation.Value;
 public abstract class AbstractValue extends AbstractEntity implements
 		Value, RelevantObject {
 
+	private static final long serialVersionUID = 1607261161707719469L;
 	protected Object value;
 	
 	public AbstractValue(String id, String type) {

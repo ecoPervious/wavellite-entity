@@ -31,6 +31,7 @@ import fi.uef.envi.wavellite.vocabulary.WOE;
 public abstract class AbstractMeasurementValue extends AbstractEntity implements
 		MeasurementValue {
 
+	private static final long serialVersionUID = 8013441825304053403L;
 	protected Object value;
 
 	public AbstractMeasurementValue() {

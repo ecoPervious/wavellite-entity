@@ -30,6 +30,8 @@ import fi.uef.envi.wavellite.vocabulary.SSN;
 
 public class ObservationValueDouble extends AbstractObservationValue {
 
+	private static final long serialVersionUID = -7824217647470553427L;
+
 	public ObservationValueDouble() {
 		this(UUID.randomUUID().toString());
 	}

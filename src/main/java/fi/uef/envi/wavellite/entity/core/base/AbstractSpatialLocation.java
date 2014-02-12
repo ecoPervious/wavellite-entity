@@ -33,6 +33,7 @@ import fi.uef.envi.wavellite.vocabulary.WOE;
 public abstract class AbstractSpatialLocation extends AbstractEntity implements
 		SpatialLocation {
 
+	private static final long serialVersionUID = -2244729407040858460L;
 	private Set<SpatialLocation> equal = new HashSet<SpatialLocation>();
 	private Set<SpatialLocation> disjoint = new HashSet<SpatialLocation>();
 	private Set<SpatialLocation> intersects = new HashSet<SpatialLocation>();

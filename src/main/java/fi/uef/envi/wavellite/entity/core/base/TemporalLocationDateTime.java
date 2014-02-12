@@ -32,6 +32,8 @@ import fi.uef.envi.wavellite.vocabulary.WOE;
 
 public class TemporalLocationDateTime extends AbstractTemporalLocation {
 
+	private static final long serialVersionUID = 7333946748427770503L;
+
 	public TemporalLocationDateTime() {
 		this(DateTime.now());
 	}

@@ -35,6 +35,7 @@ import fi.uef.envi.wavellite.vocabulary.STO;
 
 public class SituationBase extends AbstractEntity implements Situation {
 
+	private static final long serialVersionUID = 7280143774256425287L;
 	private Set<ElementaryInfon> infons;
 
 	public SituationBase() {

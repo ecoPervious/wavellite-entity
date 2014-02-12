@@ -31,6 +31,7 @@ import fi.uef.envi.wavellite.vocabulary.WOE;
 
 public class SpatialLocationRegion extends AbstractSpatialLocation {
 
+	private static final long serialVersionUID = -4394483330502442059L;
 	private SpatialGeometry spatialGeometry;
 
 	public SpatialLocationRegion() {

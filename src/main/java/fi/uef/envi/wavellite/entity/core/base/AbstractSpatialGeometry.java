@@ -34,6 +34,7 @@ import fi.uef.envi.wavellite.vocabulary.SF;
 public abstract class AbstractSpatialGeometry extends AbstractEntity implements
 		SpatialGeometry {
 
+	private static final long serialVersionUID = 1103769230679763300L;
 	protected Geometry value;
 	private WKTWriter wktWriter = new WKTWriter();
 	private GMLWriter gmlWriter = new GMLWriter();

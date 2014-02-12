@@ -34,6 +34,8 @@ import fi.uef.envi.wavellite.vocabulary.STO;
 
 public class AttributeUri extends AbstractAttribute implements RelevantObject {
 
+	private static final long serialVersionUID = 828750282279893903L;
+
 	public AttributeUri() {
 		this(UUID.randomUUID().toString());
 	}

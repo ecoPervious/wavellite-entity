@@ -30,6 +30,8 @@ import fi.uef.envi.wavellite.vocabulary.WOE;
 
 public class MeasurementValueDouble extends AbstractMeasurementValue {
 
+	private static final long serialVersionUID = -5451434662654927252L;
+
 	public MeasurementValueDouble(Double value) {
 		this(UUID.randomUUID().toString(), value);
 	}

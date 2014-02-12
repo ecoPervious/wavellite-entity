@@ -29,6 +29,8 @@ import fi.uef.envi.wavellite.vocabulary.STO;
 
 public class RelationBase extends AbstractEntity implements Relation {
 
+	private static final long serialVersionUID = -9219478228704588399L;
+
 	public RelationBase(String id) {
 		this(id, STO.Relation);
 	}

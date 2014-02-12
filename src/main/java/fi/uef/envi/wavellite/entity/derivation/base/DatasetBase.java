@@ -35,6 +35,7 @@ import fi.uef.envi.wavellite.vocabulary.QB;
 
 public class DatasetBase extends AbstractEntity implements Dataset {
 
+	private static final long serialVersionUID = -6188604240253868400L;
 	private DataStructureDefinition definition;
 
 	public DatasetBase(String id) {

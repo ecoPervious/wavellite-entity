@@ -33,6 +33,7 @@ import fi.uef.envi.wavellite.vocabulary.WOE;
 
 public class ComponentBase extends AbstractEntity implements Component {
 
+	private static final long serialVersionUID = 8938086663111604237L;
 	private ComponentProperty property;
 	private ComponentPropertyValue value;
 

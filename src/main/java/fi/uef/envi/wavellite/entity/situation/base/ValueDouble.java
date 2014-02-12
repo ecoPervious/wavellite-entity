@@ -31,6 +31,8 @@ import fi.uef.envi.wavellite.vocabulary.STO;
 
 public class ValueDouble extends AbstractValue {
 
+	private static final long serialVersionUID = -8560467668891672891L;
+
 	public ValueDouble() {
 		this(UUID.randomUUID().toString());
 	}

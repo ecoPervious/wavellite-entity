@@ -31,6 +31,8 @@ import fi.uef.envi.wavellite.vocabulary.STO;
 
 public class AttributeRelevantIndividual extends AbstractAttribute {
 
+	private static final long serialVersionUID = -4246633244475301142L;
+
 	public AttributeRelevantIndividual() {
 		this(UUID.randomUUID().toString());
 	}

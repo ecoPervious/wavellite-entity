@@ -40,6 +40,7 @@ import fi.uef.envi.wavellite.vocabulary.QB;
 public class DataStructureDefinitionBase extends AbstractEntity implements
 		DataStructureDefinition {
 
+	private static final long serialVersionUID = -8808896498498167893L;
 	private Set<ComponentSpecification> componentSpecifications;
 
 	public DataStructureDefinitionBase() {

@@ -34,6 +34,7 @@ import fi.uef.envi.wavellite.vocabulary.WOE;
 
 public class SpatialLocationPlace extends AbstractSpatialLocation {
 
+	private static final long serialVersionUID = 2316273494427413024L;
 	private String label;
 	private Set<URI> sameAs;
 

@@ -26,6 +26,7 @@ import fi.uef.envi.wavellite.entity.core.Entity;
 
 public abstract class AbstractEntity implements Entity {
 
+	private static final long serialVersionUID = -2335045343468916664L;
 	protected String id;
 	protected String type;
 
