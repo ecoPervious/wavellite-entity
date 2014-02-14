@@ -214,7 +214,7 @@ public class EntityFactory {
 
 	public static SensorObservation sensorObservation(Sensor sensor,
 			Property property, Feature feature, SensorOutput output,
-			TemporalLocation temporalLocation, SpatialLocation spatialLocation) {
+			TemporalLocation temporalLocation) {
 		SensorObservation ret = new SensorObservationBase();
 
 		ret.setSensor(sensor);
@@ -222,6 +222,16 @@ public class EntityFactory {
 		ret.setFeature(feature);
 		ret.setSensorOutput(output);
 		ret.setTemporalLocation(temporalLocation);
+
+		return ret;
+	}
+
+	public static SensorObservation sensorObservation(Sensor sensor,
+			Property property, Feature feature, SensorOutput output,
+			TemporalLocation temporalLocation, SpatialLocation spatialLocation) {
+		SensorObservation ret = sensorObservation(sensor, property, feature,
+				output, temporalLocation);
+
 		ret.setSpatialLocation(spatialLocation);
 
 		return ret;
