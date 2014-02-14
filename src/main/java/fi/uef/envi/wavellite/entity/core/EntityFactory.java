@@ -136,10 +136,19 @@ public class EntityFactory {
 
 	public static TemporalLocation temporalLocation(int year, int month,
 			int day, int hour, int min, int sec) {
-		return temporalLocation(new DateTime(year, month, day, hour, min, sec));
+		return dateTime(year, month, day, hour, min, sec);
 	}
 
 	public static TemporalLocation temporalLocation(DateTime time) {
+		return new TemporalLocationDateTime(time);
+	}
+
+	public static TemporalLocationDateTime dateTime(int year, int month,
+			int day, int hour, int min, int sec) {
+		return dateTime(new DateTime(year, month, day, hour, min, sec));
+	}
+
+	public static TemporalLocationDateTime dateTime(DateTime time) {
 		return new TemporalLocationDateTime(time);
 	}
 
@@ -153,6 +162,20 @@ public class EntityFactory {
 	}
 
 	public static TemporalLocation temporalLocation(
+			TemporalLocationDateTime start, TemporalLocationDateTime end) {
+		return new TemporalLocationInterval(start, end);
+	}
+
+	public static TemporalLocationInterval interval(Interval interval) {
+		return interval(interval.getStart(), interval.getEnd());
+	}
+
+	public static TemporalLocationInterval interval(DateTime start, DateTime end) {
+		return interval(new TemporalLocationDateTime(start),
+				new TemporalLocationDateTime(end));
+	}
+
+	public static TemporalLocationInterval interval(
 			TemporalLocationDateTime start, TemporalLocationDateTime end) {
 		return new TemporalLocationInterval(start, end);
 	}
