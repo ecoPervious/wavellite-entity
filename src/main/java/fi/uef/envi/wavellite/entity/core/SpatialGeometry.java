@@ -32,6 +32,10 @@ public interface SpatialGeometry extends Entity {
 	
 	public String getValueAsGML();
 	
+	public void setValueAsWKT(String value);
+	
+	public void setValueAsGML(String value);
+	
 	public void accept(SpatialGeometryVisitor visitor);
 	
 }
