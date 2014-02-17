@@ -71,6 +71,11 @@ public abstract class AbstractSpatialGeometry extends AbstractEntity implements
 	public Geometry getValue() {
 		return value;
 	}
+	
+	@Override
+	public void setValue(Geometry value) {
+		this.value = value;
+	}
 
 	@Override
 	public String getValueAsWKT() {

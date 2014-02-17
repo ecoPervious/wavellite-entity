@@ -28,6 +28,8 @@ public interface SpatialGeometry extends Entity {
 
 	public Geometry getValue();
 	
+	public void setValue(Geometry geometry);
+	
 	public String getValueAsWKT();
 	
 	public String getValueAsGML();
