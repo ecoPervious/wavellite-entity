@@ -60,6 +60,10 @@ public class SpatialLocationRegion extends AbstractSpatialLocation {
 		this.spatialGeometry = geometry;
 	}
 
+	public void setSpatialGeometry(SpatialGeometry geometry) {
+		this.spatialGeometry = geometry;
+	}
+	
 	public SpatialGeometry getSpatialGeometry() {
 		return spatialGeometry;
 	}
