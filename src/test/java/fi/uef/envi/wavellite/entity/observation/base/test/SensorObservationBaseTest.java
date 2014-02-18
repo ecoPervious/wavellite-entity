@@ -73,7 +73,7 @@ public class SensorObservationBaseTest {
 		SensorObservationBase e = new SensorObservationBase("i1");
 		SensorObservationBase a = new SensorObservationBase("i2");
 
-		assertNotEquals(e, a);
+		assertEquals(e, a);
 	}
 
 	@Test
@@ -105,7 +105,7 @@ public class SensorObservationBaseTest {
 		SensorObservationBase s1 = new SensorObservationBase("i1");
 		SensorObservationBase s2 = new SensorObservationBase("i2");
 
-		assertNotEquals(s1.hashCode(), s2.hashCode());
+		assertEquals(s1.hashCode(), s2.hashCode());
 	}
 
 	@Test
