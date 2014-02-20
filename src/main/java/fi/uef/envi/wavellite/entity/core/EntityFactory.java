@@ -39,7 +39,9 @@ import fi.uef.envi.wavellite.entity.derivation.base.ComponentPropertyMeasure;
 import fi.uef.envi.wavellite.entity.derivation.base.ComponentPropertyValueDouble;
 import fi.uef.envi.wavellite.entity.derivation.base.ComponentPropertyValueInteger;
 import fi.uef.envi.wavellite.entity.derivation.base.ComponentPropertyValueSpatialLocation;
+import fi.uef.envi.wavellite.entity.derivation.base.ComponentPropertyValueString;
 import fi.uef.envi.wavellite.entity.derivation.base.ComponentPropertyValueTemporalLocation;
+import fi.uef.envi.wavellite.entity.derivation.base.ComponentPropertyValueUri;
 import fi.uef.envi.wavellite.entity.derivation.base.DatasetBase;
 import fi.uef.envi.wavellite.entity.derivation.base.DatasetObservationBase;
 import fi.uef.envi.wavellite.entity.measurement.MeasurementResult;
@@ -405,6 +407,14 @@ public class EntityFactory {
 	public static ComponentPropertyValue componentPropertyValue(
 			SpatialLocation location) {
 		return new ComponentPropertyValueSpatialLocation(location);
+	}
+	
+	public static ComponentPropertyValue componentPropertyValue(String value) {
+		return new ComponentPropertyValueString(value);
+	}
+	
+	public static ComponentPropertyValue componentPropertyValue(URI value) {
+		return new ComponentPropertyValueUri(value);
 	}
 
 	public static Situation situation(ElementaryInfon... infons) {
