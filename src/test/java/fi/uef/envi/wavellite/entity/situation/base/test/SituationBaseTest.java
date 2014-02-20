@@ -13,7 +13,7 @@ import org.junit.Test;
 import fi.uef.envi.wavellite.entity.situation.ElementaryInfon;
 import fi.uef.envi.wavellite.entity.situation.Polarity;
 import fi.uef.envi.wavellite.entity.situation.Situation;
-import fi.uef.envi.wavellite.entity.situation.base.AttributeRelevantIndividual;
+import fi.uef.envi.wavellite.entity.situation.base.AttributeValue;
 import fi.uef.envi.wavellite.entity.situation.base.ValueString;
 import fi.uef.envi.wavellite.entity.situation.base.ElementaryInfonBase;
 import fi.uef.envi.wavellite.entity.situation.base.RelationBase;
@@ -166,7 +166,7 @@ public class SituationBaseTest {
 		Situation a = new SituationBase("s1");
 		ElementaryInfon i1 = new ElementaryInfonBase("i1");
 		i1.setRelation(new RelationBase("r1"));
-		i1.addRelevantObject(new RelevantIndividualBase("o1", new AttributeRelevantIndividual(
+		i1.addRelevantObject(new RelevantIndividualBase("o1", new AttributeValue(
 				"a1", new ValueString("v1", "A"))));
 		i1.setPolarity(Polarity.True);
 		a.addSupportedInfon(i1);
@@ -174,7 +174,7 @@ public class SituationBaseTest {
 		Situation e = new SituationBase("s1");
 		ElementaryInfon i2 = new ElementaryInfonBase("i1");
 		i2.setRelation(new RelationBase("r1"));
-		i2.addRelevantObject(new RelevantIndividualBase("o1", new AttributeRelevantIndividual(
+		i2.addRelevantObject(new RelevantIndividualBase("o1", new AttributeValue(
 				"a1", new ValueString("v1", "A"))));
 		i2.setPolarity(Polarity.True);
 		e.addSupportedInfon(i2);

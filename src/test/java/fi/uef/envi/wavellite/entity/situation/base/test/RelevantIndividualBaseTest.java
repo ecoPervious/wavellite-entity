@@ -10,7 +10,7 @@ import static org.junit.Assert.assertNotEquals;
 
 import org.junit.Test;
 
-import fi.uef.envi.wavellite.entity.situation.base.AttributeRelevantIndividual;
+import fi.uef.envi.wavellite.entity.situation.base.AttributeValue;
 import fi.uef.envi.wavellite.entity.situation.base.RelevantIndividualBase;
 import fi.uef.envi.wavellite.vocabulary.STO;
 
@@ -137,8 +137,8 @@ public class RelevantIndividualBaseTest {
 		RelevantIndividualBase s1 = new RelevantIndividualBase("i1");
 		RelevantIndividualBase s2 = new RelevantIndividualBase("i1");
 		
-		s1.addAttribute(new AttributeRelevantIndividual("a1"));
-		s2.addAttribute(new AttributeRelevantIndividual("a1"));
+		s1.addAttribute(new AttributeValue("a1"));
+		s2.addAttribute(new AttributeValue("a1"));
 		
 		assertEquals(s1, s2);
 	}
@@ -148,8 +148,8 @@ public class RelevantIndividualBaseTest {
 		RelevantIndividualBase s1 = new RelevantIndividualBase("i1");
 		RelevantIndividualBase s2 = new RelevantIndividualBase("i1");
 		
-		s1.addAttribute(new AttributeRelevantIndividual("a1"));
-		s2.addAttribute(new AttributeRelevantIndividual("a2"));
+		s1.addAttribute(new AttributeValue("a1"));
+		s2.addAttribute(new AttributeValue("a2"));
 		
 		assertEquals(s1, s2);
 	}

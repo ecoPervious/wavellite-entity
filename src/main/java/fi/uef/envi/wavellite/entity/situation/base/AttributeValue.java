@@ -14,7 +14,7 @@ import fi.uef.envi.wavellite.vocabulary.STO;
 
 /**
  * <p>
- * Title: AttributeRelevantIndividual
+ * Title: AttributeValue
  * </p>
  * <p>
  * Description:
@@ -29,31 +29,31 @@ import fi.uef.envi.wavellite.vocabulary.STO;
  * @author Markus Stocker
  */
 
-public class AttributeRelevantIndividual extends AbstractAttribute {
+public class AttributeValue extends AbstractAttribute {
 
 	private static final long serialVersionUID = -4246633244475301142L;
 
-	public AttributeRelevantIndividual() {
+	public AttributeValue() {
 		this(UUID.randomUUID().toString());
 	}
 
-	public AttributeRelevantIndividual(Value value) {
+	public AttributeValue(Value value) {
 		this(UUID.randomUUID().toString(), value);
 	}
 
-	public AttributeRelevantIndividual(String id) {
+	public AttributeValue(String id) {
 		this(id, STO.Attribute);
 	}
 
-	public AttributeRelevantIndividual(String id, Value value) {
+	public AttributeValue(String id, Value value) {
 		this(id, STO.Attribute, value);
 	}
 
-	public AttributeRelevantIndividual(String id, String type) {
+	public AttributeValue(String id, String type) {
 		super(id, type);
 	}
 
-	public AttributeRelevantIndividual(String id, String type, Value value) {
+	public AttributeValue(String id, String type, Value value) {
 		super(id, type, value);
 	}
 
@@ -92,7 +92,7 @@ public class AttributeRelevantIndividual extends AbstractAttribute {
 		if (getClass() != obj.getClass())
 			return false;
 
-		AttributeRelevantIndividual other = (AttributeRelevantIndividual) obj;
+		AttributeValue other = (AttributeValue) obj;
 
 		if (type == null) {
 			if (other.type != null)
@@ -111,7 +111,7 @@ public class AttributeRelevantIndividual extends AbstractAttribute {
 
 	@Override
 	public String toString() {
-		return "AttributeRelevantIndividual [id = " + id + "; type = " + type
+		return "AttributeValue [id = " + id + "; type = " + type
 				+ "; value = " + value + "]";
 	}
 
