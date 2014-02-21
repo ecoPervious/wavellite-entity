@@ -41,7 +41,7 @@ public class ElementaryInfonBase extends AbstractEntity implements
 	private static final long serialVersionUID = 191483565485552354L;
 	private Relation relation;
 	private List<RelevantObject> objects;
-	private Polarity polarity;
+	private Polarity polarity = Polarity.True;
 
 	public ElementaryInfonBase() {
 		this(UUID.randomUUID().toString());
