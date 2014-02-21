@@ -40,15 +40,15 @@ public class SituationBase extends AbstractEntity implements Situation {
 	public SituationBase() {
 		this(UUID.randomUUID().toString());
 	}
-	
+
 	public SituationBase(ElementaryInfon... infons) {
 		this(UUID.randomUUID().toString(), infons);
 	}
-		
+
 	public SituationBase(String id) {
 		this(id, STO.Situation);
 	}
-	
+
 	public SituationBase(String id, ElementaryInfon... infons) {
 		this(id, STO.Situation, infons);
 	}
@@ -58,10 +58,10 @@ public class SituationBase extends AbstractEntity implements Situation {
 
 		this.infons = new HashSet<ElementaryInfon>();
 	}
-	
+
 	public SituationBase(String id, String type, ElementaryInfon... infons) {
 		this(id, type);
-	
+
 		for (ElementaryInfon infon : infons) {
 			this.infons.add(infon);
 		}
@@ -71,7 +71,7 @@ public class SituationBase extends AbstractEntity implements Situation {
 	public void accept(EntityVisitor visitor) {
 		visitor.visit(this);
 	}
-	
+
 	@Override
 	public void addSupportedInfon(ElementaryInfon infon) {
 		infons.add(infon);
@@ -79,7 +79,7 @@ public class SituationBase extends AbstractEntity implements Situation {
 
 	@Override
 	public Set<ElementaryInfon> getSupportedInfons() {
-		return infons;
+		return new HashSet<ElementaryInfon>(infons);
 	}
 
 	@Override
@@ -87,7 +87,7 @@ public class SituationBase extends AbstractEntity implements Situation {
 		final int prime = 31;
 		int result = 1;
 
-//		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		// result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((type == null) ? 0 : type.hashCode());
 		result = prime * result + ((infons == null) ? 0 : infons.hashCode());
 
@@ -104,12 +104,12 @@ public class SituationBase extends AbstractEntity implements Situation {
 			return false;
 
 		SituationBase other = (SituationBase) obj;
-		
-//		if (id == null) {
-//			if (other.id != null)
-//				return false;
-//		} else if (!id.equals(other.id))
-//			return false;
+
+		// if (id == null) {
+		// if (other.id != null)
+		// return false;
+		// } else if (!id.equals(other.id))
+		// return false;
 
 		if (type == null) {
 			if (other.type != null)
@@ -120,7 +120,7 @@ public class SituationBase extends AbstractEntity implements Situation {
 		if (infons == null) {
 			if (other.infons != null)
 				return false;
-		} else if (!infons.equals(other.infons))
+		} else if (!getSupportedInfons().equals(other.getSupportedInfons()))
 			return false;
 
 		return true;
