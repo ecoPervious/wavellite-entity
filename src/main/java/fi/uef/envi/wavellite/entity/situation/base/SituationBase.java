@@ -5,7 +5,6 @@
 
 package fi.uef.envi.wavellite.entity.situation.base;
 
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
@@ -80,7 +79,7 @@ public class SituationBase extends AbstractEntity implements Situation {
 
 	@Override
 	public Set<ElementaryInfon> getSupportedInfons() {
-		return Collections.unmodifiableSet(infons);
+		return infons;
 	}
 
 	@Override
