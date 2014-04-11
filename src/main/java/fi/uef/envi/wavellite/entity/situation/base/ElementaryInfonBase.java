@@ -47,6 +47,14 @@ public class ElementaryInfonBase extends AbstractEntity implements
 		this(UUID.randomUUID().toString());
 	}
 
+	public ElementaryInfonBase(Relation relation) {
+		this(relation, new RelevantObject[] {});
+	}
+
+	public ElementaryInfonBase(Relation relation, RelevantObject... objects) {
+		this(relation, Polarity.True, objects);
+	}
+
 	public ElementaryInfonBase(Relation relation, Polarity polarity,
 			RelevantObject... objects) {
 		this(UUID.randomUUID().toString(), relation, polarity, objects);
@@ -56,6 +64,15 @@ public class ElementaryInfonBase extends AbstractEntity implements
 		this(id, STO.ElementaryInfon);
 	}
 
+	public ElementaryInfonBase(String id, Relation relation) {
+		this(id, relation, new RelevantObject[] {});
+	}
+
+	public ElementaryInfonBase(String id, Relation relation,
+			RelevantObject... objects) {
+		this(id, relation, Polarity.True, objects);
+	}
+	
 	public ElementaryInfonBase(String id, Relation relation, Polarity polarity,
 			RelevantObject... objects) {
 		this(id, STO.ElementaryInfon, relation, polarity, objects);
@@ -78,7 +95,7 @@ public class ElementaryInfonBase extends AbstractEntity implements
 			this.objects.add(object);
 		}
 	}
-	
+
 	@Override
 	public void accept(EntityVisitor visitor) {
 		visitor.visit(this);
@@ -119,7 +136,7 @@ public class ElementaryInfonBase extends AbstractEntity implements
 		final int prime = 31;
 		int result = 1;
 
-//		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		// result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((type == null) ? 0 : type.hashCode());
 		result = prime * result
 				+ ((relation == null) ? 0 : relation.hashCode());
@@ -141,11 +158,11 @@ public class ElementaryInfonBase extends AbstractEntity implements
 
 		ElementaryInfonBase other = (ElementaryInfonBase) obj;
 
-//		if (id == null) {
-//			if (other.id != null)
-//				return false;
-//		} else if (!id.equals(other.id))
-//			return false;
+		// if (id == null) {
+		// if (other.id != null)
+		// return false;
+		// } else if (!id.equals(other.id))
+		// return false;
 
 		if (type == null) {
 			if (other.type != null)
