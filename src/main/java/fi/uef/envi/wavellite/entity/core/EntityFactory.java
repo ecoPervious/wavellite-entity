@@ -431,11 +431,11 @@ public class EntityFactory {
 	}
 
 	public static AttributeTemporalLocation relevantObject(DateTime object) {
-		return relevantObject(object);
+		return attribute(object);
 	}
 
 	public static AttributeTemporalLocation relevantObject(Interval object) {
-		return relevantObject(object);
+		return attribute(object);
 	}
 
 	public static AttributeTemporalLocation relevantObject(
@@ -444,15 +444,15 @@ public class EntityFactory {
 	}
 
 	public static AttributeSpatialLocation relevantObject(Point object) {
-		return relevantObject(object);
+		return attribute(object);
 	}
 
 	public static AttributeSpatialLocation relevantObject(Polygon object) {
-		return relevantObject(object);
+		return attribute(object);
 	}
 
 	public static AttributeSpatialLocation relevantObject(LineString object) {
-		return relevantObject(object);
+		return attribute(object);
 	}
 
 	public static AttributeSpatialLocation relevantObject(SpatialLocation object) {
@@ -505,6 +505,18 @@ public class EntityFactory {
 
 	public static AttributeSpatialLocation attribute(SpatialLocation location) {
 		return new AttributeSpatialLocation(location);
+	}
+	
+	public static AttributeSpatialLocation attribute(Point point) {
+		return attribute(spatialLocation(point));
+	}
+	
+	public static AttributeSpatialLocation attribute(Polygon polygon) {
+		return attribute(spatialLocation(polygon));
+	}
+	
+	public static AttributeSpatialLocation attribute(LineString lineString) {
+		return attribute(spatialLocation(lineString));
 	}
 
 }
