@@ -165,7 +165,7 @@ public class ElementaryInfonBaseTest {
 		s1.setPolarity(Polarity.True);
 		s2.setPolarity(Polarity.True);
 		
-		assertEquals(s1, s2);
+		assertNotEquals(s1, s2);
 	}
 
 }
