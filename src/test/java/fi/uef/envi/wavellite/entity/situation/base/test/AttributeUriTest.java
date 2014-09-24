@@ -128,12 +128,38 @@ public class AttributeUriTest {
 	}
 
 	@Test
-	public void test15() {
+	public void test11() {
 		AttributeUri s1 = new AttributeUri("i1");
 		AttributeUri s2 = new AttributeUri("i1");
 
 		s1.setValue("v1");
 		s2.setValue("v2");
+
+		assertNotEquals(s1, s2);
+	}
+	
+	@Test
+	public void test12() {
+		AttributeUri s1 = new AttributeUri("i1");
+		AttributeUri s2 = new AttributeUri("i1");
+
+		s1.setName("myAttribute");
+		s1.setValue("v1");
+		s2.setName("myAttribute");
+		s2.setValue("v1");
+
+		assertEquals(s1, s2);
+	}
+	
+	@Test
+	public void test13() {
+		AttributeUri s1 = new AttributeUri("i1");
+		AttributeUri s2 = new AttributeUri("i1");
+
+		s1.setName("myAttribute1");
+		s1.setValue("v1");
+		s2.setName("myAttribute2");
+		s2.setValue("v1");
 
 		assertNotEquals(s1, s2);
 	}

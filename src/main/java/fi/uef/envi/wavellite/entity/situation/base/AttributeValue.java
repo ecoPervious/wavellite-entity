@@ -78,6 +78,7 @@ public class AttributeValue extends AbstractAttribute {
 		int result = 1;
 
 		result = prime * result + ((type == null) ? 0 : type.hashCode());
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		result = prime * result + ((value == null) ? 0 : value.hashCode());
 
 		return result;
@@ -100,6 +101,12 @@ public class AttributeValue extends AbstractAttribute {
 		} else if (!type.equals(other.type))
 			return false;
 
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+
 		if (value == null) {
 			if (other.value != null)
 				return false;
@@ -111,8 +118,8 @@ public class AttributeValue extends AbstractAttribute {
 
 	@Override
 	public String toString() {
-		return "AttributeValue [id = " + id + "; type = " + type
-				+ "; value = " + value + "]";
+		return "AttributeValue [id = " + id + "; type = " + type + "; name = "
+				+ name + "; value = " + value + "]";
 	}
 
 }

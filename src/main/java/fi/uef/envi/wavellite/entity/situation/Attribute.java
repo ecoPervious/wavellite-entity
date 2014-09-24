@@ -26,7 +26,11 @@ import fi.uef.envi.wavellite.entity.core.Entity;
 
 public interface Attribute extends Entity {
 	
+	public String getName();
+	
 	public Object getValue();
+	
+	public void setName(String name);
 	
 	public void setValue(Object value);
 	

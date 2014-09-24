@@ -153,4 +153,28 @@ public class AttributeTemporalLocationTest {
 		assertNotEquals(s1, s2);
 	}
 
+	@Test
+	public void test16() {
+		AttributeTemporalLocation s1 = new AttributeTemporalLocation(
+				new TemporalLocationDateTime(new DateTime(2014, 1, 10, 0, 0, 0)));
+		s1.setName("myAttribute");
+		AttributeTemporalLocation s2 = new AttributeTemporalLocation(
+				new TemporalLocationDateTime(new DateTime(2014, 1, 10, 0, 0, 0)));
+		s2.setName("myAttribute");
+
+		assertEquals(s1, s2);
+	}
+
+	@Test
+	public void test17() {
+		AttributeTemporalLocation s1 = new AttributeTemporalLocation(
+				new TemporalLocationDateTime(new DateTime(2014, 1, 10, 0, 0, 0)));
+		s1.setName("myAttribute1");
+		AttributeTemporalLocation s2 = new AttributeTemporalLocation(
+				new TemporalLocationDateTime(new DateTime(2014, 1, 10, 0, 0, 0)));
+		s2.setName("myAttribute2");
+
+		assertNotEquals(s1, s2);
+	}
+
 }

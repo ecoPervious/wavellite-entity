@@ -86,6 +86,7 @@ public class AttributeUri extends AbstractAttribute implements RelevantObject {
 		int result = 1;
 
 		result = prime * result + ((type == null) ? 0 : type.hashCode());
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		result = prime * result + ((value == null) ? 0 : value.hashCode());
 
 		return result;
@@ -108,6 +109,12 @@ public class AttributeUri extends AbstractAttribute implements RelevantObject {
 		} else if (!type.equals(other.type))
 			return false;
 
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+
 		if (value == null) {
 			if (other.value != null)
 				return false;
@@ -119,8 +126,8 @@ public class AttributeUri extends AbstractAttribute implements RelevantObject {
 
 	@Override
 	public String toString() {
-		return "AttributeUri [id = " + id + "; type = " + type + "; value = "
-				+ value + "]";
+		return "AttributeUri [id = " + id + "; type = " + type + "; name = "
+				+ name + "; value = " + value + "]";
 	}
 
 }

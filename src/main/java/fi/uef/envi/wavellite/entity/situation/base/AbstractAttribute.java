@@ -29,6 +29,8 @@ public abstract class AbstractAttribute extends AbstractEntity implements
 		Attribute {
 
 	private static final long serialVersionUID = -3895824058486371102L;
+
+	protected String name;
 	protected Object value;
 
 	public AbstractAttribute(String id, String type) {
@@ -39,6 +41,16 @@ public abstract class AbstractAttribute extends AbstractEntity implements
 		this(id, type);
 
 		setValue(value);
+	}
+
+	@Override
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	@Override
+	public String getName() {
+		return name;
 	}
 
 	@Override

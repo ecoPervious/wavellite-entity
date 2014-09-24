@@ -165,4 +165,30 @@ public class AttributeRelevantIndividualTest {
 		assertNotEquals(s1, s2);
 	}
 	
+	@Test
+	public void test17() {
+		AttributeValue s1 = new AttributeValue("i1");
+		AttributeValue s2 = new AttributeValue("i1");
+		
+		s1.setName("myAttribute");
+		s1.setValue(new ValueDouble("v1", 0.0));
+		s2.setName("myAttribute");
+		s2.setValue(new ValueDouble("v1", 0.0));
+		
+		assertEquals(s1, s2);
+	}
+	
+	@Test
+	public void test18() {
+		AttributeValue s1 = new AttributeValue("i1");
+		AttributeValue s2 = new AttributeValue("i1");
+		
+		s1.setName("myAttribute1");
+		s1.setValue(new ValueDouble("v1", 0.0));
+		s2.setName("myAttribute2");
+		s2.setValue(new ValueDouble("v1", 0.0));
+		
+		assertNotEquals(s1, s2);
+	}
+	
 }

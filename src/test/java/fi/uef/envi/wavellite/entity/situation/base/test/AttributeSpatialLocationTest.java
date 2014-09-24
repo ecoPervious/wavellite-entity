@@ -152,4 +152,28 @@ public class AttributeSpatialLocationTest {
 		assertNotEquals(s1, s2);
 	}
 
+	@Test
+	public void test16() {
+		AttributeSpatialLocation s1 = new AttributeSpatialLocation(
+				new SpatialLocationPlace("l1"));
+		s1.setName("myAttribute");
+		AttributeSpatialLocation s2 = new AttributeSpatialLocation(
+				new SpatialLocationPlace("l1"));
+		s2.setName("myAttribute");
+
+		assertEquals(s1, s2);
+	}
+
+	@Test
+	public void test17() {
+		AttributeSpatialLocation s1 = new AttributeSpatialLocation(
+				new SpatialLocationPlace("l1"));
+		s1.setName("myAttribute1");
+		AttributeSpatialLocation s2 = new AttributeSpatialLocation(
+				new SpatialLocationPlace("l1"));
+		s2.setName("myAttribute2");
+
+		assertNotEquals(s1, s2);
+	}
+
 }
