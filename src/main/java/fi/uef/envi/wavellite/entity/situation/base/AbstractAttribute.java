@@ -7,6 +7,7 @@ package fi.uef.envi.wavellite.entity.situation.base;
 
 import fi.uef.envi.wavellite.entity.core.base.AbstractEntity;
 import fi.uef.envi.wavellite.entity.situation.Attribute;
+import fi.uef.envi.wavellite.vocabulary.STO;
 
 /**
  * <p>
@@ -50,6 +51,9 @@ public abstract class AbstractAttribute extends AbstractEntity implements
 
 	@Override
 	public String getName() {
+		if (name == null)
+			setName(STO.hasAttribute);
+		
 		return name;
 	}
 
