@@ -1,18 +1,18 @@
 /*
- * Copyright (C) 2013 see CREDITS.txt
+ * Copyright (C) 2014 see CREDITS.txt
  * All rights reserved.
  */
 
-package fi.uef.envi.wavellite.entity.core.base;
+package fi.uef.envi.wavellite.entity.observation.base;
 
 import fi.uef.envi.wavellite.entity.core.EntityVisitor;
-import fi.uef.envi.wavellite.entity.core.Sensor;
+import fi.uef.envi.wavellite.entity.core.base.AbstractEntity;
 import fi.uef.envi.wavellite.entity.observation.Sensing;
 import fi.uef.envi.wavellite.vocabulary.SSN;
 
 /**
  * <p>
- * Title: SensorBase
+ * Title: SensingBase
  * </p>
  * <p>
  * Description:
@@ -21,34 +21,22 @@ import fi.uef.envi.wavellite.vocabulary.SSN;
  * Project: Wavellite Entity
  * </p>
  * <p>
- * Copyright: Copyright (C) 2013
+ * Copyright: Copyright (C) 2014
  * </p>
  * 
  * @author Markus Stocker
  */
 
-public class SensorBase extends AbstractEntity implements Sensor {
+public class SensingBase extends AbstractEntity implements Sensing {
 
-	private static final long serialVersionUID = -8805371750193731525L;
+	private static final long serialVersionUID = 6487388348398871910L;
 
-	private Sensing sensing;
-
-	public SensorBase(String id) {
-		this(id, SSN.Sensor);
+	public SensingBase(String id) {
+		this(id, SSN.Sensing);
 	}
-
-	public SensorBase(String id, String type) {
+	
+	public SensingBase(String id, String type) {
 		super(id, type);
-	}
-
-	@Override
-	public void setSensing(Sensing sensing) {
-		this.sensing = sensing;
-	}
-
-	@Override
-	public Sensing getSensing() {
-		return sensing;
 	}
 
 	@Override
@@ -63,7 +51,6 @@ public class SensorBase extends AbstractEntity implements Sensor {
 
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((type == null) ? 0 : type.hashCode());
-		result = prime * result + ((sensing == null) ? 0 : sensing.hashCode());
 
 		return result;
 	}
@@ -77,7 +64,7 @@ public class SensorBase extends AbstractEntity implements Sensor {
 		if (getClass() != obj.getClass())
 			return false;
 
-		SensorBase other = (SensorBase) obj;
+		SensingBase other = (SensingBase) obj;
 
 		if (id == null) {
 			if (other.id != null)
@@ -91,19 +78,12 @@ public class SensorBase extends AbstractEntity implements Sensor {
 		} else if (!type.equals(other.type))
 			return false;
 
-		if (sensing == null) {
-			if (other.sensing != null)
-				return false;
-		} else if (!sensing.equals(other.sensing))
-			return false;
-
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "SensorBase [id = " + id + "; type = " + type + "; sensing = "
-				+ sensing + "]";
+		return "SensingBase [id = " + id + "; type = " + type + "]";
 	}
 
 }

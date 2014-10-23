@@ -23,6 +23,7 @@ import fi.uef.envi.wavellite.entity.measurement.MeasurementResult;
 import fi.uef.envi.wavellite.entity.measurement.MeasurementValue;
 import fi.uef.envi.wavellite.entity.measurement.MeasurementValueContext;
 import fi.uef.envi.wavellite.entity.observation.ObservationValue;
+import fi.uef.envi.wavellite.entity.observation.Sensing;
 import fi.uef.envi.wavellite.entity.observation.SensorObservation;
 import fi.uef.envi.wavellite.entity.observation.SensorOutput;
 import fi.uef.envi.wavellite.entity.situation.Attribute;
@@ -75,6 +76,12 @@ public class EntityVisitorBase implements EntityVisitor {
 				"Not supported by this entity visitor");
 	}
 
+	@Override
+	public void visit(Sensing entity) {
+		throw new UnsupportedOperationException(
+				"Not supported by this entity visitor");
+	}
+	
 	@Override
 	public void visit(SpatialGeometry entity) {
 		throw new UnsupportedOperationException(

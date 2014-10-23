@@ -1,4 +1,9 @@
-0.1.1 Changes (YYYY-MM-DD)
+0.2.0 Changes (YYYY-MM-DD)
+--------------------------
+
+* ADDED: Support for provenance  
+
+0.1.1 Changes (2014-10-23)
 --------------------------
 
 * FIXED: Dataset interface. No setting and getting of Components. Only set the 
