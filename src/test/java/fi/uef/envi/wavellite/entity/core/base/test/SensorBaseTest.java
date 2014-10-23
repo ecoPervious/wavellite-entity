@@ -6,10 +6,11 @@
 package fi.uef.envi.wavellite.entity.core.base.test;
 
 import org.junit.Test;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
-
 import fi.uef.envi.wavellite.entity.core.base.SensorBase;
+import fi.uef.envi.wavellite.entity.observation.base.SensingBase;
 import fi.uef.envi.wavellite.vocabulary.SSN;
 
 /**
@@ -128,6 +129,28 @@ public class SensorBaseTest {
 		SensorBase s = new SensorBase("i1", "t1");
 		
 		assertNotEquals("t2", s.getType());
+	}
+	
+	@Test
+	public void test14() {
+		SensorBase s1 = new SensorBase("i1");
+		SensorBase s2 = new SensorBase("i1");
+		
+		s1.setSensing(new SensingBase("s1"));
+		s2.setSensing(new SensingBase("s1"));
+		
+		assertEquals(s1, s2);
+	}
+	
+	@Test
+	public void test15() {
+		SensorBase s1 = new SensorBase("i1");
+		SensorBase s2 = new SensorBase("i1");
+		
+		s1.setSensing(new SensingBase("s1"));
+		s2.setSensing(new SensingBase("s2"));
+		
+		assertNotEquals(s1, s2);
 	}
 	
 }
