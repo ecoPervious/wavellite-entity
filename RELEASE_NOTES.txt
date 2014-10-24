@@ -1,7 +1,7 @@
 0.2.0 Changes (YYYY-MM-DD)
 --------------------------
 
-* ADDED: Support for provenance  
+* ADDED: Added Sensing and relation between Sensor and Sensing 
 
 0.1.1 Changes (2014-10-23)
 --------------------------
