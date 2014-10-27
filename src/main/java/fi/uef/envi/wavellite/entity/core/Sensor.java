@@ -5,9 +5,6 @@
 
 package fi.uef.envi.wavellite.entity.core;
 
-import fi.uef.envi.wavellite.entity.observation.Sensing;
-
-
 /**
  * <p>
  * Title: Sensor
@@ -26,14 +23,5 @@ import fi.uef.envi.wavellite.entity.observation.Sensing;
  */
 
 public interface Sensor extends Entity {
-
-	/**
-	 * The sensing process implemented by this sensor
-	 * 
-	 * @param sensing
-	 */
-	public void setSensing(Sensing sensing);
-	
-	public Sensing getSensing();
 	
 }

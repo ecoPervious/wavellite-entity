@@ -7,12 +7,12 @@ package fi.uef.envi.wavellite.entity.observation.base;
 
 import fi.uef.envi.wavellite.entity.core.EntityVisitor;
 import fi.uef.envi.wavellite.entity.core.base.AbstractEntity;
-import fi.uef.envi.wavellite.entity.observation.Sensing;
+import fi.uef.envi.wavellite.entity.observation.Stimulus;
 import fi.uef.envi.wavellite.vocabulary.SSN;
 
 /**
  * <p>
- * Title: SensingBase
+ * Title: StimulusBase
  * </p>
  * <p>
  * Description:
@@ -27,15 +27,15 @@ import fi.uef.envi.wavellite.vocabulary.SSN;
  * @author Markus Stocker
  */
 
-public class SensingBase extends AbstractEntity implements Sensing {
+public class StimulusBase extends AbstractEntity implements Stimulus {
 
 	private static final long serialVersionUID = 6487388348398871910L;
 
-	public SensingBase(String id) {
-		this(id, SSN.Sensing);
+	public StimulusBase(String id) {
+		this(id, SSN.Stimulus);
 	}
 	
-	public SensingBase(String id, String type) {
+	public StimulusBase(String id, String type) {
 		super(id, type);
 	}
 
@@ -64,7 +64,7 @@ public class SensingBase extends AbstractEntity implements Sensing {
 		if (getClass() != obj.getClass())
 			return false;
 
-		SensingBase other = (SensingBase) obj;
+		StimulusBase other = (StimulusBase) obj;
 
 		if (id == null) {
 			if (other.id != null)
@@ -83,7 +83,7 @@ public class SensingBase extends AbstractEntity implements Sensing {
 
 	@Override
 	public String toString() {
-		return "SensingBase [id = " + id + "; type = " + type + "]";
+		return "StimulusBase [id = " + id + "; type = " + type + "]";
 	}
 
 }

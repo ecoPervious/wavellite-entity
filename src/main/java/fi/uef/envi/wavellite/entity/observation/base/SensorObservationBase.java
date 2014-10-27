@@ -16,6 +16,7 @@ import fi.uef.envi.wavellite.entity.core.TemporalLocation;
 import fi.uef.envi.wavellite.entity.core.base.AbstractEntity;
 import fi.uef.envi.wavellite.entity.observation.SensorObservation;
 import fi.uef.envi.wavellite.entity.observation.SensorOutput;
+import fi.uef.envi.wavellite.entity.observation.Stimulus;
 import fi.uef.envi.wavellite.vocabulary.WOE;
 
 /**
@@ -42,6 +43,7 @@ public class SensorObservationBase extends AbstractEntity implements
 	private Sensor sensor;
 	private Feature feature;
 	private Property property;
+	private Stimulus stimulus;
 	private SensorOutput output;
 	private TemporalLocation temporalLocation;
 	private SpatialLocation spatialLocation;
@@ -62,7 +64,7 @@ public class SensorObservationBase extends AbstractEntity implements
 	public void accept(EntityVisitor visitor) {
 		visitor.visit(this);
 	}
-	
+
 	@Override
 	public void setSensor(Sensor sensor) {
 		this.sensor = sensor;
@@ -76,6 +78,11 @@ public class SensorObservationBase extends AbstractEntity implements
 	@Override
 	public void setProperty(Property property) {
 		this.property = property;
+	}
+
+	@Override
+	public void setStimulus(Stimulus stimulus) {
+		this.stimulus = stimulus;
 	}
 
 	@Override
@@ -109,6 +116,11 @@ public class SensorObservationBase extends AbstractEntity implements
 	}
 
 	@Override
+	public Stimulus getStimulus() {
+		return stimulus;
+	}
+
+	@Override
 	public SensorOutput getSensorOutput() {
 		return output;
 	}
@@ -128,12 +140,14 @@ public class SensorObservationBase extends AbstractEntity implements
 		final int prime = 31;
 		int result = 1;
 
-//		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		// result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((type == null) ? 0 : type.hashCode());
 		result = prime * result + ((sensor == null) ? 0 : sensor.hashCode());
 		result = prime * result
 				+ ((property == null) ? 0 : property.hashCode());
 		result = prime * result + ((feature == null) ? 0 : feature.hashCode());
+		result = prime * result
+				+ ((stimulus == null) ? 0 : stimulus.hashCode());
 		result = prime * result + ((output == null) ? 0 : output.hashCode());
 		result = prime
 				* result
@@ -155,11 +169,11 @@ public class SensorObservationBase extends AbstractEntity implements
 
 		SensorObservationBase other = (SensorObservationBase) obj;
 
-//		if (id == null) {
-//			if (other.id != null)
-//				return false;
-//		} else if (!id.equals(other.id))
-//			return false;
+		// if (id == null) {
+		// if (other.id != null)
+		// return false;
+		// } else if (!id.equals(other.id))
+		// return false;
 
 		if (type == null) {
 			if (other.type != null)
@@ -183,6 +197,12 @@ public class SensorObservationBase extends AbstractEntity implements
 			if (other.feature != null)
 				return false;
 		} else if (!feature.equals(other.feature))
+			return false;
+
+		if (stimulus == null) {
+			if (other.stimulus != null)
+				return false;
+		} else if (!stimulus.equals(other.stimulus))
 			return false;
 
 		if (output == null) {
@@ -210,9 +230,10 @@ public class SensorObservationBase extends AbstractEntity implements
 	public String toString() {
 		return "SensorObservationBase [id = " + id + "; type = " + type
 				+ "; sensor = " + sensor + "; property = " + property
-				+ "; feature = " + feature + "; output = " + output
-				+ "; temporalLocation = " + temporalLocation
-				+ "; spatialLocation = " + spatialLocation + "]";
+				+ "; feature = " + feature + "; stimulus = " + stimulus
+				+ "; output = " + output + "; temporalLocation = "
+				+ temporalLocation + "; spatialLocation = " + spatialLocation
+				+ "]";
 	}
 
 }

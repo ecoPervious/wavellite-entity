@@ -36,6 +36,8 @@ public interface SensorObservation extends Entity {
 	public void setFeature(Feature feature);
 
 	public void setProperty(Property property);
+	
+	public void setStimulus(Stimulus stimulus);
 
 	public void setSensorOutput(SensorOutput output);
 
@@ -48,6 +50,8 @@ public interface SensorObservation extends Entity {
 	public Feature getFeature();
 
 	public Property getProperty();
+	
+	public Stimulus getStimulus();
 
 	public SensorOutput getSensorOutput();
 

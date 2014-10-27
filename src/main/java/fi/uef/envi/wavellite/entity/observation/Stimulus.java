@@ -9,11 +9,12 @@ import fi.uef.envi.wavellite.entity.core.Entity;
 
 /**
  * <p>
- * Title: Sensing
+ * Title: Stimulus
  * </p>
  * <p>
- * Description: Sensing is a process that results in the estimation, or
- * calculation, of the value of a phenomenon.
+ * Description: An Event in the real world that 'triggers' the sensor. The
+ * properties associated to the stimulus may be different to eventual observed
+ * property. It is the event, not the object that triggers the sensor.
  * </p>
  * <p>
  * Project: Wavellite Entity
@@ -25,6 +26,6 @@ import fi.uef.envi.wavellite.entity.core.Entity;
  * @author Markus Stocker
  */
 
-public interface Sensing extends Entity {
+public interface Stimulus extends Entity {
 
 }

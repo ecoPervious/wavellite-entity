@@ -31,6 +31,7 @@ import fi.uef.envi.wavellite.entity.observation.SensorOutput;
 import fi.uef.envi.wavellite.entity.observation.base.ObservationValueDouble;
 import fi.uef.envi.wavellite.entity.observation.base.SensorObservationBase;
 import fi.uef.envi.wavellite.entity.observation.base.SensorOutputBase;
+import fi.uef.envi.wavellite.entity.observation.base.StimulusBase;
 import fi.uef.envi.wavellite.vocabulary.WOE;
 
 /**
@@ -232,6 +233,26 @@ public class SensorObservationBaseTest {
 		assertEquals(new DateTime(2013, 10, 31, 0, 0, 0),
 				so.getTemporalLocation().getValue());
 		assertEquals(sl, so.getSpatialLocation());
+	}
+	
+	@Test
+	public void test17() {
+		SensorObservationBase o1 = new SensorObservationBase();
+		o1.setStimulus(new StimulusBase("s1"));
+		SensorObservationBase o2 = new SensorObservationBase();
+		o2.setStimulus(new StimulusBase("s1"));
+
+		assertEquals(o1, o2);
+	}
+	
+	@Test
+	public void test18() {
+		SensorObservationBase o1 = new SensorObservationBase();
+		o1.setStimulus(new StimulusBase("s1"));
+		SensorObservationBase o2 = new SensorObservationBase();
+		o2.setStimulus(new StimulusBase("s2"));
+
+		assertNotEquals(o1, o2);
 	}
 
 }

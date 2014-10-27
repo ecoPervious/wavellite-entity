@@ -16,7 +16,7 @@ import fi.uef.envi.wavellite.entity.measurement.MeasurementResult;
 import fi.uef.envi.wavellite.entity.measurement.MeasurementValue;
 import fi.uef.envi.wavellite.entity.measurement.MeasurementValueContext;
 import fi.uef.envi.wavellite.entity.observation.ObservationValue;
-import fi.uef.envi.wavellite.entity.observation.Sensing;
+import fi.uef.envi.wavellite.entity.observation.Stimulus;
 import fi.uef.envi.wavellite.entity.observation.SensorObservation;
 import fi.uef.envi.wavellite.entity.observation.SensorOutput;
 import fi.uef.envi.wavellite.entity.situation.Attribute;
@@ -57,7 +57,7 @@ public interface EntityVisitor {
 	
 	public void visit(Sensor entity);
 	
-	public void visit(Sensing entity);
+	public void visit(Stimulus entity);
 	
 	public void visit(SpatialGeometry entity);
 	
