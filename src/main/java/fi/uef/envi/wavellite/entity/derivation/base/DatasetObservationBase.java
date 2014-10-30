@@ -15,6 +15,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import fi.uef.envi.wavellite.entity.core.EntityVisitor;
+import fi.uef.envi.wavellite.entity.core.Operation;
+import fi.uef.envi.wavellite.entity.core.Operator;
 import fi.uef.envi.wavellite.entity.core.base.AbstractEntity;
 import fi.uef.envi.wavellite.entity.derivation.Component;
 import fi.uef.envi.wavellite.entity.derivation.ComponentProperty;
@@ -46,6 +48,8 @@ public class DatasetObservationBase extends AbstractEntity implements
 	private static final long serialVersionUID = -903449366250020973L;
 	private Dataset dataset;
 	private Map<ComponentProperty, Component> components;
+	private Operator operator;
+	private Operation operation;
 	private final static Logger log = Logger
 			.getLogger(DatasetObservationBase.class.getName());
 
@@ -147,7 +151,27 @@ public class DatasetObservationBase extends AbstractEntity implements
 	public int getDimensionality() {
 		return components.size();
 	}
+	
+	@Override
+	public void setOperation(Operation operation) {
+		this.operation = operation;
+	}
+	
+	@Override
+	public Operation getOperation() {
+		return operation;
+	}
 
+	@Override
+	public void setOperator(Operator operator) {
+		this.operator = operator;
+	}
+	
+	@Override
+	public Operator getOperator() {
+		return operator;
+	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;

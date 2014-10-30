@@ -7,6 +7,8 @@ package fi.uef.envi.wavellite.entity.core.base;
 
 import fi.uef.envi.wavellite.entity.core.EntityVisitor;
 import fi.uef.envi.wavellite.entity.core.Feature;
+import fi.uef.envi.wavellite.entity.core.Operation;
+import fi.uef.envi.wavellite.entity.core.Operator;
 import fi.uef.envi.wavellite.entity.core.Property;
 import fi.uef.envi.wavellite.entity.core.Sensor;
 import fi.uef.envi.wavellite.entity.core.SpatialGeometry;
@@ -59,6 +61,18 @@ import fi.uef.envi.wavellite.entity.situation.base.AttributeUri;
 public class EntityVisitorBase implements EntityVisitor {
 
 	@Override
+	public void visit(Operation operation) {
+		throw new UnsupportedOperationException(
+				"Not supported by this entity visitor");
+	}
+
+	@Override
+	public void visit(Operator operator) {
+		throw new UnsupportedOperationException(
+				"Not supported by this entity visitor");
+	}
+
+	@Override
 	public void visit(Feature entity) {
 		throw new UnsupportedOperationException(
 				"Not supported by this entity visitor");
@@ -81,7 +95,7 @@ public class EntityVisitorBase implements EntityVisitor {
 		throw new UnsupportedOperationException(
 				"Not supported by this entity visitor");
 	}
-	
+
 	@Override
 	public void visit(SpatialGeometry entity) {
 		throw new UnsupportedOperationException(
@@ -183,37 +197,37 @@ public class EntityVisitorBase implements EntityVisitor {
 		throw new UnsupportedOperationException(
 				"Not supported by this entity visitor");
 	}
-	
+
 	@Override
 	public void visit(ValueInteger entity) {
 		throw new UnsupportedOperationException(
 				"Not supported by this entity visitor");
 	}
-	
+
 	@Override
 	public void visit(ValueDouble entity) {
 		throw new UnsupportedOperationException(
 				"Not supported by this entity visitor");
 	}
-	
+
 	@Override
 	public void visit(ValuePeriod entity) {
 		throw new UnsupportedOperationException(
 				"Not supported by this entity visitor");
 	}
-	
+
 	@Override
 	public void visit(ValueString entity) {
 		throw new UnsupportedOperationException(
 				"Not supported by this entity visitor");
 	}
-	
+
 	@Override
 	public void visit(AttributeUri entity) {
 		throw new UnsupportedOperationException(
 				"Not supported by this entity visitor");
 	}
-	
+
 	@Override
 	public void visit(ElementaryInfon entity) {
 		throw new UnsupportedOperationException(
@@ -237,7 +251,7 @@ public class EntityVisitorBase implements EntityVisitor {
 		throw new UnsupportedOperationException(
 				"Not supported by this entity visitor");
 	}
-	
+
 	@Override
 	public void visit(AttributeSpatialLocation entity) {
 		throw new UnsupportedOperationException(
