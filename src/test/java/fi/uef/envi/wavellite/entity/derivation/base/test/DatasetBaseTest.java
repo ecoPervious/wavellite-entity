@@ -18,6 +18,7 @@ import fi.uef.envi.wavellite.entity.core.base.OperatorBase;
 import fi.uef.envi.wavellite.entity.derivation.ComponentProperty;
 import fi.uef.envi.wavellite.entity.derivation.ComponentSpecification;
 import fi.uef.envi.wavellite.entity.derivation.DataStructureDefinition;
+import fi.uef.envi.wavellite.entity.derivation.Dataset;
 import fi.uef.envi.wavellite.entity.derivation.base.ComponentPropertyBase;
 import fi.uef.envi.wavellite.entity.derivation.base.ComponentSpecificationBase;
 import fi.uef.envi.wavellite.entity.derivation.base.DataStructureDefinitionBase;
@@ -153,38 +154,38 @@ public class DatasetBaseTest {
 		s.setComponentRequired(true);
 		s.setOrder(1);
 		d.addComponentSpecification(s);
-		
+
 		e.setDataStructureDefinition(d);
 		a.setDataStructureDefinition(d);
-		
+
 		assertEquals(e, a);
 	}
-	
+
 	@Test
 	public void test15() {
 		DatasetBase e = new DatasetBase("i1");
 		DatasetBase a = new DatasetBase("i1");
-		
+
 		DataStructureDefinition d1 = new DataStructureDefinitionBase("d1");
 		ComponentSpecification s1 = new ComponentSpecificationBase("s1");
 		s1.setComponentProperty(new ComponentPropertyBase("p1"));
 		s1.setComponentRequired(true);
 		s1.setOrder(1);
 		d1.addComponentSpecification(s1);
-		
+
 		DataStructureDefinition d2 = new DataStructureDefinitionBase("d1");
 		ComponentSpecification s2 = new ComponentSpecificationBase("s1");
 		s2.setComponentProperty(new ComponentPropertyBase("p1"));
 		s2.setComponentRequired(false);
 		s2.setOrder(1);
 		d2.addComponentSpecification(s2);
-		
+
 		e.setDataStructureDefinition(d1);
 		a.setDataStructureDefinition(d2);
 
 		assertNotEquals(e, a);
 	}
-	
+
 	@Test
 	public void test16() {
 		DatasetBase d = new DatasetBase("i1");
@@ -200,55 +201,75 @@ public class DatasetBaseTest {
 		cs2.setComponentRequired(true);
 		cs2.setOrder(0);
 		sd.addComponentSpecification(cs2);
-		
+
 		d.setDataStructureDefinition(sd);
-		
+
 		List<ComponentProperty> e = new ArrayList<ComponentProperty>();
-		
+
 		e.add(new ComponentPropertyBase("cp0"));
 		e.add(new ComponentPropertyBase("cp1"));
-		
+
 		List<ComponentProperty> a = d.getComponentPropertiesOrdered();
-		
+
 		assertEquals(e, a);
 	}
-	
+
 	@Test
 	public void test17() {
 		DatasetBase e = new DatasetBase("i1");
 		DatasetBase a = new DatasetBase("i1");
-		
+
 		e.setOperator(new OperatorBase("o1"));
 		a.setOperator(new OperatorBase("o1"));
-	
+
 		e.setOperation(new OperationBase("o2"));
 		a.setOperation(new OperationBase("o2"));
-		
+
 		assertEquals(e, a);
 	}
-	
+
 	@Test
 	public void test18() {
 		DatasetBase e = new DatasetBase("i1");
-		
+
 		e.setOperator(new OperatorBase("o1"));
-	
+
 		e.setOperation(new OperationBase("o2"));
-		
+
 		assertEquals(new OperatorBase("o1"), e.getOperator());
 		assertEquals(new OperationBase("o2"), e.getOperation());
 	}
-	
+
 	@Test
 	public void test19() {
 		DatasetBase e = new DatasetBase("i1");
-		
+
 		e.setOperator(new OperatorBase("o1"));
-	
+
 		e.setOperation(new OperationBase("o2"));
-		
+
 		assertNotEquals(new OperatorBase("p1"), e.getOperator());
 		assertNotEquals(new OperationBase("p2"), e.getOperation());
+	}
+
+	@Test
+	public void test20() {
+		DatasetBase e = new DatasetBase("i1");
+
+		e.addDerivedFrom(new DatasetBase("i2"));
+
+		assertEquals(new DatasetBase("i2"),
+				e.getDerivedFrom().toArray(new Dataset[] {})[0]);
+	}
+
+	@Test
+	public void test21() {
+		DatasetBase e = new DatasetBase("i1");
+
+		e.addDerivedFrom(new DatasetBase("i2"));
+
+		assertNotEquals(new DatasetBase("i1"),
+				e.getDerivedFrom().toArray(new Dataset[] {})[0]);
 	}
 
 }

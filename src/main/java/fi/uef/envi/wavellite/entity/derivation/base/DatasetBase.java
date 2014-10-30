@@ -5,6 +5,7 @@
 
 package fi.uef.envi.wavellite.entity.derivation.base;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Set;
@@ -42,6 +43,7 @@ public class DatasetBase extends AbstractEntity implements Dataset {
 	private DataStructureDefinition definition;
 	private Operation operation;
 	private Operator operator;
+	private List<Dataset> derived = new ArrayList<Dataset>();
 
 	public DatasetBase(String id) {
 		this(id, QB.DataSet);
@@ -114,6 +116,16 @@ public class DatasetBase extends AbstractEntity implements Dataset {
 	@Override
 	public Operation getOperation() {
 		return operation;
+	}
+	
+	@Override
+	public void addDerivedFrom(Dataset dataset) {
+		this.derived.add(dataset);
+	}
+	
+	@Override
+	public List<Dataset> getDerivedFrom() {
+		return Collections.unmodifiableList(derived);
 	}
 
 	@Override

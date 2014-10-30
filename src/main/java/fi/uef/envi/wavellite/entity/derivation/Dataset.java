@@ -46,5 +46,9 @@ public interface Dataset extends Entity {
 	public void setOperation(Operation operation);
 	
 	public Operation getOperation();
+	
+	public void addDerivedFrom(Dataset dataset);
+
+	public List<Dataset> getDerivedFrom();
 
 }

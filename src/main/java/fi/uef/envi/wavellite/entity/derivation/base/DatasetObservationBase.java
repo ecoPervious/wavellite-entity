@@ -5,15 +5,18 @@
 
 package fi.uef.envi.wavellite.entity.derivation.base;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import fi.uef.envi.wavellite.entity.core.Entity;
 import fi.uef.envi.wavellite.entity.core.EntityVisitor;
 import fi.uef.envi.wavellite.entity.core.Operation;
 import fi.uef.envi.wavellite.entity.core.Operator;
@@ -23,6 +26,7 @@ import fi.uef.envi.wavellite.entity.derivation.ComponentProperty;
 import fi.uef.envi.wavellite.entity.derivation.ComponentPropertyValue;
 import fi.uef.envi.wavellite.entity.derivation.Dataset;
 import fi.uef.envi.wavellite.entity.derivation.DatasetObservation;
+import fi.uef.envi.wavellite.entity.observation.SensorObservation;
 import fi.uef.envi.wavellite.vocabulary.WOE;
 
 /**
@@ -50,6 +54,8 @@ public class DatasetObservationBase extends AbstractEntity implements
 	private Map<ComponentProperty, Component> components;
 	private Operator operator;
 	private Operation operation;
+	private List<Entity> derived = new ArrayList<Entity>();
+	
 	private final static Logger log = Logger
 			.getLogger(DatasetObservationBase.class.getName());
 
@@ -170,6 +176,21 @@ public class DatasetObservationBase extends AbstractEntity implements
 	@Override
 	public Operator getOperator() {
 		return operator;
+	}
+	
+	@Override
+	public void addDerivedFrom(SensorObservation observation) {
+		this.derived.add(observation);
+	}
+	
+	@Override
+	public void addDerivedFrom(DatasetObservation observation) {
+		this.derived.add(observation);
+	}
+	
+	@Override
+	public List<Entity> getDerivedFrom() {
+		return Collections.unmodifiableList(derived);
 	}
 	
 	@Override
