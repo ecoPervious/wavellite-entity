@@ -10,6 +10,8 @@ import java.util.List;
 import java.util.Set;
 
 import fi.uef.envi.wavellite.entity.core.EntityVisitor;
+import fi.uef.envi.wavellite.entity.core.Operation;
+import fi.uef.envi.wavellite.entity.core.Operator;
 import fi.uef.envi.wavellite.entity.core.base.AbstractEntity;
 import fi.uef.envi.wavellite.entity.derivation.ComponentProperty;
 import fi.uef.envi.wavellite.entity.derivation.DataStructureDefinition;
@@ -36,7 +38,10 @@ import fi.uef.envi.wavellite.vocabulary.QB;
 public class DatasetBase extends AbstractEntity implements Dataset {
 
 	private static final long serialVersionUID = -6188604240253868400L;
+	
 	private DataStructureDefinition definition;
+	private Operation operation;
+	private Operator operator;
 
 	public DatasetBase(String id) {
 		this(id, QB.DataSet);
@@ -89,6 +94,26 @@ public class DatasetBase extends AbstractEntity implements Dataset {
 			return Collections.emptyList();
 
 		return definition.getComponentPropertiesOrdered();
+	}
+	
+	@Override
+	public void setOperator(Operator operator) {
+		this.operator = operator;
+	}
+	
+	@Override
+	public Operator getOperator() {
+		return operator;
+	}
+	
+	@Override
+	public void setOperation(Operation operation) {
+		this.operation = operation;
+	}
+	
+	@Override
+	public Operation getOperation() {
+		return operation;
 	}
 
 	@Override

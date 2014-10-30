@@ -9,6 +9,8 @@ import java.util.List;
 import java.util.Set;
 
 import fi.uef.envi.wavellite.entity.core.Entity;
+import fi.uef.envi.wavellite.entity.core.Operation;
+import fi.uef.envi.wavellite.entity.core.Operator;
 
 /**
  * <p>
@@ -36,5 +38,13 @@ public interface Dataset extends Entity {
 	public Set<ComponentProperty> getComponentProperties();
 	
 	public List<ComponentProperty> getComponentPropertiesOrdered();
+	
+	public void setOperator(Operator operator);
+	
+	public Operator getOperator();
+	
+	public void setOperation(Operation operation);
+	
+	public Operation getOperation();
 
 }

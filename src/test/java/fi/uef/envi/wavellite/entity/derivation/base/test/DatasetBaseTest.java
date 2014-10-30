@@ -13,6 +13,8 @@ import java.util.List;
 
 import org.junit.Test;
 
+import fi.uef.envi.wavellite.entity.core.base.OperationBase;
+import fi.uef.envi.wavellite.entity.core.base.OperatorBase;
 import fi.uef.envi.wavellite.entity.derivation.ComponentProperty;
 import fi.uef.envi.wavellite.entity.derivation.ComponentSpecification;
 import fi.uef.envi.wavellite.entity.derivation.DataStructureDefinition;
@@ -210,6 +212,43 @@ public class DatasetBaseTest {
 		
 		assertEquals(e, a);
 	}
-
+	
+	@Test
+	public void test17() {
+		DatasetBase e = new DatasetBase("i1");
+		DatasetBase a = new DatasetBase("i1");
+		
+		e.setOperator(new OperatorBase("o1"));
+		a.setOperator(new OperatorBase("o1"));
+	
+		e.setOperation(new OperationBase("o2"));
+		a.setOperation(new OperationBase("o2"));
+		
+		assertEquals(e, a);
+	}
+	
+	@Test
+	public void test18() {
+		DatasetBase e = new DatasetBase("i1");
+		
+		e.setOperator(new OperatorBase("o1"));
+	
+		e.setOperation(new OperationBase("o2"));
+		
+		assertEquals(new OperatorBase("o1"), e.getOperator());
+		assertEquals(new OperationBase("o2"), e.getOperation());
+	}
+	
+	@Test
+	public void test19() {
+		DatasetBase e = new DatasetBase("i1");
+		
+		e.setOperator(new OperatorBase("o1"));
+	
+		e.setOperation(new OperationBase("o2"));
+		
+		assertNotEquals(new OperatorBase("p1"), e.getOperator());
+		assertNotEquals(new OperationBase("p2"), e.getOperation());
+	}
 
 }

@@ -10,6 +10,8 @@ import static org.junit.Assert.assertNotEquals;
 
 import org.junit.Test;
 
+import fi.uef.envi.wavellite.entity.core.base.OperationBase;
+import fi.uef.envi.wavellite.entity.core.base.OperatorBase;
 import fi.uef.envi.wavellite.entity.derivation.base.DatasetBase;
 import fi.uef.envi.wavellite.entity.derivation.base.DatasetObservationBase;
 import fi.uef.envi.wavellite.vocabulary.WOE;
@@ -143,6 +145,44 @@ public class DatasetObservationBaseTest {
 		a.setDataset(d);
 		
 		assertEquals(e, a);
+	}
+	
+	@Test
+	public void test15() {
+		DatasetObservationBase e = new DatasetObservationBase("i1");
+		DatasetObservationBase a = new DatasetObservationBase("i1");
+		
+		e.setOperator(new OperatorBase("o1"));
+		a.setOperator(new OperatorBase("o1"));
+	
+		e.setOperation(new OperationBase("o2"));
+		a.setOperation(new OperationBase("o2"));
+		
+		assertEquals(e, a);
+	}
+	
+	@Test
+	public void test16() {
+		DatasetObservationBase e = new DatasetObservationBase("i1");
+		
+		e.setOperator(new OperatorBase("o1"));
+	
+		e.setOperation(new OperationBase("o2"));
+		
+		assertEquals(new OperatorBase("o1"), e.getOperator());
+		assertEquals(new OperationBase("o2"), e.getOperation());
+	}
+	
+	@Test
+	public void test17() {
+		DatasetObservationBase e = new DatasetObservationBase("i1");
+		
+		e.setOperator(new OperatorBase("o1"));
+	
+		e.setOperation(new OperationBase("o2"));
+		
+		assertNotEquals(new OperatorBase("p1"), e.getOperator());
+		assertNotEquals(new OperationBase("p2"), e.getOperation());
 	}
 	
 }
