@@ -51,9 +51,9 @@ import fi.uef.envi.wavellite.entity.situation.base.AttributeUri;
 
 public interface EntityVisitor {
 	
-	public void visit(Operation operation);
+	public void visit(Operation entity);
 	
-	public void visit(Operator operator);
+	public void visit(Operator entity);
 
 	public void visit(Feature entity);
 	
