@@ -12,6 +12,7 @@ import fi.uef.envi.wavellite.entity.situation.base.ValueInteger;
 import fi.uef.envi.wavellite.entity.situation.base.ValuePeriod;
 import fi.uef.envi.wavellite.entity.situation.base.ValueString;
 import fi.uef.envi.wavellite.entity.situation.base.AttributeUri;
+import fi.uef.envi.wavellite.entity.situation.base.ValueUri;
 
 
 /**
@@ -39,6 +40,8 @@ public interface RelevantObjectVisitor {
 
 	public void visit(AttributeTemporalLocation object);
 	
+	public void visit(AttributeUri object);
+	
 	public void visit(ValueDouble object);
 	
 	public void visit(ValueInteger object);
@@ -47,6 +50,6 @@ public interface RelevantObjectVisitor {
 	
 	public void visit(ValueString object);
 	
-	public void visit(AttributeUri object);
+	public void visit(ValueUri object);
 
 }
