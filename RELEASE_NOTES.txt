@@ -4,6 +4,7 @@
 * ADDED: Added Sensing and relation between Sensor and Sensing
 * CHANGED: Do not consider id in RelevantIndividualBase hashCode() and equals()
 * ADDED: Operator and Operation (for dataset observation, dataset, and STO objects)
+* CHANGED: Separate ValueUri, distinct from AttributeUri
 
 0.1.1 Changes (2014-10-23)
 --------------------------
