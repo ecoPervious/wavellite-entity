@@ -10,7 +10,7 @@ package fi.uef.envi.wavellite.entity.core;
  * Title: Operation
  * </p>
  * <p>
- * Description:
+ * Description: A PROV-O activity
  * </p>
  * <p>
  * Project: Wavellite Entity
@@ -22,6 +22,10 @@ package fi.uef.envi.wavellite.entity.core;
  * @author Markus Stocker
  */
 
-public interface Operation {
+public interface Operation extends Entity {
 
+	public void setAssociatedWith(Operator operator);
+	
+	public Operator getAssociatedWith();
+	
 }

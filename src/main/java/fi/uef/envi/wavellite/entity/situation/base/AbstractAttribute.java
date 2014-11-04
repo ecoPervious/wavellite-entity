@@ -5,7 +5,6 @@
 
 package fi.uef.envi.wavellite.entity.situation.base;
 
-import fi.uef.envi.wavellite.entity.core.base.AbstractEntity;
 import fi.uef.envi.wavellite.entity.situation.Attribute;
 import fi.uef.envi.wavellite.vocabulary.STO;
 
@@ -26,7 +25,7 @@ import fi.uef.envi.wavellite.vocabulary.STO;
  * @author Markus Stocker
  */
 
-public abstract class AbstractAttribute extends AbstractEntity implements
+public abstract class AbstractAttribute extends AbstractSTObject implements
 		Attribute {
 
 	private static final long serialVersionUID = -3895824058486371102L;

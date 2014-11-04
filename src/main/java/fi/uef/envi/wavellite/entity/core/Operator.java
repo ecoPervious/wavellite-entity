@@ -10,7 +10,7 @@ package fi.uef.envi.wavellite.entity.core;
  * Title: Operator
  * </p>
  * <p>
- * Description:
+ * Description: A PROV-O agent
  * </p>
  * <p>
  * Project: Wavellite Entity
@@ -22,6 +22,6 @@ package fi.uef.envi.wavellite.entity.core;
  * @author Markus Stocker
  */
 
-public interface Operator {
+public interface Operator extends Entity {
 
 }

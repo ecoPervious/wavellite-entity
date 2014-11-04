@@ -7,8 +7,6 @@ package fi.uef.envi.wavellite.entity.situation;
 
 import java.util.List;
 
-import fi.uef.envi.wavellite.entity.core.Entity;
-
 /**
  * <p>
  * Title: ElementaryInfon
@@ -26,7 +24,7 @@ import fi.uef.envi.wavellite.entity.core.Entity;
  * @author Markus Stocker
  */
 
-public interface ElementaryInfon extends Entity {
+public interface ElementaryInfon extends STObject {
 
 	public void setRelation(Relation relation);
 

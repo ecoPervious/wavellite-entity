@@ -5,8 +5,6 @@
 
 package fi.uef.envi.wavellite.entity.situation;
 
-import fi.uef.envi.wavellite.entity.core.Entity;
-
 /**
  * <p>
  * Title: Attribute
@@ -24,7 +22,7 @@ import fi.uef.envi.wavellite.entity.core.Entity;
  * @author Markus Stocker
  */
 
-public interface Attribute extends Entity {
+public interface Attribute extends STObject {
 	
 	public String getName();
 	

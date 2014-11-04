@@ -39,13 +39,13 @@ public interface Dataset extends Entity {
 	
 	public List<ComponentProperty> getComponentPropertiesOrdered();
 	
-	public void setOperator(Operator operator);
+	public void setAttributedTo(Operator operator);
 	
-	public Operator getOperator();
+	public Operator getAttributedTo();
 	
-	public void setOperation(Operation operation);
+	public void setGeneratedBy(Operation operation);
 	
-	public Operation getOperation();
+	public Operation getGeneratedBy();
 	
 	public void addDerivedFrom(Dataset dataset);
 

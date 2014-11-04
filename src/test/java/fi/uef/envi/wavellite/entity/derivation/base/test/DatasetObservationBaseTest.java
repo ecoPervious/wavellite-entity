@@ -153,11 +153,11 @@ public class DatasetObservationBaseTest {
 		DatasetObservationBase e = new DatasetObservationBase("i1");
 		DatasetObservationBase a = new DatasetObservationBase("i1");
 
-		e.setOperator(new OperatorBase("o1"));
-		a.setOperator(new OperatorBase("o1"));
+		e.setAttributedTo(new OperatorBase("o1"));
+		a.setAttributedTo(new OperatorBase("o1"));
 
-		e.setOperation(new OperationBase("o2"));
-		a.setOperation(new OperationBase("o2"));
+		e.setGeneratedBy(new OperationBase("o2"));
+		a.setGeneratedBy(new OperationBase("o2"));
 
 		assertEquals(e, a);
 	}
@@ -166,24 +166,24 @@ public class DatasetObservationBaseTest {
 	public void test16() {
 		DatasetObservationBase e = new DatasetObservationBase("i1");
 
-		e.setOperator(new OperatorBase("o1"));
+		e.setAttributedTo(new OperatorBase("o1"));
 
-		e.setOperation(new OperationBase("o2"));
+		e.setGeneratedBy(new OperationBase("o2"));
 
-		assertEquals(new OperatorBase("o1"), e.getOperator());
-		assertEquals(new OperationBase("o2"), e.getOperation());
+		assertEquals(new OperatorBase("o1"), e.getAttributedTo());
+		assertEquals(new OperationBase("o2"), e.getGeneratedBy());
 	}
 
 	@Test
 	public void test17() {
 		DatasetObservationBase e = new DatasetObservationBase("i1");
 
-		e.setOperator(new OperatorBase("o1"));
+		e.setAttributedTo(new OperatorBase("o1"));
 
-		e.setOperation(new OperationBase("o2"));
+		e.setGeneratedBy(new OperationBase("o2"));
 
-		assertNotEquals(new OperatorBase("p1"), e.getOperator());
-		assertNotEquals(new OperationBase("p2"), e.getOperation());
+		assertNotEquals(new OperatorBase("p1"), e.getAttributedTo());
+		assertNotEquals(new OperationBase("p2"), e.getGeneratedBy());
 	}
 
 	@Test

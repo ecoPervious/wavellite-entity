@@ -7,6 +7,7 @@ package fi.uef.envi.wavellite.entity.core.base;
 
 import fi.uef.envi.wavellite.entity.core.EntityVisitor;
 import fi.uef.envi.wavellite.entity.core.Operation;
+import fi.uef.envi.wavellite.entity.core.Operator;
 import fi.uef.envi.wavellite.vocabulary.WOO;
 
 /**
@@ -30,12 +31,24 @@ public class OperationBase extends AbstractEntity implements Operation {
 
 	private static final long serialVersionUID = -2101868541407032777L;
 
+	private Operator operator;
+
 	public OperationBase(String id) {
 		this(id, WOO.Operation);
 	}
 
 	public OperationBase(String id, String type) {
 		super(id, type);
+	}
+
+	@Override
+	public void setAssociatedWith(Operator operator) {
+		this.operator = operator;
+	}
+
+	@Override
+	public Operator getAssociatedWith() {
+		return operator;
 	}
 
 	@Override
@@ -82,7 +95,8 @@ public class OperationBase extends AbstractEntity implements Operation {
 
 	@Override
 	public String toString() {
-		return "OperationBase [id = " + id + "; type = " + type + "]";
+		return "OperationBase [id = " + id + "; type = " + type
+				+ "; operator = " + operator + "]";
 	}
 
 }

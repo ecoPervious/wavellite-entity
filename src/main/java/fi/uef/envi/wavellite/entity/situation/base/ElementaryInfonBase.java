@@ -11,7 +11,6 @@ import java.util.List;
 import java.util.UUID;
 
 import fi.uef.envi.wavellite.entity.core.EntityVisitor;
-import fi.uef.envi.wavellite.entity.core.base.AbstractEntity;
 import fi.uef.envi.wavellite.entity.situation.ElementaryInfon;
 import fi.uef.envi.wavellite.entity.situation.Polarity;
 import fi.uef.envi.wavellite.entity.situation.Relation;
@@ -35,7 +34,7 @@ import fi.uef.envi.wavellite.vocabulary.STO;
  * @author Markus Stocker
  */
 
-public class ElementaryInfonBase extends AbstractEntity implements
+public class ElementaryInfonBase extends AbstractSTObject implements
 		ElementaryInfon {
 
 	private static final long serialVersionUID = 191483565485552354L;

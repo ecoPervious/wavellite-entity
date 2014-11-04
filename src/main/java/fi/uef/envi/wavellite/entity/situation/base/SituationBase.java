@@ -10,7 +10,6 @@ import java.util.Set;
 import java.util.UUID;
 
 import fi.uef.envi.wavellite.entity.core.EntityVisitor;
-import fi.uef.envi.wavellite.entity.core.base.AbstractEntity;
 import fi.uef.envi.wavellite.entity.situation.ElementaryInfon;
 import fi.uef.envi.wavellite.entity.situation.Situation;
 import fi.uef.envi.wavellite.vocabulary.STO;
@@ -32,7 +31,7 @@ import fi.uef.envi.wavellite.vocabulary.STO;
  * @author Markus Stocker
  */
 
-public class SituationBase extends AbstractEntity implements Situation {
+public class SituationBase extends AbstractSTObject implements Situation {
 
 	private static final long serialVersionUID = 7280143774256425287L;
 	private Set<ElementaryInfon> infons;

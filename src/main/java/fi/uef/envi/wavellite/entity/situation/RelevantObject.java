@@ -5,8 +5,6 @@
 
 package fi.uef.envi.wavellite.entity.situation;
 
-import fi.uef.envi.wavellite.entity.core.Entity;
-
 /**
  * <p>
  * Title: RelevantObject
@@ -24,7 +22,7 @@ import fi.uef.envi.wavellite.entity.core.Entity;
  * @author Markus Stocker
  */
 
-public interface RelevantObject extends Entity {
+public interface RelevantObject extends STObject {
 
 	public void accept(RelevantObjectVisitor visitor);
 	

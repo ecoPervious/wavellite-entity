@@ -7,8 +7,6 @@ package fi.uef.envi.wavellite.entity.situation;
 
 import java.util.Set;
 
-import fi.uef.envi.wavellite.entity.core.Entity;
-
 /**
  * <p>
  * Title: Situation
@@ -26,7 +24,7 @@ import fi.uef.envi.wavellite.entity.core.Entity;
  * @author Markus Stocker
  */
 
-public interface Situation extends Entity {
+public interface Situation extends STObject {
 
 	public void addSupportedInfon(ElementaryInfon infon);
 

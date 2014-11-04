@@ -5,7 +5,6 @@
 
 package fi.uef.envi.wavellite.entity.situation.base;
 
-import fi.uef.envi.wavellite.entity.core.base.AbstractEntity;
 import fi.uef.envi.wavellite.entity.situation.RelevantObject;
 
 /**
@@ -25,7 +24,7 @@ import fi.uef.envi.wavellite.entity.situation.RelevantObject;
  * @author Markus Stocker
  */
 
-public abstract class AbstractRelevantObject extends AbstractEntity implements
+public abstract class AbstractRelevantObject extends AbstractSTObject implements
 		RelevantObject {
 
 	private static final long serialVersionUID = -4685705879875540200L;

@@ -5,8 +5,6 @@
 
 package fi.uef.envi.wavellite.entity.situation;
 
-import fi.uef.envi.wavellite.entity.core.Entity;
-
 /**
  * <p>
  * Title: Value
@@ -24,7 +22,7 @@ import fi.uef.envi.wavellite.entity.core.Entity;
  * @author Markus Stocker, markus.stocker@uef.fi
  */
 
-public interface Value extends Entity {
+public interface Value extends STObject {
 
 	public void accept(ValueVisitor visitor);
 	

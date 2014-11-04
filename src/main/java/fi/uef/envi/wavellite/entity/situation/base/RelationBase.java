@@ -6,7 +6,6 @@
 package fi.uef.envi.wavellite.entity.situation.base;
 
 import fi.uef.envi.wavellite.entity.core.EntityVisitor;
-import fi.uef.envi.wavellite.entity.core.base.AbstractEntity;
 import fi.uef.envi.wavellite.entity.situation.Relation;
 import fi.uef.envi.wavellite.vocabulary.STO;
 
@@ -27,7 +26,7 @@ import fi.uef.envi.wavellite.vocabulary.STO;
  * @author Markus Stocker
  */
 
-public class RelationBase extends AbstractEntity implements Relation {
+public class RelationBase extends AbstractSTObject implements Relation {
 
 	private static final long serialVersionUID = -9219478228704588399L;
 

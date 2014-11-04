@@ -99,22 +99,22 @@ public class DatasetBase extends AbstractEntity implements Dataset {
 	}
 	
 	@Override
-	public void setOperator(Operator operator) {
+	public void setAttributedTo(Operator operator) {
 		this.operator = operator;
 	}
 	
 	@Override
-	public Operator getOperator() {
+	public Operator getAttributedTo() {
 		return operator;
 	}
 	
 	@Override
-	public void setOperation(Operation operation) {
+	public void setGeneratedBy(Operation operation) {
 		this.operation = operation;
 	}
 	
 	@Override
-	public Operation getOperation() {
+	public Operation getGeneratedBy() {
 		return operation;
 	}
 	

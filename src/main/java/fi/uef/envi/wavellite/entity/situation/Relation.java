@@ -5,8 +5,6 @@
 
 package fi.uef.envi.wavellite.entity.situation;
 
-import fi.uef.envi.wavellite.entity.core.Entity;
-
 /**
  * <p>
  * Title: Relation
@@ -24,6 +22,6 @@ import fi.uef.envi.wavellite.entity.core.Entity;
  * @author Markus Stocker
  */
 
-public interface Relation extends Entity {
+public interface Relation extends STObject {
 
 }
