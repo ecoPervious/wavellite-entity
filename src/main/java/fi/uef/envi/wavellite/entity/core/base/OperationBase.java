@@ -63,6 +63,7 @@ public class OperationBase extends AbstractEntity implements Operation {
 
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((type == null) ? 0 : type.hashCode());
+		result = prime * result + ((operator == null) ? 0 : operator.hashCode());
 
 		return result;
 	}
@@ -88,6 +89,12 @@ public class OperationBase extends AbstractEntity implements Operation {
 			if (other.type != null)
 				return false;
 		} else if (!type.equals(other.type))
+			return false;
+		
+		if (operator == null) {
+			if (other.operator != null)
+				return false;
+		} else if (!operator.equals(other.operator))
 			return false;
 
 		return true;
