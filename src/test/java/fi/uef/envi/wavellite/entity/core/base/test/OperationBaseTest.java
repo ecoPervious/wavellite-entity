@@ -10,6 +10,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 import fi.uef.envi.wavellite.entity.core.base.OperationBase;
+import fi.uef.envi.wavellite.entity.core.base.OperatorBase;
 import fi.uef.envi.wavellite.vocabulary.WOO;
 
 /**
@@ -129,5 +130,41 @@ public class OperationBaseTest {
 
 		assertNotEquals("t2", s.getType());
 	}
+
+	@Test
+	public void test14() {
+		OperationBase s = new OperationBase("i1");
+		s.setAssociatedWith(new OperatorBase("i2"));
+
+		assertEquals(new OperatorBase("i2"), s.getAssociatedWith());
+	}
+
+	@Test
+	public void test15() {
+		OperationBase s = new OperationBase("i1");
+		s.setAssociatedWith(new OperatorBase("i2"));
+
+		assertNotEquals(new OperatorBase("i3"), s.getAssociatedWith());
+	}
 	
+	@Test
+	public void test16() {
+		OperationBase e = new OperationBase("i1");
+		e.setAssociatedWith(new OperatorBase("i2"));
+		OperationBase a = new OperationBase("i1");
+		a.setAssociatedWith(new OperatorBase("i2"));
+
+		assertEquals(e, a);
+	}
+	
+	@Test
+	public void test17() {
+		OperationBase e = new OperationBase("i1");
+		e.setAssociatedWith(new OperatorBase("i2"));
+		OperationBase a = new OperationBase("i1");
+		a.setAssociatedWith(new OperatorBase("i3"));
+
+		assertNotEquals(e, a);
+	}
+
 }
